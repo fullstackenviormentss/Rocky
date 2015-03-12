@@ -23,7 +23,7 @@ Rocky::Application.configure do
   config.assets.digest = true
 
   # Serve assets from S3
-  config.action_controller.asset_host = "//s3.amazonaws.com/rocky-assets"
+  # config.action_controller.asset_host = "//s3.amazonaws.com/rocky-assets"
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -54,7 +54,7 @@ Rocky::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
 
   # Enable threaded mode
