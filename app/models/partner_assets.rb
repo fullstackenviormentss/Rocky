@@ -48,17 +48,20 @@ module PartnerAssets
   end
 
   def application_css_present?
-    folder.asset_file_exists?(APP_CSS)
+    false
+    # folder.asset_file_exists?(APP_CSS)
     #File.exists?(self.absolute_application_css_path)
   end
 
   def registration_css_present?
-    folder.asset_file_exists?(REG_CSS)
+    false
+    #folder.asset_file_exists?(REG_CSS)
     #File.exists?(self.absolute_registration_css_path)
   end
 
   def partner_css_present?
-    folder.asset_file_exists?(PART_CSS)
+    false
+    #folder.asset_file_exists?(PART_CSS)
     #File.exists?(self.absolute_partner_css_path)
   end
   

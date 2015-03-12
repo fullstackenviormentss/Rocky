@@ -35,7 +35,6 @@ end
 
 gem 'rest-client'
 gem 'diffy'
-gem 'asset_sync'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.10.1"
