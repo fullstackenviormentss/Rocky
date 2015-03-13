@@ -246,8 +246,8 @@ ActiveRecord::Schema.define(:version => 20141206195748) do
     t.string   "party_tooltip",             :limit => 1024
     t.string   "sub_18",                    :limit => 1024
     t.string   "registration_deadline",     :limit => 1024
-    t.string   "pdf_instructions",          :limit => 1024
-    t.string   "email_instructions",        :limit => 1024
+    t.string   "pdf_instructions",          :limit => 2048
+    t.string   "email_instructions",        :limit => 2048
   end
 
   add_index "state_localizations", ["state_id"], :name => "index_state_localizations_on_state_id"

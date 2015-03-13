@@ -184,8 +184,10 @@ class Registrant < ActiveRecord::Base
   belongs_to :partner
   # belongs_to :remote_partner
   def partner
-    !remote_partner_id.blank? ? RemotePartner.find(remote_partner_id) : super
+    Partner.first
+    #!remote_partner_id.blank? ? RemotePartner.find(remote_partner_id) : super
   end
+
   def partner=(obj)
     if obj.is_a?(RemotePartner)
       self.remote_partner_id = obj.id

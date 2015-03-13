@@ -3,8 +3,8 @@ class ChangeStateLocalizationsToTexts < ActiveRecord::Migration
     change_column :state_localizations, :parties,  :string, :limit => 1024
     change_column :state_localizations, :sub_18,  :string, :limit => 1024
     change_column :state_localizations, :registration_deadline,  :string, :limit => 1024
-    change_column :state_localizations, :pdf_instructions,  :string, :limit => 1024
-    change_column :state_localizations, :email_instructions,  :string, :limit => 1024
+    change_column :state_localizations, :pdf_instructions,  :string, :limit => 2048
+    change_column :state_localizations, :email_instructions,  :string, :limit => 2048
   end
 
   def down
