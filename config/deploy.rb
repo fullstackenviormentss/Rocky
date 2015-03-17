@@ -27,8 +27,6 @@ require 'dotenv'
 Dotenv.load
 
 
-
-
 set :application, "rocky"
 set :repository,  "git@github.com:trustthevote/Rocky.git"
 

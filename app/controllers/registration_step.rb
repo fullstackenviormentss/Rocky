@@ -26,9 +26,10 @@ class RegistrationStep < ApplicationController
   CURRENT_STEP = -1
   include ApplicationHelper
 
-  layout "registration"
+  layout "usa_gov"
   before_filter :redirect_app_role
   before_filter :find_partner
+  helper_method :current_step
 
   rescue_from Registrant::AbandonedRecord do |exception|
     reg = exception.registrant
