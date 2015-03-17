@@ -1,0 +1,252 @@
+<html lang="en" xml:lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="google" value="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USA.gov: Register to Vote</title>
+  <!--[if lte IE 8]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag    "usa_gov", :media => "all" %>
+  
+  <%= javascript_include_tag  'application' %>
+  
+  <%= csrf_meta_tags %>
+  
+  <%= yield :head %>
+</head>
+<body>
+ <div id="skiplinkholder">
+  <p><a id="skiplink" href="#skiptarget" onclick="document.getElementById('#skiptarget').focus();">Skip to Main Content</a></p>
+</div>
+<div id="header">
+  <div class="container group">
+    <a class="logolink" href="http://promotions.usa.gov/platform/platformHP.html">
+      <img id="logo" src="/assets/usa_gov/USA_Logo.png" alt="USA.gov">
+    </a>
+    <ul id="utilities">
+      <li><a href="#"><span class="icon-user">Contact USA.gov</span></a></li> &nbsp;&nbsp;<li><a href="#"><span class="icon-text-height">Change Text Size</span></a></li>
+    </ul>
+  </div>
+  
+     <div id="mnmenu">
+        <div class="container">
+      <nav id="mnnav" role="navigation" aria-label="Site-wide">
+          <ul class="navItems clearfix group">
+              <li><a href="http://www.usa.gov/"><span class="icon-home">Home</span></a></li>
+              <li><a href="http://www.usa.gov/"><span class="icon-flag">About the U.S.</span></a></li>
+              <li><a href="http://www.usa.gov/"><span class="icon-agencies">Agencies and Elected Officials</span></a></li>
+              <li><a href="http://www.usa.gov/"><span class="icon-mortgage">Housing and Community</span></a></li>
+              <li><a href="http://www.usa.gov/"><span class="icon-job">Jobs and Unemployment</span></a></li>
+              <li><a href="http://www.usa.gov/"><span class="icon-tax">Money and Shopping</span></a></li>
+              <li><a href="http://www.usa.gov/"><span class="icon-globe">Travel and Immigration</span></a></li>
+              <li id="moreservices"><a href="http://www.usa.gov/"><span class="icon-plus">More Services</span></a></li>
+          </ul>
+      </nav>
+      <div class="headercontact clearfix">
+      <h2 id="">Contact USA.gov</h2>
+      <ul>
+        <li><a href="http://www.usa.gov/">
+          <span class="icon-phone spk">Call 1-844-USA-GOV1 (1‑844‑872‑4681)</span>
+        </a></li>
+        <li><a href="http://www.usa.gov/">
+          <span class="icon-email">E-mail USA.gov</span>
+        </a></li>
+        <li><a href="http://www.usa.gov/">
+          <span class="icon-chat">Chat with USA.gov</span>
+        </a></li>
+      </ul>
+    </div>
+      </div>
+    </div>
+</div>
+  <!-- begin skip link target for main content -->
+  <div class="searchbkgnd">
+ <div class="container">
+ <div class="searchttl"><p>Search the Government</p></div>
+   <div id="search" role="search">
+    <div>
+      <form action="http://search.usa.gov/search" method="get" name="search_form" accept-charset="UTF-8">
+        <input id="affiliate" name="affiliate" type="hidden" value="usagov">
+        <label class="hidden" for="query">Search</label>
+        <input type="text" maxlength="50" name="query" size="38" id="query" class="text search_bg usagov-search-autocomplete ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+        <button type="submit" class="submit" value="Search" id="buscarSubmit"><span class="icon-search">Search</span></button>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
+
+  <div class="clearfix">
+     <p id="skiptargetholder"> <a id="skiptarget" class="skip" tabindex="-1"></a> </p>
+  </div>
+  <!-- end skip link target for main content -->
+  <!-- begin toggle -->
+  <div id="#skiptarget" class="hptoggles clearfix">
+    <div class="container">
+      <ul>
+        <li class="engtoggle"><%= link_to "Español", new_registrant_path(locale: 'es') %></li>
+      </ul>
+    </div>
+   </div>
+   <!-- end toggle -->
+
+
+<main id="content" role="main">
+  <div class="container clearfix">
+    <%= render partial: "layouts/usa_gov_header_nav" %>
+    <%= yield %>
+  </div>
+  <aside class="sclmedia">
+    <div class="container clearfix">
+      <div class="col-md-offset-3">
+      <section class="col-md-6 col-xs-12">
+      <div class="nodvdr">
+        <header>
+          <h2 id="">Share This Page:</h2>
+        </header>
+        <ul>
+          <li class="col-md-3 col-xs-6"><a href="http://www.usa.gov/" class="sclfcbk"><span>Facebook</span></a></li>
+          <li class="col-md-3 col-xs-6"><a href="http://www.usa.gov/" class="scltwttr"><span>Twitter</span></a></li>
+          <li class="col-md-3 col-xs-6"><a href="http://www.usa.gov/" class="sclggle"><span>Google+</span></a></li>
+          <li class="col-md-3 col-xs-6"><a href="http://www.usa.gov/" class="scleml"><span>E-mail</span></a></li>
+        </ul>
+      </div>
+      </section>
+      <section class="col-md-6 col-xs-12 dvdr">
+      <div>
+        <header>
+          <h2 id=""><label for="email-input">Get E-mail Updates on This Topic:</label></h2>
+        </header>
+        <div class="nowrp">
+                  <form method="POST" action="https://public.govdelivery.com/accounts/USAGOV/subscribers/qualify">
+                    <p class="txtbx">
+                      <input id="email-input" class="text" size="38" role="textbox" name="email" type="email">
+                      <input class="submit" value="Subscribe" id="emailSubmit" type="submit">
+                    </p>
+                  </form>
+              </div>
+      </div>
+      </section>  
+      </div>
+    </div>
+  </aside>
+</main>
+<!-- begin footer container -->
+<div id="footer" role="contentinfo">
+  <div class="ftr-cntntmddl clearfix container">
+    <!-- begin contact container -->
+    <div class="row">
+      <div class="footercontact col-md-4 col-sm-12 clearfix">
+        <h2 id="">Contact USA.gov</h2>
+        <ul>
+          <li><a href="http://www.usa.gov/">
+            <span class="icon-phone spk">Call 1-844-USA-GOV1 (1‑844‑872‑4681)</span>
+          </a></li>
+          <li><a href="http://www.usa.gov/">
+            <span class="icon-email">E-mail USA.gov</span>
+          </a></li>
+          <li><a href="http://www.usa.gov/">
+            <span class="icon-chat">Chat with USA.gov</span>
+          </a></li>
+        </ul>
+      </div>
+      <!-- end contact container -->
+      
+      <!-- begin about container -->
+      <div class="footernav col-md-4 col-sm-12 clearfix">
+        <!-- <section> -->
+        <h2 id="">About USA.gov</h2>
+        <ul>
+          <li><a href="http://www.usa.gov/">About Us</a></li>
+          <li><a href="http://www.usa.gov/">Site Index</a></li>
+          <li><a href="http://www.usa.gov/">Kids.gov</a></li>
+          <li><a href="http://www.usa.gov/">GobiernoUSA.gov</a></li>
+          <li><a href="http://www.usa.gov/">Order Print Publications</a></li>
+          <li><a href="http://www.usa.gov/">For the Media</a></li>
+          <li><a href="http://www.usa.gov/">For Developers</a></li>
+          <li><a href="http://www.usa.gov/">Website Policies</a></li>
+        </ul>
+      </div>
+      <!-- end about container -->
+      
+      <!-- begin connected container -->
+      <div class="footerconnected col-md-4 col-sm-12 clearfix">
+        <h2 id="">Stay Connected</h2>
+        <ul>
+          <li><a href="http://www.usa.gov/"> <span class="icon-facebook">Facebook</span></a></li>
+          <li><a href="http://www.usa.gov/"> <span class="icon-googleplus">Google+</span> </a></li>
+          <li><a href="http://www.usa.gov/"> <span class="icon-twitter">Twitter</span> </a></li>
+          <li><a href="http://www.usa.gov/"> <span class="icon-rss">RSS</span> </a></li>
+          <li><a href="http://www.usa.gov/"> <span class="icon-youtube">YouTube</span> </a></li>
+          <li><a href="http://www.usa.gov/"> <span class="icon-connect">Get E-mail Updates</span> </a></li>
+        </ul>
+        <!-- </section> -->
+      </div>
+      <!-- end connected container -->
+    </div>
+  </div>
+  <!-- begin tagline container -->
+  <div class="footertagline">
+  <!-- <section> -->
+    <div class="tagline clearfix container">
+      <p>USA.gov is the U.S. government's official web portal.</p>
+      <p class="volver clearfix"><a href="#skiptarget"><span class="icon-backtotop-dwnlvl">Back to Top</span></a></p>
+    </div>
+  </div>
+  <!-- end tagline container -->
+  
+</div>
+<!-- end footer container -->
+<!-- Needed_for_USA.gov_uptime_check -->
+<script type="text/javascript"> 
+//<![CDATA[ 
+var aid = "usagov"; 
+//]]>
+</script><script src="http://search.usa.gov/javascripts/stats.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28227333-1']);
+  _gaq.push(['_setDomainName', 'usa.gov']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Begin: VOC survey -->
+<script type="text/javascript" src="https://survey.usa.gov/widget/121/invitation.js?target_id=srvyinvt&amp;mobile_target_id=survey-target∓stylesheet=http%3A%2F%2Fwww.usa.gov/surveystylsheet.css"></script>
+<!-- End: VOC survey -->
+<!--end gsaText_common_banner mobile-->
+
+
+      <!--end gsaCommonPage_bottombanner mobile-->
+  
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0007/9651.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+        
+  
+  <script type="text/javascript">
+//<![CDATA[
+     var usasearch_config = { siteHandle:"usagov" };
+
+     var script = document.createElement("script");
+     script.type = "text/javascript";
+     script.src = "http://search.usa.gov/javascripts/remote.loader.js";
+     document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+
+
+<div id="usasearch_sayt" style="border: 0px; display: block; float: none; height: 0px; line-height: 0; margin: 0px; padding: 0px; position: static; width: 0px; background: none;"><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 1; top: 0px; left: 0px; display: none;"></ul></div></body></html>
+</html>
