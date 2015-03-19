@@ -14,19 +14,19 @@
     <ul class="stacked">
       <li class="width_a">
         <h3><%= f.label :from_email %></h3>
-        <%= field_div f, :from_email %>
+        <%= field_div f, :from_email, class: 'form-control' %>
         <span class="error"><%= @partner.errors[:from_email].join("\n") %></span>
         <span class="instructions">* Email address to send confirmation, reminder and thank-you emails from for whitelabeled partners</span>
       </li>
       <li class="width_a">
         <h3><%= f.label :finish_iframe_url %></h3>
-        <%= field_div f, :finish_iframe_url %>
+        <%= field_div f, :finish_iframe_url, class: 'form-control' %>
         <span class="error"><%= @partner.errors[:finish_iframe_url].join("\n") %></span>
         <span class="instructions">* URL for iFrame to show registrants on the thank you page</span>
       </li>        
       <li class="width_a">
         <h3><%= f.label :registration_instructions_url %></h3>
-        <%= field_div f, :registration_instructions_url %>
+        <%= field_div f, :registration_instructions_url, class: 'form-control' %>
         <span class="error"><%= @partner.errors[:registration_instructions_url].join("\n") %></span>
         <span class="instructions">* URL for web-based instructions spawned from the pdf. <br/>
         Will replace http://www.rockthevote.com/registration/instructions/&lt;STATE&gt;-&lt;LOCALE&gt;.html

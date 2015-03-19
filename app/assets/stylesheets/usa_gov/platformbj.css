@@ -1133,6 +1133,8 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
 }
 .flowIndicator div.active:after{
     background-color:#C61F0C;
+    border-top: 1px solid #C61F0C;
+  border-right: 1px solid #C61F0C;
 }
 .flowIndicator .active.left:before,
 .flowIndicator .active.left:after,
@@ -1163,6 +1165,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
 /***********************
 14. Forms
 ***********************/
+
 .inline-form{
     border: 2px solid #E4EAEE;
     padding:0 0 15px 0;
@@ -1192,86 +1195,12 @@ display: block;
     width:120px;
 }
 input[type='checkbox'] { 
-    height: 20px;
-	border:1px solid #4B4A4F;
-	padding:7px 7px 7px 12px;
-	/*margin:0 0 30px 0;*/
-	background:#fafafa;
-	border:1px solid #4B4A4F;
-	outline:none;
-	color:#96999D; 
-	-webkit-appearance: none;
-	-webkit-font-smoothing: antialiased;
-	-webkit-border-radius: 4px;
-	   -moz-border-radius: 4px;
-	        border-radius: 4px;
-	-webkit-transition: all 0.15s;
-	   -moz-transition: all 0.15s;
-		-ms-transition: all 0.15s;
-		 -o-transition: all 0.15s;
-		  	transition: all 0.15s;	
-    position: relative;
-    top:6px;
+    -webkit-appearance:checkbox;
 }
 
-input[type=checkbox]:focus
-  {
-	border-color: #4B4A4F;
-	color: #555;
-	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18)!important;
-	   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18)!important;
-	        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18)!important;
-}
-input[type='checkbox']:checked
-{
-    position:relative;
-}
-input[type='checkbox']:checked:before
-{
-    content:'';
-    display:block;
-    width:17px;
-    height:16px;
-    position:absolute;
-    top:1px;
-    left:1px;
-    background:none #ACACB8;
-    -webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-	        border-radius: 3px;
-    opacity:0.5;
-}
+
 input[type='radio'] {
-	-webkit-appearance: none;
-	background-color: #fafafa;
-	border: 1px solid #4B4A4F;
-	padding: 9px;
-	border-radius: 50px;
-	display: inline-block;
-	position: relative;
-    top:6px;
-}
-
-input[type='radio']:checked:after {
-	content: ' ';
-	width: 12px;
-	height: 12px;
-	border-radius: 50px;
-	position: absolute;
-	top: 3px;
-	background: #ACACB8;
-	left: 3px;
-	font-size: 32px;
-}
-
-input[type='radio']:checked {
-	background-color: #fafafa;
-	color: #ACACB8;
-	border: 1px solid #4B4A4F;
-}
-
-input[type='radio'] :active, .regular-radio:checked:active {
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+     -webkit-appearance:radio;
 }
 .actionRow{
     margin: 15px 15px 0 15px;

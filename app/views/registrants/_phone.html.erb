@@ -2,7 +2,7 @@
   <li class="width_b">
     <h3><%= form.label :phone %></h3>
     <div class="flat-stack">
-      <%= field_div form, :phone %>
+      <%= field_div form, :phone, class: 'form-control' %>
       <% if form.object.errors[:phone].any? %>
         <span class="error"><%= form.object.errors[:phone].join("\n") %></span>
       <% else %>
@@ -19,4 +19,3 @@
     </div>
   </li>
 </ul>
-<hr/>

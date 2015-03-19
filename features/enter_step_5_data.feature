@@ -26,7 +26,7 @@ Feature: Step 5
       Given I have completed step 4 as a resident of "<state>" state
       And I have a state license
       When I go to the step 5 page
-      And I follow "< Previous Step"
+      And I follow "Previous Step"
       Then I should see "Additional Registration Information"
 
       Examples:
@@ -44,7 +44,7 @@ Feature: Step 5
         | false     | false         | false         | false             | false   | false       | | |
       And I have completed step 4 from that partner
       When I go to the step 5 page
-      And I follow "< Previous Step"
+      And I follow "Previous Step"
       Then I should see "Additional Registration Information"
       
 

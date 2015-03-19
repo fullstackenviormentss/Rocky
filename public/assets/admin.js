@@ -1,0 +1,1 @@
+var editPartnerForm=function(){var e=$("form.edit_partner");if(0!=e.length){var r=$("div.whitelabeled"),t=$("input#partner_whitelabeled"),i=function(){t.is(":checked")?r.show():r.hide()};t.change(i),i()}};$(function(){editPartnerForm()});

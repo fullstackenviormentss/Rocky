@@ -8,26 +8,26 @@
     <ul class="stacked">
       <li class="width_d">
         <h3><%= form.label :name_title %></h3>
-        <%= select_div form, :name_title, @registrant.titles, :include_blank => true %>
+        <%= select_div form, :name_title, @registrant.titles, :include_blank => true, class: 'form-control' %>
         <span class="error"><%= form.object.errors[:name_title].join("\n") %></span>
       </li>
       <li class="width_b">
         <h3><%= form.label :first_name %></h3>
-        <%= field_div form, :first_name %>
+        <%= field_div form, :first_name, class: 'form-control' %>
         <span class="error"><%= form.object.errors[:first_name].join("\n") %></span>
       </li>
       <li class="width_c">
         <h3><%= form.label :middle_name %></h3>
-        <%= field_div form, :middle_name %>
+        <%= field_div form, :middle_name, class: 'form-control' %>
       </li>
       <li class="width_b">
         <h3><%= form.label :last_name %></h3>
-        <%= field_div form, :last_name %>
+        <%= field_div form, :last_name, class: 'form-control' %>
         <span class="error"><%= form.object.errors[:last_name].join("\n") %></span>
       </li>
       <li class="width_d">
         <h3><%= form.label :name_suffix %></h3>
-        <div><%= form.select :name_suffix, @registrant.suffixes, :include_blank => t('txt.registration.select_none') %></div>
+        <div><%= form.select :name_suffix, @registrant.suffixes, :include_blank => t('txt.registration.select_none'), class: 'form-control' %></div>
       </li>
     </ul>
   </fieldset>
@@ -45,14 +45,17 @@
     
     <%= render :partial=>'registrants/survey_and_volunteer', :locals=>{:form=>form} %>      
   
-    <%= rollover_button(:prepare, I18n.t('txt.button.prepare')) %>
-    
-  <%- else %>
+    <div class="buttons">
     <%= render(:partial => 'previous', :locals => {:form => form}) unless @registrant.first_registration? %>
+    <%= rollover_button(:prepare, I18n.t('txt.button.prepare'), :previous => true) %>
+</div>
+  <%- else %>
+   
     <%= render :partial=> "registrants/phone", :locals=>{:form=>form} %>
     
     <%= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
+<div class="back"><%= link_to t('txt.button.back').html_safe, registrant_path(@registrant) %></div>
   <%- end %>
   
-  <div class="back"><%= link_to t('txt.button.back').html_safe, registrant_path(@registrant) %></div>
+  
 <% end %>

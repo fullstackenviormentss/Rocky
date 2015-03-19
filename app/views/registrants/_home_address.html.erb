@@ -13,28 +13,28 @@ $(document).ready(function() {
   <ul class="stacked">
     <li class="width_a">
       <h3><%= form.label :home_address %></h3>
-      <%= field_div form, :home_address %>
+      <%= field_div form, :home_address, class: 'form-control' %>
       <span class="error"><%= form.object.errors[:home_address].join("\n") %></span>
     </li>
     <li class="width_b">
       <h3><%= form.label :home_unit %></h3>
-      <%= field_div form, :home_unit %>
+      <%= field_div form, :home_unit, class: 'form-control' %>
     </li>
   </ul>
   <ul class="stacked">
     <li class="width_a">
       <h3><%= form.label :home_city %></h3>
-      <%= field_div form, :home_city %>
+      <%= field_div form, :home_city, class: 'form-control' %>
       <span class="error"><%= form.object.errors[:home_city].join("\n") %></span>
     </li>
     <li class="width_b">
       <h3><%= form.label :home_state_name %></h3>
-      <%= field_div form, :home_state_name, :disabled => true %>
+      <%= field_div form, :home_state_name, :disabled => true , class: 'form-control'%>
       <span class="error"><%= form.object.errors[:home_state_name].join("\n") %></span>
     </li>
     <li class="width_c">
       <h3><%= form.label :home_zip_code %></h3>
-      <%= field_div form, :home_zip_code, :size => 8, :disabled => true %>
+      <%= field_div form, :home_zip_code, :size => 8, :disabled => true , class: 'form-control'%>
       <span class="error"><%= form.object.errors[:home_zip_code].join("\n") %></span>
     </li>
   </ul>
@@ -55,33 +55,33 @@ $(document).ready(function() {
   <ul class="stacked">
     <li class="width_a">
       <h3><%= form.label :mailing_address %></h3>
-      <%= field_div form, :mailing_address %>
+      <%= field_div form, :mailing_address, class: 'form-control' %>
       <span class="error"><%= form.object.errors[:mailing_address].join("\n") %></span>
     </li>
     <li class="width_b">
       <h3><%= form.label :mailing_unit %></h3>
-      <%= field_div form, :mailing_unit, :size => 15 %>
+      <%= field_div form, :mailing_unit, :size => 15, class: 'form-control' %>
     </li>
   </ul>
   <ul class="stacked">
     <li class="width_a">
       <h3><%= form.label :mailing_city %></h3>
-      <%= field_div form, :mailing_city %>
+      <%= field_div form, :mailing_city, class: 'form-control' %>
       <span class="error"><%= form.object.errors[:mailing_city].join("\n") %></span>
     </li>
     <li class="width_b">
       <h3><%= form.label :mailing_state_abbrev %></h3>
-      <div><%= form.select :mailing_state_abbrev, GeoState.collection_for_select %></div>
+      <div><%= form.select :mailing_state_abbrev, GeoState.collection_for_select, class: 'form-control' %></div>
       <span class="error"><%= form.object.errors[:mailing_state_id].join("\n") %></span>
     </li>
     <li class="width_c">
       <h3><%= form.label :mailing_zip_code %></h3>
-      <%= field_div form, :mailing_zip_code, :size => 10, :maxlength => 10 %>
+      <%= field_div form, :mailing_zip_code, :size => 10, :maxlength => 10, class: 'form-control' %>
       <span class="error"><%= form.object.errors[:mailing_zip_code].join("\n") %></span>
     </li>
   </ul>
 </fieldset>
-<%- show_hr = show_hr.nil? ? true : show_hr %>
-<%- if show_hr %>
-  <hr id="mailing_address_rule" style="display:none;" />
+<%- show_div = show_div.nil? ? true : show_div %>
+<%- if show_div %>
+<div id="mailing_address_rule" style="display:none;"></div>
 <%- end %>

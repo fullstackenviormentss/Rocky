@@ -20,24 +20,24 @@ $(document).ready(function() {
   <ul class="flat">
     <li class="width_f">
       <h3><%= form.label :email_address %></h3>
-      <%= field_div form, :email_address %>
-      <div class="tooltip"><%= tooltip_tag :email_address %></div>
-      <span class="error"><%= form.object.errors[:email_address].join("\n") %></span>
+      <%= field_div form, :email_address, class: 'form-control' %>
+      <span class="tooltip"><%= tooltip_tag :email_address %></span>
+      <div class="error"><%= form.object.errors[:email_address].join("\n") %></div>
     </li>
   </ul>
 <%- end %>
-<ul class="flat">
+<ul class="flat form-row-alt">
   <li class="width_f">
     <h3><%= form.label :home_zip_code %></h3>
-    <%= field_div form, :home_zip_code %>
-    <div class="tooltip"><%= tooltip_tag :home_zip_code %></div>
+    <%= field_div form, :home_zip_code, class: 'form-control' %>
+    <span class="tooltip"><%= tooltip_tag :home_zip_code %></span>
     <span class="error"><%= form.object.errors[:home_zip_code].join("\n") %></span>
   </li>
 </ul>
 <ul class="flat">
   <li class="width_f">
     <h3><%= form.label :date_of_birth %></h3>
-    <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth %>
+    <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth, class: 'form-control'  %>
     <div class="tooltip"><%= tooltip_tag :date_of_birth %></div>
     <% if !form.object.errors[:date_of_birth].empty? %>
       <span class="error"><%= form.object.errors[:date_of_birth].join("\n") %></span>
@@ -47,8 +47,7 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<ul class="checkbox checkbox-step-1">
-  <li class="spacer">&nbsp;</li>
+<ul class="checkbox checkbox-step-1 form-row-alt">
   <li>
     <h3>
       <%= form.check_box :us_citizen %> <%= form.label :us_citizen %>
@@ -60,7 +59,6 @@ $(document).ready(function() {
 
 
 <ul class="checkbox checkbox-step-1">
-  <li class="spacer">&nbsp;</li>
   <li>
     <h3>
       <%= form.check_box :has_state_license %> <%= form.label :has_state_license %>
@@ -70,8 +68,7 @@ $(document).ready(function() {
   </li>
 </ul>
 
-<ul class="checkbox checkbox-step-1">
-  <li class="spacer">&nbsp;</li>
+<ul class="checkbox checkbox-step-1 form-row-alt">
   <li>
     <h3>
       <%= form.check_box :will_be_18_by_election %> <%= form.label :will_be_18_by_election %>
@@ -84,7 +81,6 @@ $(document).ready(function() {
 
 
 <ul class="checkbox checkbox-step-1">
-  <li class="spacer">&nbsp;</li>
   <li>
     <h3>
       <%= form.check_box :first_registration %> <%= form.label :first_registration %>
