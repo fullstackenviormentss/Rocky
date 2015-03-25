@@ -49,7 +49,7 @@ module ActiveResource
 end
  
 if Rails.env.development? || Rails.env.test?
-  ActiveResource::Connection.cache_with :file_store, '/tmp/cache'
+  # ActiveResource::Connection.cache_with :file_store, '/tmp/cache'
 else
   ActiveResource::Connection.cache_with :dalli_store,
                       (ENV["MEMCACHIER_SERVERS"] || "").split(","),

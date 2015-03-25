@@ -28,12 +28,7 @@ class PartnerAssetsFolder
   
   def initialize(partner)
     @partner = partner
-    @connection = Fog::Storage.new({
-      :provider                 => 'AWS',
-      :aws_access_key_id        => ENV['AWS_ACCESS_KEY_ID'],
-      :aws_secret_access_key    => ENV['AWS_SECRET_ACCESS_KEY']
-    })
-    
+    @connection = FOG_STORAGE
   end
   
   def directory
@@ -101,7 +96,11 @@ class PartnerAssetsFolder
   end
 
   def asset_file(name)
-    directory.files.get(path_from_name(name))
+    if directory
+      directory.files.get(path_from_name(name))
+    else
+      nil
+    end
   end
   
   def asset_file_exists?(name)

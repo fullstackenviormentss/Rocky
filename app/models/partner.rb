@@ -80,16 +80,22 @@ class Partner < ActiveRecord::Base
     end
   end
 
-  has_attached_file :logo, RockyConf.paperclip_options.to_hash.symbolize_keys.merge(:styles => { 
-    :header => "75x45" 
-  }).merge({
-    fog_directory: partner_assets_bucket,
-    fog_credentials: {
-      provider: "AWS",
-      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-    }
-  })
+  if ENV['AWS_ACCESS_KEY_ID']
+    has_attached_file :logo, RockyConf.paperclip_options.to_hash.symbolize_keys.merge(:styles => { 
+      :header => "75x45" 
+    }).merge({
+      fog_directory: partner_assets_bucket,
+      fog_credentials: {
+        provider: "AWS",
+        aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+      }
+    })
+  else
+    has_attached_file :logo, RockyConf.paperclip_options.to_hash.symbolize_keys.merge(:styles => { 
+      :header => "75x45" 
+    })
+  end
   
   def header_logo_url
     self.logo(:header)

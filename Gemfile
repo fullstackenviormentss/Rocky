@@ -53,7 +53,7 @@ group :development, :test do
   gem "treetop", "= 1.4.10"
   # gem "selenium-client", "= 1.2.16"
   gem "capistrano", "= 2.15.5"
-  gem "rvm-capistrano"
+  gem "rvm-capistrano", require: false
   
   # Pito:
   gem "hpricot", "0.8.6"
@@ -70,7 +70,7 @@ group :test do
 end
 
 group :assets do
-  gem 'therubyracer'
+  # gem 'therubyracer'
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
