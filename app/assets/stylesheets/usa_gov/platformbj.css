@@ -236,6 +236,7 @@ h1 .small{
   font-size: 100%;
   line-height: 20px;
   height: 40px;
+    background-color:#fff;
 }
 
 ::-webkit-input-placeholder {

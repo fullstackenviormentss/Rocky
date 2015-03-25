@@ -2,6 +2,7 @@
   <li class="width_b">
     <h3><%= form.label :phone %></h3>
     <div class="flat-stack">
+     <span class="tooltip"><%= t("txt.registration.tooltips.phone")%></span>
       <%= field_div form, :phone %>
       <% if form.object.errors[:phone].any? %>
         <span class="error"><%= form.object.errors[:phone].join("\n") %></span>
@@ -9,7 +10,7 @@
         <span class="example">###-###-####</span>
       <% end %>
     </div>
-    <span class="tooltip"><%= t("txt.registration.tooltips.phone")%></span>
+   
   </li>
   <li class="secondary">
     <h3 id="registrant_phone_type_label"><%= form.label :phone_type %></h3>

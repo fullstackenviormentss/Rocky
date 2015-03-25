@@ -44,7 +44,6 @@ $(document).ready(function() {
   <li class="width_f">
     <h2><%= "#{form.label :date_of_birth}*".html_safe %></h2>  
     <span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span>
-    <span class="example">MM-DD-YYYY</span>
     <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth %>
     <% if !form.object.errors[:date_of_birth].empty? %>
       <span class="error"><%= form.object.errors[:date_of_birth].join("\n") %></span>

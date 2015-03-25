@@ -45,19 +45,23 @@ fieldset > .checkbox, .stacked{
 .checkbox > li > h3{
     margin: 0px!important;
 }
-.flat > li > h3{
-    margin: 0px!important;
+.flat > li > h2, h2 > label{
+    margin:0 0 2px 0px!important;
+    font-size: 15px;
+    font-weight: 600;
 }
 .stacked > li > h3{
     margin: 0px!important;
 }
-.form-control{
+.flat > li > div > input, .stacked> li > div > input, .form-control, .flat-stack input{
   display: block;
   width: 300px;
   height: 35px;
   padding: 20px;
   border: solid 1px #ddd;
   font-size: 100%;
+    background-color: #fafafa;
+    border-radius: 4px;
 }
 .form-control-inline{
   display: inline-block;
@@ -142,3 +146,50 @@ legend{
   padding: 0 15px 0 15px;
 }
 
+/*tooltip styles*/
+.tooltip{
+  position: relative;
+  width:99%;
+  color: #000;
+  background: #E4EAEE;
+  border: 1px solid #ddd;
+  height: auto;
+  line-height: 25px;
+  text-align: left;
+    padding: 0 10px 0 10px;
+//  visibility: hidden;
+    display: block;
+    margin: 0 30px 2px 0px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+.tooltip:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 4%;
+  margin-left: -12px;
+  width: 0; height: 0;
+  border-top: 12px solid #ddd;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+}
+.tooltip:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 4%;
+  margin-left: -10px;
+  width: 0; height: 0;
+  border-top: 10px solid #E4EAEE ;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+//.tooltip{
+//  visibility: visible;
+//  opacity: 1;
+//  bottom: 30px;
+//  left: 50%;
+//  margin-left: -76px;
+//  z-index: 999;
+//}

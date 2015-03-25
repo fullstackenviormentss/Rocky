@@ -2,7 +2,6 @@
 <%- if @registrant.any_email_opt_ins? %>
   <%- if @registrant.partner.rtv_email_opt_in || @registrant.partner.primary? %>
     <ul class="checkbox">
-      <li class="spacer">&nbsp;</li>
       <li>
         <h3>
           <%= form.check_box :opt_in_email %>
@@ -16,7 +15,6 @@
   <%- end %>
   <%- if @registrant.partner.partner_email_opt_in && !@registrant.partner.primary? %>
     <ul class="checkbox">
-      <li class="spacer">&nbsp;</li>
       <li>
         <h3>
           <%= form.check_box :partner_opt_in_email %>
