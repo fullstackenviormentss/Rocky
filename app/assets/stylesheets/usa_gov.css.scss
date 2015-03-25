@@ -63,6 +63,12 @@ fieldset > .checkbox, .stacked{
     background-color: #fafafa;
     border-radius: 4px;
 }
+.checkbox-step-1 input[type='checkbox'] {
+  -webkit-appearance: checkbox;
+  margin-left: 90%;
+  margin-top: -15px;
+    display: table;
+}
 .form-control-inline{
   display: inline-block;
   margin-right: 5px;
@@ -95,10 +101,16 @@ color: #c61f0c;
   padding: 5px 5px 5px 15px;
   line-height: 35px;
 }
+.button_row {
+  display: flex;
+  overflow: hidden;
+  margin: 15px 5px;
+}
+
 .button{
     clear: both;
     overflow: hidden;
-    padding: 15px 15px 5px 0;
+    display: inline;
 }
 .button_next_step > button,
 .button_prepare > button,
@@ -106,7 +118,6 @@ color: #c61f0c;
   border: solid 1px #1b50a0;
   background: #fff;
   color: #1b50a0;
-  float: right;
   margin: 0 0 0 0;
   padding: 7px 5px 10px 5px;
   font-size: 130%;
@@ -115,12 +126,13 @@ color: #c61f0c;
   min-width: 130px;
   height: 40px;
   cursor: pointer;
+
 }
 .back{
-  border: solid 1px #ddd;
   background: #fff;
   color: #4B4A4F;
-  float: left;
+    display: inline;
+    flex: 6;
   margin: 0 0 0 15px;
   padding: 7px 0 10px 0;
   font-size: 130%;
@@ -128,8 +140,12 @@ color: #c61f0c;
   line-height: 20px;
   width: 130px;
   height: 40px;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
+}
+.back a{
+    border: solid 1px #ddd;
+    padding: 3px 15px 10px 15px;
 }
 .button_edit{
     margin-left: 15px;
@@ -185,11 +201,28 @@ legend{
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
 }
-//.tooltip{
-//  visibility: visible;
-//  opacity: 1;
-//  bottom: 30px;
-//  left: 50%;
-//  margin-left: -76px;
-//  z-index: 999;
-//}
+/*Errors on the page*/
+.alert{
+   color: #a94442;
+  background-color: #f2dede;
+  border:solid 1px #ebccd1;
+    padding: 5px;
+    margin: 2px;
+    overflow: auto;
+    min-height: 0;
+}
+.alert:empty{
+    visibility: hidden;
+}
+.alert ul{
+    list-style: inside;
+    padding: 0;
+    margin: 0;
+}
+.success{
+      background-color: #dff0d8;
+      border-top: 1px solid #ddd;
+    margin: 2px;
+  padding: 5px;
+}
+

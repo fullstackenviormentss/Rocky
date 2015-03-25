@@ -135,7 +135,7 @@ Feature: Step 4
         | false     | false         | false         | false             | false   | false       | | |
       And I have completed step 4 from that partner as a resident of "Nevada" state
       When I go to the step 4 page
-      And I follow "< Previous Step"
+      And I follow "Previous Step"
       Then I should see "Personal Information"
       
     

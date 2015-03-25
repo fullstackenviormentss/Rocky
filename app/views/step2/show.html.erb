@@ -3,15 +3,17 @@
 <h1><%= t('txt.registration.step_2_header') %></h1>
 
 <%= form_for(@registrant, :url => registrant_step_2_path(@registrant)) do |form| %>
-  <div id="errors">
+<% if form.object.errors.count > 0 %>
+  <div id="errors" class="alert">
     <ul>
       <% form.object.errors.full_messages.each do |error| %>
         <li class="individual_error"><%= error %></li>
       <% end %>
     </ul>
   </div>
+<% end %>
   <% if @online_reg_url %>
-  <div id="online_reg_notice">
+  <div id="online_reg_notice" class="success">
     <p>Hey!, It Looks like online registration may be avialable in your state<p>
     <%= link_to "Online Registration", @online_reg_url %>
   </div>

@@ -15,13 +15,15 @@ $(document).ready(function() {
 </script>
 <% end %>
 <%= form.hidden_field :javascript_disabled %>
-<div id="errors">
+<% if form.object.errors.count > 0 %>
+<div id="errors" class="alert">
   <ul>
     <% form.object.errors.full_messages.each do |error| %>
       <li class="individual_error"><%= error %></li>
     <% end %>
   </ul>
 </div>
+<% end %>
 <%- if @registrant.collect_email_address? %>
   <ul class="flat">
     <li class="width_f">

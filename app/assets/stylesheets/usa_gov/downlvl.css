@@ -632,6 +632,7 @@ ul.topics {
   .col-md-offset-3 input#email-input{
 	height: 40px;
 	width: 300px;
+      background-color: #fff;
  }
  
  .sclmedianoml{

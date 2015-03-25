@@ -5,13 +5,15 @@
 <%- end %>
 
 <%= form_for(@registrant, :url => registrant_step_3_path(@registrant)) do |form| %>
-  <div id="errors">
+<% if form.object.errors.count > 0 %>
+  <div id="errors" class="alert">
     <ul>
       <% form.object.errors.full_messages.each do |error| %>
         <li class="individual_error"><%= error %></li>
       <% end %>
     </ul>
   </div>
+<% end %>
   <%- if @registrant.in_ovr_flow? %>
     <%= render :partial=> 'registrants/email_opt_ins', :locals=>{:form=>form} %>
     <%= render :partial=> 'registrants/phone_opt_ins', :locals=>{:form=>form, :show_hr=>true} %>
