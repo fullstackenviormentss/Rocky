@@ -3,8 +3,16 @@
 <h1><%= t('txt.registration.step_2_header') %></h1>
 
 <%= form_for(@registrant, :url => registrant_step_2_path(@registrant)) do |form| %>
+  <div id="errors">
+    <ul>
+      <% form.object.errors.full_messages.each do |error| %>
+        <li class="individual_error"><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
   <fieldset>
-    <legend><%= I18n.t('txt.registration.name') %><%= tooltip_tag :registrant_name %></legend>
+    <legend><%= I18n.t('txt.registration.name') %></legend>
+    <span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span>
     <ul class="stacked">
       <li class="width_d">
         <h3><%= form.label :name_title %></h3>
@@ -45,14 +53,16 @@
     
     <%= render :partial=>'registrants/survey_and_volunteer', :locals=>{:form=>form} %>      
   
-    <%= rollover_button(:prepare, I18n.t('txt.button.prepare')) %>
+    <%#= rollover_button(:prepare, I18n.t('txt.button.prepare')) %>
     
   <%- else %>
     <%= render(:partial => 'previous', :locals => {:form => form}) unless @registrant.first_registration? %>
     <%= render :partial=> "registrants/phone", :locals=>{:form=>form} %>
     
-    <%= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
+    <%#= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
   <%- end %>
-  
-  <div class="back"><%= link_to t('txt.button.back').html_safe, registrant_path(@registrant) %></div>
+  <div class="button_row">
+    <div class="back"><%= link_to t('txt.button.back').html_safe, registrant_path(@registrant) %></div>
+    <%= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
+  </div>
 <% end %>

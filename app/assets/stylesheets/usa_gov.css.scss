@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require usa_gov/grid
+ *= require usa_gov/style
+ *= require usa_gov/downlvl
+ *= require usa_gov/platformbj
+ */
+
+#other_language_link{
+  visibility: hidden;
+}
+main > div > form, .review {
+    border: 2px solid #E4EAEE;
+  padding: 0 Ω0 15px 0;
+  margin: 15px 0 15px 0;
+}
+select{
+     display: block;
+  width: 300px;
+  height: 35px;
+  padding: 20px;
+  border: solid 1px #ddd;
+  font-size: 100%;
+}
+.flat, .checkbox, .stacked,.affirm  > li{
+    list-style: none;
+}
+.flat, .checkbox, .stacked{
+    border-bottom: dotted 1px #ddd;
+    padding: 10px 0 10px 25px;
+    margin: 0;
+}
+fieldset > .checkbox, .stacked{
+    border-bottom:none;
+}
+.checkbox > li > h3{
+    margin: 0px!important;
+}
+.flat > li > h3{
+    margin: 0px!important;
+}
+.stacked > li > h3{
+    margin: 0px!important;
+}
+.form-control{
+  display: block;
+  width: 300px;
+  height: 35px;
+  padding: 20px;
+  border: solid 1px #ddd;
+  font-size: 100%;
+}
+.form-control-inline{
+  display: inline-block;
+  margin-right: 5px;
+  width: 120px;
+}
+.form-row-alt{
+    background-color: #E4EAEE;
+}
+h1{
+color: #c61f0c;
+  padding: 10px 0 10px 0;
+  font-size: 180%;
+  font-weight: normal;
+}
+.new_registrant, fieldset{
+      border: 1px solid #eee;
+  margin: 15px;
+}
+// .tooltip{
+//   position: relative;
+//   top: -15px;
+//   left: 155px;
+// }
+// .tooltip > img{
+//     width:20px;
+// }
+.info, .text {
+  background-color: #E4EAEE;
+  color: #4B4A4F;
+  padding: 5px 5px 5px 15px;
+  line-height: 35px;
+}
+.button{
+    clear: both;
+    overflow: hidden;
+    padding: 15px 15px 5px 0;
+}
+.button_next_step > button,
+.button_prepare > button,
+.button_review > button{
+  border: solid 1px #1b50a0;
+  background: #fff;
+  color: #1b50a0;
+  float: right;
+  margin: 0 0 0 0;
+  padding: 7px 5px 10px 5px;
+  font-size: 130%;
+  font-weight: normal;
+  line-height: 20px;
+  min-width: 130px;
+  height: 40px;
+  cursor: pointer;
+}
+.back{
+  border: solid 1px #ddd;
+  background: #fff;
+  color: #4B4A4F;
+  float: left;
+  margin: 0 0 0 15px;
+  padding: 7px 0 10px 0;
+  font-size: 130%;
+  font-weight: normal;
+  line-height: 20px;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+.button_edit{
+    margin-left: 15px;
+}
+filedset > legend > .tooltip{
+position: relative;
+  top: 5px;
+  left: 5px;
+  width: 25px;
+}
+legend{
+      font-size: 1.5em;
+  font-weight: 300;
+  padding: 0 15px 0 15px;
+}
+

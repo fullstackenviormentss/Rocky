@@ -109,8 +109,8 @@
   <ul class="affirm">
     <li>
       <h3>
-        <%= form.check_box :attest_true %>
         <%= form.label :attest_true %>
+        <%= form.check_box :attest_true %>
       </h3>
     </li>
     <li>
@@ -118,8 +118,10 @@
     </li>
   </ul>
 
-  <%= rollover_button(:prepare, I18n.t('txt.button.prepare')) %>
+  <div class="button_row">
+    <div class="back"><%= link_to t('txt.button.back').html_safe, (@registrant.skip_survey_and_opt_ins? && !@registrant.in_ovr_flow?) ? registrant_step_3_path(@registrant, :show_fields=>"1") : registrant_step_4_path(@registrant, :show_fields=>"1") %></div>
+    <%= rollover_button(:prepare, I18n.t('txt.button.prepare')) %>
+  </div>
 
-  <div class="back"><%= link_to t('txt.button.back').html_safe, (@registrant.skip_survey_and_opt_ins? && !@registrant.in_ovr_flow?) ? registrant_step_3_path(@registrant, :show_fields=>"1") : registrant_step_4_path(@registrant, :show_fields=>"1") %></div>
   
 <% end %>

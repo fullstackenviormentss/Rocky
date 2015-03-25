@@ -15,6 +15,7 @@ from_address: "rocky@example.com"
 default_url_host: "register.example.com"
 ui_url_host: "register5.example.com"
 
+skip_survey_and_opt_ins: true
 
 admin:
   from_address: "rtv-admins@osuosl.org"

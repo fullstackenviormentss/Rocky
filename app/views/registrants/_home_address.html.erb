@@ -9,7 +9,9 @@ $(document).ready(function() {
 
 
 <fieldset>
-  <legend><%= I18n.t('txt.registration.home_address') %><%= tooltip_tag :home_address %></legend>
+  <legend><%= I18n.t('txt.registration.home_address') %></legend>
+
+    <span class="tooltip"><%= t("txt.registration.tooltips.home_address")%></span>
   <ul class="stacked">
     <li class="width_a">
       <h3><%= form.label :home_address %></h3>
@@ -44,14 +46,16 @@ $(document).ready(function() {
   <ul class="checkbox">
     <li class="spacer">&nbsp;</li>
     <li>
-      <h3><%= form.check_box :has_mailing_address %> <%= form.label :has_mailing_address %></h3>
+      <h3> <%= form.label :has_mailing_address %></h3>
+      <%= form.check_box :has_mailing_address %>
     </li>
   </ul>
 </fieldset>
 
 <fieldset id="mailing_address_set">
   <%= hidden_field_tag "javascript_disabled", "1"  %>
-  <legend><%= I18n.t('txt.registration.mailing_address') %><%= tooltip_tag :mailing_address %></legend>
+  <legend><%= I18n.t('txt.registration.mailing_address') %></legend>
+  <span class="tooltip"><%= t("txt.registration.tooltips.mailing_address")%></span>
   <ul class="stacked">
     <li class="width_a">
       <h3><%= form.label :mailing_address %></h3>

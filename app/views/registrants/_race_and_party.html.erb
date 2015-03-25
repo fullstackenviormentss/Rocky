@@ -1,8 +1,9 @@
 <ul class="flat race-dropdown">
   <li>
     <h3><%= form.label :race %></h3>
+
+    <span class="tooltip"><%= t("txt.registration.tooltips.race")%></span>
     <div><%= form.select :race, @registrant.races, :include_blank => true %></div>
-    <div class="tooltip"><%= tooltip_tag :race, @race_tooltip %></div>
     <span class="error"><%= form.object.errors[:race].join("\n") %></span>
   </li>
 </ul>
@@ -10,8 +11,8 @@
   <ul class="flat party-dropdown">
     <li>
       <h3><%= form.label :party %></h3>
+      <span class="tooltip"><%= t("txt.registration.tooltips.party")%></span>
       <%= select_div form, :party, @state_parties, :include_blank => true %>
-      <div class="tooltip"><%= tooltip_tag :party, @party_tooltip %></div>
       <span class="error"><%= form.object.errors[:party].join("\n") %></span>
     </li>
   </ul>

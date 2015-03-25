@@ -1,9 +1,15 @@
-pdf_host_name: localhost:3001
-api_host_name: http://localhost:3001
+pdf_host_name: 'vr.rockthevote.com'
+api_host_name: "https://vr.rockthevote.com"
+from_address: "register@rockthevote.com"
+default_url_host: "register.rockthevote.com"
+ui_url_host: "register.rockthevote.com"
+
+# pdf_host_name: localhost:3001
+# api_host_name: http://localhost:3001
 use_https: false
-from_address: "rocky-dev@gmail.com"
-default_url_host: "register.example.com"
-ui_url_host: "localhost:3000"
+# from_address: "rocky-dev@gmail.com"
+# default_url_host: "register.example.com"
+# ui_url_host: "localhost:3000"
 
 hours_before_first_reminder: 0.0333
 hours_between_first_and_second_reminder: 0.0333

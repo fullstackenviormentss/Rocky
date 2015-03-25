@@ -16,5 +16,6 @@
 = form_for(@registrant) do |form|
   = render :partial => 'form', :object => form
   %p= I18n.t('txt.registration.instructions.overseas').html_safe
-  = rollover_button(:next_step, I18n.t('txt.button.submit').html_safe)
+  .button_row
+    = rollover_button(:next_step, I18n.t('txt.button.submit').html_safe)
 

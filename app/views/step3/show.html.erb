@@ -5,6 +5,13 @@
 <%- end %>
 
 <%= form_for(@registrant, :url => registrant_step_3_path(@registrant)) do |form| %>
+  <div id="errors">
+    <ul>
+      <% form.object.errors.full_messages.each do |error| %>
+        <li class="individual_error"><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
   <%- if @registrant.in_ovr_flow? %>
     <%= render :partial=> 'registrants/email_opt_ins', :locals=>{:form=>form} %>
     <%= render :partial=> 'registrants/phone_opt_ins', :locals=>{:form=>form, :show_hr=>true} %>
@@ -18,8 +25,10 @@
     
 
   <%- end %>
-  <%= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
 
+  <div class="button_row">
+    <div class="back"><%= link_to t('txt.button.back').html_safe, registrant_step_2_path(@registrant) %></div>
+    <%= rollover_button(:review, I18n.t('txt.button.review')) %>
+  </div>
   
-  <div class="back"><%= link_to t('txt.button.back').html_safe, registrant_step_2_path(@registrant) %></div>
 <% end %>

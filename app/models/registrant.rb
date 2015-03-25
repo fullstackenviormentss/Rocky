@@ -184,7 +184,8 @@ class Registrant < ActiveRecord::Base
   belongs_to :partner
   # belongs_to :remote_partner
   def partner
-    !remote_partner_id.blank? ? RemotePartner.find(remote_partner_id) : super
+    Partner.first
+    # !remote_partner_id.blank? ? RemotePartner.find(remote_partner_id) : super
   end
   def partner=(obj)
     if obj.is_a?(RemotePartner)
@@ -332,6 +333,7 @@ class Registrant < ActiveRecord::Base
 
 
   def skip_survey_and_opt_ins?
+    return true if RockyConf.skip_survey_and_opt_ins
     question_1.blank? && question_2.blank? && !any_ask_for_volunteers? && !any_email_opt_ins? && !any_phone_opt_ins?
   end
   
