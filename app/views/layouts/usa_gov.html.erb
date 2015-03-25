@@ -84,7 +84,11 @@
   <div id="#skiptarget" class="hptoggles clearfix">
     <div class="container">
       <ul>
-        <li class="engtoggle"><%= link_to "Español", new_registrant_path(locale: 'es') %></li>
+        <% if I18n.locale == "en" %>
+          <li class="engtoggle"><%= link_to "Español", new_registrant_path(locale: 'es') %></li>
+        <% else %>
+        <li class="engtoggle"><%= link_to "English", new_registrant_path(locale: 'en') %></li>
+        <% end %>
       </ul>
     </div>
    </div>
