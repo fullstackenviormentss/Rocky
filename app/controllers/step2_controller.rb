@@ -70,7 +70,9 @@ class Step2Controller < RegistrationStep
     @registrant.mailing_state ||= @registrant.home_state
     @registrant.prev_state ||= @registrant.home_state
     
-    
+    if @registrant.home_state.try(:abbreviation)
+      @online_reg_url = RockyConf[:redirect_ovr_states].try(@registrant.home_state.try(:abbreviation))
+    end
     @state_id_tooltip = @registrant.state_id_tooltip
     
     @state_parties = @registrant.state_parties

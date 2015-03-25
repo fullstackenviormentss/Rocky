@@ -10,6 +10,12 @@
       <% end %>
     </ul>
   </div>
+  <% if @online_reg_url %>
+  <div id="online_reg_notice">
+    <p>Hey!, It Looks like online registration may be avialable in your state<p>
+    <%= link_to "Online Registration", @online_reg_url %>
+  </div>
+  <% end %>
   <fieldset>
     <legend><%= I18n.t('txt.registration.name') %></legend>
     <span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span>
