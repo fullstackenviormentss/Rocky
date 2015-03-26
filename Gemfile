@@ -83,5 +83,5 @@ gem "airbrake"
 gem "ledermann-rails-settings", :require => "rails-settings"
 
 gem 'json'
-
+gem 'font-awesome-rails'
 gem "delayed_job_active_record"
