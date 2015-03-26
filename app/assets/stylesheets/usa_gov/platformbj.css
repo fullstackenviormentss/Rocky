@@ -32,7 +32,6 @@ max-width: 480px
 /***********************
 1. General & Misc
 ***********************/
- @import "font-awesome";
 body {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
@@ -1156,9 +1155,9 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
 .flowIndicator div.notInitiated:after{
     background-color:#EBE7DF ;
 }
-.flowIndicator i{
-    display: none;
-}
+/*.flowIndicator i{
+   display: none;
+}*/
 .flowindicator-icon{
     position: relative;
     top: 15px;
