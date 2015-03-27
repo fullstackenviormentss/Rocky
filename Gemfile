@@ -75,7 +75,6 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
 end
-
 gem "nokogiri", "= 1.5.9"
 gem "mechanize", "= 2.7.1"
 gem "newrelic_rpm", "= 3.6.0.83"

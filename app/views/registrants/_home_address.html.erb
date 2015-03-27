@@ -16,7 +16,7 @@ $(document).ready(function() {
     <li class="width_a">
       <h3><%= form.label :home_address %></h3>
       <%= field_div form, :home_address %>
-      <span class="error"><%= form.object.errors[:home_address].join("\n") %></span>
+      <!-- <span class="error"><%= form.object.errors[:home_address].join("\n") %></span> -->
     </li>
     <li class="width_b">
       <h3><%= form.label :home_unit %></h3>
@@ -27,17 +27,17 @@ $(document).ready(function() {
     <li class="width_a">
       <h3><%= form.label :home_city %></h3>
       <%= field_div form, :home_city %>
-      <span class="error"><%= form.object.errors[:home_city].join("\n") %></span>
+      <!-- <span class="error"><%= form.object.errors[:home_city].join("\n") %></span> -->
     </li>
     <li class="width_b">
       <h3><%= form.label :home_state_name %></h3>
       <%= field_div form, :home_state_name, disabled: true %>
-      <span class="error"><%= form.object.errors[:home_state_name].join("\n") %></span>
+      <!-- <span class="error"><%= form.object.errors[:home_state_name].join("\n") %></span> -->
     </li>
     <li class="width_c">
       <h3><%= form.label :home_zip_code %></h3>
       <%= field_div form, :home_zip_code, :size => 8, disabled: true %>
-      <span class="error"><%= form.object.errors[:home_zip_code].join("\n") %></span>
+      <!-- <span class="error"><%= form.object.errors[:home_zip_code].join("\n") %></span> -->
     </li>
   </ul>
 </fieldset>

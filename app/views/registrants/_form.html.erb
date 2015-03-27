@@ -16,13 +16,19 @@ $(document).ready(function() {
 <% end %>
 <%= form.hidden_field :javascript_disabled %>
 <% if form.object.errors.count > 0 %>
-<div id="errors" class="alert">
-  <ul>
-    <% form.object.errors.full_messages.each do |error| %>
-      <li class="individual_error"><%= error %></li>
-    <% end %>
-  </ul>
-</div>
+  <div id="errors" class="alert">
+    <ul>
+      <% if !form.object.errors[:email_address].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.email_address")} #{form.object.errors[:email_address].join("\n")}", 'javascript:$("#registrant_email_address").focus();' %></li>
+      <% end %>
+      <% if !form.object.errors[:home_zip_code].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_zip_code")} #{form.object.errors[:home_zip_code].join("\n")}", 'javascript:$("#registrant_home_zip_code").focus();' %></li>
+      <% end %>
+      <% if !form.object.errors[:date_of_birth].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.date_of_birth")} #{form.object.errors[:date_of_birth].join("\n")}", 'javascript:$("#registrant_date_of_birth").focus();' %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 <%- if @registrant.collect_email_address? %>
   <ul class="flat">
@@ -30,7 +36,7 @@ $(document).ready(function() {
       <h2><%= "#{form.label :email_address}*".html_safe %></h2>
       <span class="tooltip"><%= t("txt.registration.tooltips.email_address")%></span>
       <%= field_div form, :email_address %>
-      <span class="error"><%= form.object.errors[:email_address].join("\n") %></span>
+      <!-- <span class="error"><%= form.object.errors[:email_address].join("\n") %></span> -->
     </li>
   </ul>
 <%- end %>
@@ -39,18 +45,18 @@ $(document).ready(function() {
     <h2><%= "#{form.label :home_zip_code}*".html_safe %></h2>
     <span class="tooltip"><%= t("txt.registration.tooltips.home_zip_code")%></span>
     <%= field_div form, :home_zip_code %>
-    <span class="error"><%= form.object.errors[:home_zip_code].join("\n") %></span>
+    <!-- <span class="error"><%= form.object.errors[:home_zip_code].join("\n") %></span> -->
   </li>
 </ul>
 <ul class="flat">
   <li class="width_f">
     <h2><%= "#{form.label :date_of_birth}*".html_safe %></h2>  
+    <span class="example">Format: MM-DD-YYYY</span>
     <span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span>
     <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth %>
     <% if !form.object.errors[:date_of_birth].empty? %>
-      <span class="error"><%= form.object.errors[:date_of_birth].join("\n") %></span>
+      <!-- <span class="error"><%= form.object.errors[:date_of_birth].join("\n") %></span> -->
     <% else %>
-      <span class="example">MM-DD-YYYY</span>
     <% end %>
   </li>
 </ul>

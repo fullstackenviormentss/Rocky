@@ -15,10 +15,16 @@
  *= require usa_gov/platformbj
  *= require font-awesome
  */
-
+.has_error input{
+  border: 3px solid #C61F0C !important;
+}
+.has_error select{
+  border: 3px solid #C61F0C !important;
+}
 #other_language_link{
   visibility: hidden;
 }
+
 main > div > form, .review {
     border: 2px solid #E4EAEE;
   padding: 0 Ω0 15px 0;
@@ -61,8 +67,8 @@ fieldset > .checkbox, .stacked{
   padding: 20px;
   border: solid 1px #ddd;
   font-size: 100%;
-    background-color: #fafafa;
-    border-radius: 4px;
+  background-color: #fafafa;
+  border-radius: 4px;
 }
 .checkbox-step-1 input[type='checkbox'] {
   -webkit-appearance: checkbox;

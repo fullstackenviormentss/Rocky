@@ -13,7 +13,7 @@
       <h3><%= form.label :party %></h3>
       <span class="tooltip"><%= t("txt.registration.tooltips.party")%></span>
       <%= select_div form, :party, @state_parties, :include_blank => true %>
-      <span class="error"><%= form.object.errors[:party].join("\n") %></span>
+      <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->
     </li>
   </ul>
 <% end %>

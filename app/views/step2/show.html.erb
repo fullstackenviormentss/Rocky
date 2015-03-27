@@ -6,8 +6,20 @@
 <% if form.object.errors.count > 0 %>
   <div id="errors" class="alert">
     <ul>
-      <% form.object.errors.full_messages.each do |error| %>
-        <li class="individual_error"><%= error %></li>
+      <% if !form.object.errors[:name_title].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.name_title")} #{form.object.errors[:name_title].join("\n")}", 'javascript:$("#registrant_name_title").focus();' %></li>
+      <% end %>
+      <% if !form.object.errors[:first_name].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.first_name")} #{form.object.errors[:first_name].join("\n")}", 'javascript:$("#registrant_first_name").focus();' %></li>
+      <% end %>
+      <% if !form.object.errors[:last_name].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.last_name")} #{form.object.errors[:last_name].join("\n")}", 'javascript:$("#registrant_last_name").focus();' %></li>
+      <% end %>
+      <% if !form.object.errors[:home_address].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_address")} #{form.object.errors[:home_address].join("\n")}", 'javascript:$("#registrant_home_address").focus();' %></li>
+      <% end %>
+      <% if !form.object.errors[:home_city].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_city")} #{form.object.errors[:home_city].join("\n")}", 'javascript:$("#registrant_home_city").focus();' %></li>
       <% end %>
     </ul>
   </div>
@@ -25,12 +37,12 @@
       <li class="width_d">
         <h3><%= form.label :name_title %></h3>
         <%= select_div form, :name_title, @registrant.titles, :include_blank => true %>
-        <span class="error"><%= form.object.errors[:name_title].join("\n") %></span>
+        <!-- <span class="error"><%= form.object.errors[:name_title].join("\n") %></span> -->
       </li>
       <li class="width_b">
         <h3><%= form.label :first_name %></h3>
         <%= field_div form, :first_name %>
-        <span class="error"><%= form.object.errors[:first_name].join("\n") %></span>
+        <!-- <span class="error"><%= form.object.errors[:first_name].join("\n") %></span> -->
       </li>
       <li class="width_c">
         <h3><%= form.label :middle_name %></h3>
@@ -39,7 +51,7 @@
       <li class="width_b">
         <h3><%= form.label :last_name %></h3>
         <%= field_div form, :last_name %>
-        <span class="error"><%= form.object.errors[:last_name].join("\n") %></span>
+        <!-- <span class="error"><%= form.object.errors[:last_name].join("\n") %></span> -->
       </li>
       <li class="width_d">
         <h3><%= form.label :name_suffix %></h3>
