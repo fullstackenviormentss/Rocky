@@ -27,8 +27,12 @@
 
 main > div > form, .review {
     border: 2px solid #E4EAEE;
-  padding: 0 Ω0 15px 0;
+  padding: 0 0 15px 0;
   margin: 15px 0 15px 0;
+}
+input[type="text"]:disabled, select:disabled {
+    background: #dddddd;
+    border-color: #ccc;
 }
 select{
      display: block;
@@ -37,6 +41,8 @@ select{
   padding: 20px;
   border: solid 1px #ddd;
   font-size: 100%;
+    background:#fafafa!important;
+     background-image:none!important;
 }
 .flat, .checkbox, .stacked,.affirm  > li{
     list-style: none;
