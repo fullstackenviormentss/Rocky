@@ -1,8 +1,18 @@
 <h1><%= t('txt.registration.step_5_header') %></h1>
 <div class="text please_review"><p><%=I18n.t('txt.registration.instructions.review') %></p></div>
 
-<div class="review">
-
+<%= form_for(@registrant, :url => registrant_step_5_path(@registrant)) do |form| %>
+<% if form.object.errors.count > 0 %>
+    <div id="errors" class="alert">
+      <p> The following errors were present on the page:</p>
+      <ul>
+        <% if !form.object.errors[:attest_true].empty? %>
+          <li class="individual_error"><%= link_to "#{form.object.errors[:attest_true].join("\n")}", 'javascript:$("#registrant_attest_true").focus();' %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+  
   <div class="section">
     <fieldset>
       <legend><%= t('txt.registration.step_1_header') %></legend>
@@ -103,10 +113,11 @@
       <%= rollover_image_link(:edit, I18n.t('txt.button.edit_additional_info'), (@registrant.in_ovr_flow? ? registrant_step_4_path(@registrant, :show_fields=>"1") : registrant_step_3_path(@registrant))) %>
     </fieldset>
   </div>
-</div>
-
-<%= form_for(@registrant, :url => registrant_step_5_path(@registrant)) do |form| %>
+ <fieldset>
+    <legend><%= t('txt.registration.confirm_information') %></legend>
   <ul class="affirm">
+
+   
     <li>
       <h3>
         <%= form.check_box :attest_true %>
@@ -117,6 +128,7 @@
       <span class="error"><%= form.object.errors[:attest_true].join("\n") %></span>
     </li>
   </ul>
+  </fieldset>
 
   <div class="button_row">
     <div class="back"><%= link_to t('txt.button.back').html_safe, (@registrant.skip_survey_and_opt_ins? && !@registrant.in_ovr_flow?) ? registrant_step_3_path(@registrant, :show_fields=>"1") : registrant_step_4_path(@registrant, :show_fields=>"1") %></div>
