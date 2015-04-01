@@ -7,6 +7,7 @@
 <%= form_for(@registrant, :url => registrant_step_3_path(@registrant)) do |form| %>
 <% if form.object.errors.count > 0 %>
   <div id="errors" class="alert">
+    <p>The following errors were present on the page:</p>
     <ul>
       <% if !form.object.errors[:state_id_number].empty? %>
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.state_id_number")} #{form.object.errors[:state_id_number].join("\n")}", 'javascript:$("#registrant_state_id_number").focus();' %></li>

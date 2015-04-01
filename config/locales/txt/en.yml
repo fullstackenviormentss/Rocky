@@ -101,19 +101,19 @@ en:
       instructions:
         overseas: ! '<b>Note</b>: Some states offer online voter registration. <a
           href=''http://www.rockthevote.com/voter-registration/online-application-system/online.html''
-          target=''_blank''>Learn more.</a> If you are an American citizen living
+          target=''_blank''>Learn more by selecting here.</a> If you are an American citizen living
           abroad or a uniformed military voter, <a href=''http://www.rockthevote.com/voting-is-easy/voting-rights/overseas-rights/overseas.html''
-          target=''_blank''>follow this link</a> to register to vote.'
+          target=''_blank''>select here</a> to register to vote.'
         opt_in_email: We will send you timely election reminders, your polling place
           location, and information about music and issues.
         under_18: Hey, it looks like you aren't 18 yet. That's cool. In %{state_name},
           you can register to vote %{state_rule}. Visit our <a href="http://www.rockthevote.com/election-center/"
           target="_blank">Election Center</a> to find out when the next election is.
-        under_18_2: If you fit the bill, click the button to continue your application.
+        under_18_2: If you fit the bill, select the button to continue your application.
         under_18_3: If not, we'll send you a reminder to register on your 18th birthday.
         remind_when_18: We'll email you at %{email_address}
         review: Please review the following information and confirm its accuracy.
-        download: You are not done. Click on the print form button to print out your
+        download: You are not done. Select on the print form button to print out your
           voter registration form. Sign it and mail to the address located on the
           form.
         download_2: You won't be registered unless you print, sign and mail in your
@@ -132,7 +132,7 @@ en:
         finish_update_status: Don't forget to update your status on Facebook and Twitter!
         state_online_registration: Hang on. You are eligible to register online in
           your state.
-        state_online_registration_sub_header: Click below to complete the registration
+        state_online_registration_sub_header: Select below to complete the registration
           process right now with your state.
         leave_state_online_registration: You can complete your voter registration
           online with %{state} using the form below. If your driver's license or state
@@ -157,11 +157,11 @@ en:
               of State.
             p2: If you provided your driver's license number and are registering to
               vote for the first time or changing the address of your existing Colorado
-              voter registration, just click the link below. The information you have
+              voter registration, just select the link below. The information you have
               already provided will appear on the Secretary of State's online voter
               registration portal and you can finish your application there.
             p3: Otherwise, if you are unable to complete your application at the Secretary
-              of State's website, you can click the link below and continue filling
+              of State's website, you can select the link below and continue filling
               out your form here. You will get your voter registration form to print,
               sign, and mail to the Secretary of State's office.
             p4: ''
@@ -174,7 +174,7 @@ en:
               options:</p><p>(1) Close this window and use the back button on your
               browser to correct the information on your voter registration application.
               You will be able to re-submit your information to the Secretary of State's
-              website.</p><p>(2) Close this window and click on the "Continue Registration
+              website.</p><p>(2) Close this window and select the "Continue Registration
               with Rock the Vote" link on the page you just came from. You will be
               able to finish your application and get your voter registration form
               to print, sign, and mail to the Secretary of State's office.</p><p>(3)
@@ -194,7 +194,7 @@ en:
               Close this window and use the back button on your browser to correct
               the information on your voter registration application. You will be
               able to re-submit your information to the Secretary of State's website.</p><p>(2)
-              Close this window and click on the "Continue Registration with Rock
+              Close this window and select the "Continue Registration with Rock
               the Vote" link on the page you just came from. You will be able to finish
               your application and get your voter registration form to print, sign,
               and mail to the Secretary of State's office.</p><p>(3) You can also
@@ -208,7 +208,7 @@ en:
         date_of_birth: On your voter registration application, you are required to
           indicate whether you will be 18 years old on or before election day.  However,
           many states allow you to register before your 18th birthday, so please <a
-          href="http://www.rockthevote.com/voter-registration/online-application-system/register-before-you-are-18-rules.html">click
+          href="http://www.rockthevote.com/voter-registration/online-application-system/register-before-you-are-18-rules.html">select
           here</a> to see the rule for your state.
         registrant_name: Put your full name and in these boxes. Please do not use
           nicknames or initials. If this application is for a change of name you will
