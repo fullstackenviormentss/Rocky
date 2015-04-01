@@ -166,17 +166,18 @@ color: #c61f0c;
     flex: 6;
   margin: 0 0 0 15px;
   padding: 7px 0 10px 0;
-  font-size: 130%;
   font-weight: normal;
-  line-height: 20px;
   width: 130px;
   height: 40px;
   text-align: left;
-  cursor: pointer;
+  cursor: pointer; 
 }
 .back a{
-    border: solid 1px #ddd;
+    border: solid 1px #1b50a0;
+    font-size: 130%;
+    line-height: 20px;
     padding: 3px 15px 10px 15px;
+    text-decoration: none;
 }
 .button_edit{
     margin-left: 15px;
