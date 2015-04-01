@@ -24,7 +24,7 @@
   line-height: 20px;
   width: 130px;
   height: 40px;
-  
+
 }
 
 .has_error input{
@@ -35,6 +35,10 @@
 }
 #other_language_link{
   visibility: hidden;
+}
+
+.bottom_note{
+  padding: 0px 20px 0px 20px;
 }
 
 main > div > form, .review {
@@ -90,9 +94,11 @@ fieldset > .checkbox, .stacked{
 }
 .checkbox-step-1 input[type='checkbox'] {
   -webkit-appearance: checkbox;
-  margin-left: 90%;
   margin-top: -15px;
-    display: table;
+}
+label.check-box-step-1{
+  display: inline-block;
+  margin-left: 10px;
 }
 .form-control-inline{
   display: inline-block;

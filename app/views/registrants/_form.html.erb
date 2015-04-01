@@ -66,8 +66,8 @@ $(document).ready(function() {
   <li class="spacer">&nbsp;</li>
   <li>
     <h2>
-      <%= form.label :us_citizen %>
-      <%= form.check_box :us_citizen %> 
+      <%= form.check_box :us_citizen %>
+      <%= form.label :us_citizen, {}, class: "check-box-step-1" %> 
       <span class="error"><%= form.object.errors[:us_citizen].join("\n") %></span>
     </h2>
   </li>
@@ -79,8 +79,8 @@ $(document).ready(function() {
   <li class="spacer">&nbsp;</li>
   <li>
     <h2>
-      <%= form.label :has_state_license %>
-      <%= form.check_box :has_state_license %> 
+      <%= form.check_box :has_state_license %>
+      <%= form.label :has_state_license, {}, class: "check-box-step-1" %> 
       <span class="error"><%= form.object.errors[:has_state_license].join("\n") %></span>
       
     </h2>
@@ -91,8 +91,8 @@ $(document).ready(function() {
   <li class="spacer">&nbsp;</li>
   <li>
     <h2>
-      <%= form.label :will_be_18_by_election %>
       <%= form.check_box :will_be_18_by_election %>
+      <%= form.label :will_be_18_by_election, {}, class: "check-box-step-1" %>
       <span class="error"><%= form.object.errors[:will_be_18_by_election].join("\n") %></span>
       
     </h2>
@@ -105,8 +105,8 @@ $(document).ready(function() {
   <li class="spacer">&nbsp;</li>
   <li>
     <h2>
-      <%= form.label :first_registration %>
-      <%= form.check_box :first_registration %> 
+      <%= form.check_box :first_registration %>
+      <%= form.label :first_registration, class: "check-box-step-1" %> 
       <span class="error"><%= form.object.errors[:first_registration].join("\n") %></span>
     </h2>
   </li>

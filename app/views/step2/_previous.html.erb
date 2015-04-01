@@ -16,7 +16,7 @@
   <ul class="checkbox checkbox-with-tooltip">
     <li>
         <span class="tooltip"> <%= t("txt.registration.tooltips.previous_address").html_safe%></span>
-      <h2><%= form.label :change_of_address, I18n.t('activerecord.attributes.registrant.change_of_address')%> <%= form.check_box :change_of_address %> </h2>
+      <h2> <%= form.check_box :change_of_address %> <%= form.label :change_of_address, I18n.t('activerecord.attributes.registrant.change_of_address'), class: "check-box-step-1" %></h2>
     </li>
   </ul>
 </fieldset>
@@ -60,7 +60,7 @@
   <legend><%= I18n.t('txt.registration.change_of_name') %></legend>
   <ul class="checkbox checkbox-with-tooltip">
         <span class="tooltip"> <%= t("txt.registration.tooltips.previous_name").html_safe%></span>
-      <h2><%= form.label :change_of_name, I18n.t('activerecord.attributes.registrant.change_of_name') %><%= form.check_box :change_of_name %> </h2>
+      <h2><%= form.check_box :change_of_name %> <%= form.label :change_of_name, I18n.t('activerecord.attributes.registrant.change_of_name'), class: "check-box-step-1" %></h2>
     </li>
   </ul>
 </fieldset>
