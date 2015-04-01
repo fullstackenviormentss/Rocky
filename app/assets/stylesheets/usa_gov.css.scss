@@ -26,7 +26,13 @@
   height: 40px;
 
 }
-
+legend {
+    color: #1a51a1;
+  outline: 0px !important;
+  border: 0px !important;
+  font-size: 140%;
+  font-weight: bold;
+}
 .has_error input{
   border: 3px solid #C61F0C !important;
 }

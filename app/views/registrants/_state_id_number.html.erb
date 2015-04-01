@@ -1,9 +1,8 @@
 <%- include_race_and_party ||= false %>
 <%- id_size = include_race_and_party ? 35 : 20 %>
-<%- if include_race_and_party %>
+  
   <fieldset>
     <legend><%= I18n.t('txt.registration.identification_header') %></legend>
-<%- end %>
     <ul class="flat">
       <li>
         <h2><%= form.label :state_id_number %></h2>
