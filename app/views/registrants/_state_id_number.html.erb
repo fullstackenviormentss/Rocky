@@ -7,16 +7,16 @@
     <ul class="flat">
       <li>
         <h2><%= form.label :state_id_number %></h2>
+       <span class="example">Format: ###-###-####</span>
         <span class="tooltip"><%= @state_id_tooltip %></span>
         <%= field_div form, :state_id_number, :size => id_size %>
         <span class="error"><%= form.object.errors[:state_id_number].join("\n") %></span>
       </li>
     </ul>
-    <div class="instructions"><p><%= @state_id_tooltip %></p></div>
-
+  </fieldset>
 <%- if include_race_and_party %>
   <%= render :partial=> "registrants/race_and_party", :locals=>{:form=>form} %>
-  </fieldset>
+ 
 <%- else %>
   <hr/>
 <%-end %>

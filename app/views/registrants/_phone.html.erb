@@ -1,23 +1,26 @@
-<ul class="flat">
-  <li class="width_b">
-    <h3><%= form.label :phone %></h3>
-    <div class="flat-stack">
-     <span class="tooltip"><%= t("txt.registration.tooltips.phone")%></span>
-      <%= field_div form, :phone %>
-      <% if form.object.errors[:phone].any? %>
-        <span class="error"><%= form.object.errors[:phone].join("\n") %></span>
-      <% else %>
-        <span class="example">###-###-####</span>
-      <% end %>
-    </div>
-   
-  </li>
-  <li class="secondary">
-    <h3 id="registrant_phone_type_label"><%= form.label :phone_type %></h3>
-    <div class="flat-stack" id="registrant_phone_type_wrapper">
-      <div><%= form.select :phone_type, @registrant.phone_types %></div>
-      <span class="error"><%= form.object.errors[:phone_type].join("\n") %></span>
-    </div>
-  </li>
-</ul>
+<fieldset id="prev_name_set">
+  <legend><%= I18n.t('txt.registration.phone') %></legend>
+  <ul class="flat">
+    <li class="width_b">
+      <h3><%= form.label :phone %></h3>
+      <div class="flat-stack">
+       <span class="example">Format: ###-###-####</span>
+       <span class="tooltip"><%= t("txt.registration.tooltips.phone")%></span>
+        <%= field_div form, :phone %>
+        <% if form.object.errors[:phone].any? %>
+          <span class="error"><%= form.object.errors[:phone].join("\n") %></span>
+        <% else %>
+        <% end %>
+      </div>
+     
+    </li>
+    <li class="secondary">
+      <h3 id="registrant_phone_type_label"><%= form.label :phone_type %></h3>
+      <div class="flat-stack" id="registrant_phone_type_wrapper">
+        <div><%= form.select :phone_type, @registrant.phone_types %></div>
+        <span class="error"><%= form.object.errors[:phone_type].join("\n") %></span>
+      </div>
+    </li>
+  </ul>
+</fieldset>
 <hr/>
