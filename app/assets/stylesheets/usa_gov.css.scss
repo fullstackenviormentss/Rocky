@@ -8,12 +8,12 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require usa_gov/grid
  *= require usa_gov/style
  *= require usa_gov/downlvl
  *= require usa_gov/platformbj
  *= require font-awesome
+ *= require_self
  */
 
 .button_print {
@@ -25,6 +25,14 @@
   width: 130px;
   height: 40px;
 
+}
+a:focus, input:focus, div[role=group]:focus, button:focus, textarea:focus, button:focus, select:focus, {
+    outline:#ff8c00 solid 3px;
+    outline-offset: 3px;
+}
+a:active, a:hover{
+  outline:#ff8c00 solid 3px;
+    outline-offset: 3px;
 }
 legend {
     color: #1a51a1;
