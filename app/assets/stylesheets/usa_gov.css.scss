@@ -61,11 +61,10 @@ input[type="text"]:disabled, select:disabled {
 }
 select{
      display: block;
-  width: 300px;
-  height: 35px;
-  padding: 20px;
-  border: solid 1px #ddd;
-  font-size: 100%;
+    width: 300px;
+    font-size: 130%;
+    border: solid 1px #ddd;
+    line-height: 50px;
     background:#fafafa!important;
      background-image:none!important;
 }
