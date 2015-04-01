@@ -2,7 +2,7 @@
     <legend><%= I18n.t('txt.registration.race_and_party') %></legend>
   <ul class="flat race-dropdown">
     <li>
-      <h3><%= form.label :race %></h3>
+      <h2><%= form.label :race %></h2>
 
       <span class="tooltip"><%= t("txt.registration.tooltips.race")%></span>
       <div><%= form.select :race, @registrant.races, :include_blank => true %></div>
@@ -12,7 +12,7 @@
   <% if @state_parties && @state_parties.any? %>
     <ul class="flat party-dropdown">
       <li>
-        <h3><%= form.label :party %></h3>
+        <h2><%= form.label :party %></h2>
         <span class="tooltip"><%= t("txt.registration.tooltips.party")%></span>
         <%= select_div form, :party, @state_parties, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->

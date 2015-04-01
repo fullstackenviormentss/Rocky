@@ -3,10 +3,10 @@
   <%- if @registrant.partner.rtv_email_opt_in || @registrant.partner.primary? %>
     <ul class="checkbox">
       <li>
-        <h3>
+        <h2>
           <%= form.check_box :opt_in_email %>
           <%= form.label :opt_in_email, t('txt.registration.opt_in_email', :organization => h("Rock the Vote")).html_safe %>
-        </h3>
+        </h2>
       </li>
     </ul>
     <div class="checkbox-explanation">
@@ -16,10 +16,10 @@
   <%- if @registrant.partner.partner_email_opt_in && !@registrant.partner.primary? %>
     <ul class="checkbox">
       <li>
-        <h3>
+        <h2>
           <%= form.check_box :partner_opt_in_email %>
           <%= form.label :partner_opt_in_email, t('txt.registration.opt_in_email', :organization => h(@registrant.partner.organization)).html_safe %>
-        </h3>
+        </h2>
       </li>
     </ul>
   <%- end %>
