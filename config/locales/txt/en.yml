@@ -122,7 +122,7 @@ en:
         under_18_3: If not, we'll send you a reminder to register on your 18th birthday.
         remind_when_18: We'll email you at %{email_address}
         review: Please review the following information and confirm its accuracy.
-        download: You are not done. Select on the print form button to print out your
+        download: You are not done. Select the print form button to print out your
           voter registration form. Sign it and mail to the address located on the
           form.
         download_2: You won't be registered unless you print, sign and mail in your
