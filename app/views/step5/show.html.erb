@@ -23,8 +23,8 @@
           <div><%=h @registrant.date_of_birth.strftime("%B %e, %Y") %></div>
         </li>
       </ul>
+    <%= rollover_image_link(:edit, I18n.t('txt.button.edit_eligibility'), registrant_path(@registrant)) %>
     </fieldset>
-    <%= rollover_image_link(:edit, I18n.t('txt.button.edit'), registrant_path(@registrant)) %>
   </div>
 
   <div class="section">
@@ -74,8 +74,8 @@
         
         <% end %>
       </ul>
+    <%= rollover_image_link(:edit, I18n.t('txt.button.edit_identity'), registrant_step_2_path(@registrant)) %>
     </fieldset>
-    <%= rollover_image_link(:edit, I18n.t('txt.button.edit'), registrant_step_2_path(@registrant)) %>
   </div>
 
   <div class="section">
@@ -100,8 +100,8 @@
           </li>
         <% end %>
       </ul>
+      <%= rollover_image_link(:edit, I18n.t('txt.button.edit_additional_info'), (@registrant.in_ovr_flow? ? registrant_step_4_path(@registrant, :show_fields=>"1") : registrant_step_3_path(@registrant))) %>
     </fieldset>
-    <%= rollover_image_link(:edit, I18n.t('txt.button.edit'), (@registrant.in_ovr_flow? ? registrant_step_4_path(@registrant, :show_fields=>"1") : registrant_step_3_path(@registrant))) %>
   </div>
 </div>
 
