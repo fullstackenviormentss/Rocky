@@ -1,17 +1,17 @@
 %h1= t('txt.registration.step_1_header')
 
-#other_language_link
-  - if @registrant.new_record?
-    :javascript
-      function followOtherLanguageLink() {
-        window.location = $("#other_language_link select").val()
-      }
-    %select{:onchange=>"followOtherLanguageLink();"}
-      %option Select Language
-      - RockyConf.enabled_locales.each do |loc|
-        - unless loc.to_s == I18n.locale.to_s
-          %option{:value=>new_registrant_path(params.dup.merge({:locale=>loc}))}
-            = t('txt.registration.in_language_name', :locale=>loc)
+/ #other_language_link
+/   - if @registrant.new_record?
+/     :javascript
+/       function followOtherLanguageLink() {
+/         window.location = $("#other_language_link select").val()
+/       }
+/     %select{:onchange=>"followOtherLanguageLink();"}
+/       %option Select Language
+/       - RockyConf.enabled_locales.each do |loc|
+/         - unless loc.to_s == I18n.locale.to_s
+/           %option{:value=>new_registrant_path(params.dup.merge({:locale=>loc}))}
+/             = t('txt.registration.in_language_name', :locale=>loc)
 
 = form_for(@registrant) do |form|
   = render :partial => 'form', :object => form
