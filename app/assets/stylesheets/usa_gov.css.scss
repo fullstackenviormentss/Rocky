@@ -94,16 +94,11 @@ select{
 fieldset > .checkbox, .stacked{
     border-bottom:none;
 }
-.checkbox > li > h3{
-    margin: 0px!important;
-}
-.flat > li > h2, h2 > label{
+.flat > li > label, .checkbox > li > label, .stacked > li > label, .flat > li > div > label, .question > li > label{
     margin:0 0 2px 0px!important;
     font-size: 15px;
     font-weight: 600;
-}
-.stacked > li > h3{
-    margin: 0px!important;
+    line-height: 30px;
 }
 .flat > li > div > input, .stacked> li > div > input, .form-control, .flat-stack input{
   display: block;

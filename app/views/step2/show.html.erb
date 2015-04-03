@@ -36,26 +36,26 @@
     <span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span>
     <ul class="stacked">
       <li class="width_d">
-        <h3><%= form.label :name_title %></h3>
+        <%= form.label :name_title %>
         <%= select_div form, :name_title, @registrant.titles, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:name_title].join("\n") %></span> -->
       </li>
       <li class="width_b">
-        <h3><%= form.label :first_name %></h3>
+        <%= form.label :first_name %>
         <%= field_div form, :first_name %>
         <!-- <span class="error"><%= form.object.errors[:first_name].join("\n") %></span> -->
       </li>
       <li class="width_c">
-        <h3><%= form.label :middle_name %></h3>
+        <%= form.label :middle_name %>
         <%= field_div form, :middle_name %>
       </li>
       <li class="width_b">
-        <h3><%= form.label :last_name %></h3>
+        <%= form.label :last_name %>
         <%= field_div form, :last_name %>
         <!-- <span class="error"><%= form.object.errors[:last_name].join("\n") %></span> -->
       </li>
       <li class="width_d">
-        <h3><%= form.label :name_suffix %></h3>
+        <%= form.label :name_suffix %>
         <div><%= form.select :name_suffix, @registrant.suffixes, :include_blank => t('txt.registration.select_none') %></div>
       </li>
     </ul>

@@ -2,7 +2,7 @@
   <legend><%= I18n.t('txt.registration.phone') %></legend>
   <ul class="flat">
     <li class="width_b">
-      <h2><%= form.label :phone %></h2>
+      <%= form.label :phone %>
       <div class="flat-stack">
        <span class="example">Format: ###-###-####</span>
        <span class="tooltip"><%= t("txt.registration.tooltips.phone")%></span>
@@ -15,7 +15,7 @@
      
     </li>
     <li class="secondary">
-      <h2 id="registrant_phone_type_label"><%= form.label :phone_type %></h2>
+      <div id="registrant_phone_type_label"><%= form.label :phone_type %></div>
       <div class="flat-stack" id="registrant_phone_type_wrapper">
         <div><%= form.select :phone_type, @registrant.phone_types %></div>
         <span class="error"><%= form.object.errors[:phone_type].join("\n") %></span>

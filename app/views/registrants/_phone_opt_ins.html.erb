@@ -5,11 +5,8 @@
     <ul class="checkbox">
       <li class="spacer">&nbsp;</li>
       <li>
-        <h2>
           <%= form.check_box :opt_in_sms %>
           <%= form.label :opt_in_sms, t('txt.registration.opt_in_sms', :organization=>h("Rock the Vote")).html_safe %>
-
-        </h2>
       </li>
     </ul>
   <%- end %>
@@ -17,10 +14,8 @@
     <ul class="checkbox">
       <li class="spacer">&nbsp;</li>
       <li>
-        <h2>
           <%= form.check_box :partner_opt_in_sms %>
           <%= form.label :partner_opt_in_sms, t('txt.registration.opt_in_sms', :organization=>h(@registrant.partner.organization)).html_safe %>
-        </h2>
       </li>
     </ul>
   <%- end %>

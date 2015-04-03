@@ -15,8 +15,7 @@
   <legend><%= I18n.t('txt.registration.change_of_address') %></legend>
   <ul class="checkbox checkbox-with-tooltip">
     <li>
-        <span class="tooltip"> <%= t("txt.registration.tooltips.previous_address").html_safe%></span>
-      <h2> <%= form.check_box :change_of_address %> <%= form.label :change_of_address, I18n.t('activerecord.attributes.registrant.change_of_address'), class: "check-box-step-1" %></h2>
+        <span class="tooltip"> <%= t("txt.registration.tooltips.previous_address").html_safe%></span><%= form.check_box :change_of_address %> <%= form.label :change_of_address, I18n.t('activerecord.attributes.registrant.change_of_address'), class: "check-box-step-1" %>
     </li>
   </ul>
 </fieldset>
@@ -25,29 +24,29 @@
   <legend><%= I18n.t('txt.registration.previous_address') %></legend>
   <ul class="stacked">
     <li class="width_a">
-      <h2><%= form.label :prev_address %></h2>
+    <%= form.label :prev_address %>
       <%= field_div form, :prev_address %>
       <span class="error"><%= form.object.errors[:prev_address].join("\n") %></span>
   </li>
     <li class="width_b">
-      <h2><%= form.label :prev_unit %></h2>
+      <%= form.label :prev_unit %>
       <%= field_div form, :prev_unit, :size => 15 %>
       <span class="error"><%= form.object.errors[:prev_unit].join("\n") %></span>
     </li>
   </ul>
   <ul class="stacked">
     <li class="width_a">
-      <h2><%= form.label :prev_city %></h2>
+      <%= form.label :prev_city %>
       <%= field_div form, :prev_city %>
       <span class="error"><%= form.object.errors[:prev_city].join("\n") %></span>
     </li>
     <li class="width_b">
-      <h2><%= form.label :prev_state_abbrev %></h2>
+      <%= form.label :prev_state_abbrev %>
       <div><%= form.select :prev_state_abbrev, GeoState.collection_for_select %></div>
       <span class="error"><%= form.object.errors[:prev_state_abbrev].join("\n") %></span>
     </li>
     <li class="width_c">
-      <h2><%= form.label :prev_zip_code %></h2>
+      <%= form.label :prev_zip_code %>
       <%= field_div form, :prev_zip_code, :size => 10, :maxlength => 10 %>
       <span class="error"><%= form.object.errors[:prev_zip_code].join("\n") %></span>
     </li>
@@ -60,7 +59,7 @@
   <legend><%= I18n.t('txt.registration.change_of_name') %></legend>
   <ul class="checkbox checkbox-with-tooltip">
         <span class="tooltip"> <%= t("txt.registration.tooltips.previous_name").html_safe%></span>
-      <h2><%= form.check_box :change_of_name %> <%= form.label :change_of_name, I18n.t('activerecord.attributes.registrant.change_of_name'), class: "check-box-step-1" %></h2>
+      <%= form.check_box :change_of_name %> <%= form.label :change_of_name, I18n.t('activerecord.attributes.registrant.change_of_name'), class: "check-box-step-1" %>
     </li>
   </ul>
 </fieldset>
@@ -70,22 +69,22 @@
   <legend><%= I18n.t('txt.registration.previous_name') %></legend>
   <ul class="stacked">
     <li class="width_d">
-      <h2><%= form.label :prev_name_title %></h2>
+      <%= form.label :prev_name_title %>
       <%= select_div form, :prev_name_title, @registrant.titles, :include_blank => true %>
       <span class="error"><%= form.object.errors[:prev_name_title].join("\n") %></span>
     </li>
     <li class="width_b">
-      <h2><%= form.label :prev_first_name %></h2>
+      <%= form.label :prev_first_name %>
       <%= field_div form, :prev_first_name, :size => 15 %>
       <span class="error"><%= form.object.errors[:prev_first_name].join("\n") %></span>
     </li>
     <li class="width_c">
-      <h2><%= form.label :prev_middle_name %></h2>
+      <%= form.label :prev_middle_name %>
       <%= field_div form, :prev_middle_name, :size => 10 %>
       <span class="error"><%= form.object.errors[:prev_middle_name].join("\n") %></span>
     </li>
     <li class="width_b">
-      <h2><%= form.label :prev_last_name %></h2>
+      <%= form.label :prev_last_name %>
       <%= field_div form, :prev_last_name, :size => 15 %>
       <span class="error"><%= form.object.errors[:prev_last_name].join("\n") %></span>
     </li>
