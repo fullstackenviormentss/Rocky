@@ -35,7 +35,7 @@ $(document).ready(function() {
   <ul class="flat">
     <li class="width_f">
         
-     <%= "#{form.label :email_address}".html_safe %>
+     <%= raw CGI.unescapeHTML("#{form.label :email_address}") %>
       <span class="tooltip"><%= t("txt.registration.tooltips.email_address")%></span>
       <%= field_div form, :email_address %>
       <!-- <span class="error"><%= form.object.errors[:email_address].join("\n") %></span> -->
