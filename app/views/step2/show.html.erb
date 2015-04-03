@@ -3,6 +3,7 @@
 <h1><%= t('txt.registration.step_2_header') %></h1>
 
 <%= form_for(@registrant, :url => registrant_step_2_path(@registrant)) do |form| %>
+<div class="text">All fields maked with field indicator (*)on the page are required.</div>
 <% if form.object.errors.count > 0 %>
   <h1 id="errors" class="alert" tabindex="-1">
     <p> The following errors were present on the page:</p>
