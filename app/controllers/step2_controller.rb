@@ -26,6 +26,7 @@ class Step2Controller < RegistrationStep
   CURRENT_STEP = 2
 
   def update
+
     if params[:javascript_disabled] == "1" && params[:registrant]
       reg = params[:registrant]
       if reg[:has_mailing_address] == "0"
@@ -69,9 +70,8 @@ class Step2Controller < RegistrationStep
   def set_up_view_variables
     @registrant.mailing_state ||= @registrant.home_state
     @registrant.prev_state ||= @registrant.home_state
-    
     if @registrant.home_state.try(:abbreviation)
-      if @locale == "es"  
+      if I18n.locale == "es"  
         @online_reg = RockyConf[:redirect_ovr_states].try(@registrant.home_state.try(:abbreviation)).try("ES").split("|")
       end
       unless @online_reg
