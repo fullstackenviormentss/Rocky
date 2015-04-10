@@ -29,7 +29,7 @@
   <% if @online_reg_url %>
   <div id="online_reg_notice" class="success">
     <p>Based on your zip code, you can register online directly with your state at 
-    <%= link_to "#{@registrant.home_state.name} Online Voter Registration", @online_reg_url %></p>
+    <%= link_to @online_reg_text, @online_reg_url %></p>
   </div>
   <% end %>
   <fieldset>
