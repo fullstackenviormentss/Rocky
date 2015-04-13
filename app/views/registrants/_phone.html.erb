@@ -1,10 +1,10 @@
 <fieldset id="prev_name_set">
-  <legend><%= I18n.t('txt.registration.phone') %></legend>
+  <legend><%= t('txt.registration.phone') %></legend>
   <ul class="flat">
     <li class="width_b">
       <%= form.label :phone %>
       <div class="flat-stack">
-       <span class="example">Format: ###-###-####</span>
+       <span class="example"><%= t('txt.registration.tooltips.phone_format') %></span>
        <span class="tooltip"><%= t("txt.registration.tooltips.phone")%></span>
         <%= field_div form, :phone %>
         <% if form.object.errors[:phone].any? %>

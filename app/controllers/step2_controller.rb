@@ -71,14 +71,14 @@ class Step2Controller < RegistrationStep
     @registrant.mailing_state ||= @registrant.home_state
     @registrant.prev_state ||= @registrant.home_state
     if @registrant.home_state.try(:abbreviation)
-      if I18n.locale == "es"  
-        @online_reg = RockyConf[:redirect_ovr_states].try(@registrant.home_state.try(:abbreviation)).try("ES").split("|")
+      if I18n.locale == :es
+        @online_reg = RockyConf[:redirect_ovr_states].try(@registrant.home_state.try(:abbreviation)).try("ES")
       end
       unless @online_reg
-       @online_reg = RockyConf[:redirect_ovr_states].try(@registrant.home_state.try(:abbreviation)).try("EN").split("|")
+       @online_reg = RockyConf[:redirect_ovr_states].try(@registrant.home_state.try(:abbreviation)).try("EN")
       end
       if @online_reg
-        @online_reg_text,@online_reg_url = @online_reg[0], @online_reg[1]
+        @online_reg_text,@online_reg_url = @online_reg.split("|")[0], @online_reg.split("|")[1]
       end
     end
     @state_id_tooltip = @registrant.state_id_tooltip

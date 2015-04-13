@@ -1,8 +1,8 @@
 <nav aria-label="Topic" class="">
   <div class="flowIndicator">
-    <div class="<%= "active" if current_step == 1 %> right "><i class="fa fa-check-circle"></i><span>ELIGIBILITY</span></div>
-    <div class="<%= "active" if current_step == 2 %> left right <%= "notInitiated" if current_step < 2 %>"><i class="fa fa-user"></i><span>IDENTITY</span></div>
-    <div class="<%= "active" if current_step == 3 %> left right <%= "notInitiated" if current_step < 3 %>"><i class="fa fa-envelope "></i><span>MORE INFO</span></div>
-    <div class="<%= "active" if current_step == 5 %> left <%= "notInitiated" if current_step < 5 %>"><i class="fa fa-thumbs-o-up"></i><span>COMPLETE</span></div>  
+    <div class="<%= "active" if current_step == 1 %> right "><i class="fa fa-check-circle"></i><span><%= t("txt.registration.step_1_nav") %></span></div>
+    <div class="<%= "active" if current_step == 2 %> left right <%= "notInitiated" if current_step < 2 %>"><i class="fa fa-user"></i><span><%= t("txt.registration.step_2_nav") %></span></div>
+    <div class="<%= "active" if current_step == 3 %> left right <%= "notInitiated" if current_step < 3 %>"><i class="fa fa-envelope "></i><span><%= t("txt.registration.step_3_nav") %></span></div>
+    <div class="<%= "active" if current_step == 5 %> left <%= "notInitiated" if current_step < 5 %>"><i class="fa fa-thumbs-o-up"></i><span><%= t("txt.registration.step_5_nav") %></span></div>  
   </div>  
 </nav>

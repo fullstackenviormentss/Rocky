@@ -1,6 +1,7 @@
 ---
 en:
   txt:
+    required_fields: All fields maked with field indicator (*) on the page are required.
     unknown_error: "Unknown error: the web administrators have been contacted."
     error: "Something went wrong."
     try_again: "Go back and try again."
@@ -28,6 +29,7 @@ en:
       skip_state_online_registration: ! '&gt; No Thanks, I''ll continue with %{rtv_and_partner_name}
         and send in my form later.'
     registration:
+      online_voter: Based on your zip code, you can register online directly with your state at
       in_language_name: In English
       powered_by: ! 'powered by:'
       progress_indicator: ! 'Step:'
@@ -37,6 +39,10 @@ en:
       step_4_header: Stay Informed and Take Action
       step_4_ovr_header: Hang on. You are eligible to register online in your state.
       step_5_header: Review and Confirm
+      step_1_nav: ELIGIBILITY
+      step_2_nav: IDENTITY
+      step_3_nav: MORE INFO
+      step_5_nav: COMPLETE
       stay_informed_header: Stay Informed
       identification_header: Identification Information
       survey_title: Questions For You
@@ -212,8 +218,10 @@ en:
             p3: ''
       tooltips:
         email_address: We will email you a copy of your voter registration form.
-        home_zip_code: Enter ZIP code for the address where you live, even if you
-          don't receive mail there.
+        home_zip_code: "Enter ZIP code for the address where you live, even if you don't receive mail there."
+        date_of_birth_format: "Format: MM-DD-YYYY"
+        phone_format: "Format: ###-###-####"
+        state_id_format: "Format: ###-##-####"
         date_of_birth: On your voter registration application, you are required to
           indicate whether you will be 18 years old on or before election day.  However,
           many states allow you to register before your 18th birthday, so please <a

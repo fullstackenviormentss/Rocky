@@ -40,24 +40,23 @@ es:
         url: URL
       registrant:
         date_of_birth: Fecha de Nac
-        email_address: Correo Electrónico
-        first_registration: Me estoy registrando por primera vez para votar.
+        email_address: E-mail
+        first_registration: Es la primera vez que me registro para votar.
         home_zip_code: Código Postal
-        us_citizen: Soy ciudadano americano.
+        us_citizen: Soy ciudadano de EE. UU.
         name_title: Titulo
         first_name: Nombre
         middle_name: Segundo Nombre
         last_name: Apellido
         name_suffix: Sufijo
-        home_address: Dirección Casa
+        home_address: Dirección
         home_unit: No.
         home_city: Ciudad
         home_state_name: Estado
         has_mailing_address: Recibo mi correo en una dirección diferente a la provista
           anteriormente.
-        has_state_license: Tengo una licencia de conducir o una tarjeta de identificación
-          del estado.
-        will_be_18_by_election: Tendré 18 años en el próximo día de elecciones.
+        has_state_license: Tendré 18 años de edad para la próxima elección general.
+        will_be_18_by_election: Tendré 18 años de edad para la próxima elección general.
         mailing_address: Dirección Alterna
         mailing_unit: No.
         mailing_city: Ciudad
@@ -66,11 +65,11 @@ es:
         party: Partido
         race: Raza
         state_id_number: Número ID
-        phone: Teléfono
+        phone: Número
         phone_type: Tipo
         change_of_name: He cambiado mi nombre
-        prev_name_title: Titulo
-        prev_first_name: Nombre
+        prev_name_title: Título
+        prev_first_name: Primer nombre
         prev_middle_name: Segundo Nombre
         prev_last_name: Apellido
         prev_name_suffix: Sufijo
@@ -82,8 +81,7 @@ es:
         prev_zip_code: Código Postal
         opt_in_email: Recibir correo electronico
         opt_in_sms: Recibir mensajes de texto
-        attest_true: He revisado la información detalladamente, es fidedigna y veraz
-          dentro de mi conocimiento.
+        attest_true: He revisado la información ingresada arriba y declaro que es verdadera y correcta de acuerdo a mi leal saber y entender.
         tell_from: De
         tell_email: Su correo electrónico
         tell_recipients: Destinatarios

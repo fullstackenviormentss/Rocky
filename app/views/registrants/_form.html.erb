@@ -5,7 +5,7 @@
 <%= hidden_field_tag "short_form", @short_form %>
 <%= hidden_field_tag "collectemailaddress", @collect_email_address %>
 <%= form.hidden_field :under_18_ok, :value => 0 %>
-<div class="text">All fields maked with field indicator (*)on the page are required.</div>
+<div class="text"><%= t("txt.required_fields") %></div>
 
 <% content_for :head do %>
 <script>
@@ -53,7 +53,7 @@ $(document).ready(function() {
 <ul class="flat">
   <li class="width_f">
     <%= "#{form.label :date_of_birth}*".html_safe %>
-    <span class="example">Format: MM-DD-YYYY</span>
+    <span class="example"><%= t("txt.registration.tooltips.date_of_birth_format") %></span>
     <span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span>
     <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth %>
     <% if !form.object.errors[:date_of_birth].empty? %>

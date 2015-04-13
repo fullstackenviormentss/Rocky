@@ -55,7 +55,9 @@ class Step3Controller < RegistrationStep
 
   def set_up_view_variables
     @state_id_tooltip = @registrant.state_id_tooltip
-    
+    if I18n.locale == :es
+      @state_id_tooltip = "Ingrese su numero de Seguro Social"
+    end
     @registrant.mailing_state ||= @registrant.home_state
     @state_parties = @registrant.state_parties
     @race_tooltip = @registrant.race_tooltip

@@ -12,7 +12,7 @@
 
 <fieldset class='no_border'>
 
-  <legend><%= I18n.t('txt.registration.change_of_address') %></legend>
+  <legend><%= t('txt.registration.change_of_address') %></legend>
   <ul class="checkbox checkbox-with-tooltip">
     <li>
         <span class="tooltip"> <%= t("txt.registration.tooltips.previous_address").html_safe%></span><%= form.check_box :change_of_address %> <%= form.label :change_of_address, I18n.t('activerecord.attributes.registrant.change_of_address'), class: "check-box-step-1" %>
@@ -21,7 +21,7 @@
 </fieldset>
 
 <fieldset id="prev_address_set">
-  <legend><%= I18n.t('txt.registration.previous_address') %></legend>
+  <legend><%= t('txt.registration.previous_address') %></legend>
   <ul class="stacked">
     <li class="width_a">
     <%= form.label :prev_address %>

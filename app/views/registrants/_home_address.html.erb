@@ -43,7 +43,7 @@ $(document).ready(function() {
 </fieldset>
 
 <fieldset class='no_border'>
-  <legend><%= I18n.t('txt.registration.has_mailing_address') %></legend>
+  <legend><%= t('txt.registration.has_mailing_address') %></legend>
   <ul class="checkbox">
     <li>
         <%= form.check_box :has_mailing_address %>
@@ -55,7 +55,7 @@ $(document).ready(function() {
 
 <fieldset id="mailing_address_set">
   <%= hidden_field_tag "javascript_disabled", "1"  %>
-  <legend><%= I18n.t('txt.registration.mailing_address') %></legend>
+  <legend><%= t('txt.registration.mailing_address') %></legend>
   <span class="tooltip"><%= t("txt.registration.tooltips.mailing_address")%></span>
   <ul class="stacked">
     <li class="width_a">

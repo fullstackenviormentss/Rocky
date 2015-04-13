@@ -28,9 +28,9 @@ es:
       libertarian: Libertario
       republican: Republicano
       working_families: Familias Trabajadoras
-      other: Otros
+      other: Otra
     no_party_label:
-      none: Ninguno
+      none: Ninguna
       decline_to_state: Se niega a declarar
       blank: ''
     tooltips:
