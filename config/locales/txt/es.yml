@@ -227,7 +227,7 @@ es:
       tooltips:
         email_address: Le enviaremos una copia de su formulario de registro de votación.
         home_zip_code: "Ingrese el código postal de la dirección donde reside aunque no reciba correo postal allí."
-        date_of_birth_format: "Formato fecha de nacimiento: MM/DD/AAAA"
+        date_of_birth_format: "Formato fecha de nacimiento: MM-DD-AAAA"
         phone_format: "Formato: ###-###-####"
         state_id_format: "Formato de documento de identidad: ###-##-####"
         date_of_birth: En la solicitud de registro de votación usted debe indicar que h
