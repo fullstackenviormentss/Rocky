@@ -86,7 +86,7 @@
   <div id="#skiptarget" class="hptoggles clearfix">
     <div class="container">
       <ul>
-        <% if params[:locale] == "es" %>
+        <% if I18n.locale == :es %>
           <li class="engtoggle"><%= link_to "English", new_registrant_path(locale: 'en') %></li>
         <% else %>
           <li class="engtoggle"><%= link_to "Español", new_registrant_path(locale: 'es') %></li>
