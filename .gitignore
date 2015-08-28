@@ -28,6 +28,7 @@
 .env.development
 .env.test
 .env.cucumber
+.sass-cache
 coverage
 config/mobile.yml
 config/states_with_online_registration.yml
