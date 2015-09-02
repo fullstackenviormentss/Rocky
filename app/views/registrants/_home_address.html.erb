@@ -14,7 +14,7 @@ $(document).ready(function() {
     <span class="tooltip"><%= t("txt.registration.tooltips.home_address")%></span>
   <ul class="stacked">
     <li class="width_a">
-      <%= form.label :home_address %>
+      <%= "#{form.label :home_address}<span class=\"required\" title=\"required\">*</span>".html_safe %>
       <%= field_div form, :home_address %>
       <!-- <span class="error"><%= form.object.errors[:home_address].join("\n") %></span> -->
     </li>
@@ -25,7 +25,7 @@ $(document).ready(function() {
   </ul>
   <ul class="stacked">
     <li class="width_a">
-      <%= form.label :home_city %>
+      <%= "#{form.label :home_city}<span class=\"required\" title=\"required\">*</span>".html_safe %>
       <%= field_div form, :home_city %>
       <!-- <span class="error"><%= form.object.errors[:home_city].join("\n") %></span> -->
     </li>

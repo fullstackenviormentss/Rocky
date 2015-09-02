@@ -37,12 +37,12 @@
     <span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span>
     <ul class="stacked">
       <li class="width_d">
-        <%= form.label :name_title %>
+        <%= "#{form.label :name_title}<span class=\"required\" title=\"required\">*</span>".html_safe %>
         <%= select_div form, :name_title, @registrant.titles, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:name_title].join("\n") %></span> -->
       </li>
       <li class="width_b">
-        <%= form.label :first_name %>
+        <%= "#{form.label :first_name}<span class=\"required\" title=\"required\">*</span>".html_safe %>
         <%= field_div form, :first_name %>
         <!-- <span class="error"><%= form.object.errors[:first_name].join("\n") %></span> -->
       </li>
@@ -51,7 +51,7 @@
         <%= field_div form, :middle_name %>
       </li>
       <li class="width_b">
-        <%= form.label :last_name %>
+        <%= "#{form.label :last_name}".html_safe %>
         <%= field_div form, :last_name %>
         <!-- <span class="error"><%= form.object.errors[:last_name].join("\n") %></span> -->
       </li>

@@ -46,6 +46,8 @@ GEM
       activemodel
       fog (>= 1.8.0)
       unf
+    attr_encrypted (1.3.4)
+      encryptor (>= 1.3.0)
     authlogic (3.3.0)
       activerecord (>= 3.2)
       activesupport (>= 3.2)
@@ -106,6 +108,7 @@ GEM
     dotenv (0.7.0)
     dotenv-rails (0.7.0)
       dotenv (= 0.7.0)
+    encryptor (1.3.0)
     erubis (2.7.0)
     excon (0.31.0)
     execjs (1.4.0)
@@ -298,6 +301,7 @@ DEPENDENCIES
   airbrake
   assert_difference
   asset_sync
+  attr_encrypted
   authlogic (= 3.3.0)
   capistrano (= 2.15.5)
   capybara-webkit (~> 0.7.1)

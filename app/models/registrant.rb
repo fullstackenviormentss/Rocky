@@ -53,6 +53,8 @@ class Registrant < ActiveRecord::Base
   REMINDER_EMAIL_PRIORITY = 0
   WRAP_UP_PRIORITY = REMINDER_EMAIL_PRIORITY + 1
 
+  attr_encrypted :state_id_number, :key => ENV['ENCRYPTION_KEY'], :algorithm => 'bf'
+
 
   ADDRESS_FIELDS = ["home_address", 
     "mailing_address", 

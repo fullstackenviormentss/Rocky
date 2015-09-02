@@ -13,7 +13,9 @@ gem "aasm", "= 3.0.16"
 #gem 'utf8-cleaner'
 gem 'rack-robustness'
 
+gem 'attr_encrypted'
 gem "authlogic", "= 3.3.0"
+
 gem 'daemons', '~> 1.1.9'
 gem "paperclip", "~> 3.0"
 gem "mysql2"
