@@ -20,16 +20,16 @@
       <ul>
         <%- if @registrant.collect_email_address? %>
           <li>
-            <span><%= I18n.t('activerecord.attributes.registrant.email_address') %></span>
+            <span><%= raw CGI.unescapeHTML(I18n.t('activerecord.attributes.registrant.email_address')) %></span>
             <div><%=h @registrant.email_address %></div>
           </li>
         <%- end%>
         <li>
-          <span><%= I18n.t('activerecord.attributes.registrant.home_zip_code') %></span>
+          <span><%= raw CGI.unescapeHTML(I18n.t('activerecord.attributes.registrant.home_zip_code')) %></span>
           <div><%=h @registrant.home_zip_code %></div>
         </li>
         <li>
-          <span><%= I18n.t('activerecord.attributes.registrant.date_of_birth') %></span>
+          <span><%= raw CGI.unescapeHTML(I18n.t('activerecord.attributes.registrant.date_of_birth')) %></span>
           <div><%=h @registrant.date_of_birth.strftime("%B %e, %Y") %></div>
         </li>
       </ul>
@@ -94,7 +94,7 @@
 
       <ul>
         <li>
-          <span><%= I18n.t('activerecord.attributes.registrant.state_id_number') %></span>
+          <span><%= raw CGI.unescapeHTML(I18n.t('activerecord.attributes.registrant.state_id_number')) %></span>
           <div><%=h @registrant.state_id_number %></div>
         </li>
         <% unless @registrant.race.blank? %>
@@ -105,7 +105,7 @@
         <% end %>
         <% unless @registrant.party.blank? %>
           <li>
-            <span><%= I18n.t('activerecord.attributes.registrant.party') %></span>
+            <span><%= raw CGI.unescapeHTML(I18n.t('activerecord.attributes.registrant.party')) %></span>
             <div><%=h @registrant.party %></div>
           </li>
         <% end %>

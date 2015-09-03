@@ -14,7 +14,8 @@ $(document).ready(function() {
     <span class="tooltip"><%= t("txt.registration.tooltips.home_address")%></span>
   <ul class="stacked">
     <li class="width_a">
-      <%= "#{form.label :home_address}<span class=\"required\" title=\"required\">*</span>".html_safe %>
+      <label for="registrant_home_address"><%= t("activerecord.attributes.registrant.home_address") %><span class="required" title="required">*</span></label>
+      <%= raw CGI.unescapeHTML("#{form.label :home_address}").html_safe %>
       <%= field_div form, :home_address %>
       <!-- <span class="error"><%= form.object.errors[:home_address].join("\n") %></span> -->
     </li>
@@ -25,17 +26,17 @@ $(document).ready(function() {
   </ul>
   <ul class="stacked">
     <li class="width_a">
-      <%= "#{form.label :home_city}<span class=\"required\" title=\"required\">*</span>".html_safe %>
+      <label for="registrant_home_city"><%= t("activerecord.attributes.registrant.home_city") %><span class="required" title="required">*</span></label>
       <%= field_div form, :home_city %>
       <!-- <span class="error"><%= form.object.errors[:home_city].join("\n") %></span> -->
     </li>
     <li class="width_b">
-      <%= form.label :home_state_name %>
+      <label for="registrant_home_state_name"><%= t("activerecord.attributes.registrant.home_state_name") %><span class="required" title="required">*</span></label>
       <%= field_div form, :home_state_name, disabled: true %>
       <!-- <span class="error"><%= form.object.errors[:home_state_name].join("\n") %></span> -->
     </li>
     <li class="width_c">
-      <%= form.label :home_zip_code %>
+      <label for="registrant_home_zip_code"><%= t("activerecord.attributes.registrant.home_zip_code") %><span class="required" title="required">*</span></label>
       <%= field_div form, :home_zip_code, :size => 8, disabled: true %>
       <!-- <span class="error"><%= form.object.errors[:home_zip_code].join("\n") %></span> -->
     </li>

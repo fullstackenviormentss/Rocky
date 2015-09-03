@@ -11,7 +11,7 @@
   <% if @state_parties && @state_parties.any? %>
     <ul class="flat party-dropdown">
       <li>
-        <%= "#{form.label :party}<span class=\"required\" title=\"required\">*</span>".html_safe %>
+        <label for="registrant_party"><%= t("activerecord.attributes.registrant.party") %><span class="required" title="required">*</span></label>
         <span class="tooltip"><%= t("txt.registration.tooltips.party")%></span>
         <%= select_div form, :party, @state_parties, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->

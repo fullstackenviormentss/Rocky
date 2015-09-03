@@ -45,7 +45,7 @@ class Step3Controller < RegistrationStep
   protected
 
   def next_url
-    registrant_step_4_url(@registrant)
+    registrant_step_5_url(@registrant)
   end
 
   def advance_to_next_step

@@ -89,7 +89,7 @@
       <span class="error"><%= form.object.errors[:prev_last_name].join("\n") %></span>
     </li>
     <li class="width_d">
-      <h2><%= form.label :prev_name_suffix %></h2>
+      <%= form.label :prev_name_suffix %>
       <div><%= form.select :prev_name_suffix,  @registrant.suffixes, :include_blank => t('txt.registration.select_none') %></div>
       <span class="error"><%= form.object.errors[:prev_name_suffix].join("\n") %></span>
     </li>

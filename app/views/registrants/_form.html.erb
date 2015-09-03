@@ -34,8 +34,7 @@ $(document).ready(function() {
 <%- if @registrant.collect_email_address? %>
   <ul class="flat">
     <li class="width_f">
-        
-     <%= "#{form.label :email_address}<span class=\"required\" title=\"required\">*</span>".html_safe %>
+      <label for="registrant_email_address"><%= t("activerecord.attributes.registrant.email_address") %><span class="required" title="required">*</span></label>  
       <span class="tooltip"><%= t("txt.registration.tooltips.email_address")%></span>
       <%= field_div form, :email_address %>
       <!-- <span class="error"><%= form.object.errors[:email_address].join("\n") %></span> -->
@@ -44,7 +43,7 @@ $(document).ready(function() {
 <%- end %>
 <ul class="flat">
   <li class="width_f">
-    <%= "#{form.label :home_zip_code}<span class=\"required\" title=\"required\">*</span>".html_safe %>
+    <label for="registrant_home_zip_code"><%= t("activerecord.attributes.registrant.home_zip_code") %><span class="required" title="required">*</span></label>
     <span class="tooltip"><%= t("txt.registration.tooltips.home_zip_code")%></span>
     <%= field_div form, :home_zip_code %>
     <!-- <span class="error"><%= form.object.errors[:home_zip_code].join("\n") %></span> -->
@@ -52,7 +51,7 @@ $(document).ready(function() {
 </ul>
 <ul class="flat">
   <li class="width_f">
-    <%= "#{form.label :date_of_birth}<span class=\"required\" title=\"required\">*</span>".html_safe %>
+    <label for="registrant_date_of_birth"><%= t("activerecord.attributes.registrant.date_of_birth") %><span class="required" title="required">*</span></label>
     <span class="example"><%= t("txt.registration.tooltips.date_of_birth_format") %></span>
     <span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span>
     <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth %>
