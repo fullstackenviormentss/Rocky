@@ -30,7 +30,7 @@ paperclip_options:
   path: ":rails_root/public/system/:attachment/:id/:style/:filename"
   url: "/system/:attachment/:id/:style/:filename"
 
-mobile_redirect_url: https://stage-rocky.ctacdev.com/
+mobile_redirect_url: http://stage-rocky.ctacdev.com/
 mobile_browsers:
   - mobile
   - webos

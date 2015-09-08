@@ -64,8 +64,9 @@
 
   <ul class="flat">
     <li class="width_f">
-      <label for="registrant_email_address"><%= t("activerecord.attributes.registrant.email_address") %><span class="required" title="required">*</span></label>  
-      <br/><div class="tooltip"><%= t("txt.registration.tooltips.email_address")%></div>
+      <label for="registrant_email_address"><%= t("activerecord.attributes.registrant.email_address") %><span class="required" title="required">*</span>
+
+      <br/><div class="tooltip"><%= t("txt.registration.tooltips.email_address")%></div></label>  
       <%= field_div form, :email_address %>
     </li>
   </ul>
@@ -167,7 +168,7 @@
     <%#= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
   <%- end %>
 
-  <%= form.hidden_field :state_id_number, value: "999999999" %>
+  <%= form.hidden_field :state_id_number, value: "---------" %>
   <%= render :partial=> "registrants/race_and_party", :locals=>{:form=>form} %>
   <div class="button_row">
     <div class="back"><%= link_to t('txt.button.back').html_safe, registrant_path(@registrant) %></div>
