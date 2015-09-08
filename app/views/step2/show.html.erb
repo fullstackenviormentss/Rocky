@@ -1,25 +1,6 @@
 
 
 <h1><%= t('txt.registration.step_2_header') %></h1>
-<div id="online_reg_notice">
-  <p class="voter_message"><%= t("txt.registration.online_voter") %>:</p>
-    <ul>
-
-      <% if @online_reg_url %>
-        <li><%= t('txt.continue_with_state') %> <%= link_to @online_reg_text, @online_reg_url %></li>
-
-      <% end %>
-      <li><%=  t('txt.continue_with_form') %> </li>
-    </ul>
-  <p class="voter_message"><%= raw t("txt.registration.instructions.overseas_military") %></p>
-  <p class="voter_message"><%= raw t("txt.registration.instructions.requirements") %></p>
-  <p class="voter_message"><%= raw t("txt.registration.instructions.after_finish") %></p>
-  <p class="voter_message"><%= raw t("txt.registration.instructions.please_note") %></p>
-  <p class="voter_message"><%= raw t("txt.registration.instructions.each_state") %></p>
-  <p class="voter_message"><%= raw t("txt.registration.instructions.first_time_register") %> <br/><%= raw t("txt.registration.instructions.first_time_register_ids") %></p>
-  <p class="voter_message"><%= raw t("txt.registration.instructions.first_time_exempt") %></p>
-
-</div>
 
 <%= form_for(@registrant, :url => registrant_step_2_path(@registrant)) do |form| %>
 <div class="text"><%= t("txt.required_fields") %></div>
@@ -58,7 +39,28 @@
   </h1>
 <% end %>
   
+  <ul class="flat">
+  <li class="width_f">
+    <div id="online_reg_notice">
+      <p class="voter_message"><%= t("txt.registration.online_voter") %>:</p>
+        <ul>
 
+          <% if @online_reg_url %>
+            <li><%= t('txt.continue_with_state') %> <%= link_to @online_reg_text, @online_reg_url %></li>
+
+          <% end %>
+          <li><%=  t('txt.continue_with_form') %> </li>
+        </ul>
+      <p class="voter_message"><%= raw t("txt.registration.instructions.overseas_military") %></p>
+      <p class="voter_message"><%= raw t("txt.registration.instructions.requirements") %></p>
+      <p class="voter_message"><%= raw t("txt.registration.instructions.after_finish") %></p>
+      <p class="voter_message"><%= raw t("txt.registration.instructions.please_note") %></p>
+      <p class="voter_message"><%= raw t("txt.registration.instructions.each_state") %></p>
+      <p class="voter_message"><%= raw t("txt.registration.instructions.first_time_register") %> <br/><%= raw t("txt.registration.instructions.first_time_register_ids") %></p>
+      <p class="voter_message"><%= raw t("txt.registration.instructions.first_time_exempt") %></p>
+
+    </div>
+</ul>
 
   <ul class="flat">
     <li class="width_f">
@@ -164,7 +166,7 @@
     
     <%#= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
   <%- end %>
-  
+
   <%= form.hidden_field :state_id_number, value: "999999999" %>
   <%= render :partial=> "registrants/race_and_party", :locals=>{:form=>form} %>
   <div class="button_row">
