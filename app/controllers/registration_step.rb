@@ -81,12 +81,11 @@ class RegistrationStep < ApplicationController
     if @registrant.valid?
       @registrant.save_or_reject!
       
-      if @registrant.eligible?
-        redirect_when_eligible
-      else
-        redirect_to registrant_ineligible_url(@registrant)
-      end
+       redirect_when_eligible
     else
+
+    puts @registrant.inspect
+    puts @registrant.errors.inspect
       set_show_skip_state_fields
       render "show"
     end

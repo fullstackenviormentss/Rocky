@@ -1,13 +1,38 @@
 
 
 <h1><%= t('txt.registration.step_2_header') %></h1>
+<div id="online_reg_notice">
+  <p class="voter_message"><%= t("txt.registration.online_voter") %>:</p>
+    <ul>
+
+      <% if @online_reg_url %>
+        <li><%= t('txt.continue_with_state') %> <%= link_to @online_reg_text, @online_reg_url %></li>
+
+      <% end %>
+      <li><%=  t('txt.continue_with_form') %> </li>
+    </ul>
+  <p class="voter_message"><%= raw t("txt.registration.instructions.overseas_military") %></p>
+  <p class="voter_message"><%= raw t("txt.registration.instructions.requirements") %></p>
+  <p class="voter_message"><%= raw t("txt.registration.instructions.after_finish") %></p>
+  <p class="voter_message"><%= raw t("txt.registration.instructions.please_note") %></p>
+  <p class="voter_message"><%= raw t("txt.registration.instructions.each_state") %></p>
+  <p class="voter_message"><%= raw t("txt.registration.instructions.first_time_register") %> <br/><%= raw t("txt.registration.instructions.first_time_register_ids") %></p>
+  <p class="voter_message"><%= raw t("txt.registration.instructions.first_time_exempt") %></p>
+
+</div>
 
 <%= form_for(@registrant, :url => registrant_step_2_path(@registrant)) do |form| %>
 <div class="text"><%= t("txt.required_fields") %></div>
 <% if form.object.errors.count > 0 %>
-  <h1 id="errors" class="alert" tabindex="-1">
+  <h2 id="errors" class="alert" tabindex="-1">
     <p> The following errors were present on the page:</p>
     <ol>
+      <% if !form.object.errors[:email_address].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.email_address")} #{form.object.errors[:email_address].join("\n")}", 'javascript:$("#registrant_email_address").focus();' %></li>
+      <% end %>
+      <% if !form.object.errors[:date_of_birth].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.date_of_birth")} #{form.object.errors[:date_of_birth].join("\n")}", 'javascript:$("#registrant_date_of_birth").focus();', tabindex: -1 %></li>
+      <% end %>
       <% if !form.object.errors[:name_title].empty? %>
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.name_title")} #{form.object.errors[:name_title].join("\n")}", 'javascript:$("#registrant_name_title").focus();', tabindex: -1 %></li>
       <% end %>
@@ -23,21 +48,74 @@
       <% if !form.object.errors[:home_city].empty? %>
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_city")} #{form.object.errors[:home_city].join("\n")}", 'javascript:$("#registrant_home_city").focus();', tabindex: -1 %></li>
       <% end %>
+      <% if !form.object.errors[:home_zip_code].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_zip_code")} #{form.object.errors[:home_zip_code].join("\n")}",'javascript:$("#registrant_home_zip_code").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:party].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.party")} #{form.object.errors[:party].join("\n")}", 'javascript:$("#registrant_party").focus();', tabindex: -1 %></li>
+      <% end %>
     </ol>
   </h1>
 <% end %>
-  <% if @online_reg_url %>
-  <div id="online_reg_notice" class="success">
-    <p><%= t("txt.registration.online_voter") %>:</p>
-      <ul>
-        <li><%= link_to @online_reg_text, @online_reg_url %></li>
-        <li>Continue completing your registration by filling out this application, printing, signing, and mailing into your local election office.</li>
-      <ul>
-  </div>
-  <% end %>
+  
+
+
+  <ul class="flat">
+    <li class="width_f">
+      <label for="registrant_email_address"><%= t("activerecord.attributes.registrant.email_address") %><span class="required" title="required">*</span></label>  
+      <br/><div class="tooltip"><%= t("txt.registration.tooltips.email_address")%></div>
+      <%= field_div form, :email_address %>
+    </li>
+  </ul>
+  <ul class="flat">
+    <li class="width_f">
+      <label for="registrant_date_of_birth"><%= t("activerecord.attributes.registrant.date_of_birth") %><span class="required" title="required">*</span></label>
+      <span class="example"><%= t("txt.registration.tooltips.date_of_birth_format") %></span>
+      <br/><span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span>
+      <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth %>
+      <% if !form.object.errors[:date_of_birth].empty? %>
+        <!-- <span class="error"><%= form.object.errors[:date_of_birth].join("\n") %></span> -->
+      <% else %>
+      <% end %>
+    </li>
+  </ul>
+  <ul class="checkbox checkbox-step-1">
+    <li>
+        <h2>Check all that apply:</h2>
+    </li>
+  </ul>
+  <ul class="checkbox checkbox-step-1">
+    <li>
+        <%= form.check_box :us_citizen %>
+        <%= form.label :us_citizen, {}, class: "check-box-step-1" %> 
+        <span class="error"><%= form.object.errors[:us_citizen].join("\n") %></span>
+    </li>
+  </ul>
+  <ul class="checkbox checkbox-step-1">
+    <li>
+        <%= form.check_box :has_state_license %>
+        <%= form.label :has_state_license, {}, class: "check-box-step-1" %> 
+        <span class="error"><%= form.object.errors[:has_state_license].join("\n") %></span>
+    </li>
+  </ul>
+  <ul class="checkbox checkbox-step-1">
+    <li>
+        <%= form.check_box :will_be_18_by_election %>
+        <%= form.label :will_be_18_by_election, {}, class: "check-box-step-1" %>
+        <span class="error"><%= form.object.errors[:will_be_18_by_election].join("\n") %></span>
+    </li>
+  </ul>
+  <ul class="checkbox checkbox-step-1">
+    <li>
+        <%= form.check_box :first_registration %>
+        <%= form.label :first_registration, class: "check-box-step-1" %> 
+        <span class="error"><%= form.object.errors[:first_registration].join("\n") %></span>
+    </li>
+  </ul>
   <fieldset>
     <legend><%= I18n.t('txt.registration.name') %></legend>
     <br/><br/><span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span>
+
     <ul class="stacked">
       <li class="width_d">
         <label for="registrant_name_title"><%= t("activerecord.attributes.registrant.name_title") %><span class="required" title="required">*</span></label>
@@ -86,6 +164,9 @@
     
     <%#= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
   <%- end %>
+  
+  <%= form.hidden_field :state_id_number, value: "999999999" %>
+  <%= render :partial=> "registrants/race_and_party", :locals=>{:form=>form} %>
   <div class="button_row">
     <div class="back"><%= link_to t('txt.button.back').html_safe, registrant_path(@registrant) %></div>
     <%= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>

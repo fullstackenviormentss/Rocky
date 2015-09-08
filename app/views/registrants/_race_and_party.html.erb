@@ -2,15 +2,22 @@
     <legend><%= I18n.t('txt.registration.race_and_party') %></legend>
   <ul class="flat race-dropdown">
     <li>
-      <%= form.label :race %>
-      <div><%= form.select :race, @registrant.races, :include_blank => true %></div>
-      <span class="error"><%= form.object.errors[:race].join("\n") %></span>
+      <label for="registrant_race"><%= t("activerecord.attributes.registrant.race") %>
+        <% if @registrant.requires_race? %>
+          <span class="required" title="required">*</span>
+        <% end %>
+        <%= select_div form, :race, @registrant.races, :include_blank => true %>
+      </label>
     </li>
   </ul>
   <% if @state_parties && @state_parties.any? %>
     <ul class="flat party-dropdown">
       <li>
-        <label for="registrant_party"><%= t("activerecord.attributes.registrant.party") %><span class="required" title="required">*</span></label>
+        <label for="registrant_party"><%= t("activerecord.attributes.registrant.party") %>
+        <% if @registrant.requires_party? %>
+          <span class="required" title="required">*</span>
+        <% end %>  
+        </label>
          <%= select_div form, :party, @state_parties, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->
       </li>

@@ -1,7 +1,20 @@
 ---
 en:
   txt:
+    intro_text: ! '<p>
+        With the National Mail Voter Registration Form, you can:
+    </p>
+    <ul>
+      <li>Register to vote for the first time</li>
+      <li>Report a change of name or address to your voter registration office</li>
+      <li>Register with a political party</li>
+
+    </ul>
+    <p>Some states offer online voter registration. Select your state from the dropdown list below and click on the next button to see your registration options. </p>'
+    continue_with_state: Register directly online with your state at
+    continue_with_form: Fill out the National Mail Voter Registration Form below, download, print, write in your ID number, sign, and mail into your local election office. 
     required_fields: All fields marked with field indicator (*) on the page are required.
+    
     unknown_error: "Unknown error: the web administrators have been contacted."
     error: "Something went wrong."
     try_again: "Go back and try again."
@@ -13,7 +26,7 @@ en:
       edit_identity: "Edit Identity"
       edit_additional_info: "Edit State ID or Party"
       back: Previous Step
-      download: Print your registration form now
+      download: Check Your Email to Download Form
       ineligible_try_again: Return
       keep_going: Keep Going
       remind_me_later: Remind Me Later
@@ -29,7 +42,7 @@ en:
       skip_state_online_registration: ! '&gt; No Thanks, I''ll continue with %{rtv_and_partner_name}
         and send in my form later.'
     registration:
-      online_voter: Based on your ZIP code, you can
+      online_voter: Based on the state you live in, you can
       in_language_name: In English
       powered_by: ! 'powered by:'
       progress_indicator: ! 'Step:'
@@ -39,7 +52,7 @@ en:
       step_4_header: Stay Informed and Take Action
       step_4_ovr_header: Hang on. You are eligible to register online in your state.
       step_5_header: Review and Confirm
-      step_6_header: Print Your Form
+      step_6_header: Check Your Email to Download Form
       step_1_nav: Verify Eligibility
       step_2_nav: Personal information
       step_3_nav: Review
@@ -52,7 +65,7 @@ en:
       change_of_name: Change of Name
       confirm_information: Confirm Information
       race_and_party: Race and Party
-      download_header: Print Your Form
+      download_header: Check Your Email to Download Form
       finish_header: Spread the word!
       finish_pdf_delay_header: Check Your Email
       finish_pdf_delay: It's taking a while to create your registration form to download,
@@ -114,11 +127,33 @@ en:
         work: Work
         other: Other
       instructions:
-        overseas: ! '<b>Note</b>: Note: Online voter registration is available in certain states. <a
+        overseas: ! '<b>Note</b>: Online voter registration is available in certain states. <a
           href=''http://www.rockthevote.com/voter-registration/online-application-system/online.html''
           target=''_blank''>Learn more about online voter registration</a>.'
+        overseas_military: If you are an American citizen living abroad or a uniformed military voter,  
+          see <a href''http://www.fvap.gov/''>information about Overseas Citizen & Military Voter Services</a> 
+          from the Federal Voting Assistance Program (FVAP) to register to vote or request your absentee ballot. 
         opt_in_email: We will send you timely election reminders, your polling place
           location, and information about music and issues.
+        requirements: Requirements:<ul>
+          <li>You will need Adobe Acrobat to download your voter registration form. If you don''t have Adobe Acrobat, you can <a href=''https://get.adobe.com/reader/''>download Adobe Acrobat Reader here</a>. </li>
+          <li>You will also need a printer to print out your registration form. </li>
+          <li>All States require that you be a United States citizen by birth or naturalization to register to vote in federal and State elections. Federal law makes it illegal to falsely claim U.S. citizenship to register to vote in any federal, State, or local election. </li>
+          <li>You cannot be registered to vote in more than one place at one time.</li>
+          </ul>
+        after_finish: After you complete the process for filling out your voter registration form online you must print, write in your ID number, 
+          sign, and mail your form to your Secretary of State or appropriate voter registration office. For your convenience, the address of your Secretary 
+          of State or appropriate office is pre-printed on your form along with detailed registrations instructions for your state. 
+        please_note: '<b>Please note</b>: North Dakota, New Hampshire and Wyoming don''t accept the National Mail Voter Registration form. 
+          If you live in one of these states, contact your Secretary of State''s office.'
+        each_state: Each State has its own laws about who may register and vote. Check the information under your State in the State Instructions on 
+          the <a href=''http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf''>National Mail Voter Registration Form</a> 
+          (PDF, <a href=''https://get.adobe.com/reader/''>Download Adobe Reader</a>). 
+        first_time_register: If you are registering to vote for the first time in your jurisdiction and are mailing this registration application, Federal law requires you to show proof of identification the first time you vote. Proof of identification includes:'
+        first_time_register_ids: A current and valid photo identification or a current utility bill, bank statement, government check, paycheck, or government document that shows your name and address. 
+        first_time_exempt: 'Voters may be exempt from this requirement if they submit a copy of this identification with their mail in voter registration form. If you wish to submit a copy, please keep the following in mind: 
+          Your state may have additional identification requirements which may mandate you show identification at the polling place even if you meet the Federal proof of identification. 
+          Do not submit original documents with this application, only copies.'
         under_18: Hey, it looks like you aren't 18 yet. That's cool. In %{state_name},
           you can register to vote %{state_rule}. Visit our <a href="http://www.rockthevote.com/election-center/"
           target="_blank">Election Center</a> to find out when the next election is.
@@ -126,11 +161,8 @@ en:
         under_18_3: If not, we'll send you a reminder to register on your 18th birthday.
         remind_when_18: We'll email you at %{email_address}
         review: Please review the following information and confirm its accuracy.
-        download: You are not done. Select the print form button to print out your
-          voter registration form. Sign it and mail to the address located on the
-          form.
-        download_2: You won't be registered unless you print, sign and mail in your
-          form!
+        download: You are not done. Check your email to download and print  your voter registration form. Write in your ID number, sign, and mail to the address located on the form.
+        download_2: You will not be registered unless you download, print, sign and mail in your form to your local election office!
         finish: ! 'Don''t forget to tell your friends and family how easy it was to
           register. Here are a few tools you can use to spread the word about voter
           registration:'

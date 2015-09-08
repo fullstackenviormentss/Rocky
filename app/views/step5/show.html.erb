@@ -3,7 +3,7 @@
 
 <%= form_for(@registrant, :url => registrant_step_5_path(@registrant)) do |form| %>
 <% if form.object.errors.count > 0 %>
-    <h1 id="errors" class="alert" tabindex="-1">
+    <h2 id="errors" class="alert" tabindex="-1">
       <p> The following errors were present on the page:</p>
       <ol>
         <% if !form.object.errors[:attest_true].empty? %>
@@ -93,10 +93,6 @@
       <legend><%= t('txt.registration.step_3_header') %></legend>
 
       <ul>
-        <li>
-          <span><%= raw CGI.unescapeHTML(I18n.t('activerecord.attributes.registrant.state_id_number')) %></span>
-          <div><%=h @registrant.state_id_number %></div>
-        </li>
         <% unless @registrant.race.blank? %>
           <li>
             <span><%= I18n.t('activerecord.attributes.registrant.race') %></span>
@@ -131,7 +127,7 @@
   </fieldset>
 
   <div class="button_row">
-    <div class="back"><%= link_to t('txt.button.back').html_safe, (@registrant.skip_survey_and_opt_ins? && !@registrant.in_ovr_flow?) ? registrant_step_3_path(@registrant, :show_fields=>"1") : registrant_step_4_path(@registrant, :show_fields=>"1") %></div>
+    <div class="back"><%= link_to t('txt.button.back').html_safe, (@registrant.skip_survey_and_opt_ins? && !@registrant.in_ovr_flow?) ? registrant_step_2_path(@registrant, :show_fields=>"1") : registrant_step_4_path(@registrant, :show_fields=>"1") %></div>
     <%= rollover_button(:prepare, I18n.t('txt.button.prepare')) %>
   </div>
 

@@ -26,7 +26,6 @@ class Step2Controller < RegistrationStep
   CURRENT_STEP = 2
 
   def update
-
     if params[:javascript_disabled] == "1" && params[:registrant]
       reg = params[:registrant]
       if reg[:has_mailing_address] == "0"
@@ -37,6 +36,8 @@ class Step2Controller < RegistrationStep
       
     end
     super
+    
+    binding.pry
   end
 
   protected
@@ -54,7 +55,7 @@ class Step2Controller < RegistrationStep
     if @registrant.use_short_form?
       registrant_download_url(@registrant)
     else
-      registrant_step_3_url(@registrant)
+      registrant_step_5_url(@registrant)
     end
   end
 

@@ -28,6 +28,7 @@ class Step5Controller < RegistrationStep
   protected
 
   def advance_to_next_step
+    @registrant.advance_to_step_3
     @registrant.advance_to_step_4
     @registrant.advance_to_step_5
   end

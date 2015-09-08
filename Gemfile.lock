@@ -74,6 +74,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.1)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -164,6 +165,7 @@ GEM
       nokogiri (~> 1.4)
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (>= 0.0.9, < 0.2)
+    method_source (0.8.2)
     mime-types (1.25.1)
     multi_json (1.10.1)
     mysql2 (0.3.13)
@@ -186,6 +188,10 @@ GEM
       cocaine (~> 0.5.0)
       mime-types
     polyglot (0.3.4)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -261,6 +267,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
+    slop (3.6.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -326,6 +333,7 @@ DEPENDENCIES
   newrelic_rpm (= 3.6.0.83)
   nokogiri (= 1.5.9)
   paperclip (~> 3.0)
+  pry
   rack-robustness
   rails (= 3.2.18)
   rails-i18n
