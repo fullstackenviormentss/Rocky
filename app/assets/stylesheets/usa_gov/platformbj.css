@@ -1,22 +1,23 @@
+
 /***********************
 Table of Contents
 
 1. General & Misc
 2. Skip Link
 3. Header
-4. Search
-5. Top Navigation					
-6. Espanol and Kids Toggle
-7. HP Info Box and Content on This Page Box
-8. Inforamtion and Services
-9. Government Agencies
-10. Home Page Feature
-11. Footer
-12. Tagline
-13. Return to top buttons
-14. Survey
-15. Flow Indicator
-16. Forms
+4. Alert
+5. Search
+6. Top Navigation
+7. Espanol and Kids Toggle
+8. Most Popular
+9. Qoute
+10. Inforamtion and Services
+11. Government Agencies
+12. Home Page Feature
+13. Footer
+14. Tagline
+15. Return to top buttons
+16. Survey
 
 
 Media Queries
@@ -40,6 +41,9 @@ body {
   background-color: #fff;
   color: #000;
   -webkit-text-size-adjust: 100%;
+}
+main{
+  display: block;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -67,7 +71,7 @@ a:visited{
 a:hover, a:focus, a:active{
   color:#1e4570;
 }
-a:focus, input:focus, button:focus, textarea:focus, a:active, input:active, button:active, textarea:active, select:active, select:focus{
+a:focus, input:focus, button:focus, textarea:focus, select:focus, a:active, input:active, button:active, textarea:active, select:active{
   outline:#ff8c00 solid 3px;
 }
 h1{
@@ -79,12 +83,65 @@ h2 {
   font-weight: normal;
   padding: 0 0 0 0;
 }
+
+#content ul li, #content ol li{
+  line-height: 20px;
+}
+
+.hphdr2{
+    color: #c61f0c;
+    padding: 15px 0 0 0;
+    font-size: 170%;
+}
+
 input {
     -webkit-appearance: none;
     border-radius: 0;
 }
 
+input[type="checkbox"]{-webkit-appearance: checkbox; 
+}
+input[type="radio"]{-webkit-appearance: radio; 
+}
+
+/*E-mail friend input field*/
+#emlfnd {
+  padding: 0 0 0 0;
+}
+
+#emlfnd input[type="checkbox"]{-webkit-appearance: checkbox; 
+}
+
+#emlfnd input[type="text"] {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 15px;
+  height: 28px;
+  width: 50%;
+  border: 1px solid #000;
+
+} 
+
+#emlfnd textarea {
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 50%;
+  border: 1px solid #000;
+}
+
+/*E-mail friend input field end*/
+
 /*Buttons*/
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"],
+button{
+  font-family: Tahoma, Verdana, Arial, Sans-serif;
+  cursor: pointer;
+}
+
 .morebutton{
   display:block;
   float:left;
@@ -94,23 +151,69 @@ input {
   margin:15px 0 10px 80px;
   position:relative;
   background: #ebe6de;
-  cursor:pointer; 
+  cursor:pointer;
 }
 
 .moreicon{
-  background: url(../assets/assets/usa_gov/Icon_More.png) right;
+  background: url(/assets/usa_gov/Icon_More.png) right;
   background-repeat: no-repeat;
   margin: 0 0 0 0;
   padding: 5px 33px 5px 2px;
 }
 
 /*a{
-	color:#1e4570;
-	text-decoration: underline;	
+  color:#1e4570;
+  text-decoration: underline;
 }*/
 
 .mocklink{
-	text-decoration: underline;
+  text-decoration: underline;
+}
+
+ul.topics .mocklink {
+    text-decoration: underline;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.topicsmore{
+    display: block;
+    border: 1px solid #cdcdcd;
+    padding: 15px 15px 15px 15px;
+    margin: 0 0 15px 0;
+    width: 105%;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: right;
+}
+
+a:hover.topicsmore {
+    border: 1px solid #154285;
+    text-decoration:underline;
+}
+
+.topicsmore span{
+    display:inline-block;
+    background-image: url("/assets/usa_gov/Icon_Arrow_More_Service.png");
+    width: 33px;
+    height: 33px;
+    margin: 0 0 0 10px;
+    vertical-align: middle;
+    background-size: contain;
+}
+#officials h4 span, #agencies h4 span, #state-local h4 span{
+    display:inline-block;
+    background-image: url("/assets/usa_gov/Icon_Arrow_Red_Open.png");
+    width: 33px;
+    height: 33px;
+    margin: 0 0 0 10px;
+    vertical-align: middle;
+    background-size: contain;
+    transition: all 0.5s;
+}
+#officials:hover h4 span, #agencies:hover h4 span, #state-local:hover h4 span,
+#officials.active h4 span, #agencies.active h4 span, #state-local.active h4 span{
+    opacity:0;
 }
 
 /***********************
@@ -147,6 +250,9 @@ input {
   top: 0;
   z-index: 100;
 }
+#skiptargetholder {
+    margin: 0 0 0 0;
+}
 
 /***********************
 3. Header
@@ -156,7 +262,7 @@ input {
   position: relative;
 }
 #header>.container {
-    height: 60px;
+    height: 160px;
     position: relative;
 }
 
@@ -164,13 +270,69 @@ input {
   color: #fff;
 }
 
-#logo{
-  /*float: left;*/
-  padding: 15px 0 15px 0;
-  border: 0;
-  display: block;
+.cntrlogo {
   margin-left: auto;
   margin-right: auto;
+  padding: 20px 0 0 0;
+}
+
+.cntrlogo:lang(en) {
+  width: 380px;
+  height: 157px;
+}
+
+.cntrlogo:lang(es) {
+  width: 560px;
+  height: 157px;
+}
+
+.cntrlogo a, .cntrlogo a:visited{
+  font-size: 60px;
+  color: #fff;
+  display: block;
+  /*line-height: 80px;*/
+}
+
+.betalnk {
+  float: left;
+  margin: 0px 0 85px 0;
+  padding: 0 0 0 0;
+}
+
+.betalnk:lang(es) {
+  float: left;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+.betalnk li {
+  margin: 12px 0 12px 17px;
+  display: inline-block;
+  color: #fff;
+}
+
+.betalnk li:lang(es) {
+  margin: 12px 0 0 17px;
+  display: inline-block;
+  color: #fff;
+}
+
+.betalnk a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+.betalnk a:hover, #utilities a:active, #utilities a:focus  {
+  text-decoration: underline;
+}
+
+#logo{
+  /*float: left;
+  padding: 15px 0 15px 0;*/
+  border: 0;
+  /*margin-left: auto;
+  margin-right: auto;*/
 }
 
 #header h1 a, .logolink {
@@ -180,19 +342,14 @@ input {
   margin-right: auto;*/
 }
 
-h1 .small{
-    color:#4B4A4F;
-    font-size: ;
-}
-
 #utilities {
   float: right;
-  margin: -150px 0 85px 0;
+  margin: -170px 0 85px 0;
   padding: 0 0 0 0;
 }
 
 #utilities li {
-  margin: 12px 0 12px 48px;
+  margin: 12px 0 12px 17px;
   display: inline-block;
   color: #fff;
 }
@@ -220,7 +377,60 @@ h1 .small{
 }
 
 /***********************
-4. Search
+4. Alert
+***********************/
+#alertbox{
+    min-height: 75px;
+    width: 100%;
+    margin: 10px 0 20px 0;
+    background: #c61f0c; 
+    color: #fff;
+    background-image: url("/assets/usa_gov/Icon_Alert.png");
+    background-repeat: no-repeat;
+    background-position: left 20px top 25px;
+}
+
+#alertbox h2{
+    padding: 10px 0 10px 60px;
+    margin: 0 0 0 0;
+}
+
+#alertbox p{
+    padding: 0 0 10px 60px;
+    margin: 0 0 10px 0;
+}
+
+#alertbox a, #alertbox a:hover, #alertbox a:visited {
+    color: #fff;
+}
+
+#alertbox a:focus, #alertbox a:active{
+    outline: #fff solid 3px;
+}
+
+#aboutus {
+  position: relative;
+    background-color: #EBE6DE;
+    color: #1B50A0;
+    font-weight: bold;
+    font-size: 140%;
+    padding: 20px;
+    text-align: center;
+}
+#aboutus:after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin: 0 0 0 -10px;
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #EBE6DE;
+}
+/***********************
+5. Search
 ***********************/
 #search form {
     float: right;
@@ -236,7 +446,6 @@ h1 .small{
   font-size: 100%;
   line-height: 20px;
   height: 40px;
-    background-color:#fff;
 }
 
 ::-webkit-input-placeholder {
@@ -285,8 +494,8 @@ div.searchbkgnd{
 }
 
 div.searchttl{
-	margin: 0 0 0 0;
-	float:left;
+  margin: 0 0 0 0;
+  float:left;
 }
 
 div.searchttl p{
@@ -296,9 +505,42 @@ div.searchttl p{
   padding: 0 0 0 0;
   color: #fff;
 }
+#content div.searchttl p {
+  color: #c61f0c;
+  font-size: 170%;
+}
+
+/*HomePage Search*/
+#content .searchbkgnd {
+    background: transparent;
+    padding: 0 0 0 0;
+}
+#content .searchbkgnd .container {
+    padding: 0 0 0 0;
+    width: 100%;
+}
+#content #query {
+    border: 3px solid #D8D8D8;
+    box-shadow: inset 0 0 8px #D8D8D8;
+    width: 85%;
+    height: 55px;
+    font-size: 120%;
+}
+#content button#buscarSubmit {
+  width: 14%;
+  margin: 0 0 0 1%;
+  height:55px;
+}
+#content div.searchttl p{
+  color: #c61f0c;
+}
+
+#content #search form {
+    width: 100%;
+}
 
 /***********************
-5. Top Navigation
+6. Top Navigation
 ***********************/
 #mnnav {
   clear: both;
@@ -315,7 +557,7 @@ div.searchttl p{
   text-align: center;
   width: 14.33%;
   font-size: 110%;
-  /*background: url('../assets/assets/usa_gov/Line_Topnav.png');*/
+  /*background: url('/assets/usa_gov/Line_Topnav.png');*/
   background-position: left;
   background-repeat: no-repeat;
 }
@@ -324,16 +566,20 @@ div.searchttl p{
   background-image: none;
   width: 6%;
 }
-#mnnav li#moreservices {
+#mnnav li+li+li+li+li+li+li+li {
   width: 8%;
 }
 ul.navItems a {
-  display: block;
+  display: table;
   width: 100%;
   height: 115px;
   border-top: 10px solid transparent;
   text-decoration: none;
   color:#fff;
+}
+ul.navItems a:hover {
+  border: 1px solid white;
+  padding: 9px 0 0 0;
 }
 ul.navItems a:hover span, ul.navItems a:active span, ul.navItems a:focus span{
   text-decoration: underline;
@@ -342,11 +588,13 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   text-decoration: none;
 }
 
-#mnnav a.current {
+#mnnav a.current, ul.navItems a.current:hover {
   background: #fff;
+  border:none;
   border-top: 6px solid #c61f0c;
   color: #1b50a0;
   font-weight: normal;
+  padding: 4px 0 0 0;
 }
 
 
@@ -355,7 +603,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
 }
 
 #search-toggle.current .closer {
-	display: inline;
+  display: inline;
 }
 #search-toggle.current .searcher {
     display: none;
@@ -364,7 +612,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
     display: none;
 }
 #nav-toggle.current .closer {
-	display: inline;
+  display: inline;
 }
 #nav-toggle.current .menuer {
     display: none;
@@ -379,7 +627,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
 }
 
  /***********************
-6. Espanol and Kids Toggle
+7. Espanol and Kids Toggle
 ***********************/
 .hptoggles{
   width: 100%;
@@ -391,18 +639,23 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
 .hptoggles ul{
   float: right;
   margin: 0 0 0 0;
-  padding: 10px 0 15px 0;
+  padding: 19px 0 15px 0;
 }
 
 .hptoggles ul li{
   display: inline;
   margin: 0 0 0 0;
+  padding: 0 0 5px 0;
 }
 
 .engtoggle{
   position: relative;
   margin: 0 0 0 0;
   padding: 5px 0 5px 20px;
+}
+
+.hptoggles ul li.noTggle {
+    display: none;
 }
 
 /*li.engtoggle::after {
@@ -419,9 +672,13 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  margin: 0 2px 0 0;
+  margin: 0 7px 0 0;
   padding: 5px 20px 5px 20px;
   background: #022945;
+}
+
+.hptoggles .engtoggle a:hover{
+    text-decoration: underline;
 }
 
 .kidstoggle{
@@ -435,161 +692,623 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   padding: 5px 20px 5px 20px;
   background: #f8d280;
 }
- 
- /***********************
-7. HP Info Box and Content on This Page Box
-***********************/
- .info{
-     background-color: #E4EAEE;
-     color:#4B4A4F;
-     padding: 5px 5px 5px 15px;
-     line-height: 35px;
- }
-.info:before{
-    content: "\f05a";
-    color:#4B4A4F;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    font-size: 30px;
-    padding-right: 0.5em;
-    position: relative;
-    top: 5px;
-    left: 0;
+
+.hptoggles .kidstoggle a:hover{
+    text-decoration: underline;
 }
+
+/***********************
+8. Most Popular
+***********************/
+
+.background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.fade{
+  width: 100%;
+  height: 100%;
+}
+[data-bg]{
+  background-image: none;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg5 {
+  background-image: url("/assets/usa_gov/Contact_Federal_Agencies.jpg");
+ }
+html:lang(es) .bg5 {
+  background-image: url("/assets/usa_gov/Contact_State.jpg");
+}
+
+.bg6 {
+  background-image: url("/assets/usa_gov/Contact_State.jpg");
+}
+html:lang(es) .bg6 {
+  background-image: url("/assets/usa_gov/Contact_Consulate.jpg");Contact_State.jpg
+}
+
+.bg7 {
+  background-image: url("/assets/usa_gov/Contact_Elected.jpg");
+}
+
+#trending {
+  position: relative;
+  margin: 15px 0;
+  background-size: contain;
+}
+#trending .backdrop, #trending .backdrop2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: contain;
+  opacity: 1;
+  transition: opacity 0.9s;
+}
+#trending .new {
+  z-index: 1;
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+#trending .new>li {
+  overflow: hidden;
+  margin: 0 0 12px 0;
+  padding: 3px 15px 3px 15px;
+}
+#trending .topic {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin: 111px 0 0 0;
+  border: none;
+  transition: all 0.5s;
+  background: none;
+}
+#trending .inner {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  transition: height 0.5s, background 0.5s;
+  background: rgba(255, 255, 255, 0.92);
+}
+#trending .inner.expanded {
+  height: 100%;
+  background: #fff;
+}
+#trending .inner:hover {
+  background: #fff;
+}
+#trending .inner ul {
+  list-style-type: square;
+  color: #1B50A0;
+  max-height: 102px;
+  overflow: hidden;
+}
+#trending .inner li {
+  padding-right: 14px;
+}
+#trending .inner p {
+  padding: 0 10px 0 10px;
+  max-height: 102px;
+  overflow: hidden;
+  margin: 0 0 0 0;
+}
+#trending h2 {
+  margin: 0;
+  height: 90px;
+  width: 100%;
+  font-size: 135%;
+}
+#trending button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-top: 0px solid #c61f0c;
+  background: none;
+  text-align: left;
+  font-size: inherit;
+  transition: all 0.5s;
+  background-image:url(/assets/usa_gov/Icon_Red_Arrow_Up.png);
+  background-position: top 30px right 10px;
+  background-repeat: no-repeat;
+  padding: 10px 30px 10px 15px;
+  cursor: pointer;
+}
+#trending .expanded button {
+  height: 200px; 
+  padding-bottom: 130px; 
+  color: #c61f0c;
+  border-top: 5px solid #c61f0c;
+  background-image:url(/assets/usa_gov/Icon_Red_Arrow_Down.png);
+}
+#trending .inner:hover button {
+  border-top: 5px solid #c61f0c;
+}
+
+.slick.slick-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.slick div {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
  /***********************
-8. Information and Services
+9. Quote
 ***********************/
- 
- 
+.quote{
+    height: auto;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+blockquote{
+    display: inline-block;
+    padding: 25px 0 0 10px;
+    margin: 0 0 25px 0;
+    text-align: left;
+    width: 60%;
+    font-size: 135%;
+}
+
+.fquote, .lquote{
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 50px;
+}
+.fquote{
+   background-image:url("/assets/usa_gov/Quote_Start.png");
+    vertical-align: top;
+}
+.lquote{
+   background-image: url("/assets/usa_gov/Quote_End.png");
+   vertical-align: bottom;
+}
+
+ /***********************
+10. Information and Services
+***********************/
+ #topics{
+    padding: 0 0 0 0;
+}
+
+#topics li{
+    list-style-type: none;
+    height: 300px;
+    margin: 0 0 20px 0;
+}
+
+a.outline{
+    border: 1px solid #cdcdcd;
+    height: 100%;
+    padding: 5px 5px 5px 5px;
+    display: block;
+    text-decoration: none;
+    width: 105%;
+}
+a.outline.more{
+    height: auto;
+}
+
+a:hover.outline{
+    border: 1px solid #154285;
+}
+
+#topics li a div{
+    height: 145px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+}
+
+#topics li p {
+    margin: 0 0 0 0;
+    padding: 0 0 0 5px;
+}
+
+.topic-benefit{
+    background-image:url("/assets/usa_gov/Topic_Benefit.jpg");
+}
+
+.topic-tax{
+    background-image:url("/assets/usa_gov/Topic_Tax.jpg");
+}
+
+.topic-passport{
+    background-image:url("/assets/usa_gov/Topic_Passport.jpg");
+}
+
+.topic-mortgage{
+    background-image:url("/assets/usa_gov/Topic_Refinance.jpg");
+}
+
+.topic-immigration{
+    background-image:url("/assets/usa_gov/Topic_Immigration.jpg");
+}
+
+.topic-job{
+    background-image:url("/assets/usa_gov/Topic_Job.jpg");
+}
+
+.topic-health{
+    background-image:url("/assets/usa_gov/Topic_Health.jpg");
+}
+
+.topic-auction{
+    background-image:url("/assets/usa_gov/Topic_Auction.jpg");
+}
+.topic-flag{
+    background-image:url("/assets/usa_gov/Topic_Immigration.jpg");
+}
+.topic-heart{
+    background-image:url("/assets/usa_gov/Topic_Health_Resources.jpg");
+}
+.topic-globe{
+    background-image:url("/assets/usa_gov/Topic_Passport.jpg");
+}
+.topic-agencies{
+    background-image:url("/assets/usa_gov/Topic_Agencies_Elected.jpg");
+}
+.topic-scales{
+    background-image:url("/assets/usa_gov/Topic_Law.jpg");
+}
+.topic-cap{
+    background-image:url("/assets/usa_gov/Topic_Education_02.jpg");
+}
+.icon-plus-white{
+    background-image: url("/assets/usa_gov/Icon_Nav_More.png");
+}
+
+#topics li a span{
+   display: block;
+   padding: 10px 0 15px 65px;
+   min-height: 60px;
+   color: #154285;
+   font-weight: bold;
+}
+#topics li a.more span{
+   padding: 10px 50px 10px 10px;
+   color: white;
+   background-color:#1B50A0;
+   line-height:40px;
+   text-align: right;
+   background-position: center right;
+   margin: 0 0 5px 0;
+}
+
+#topics li a:hover span{
+   text-decoration: underline;
+}
+
+.hp-srvc-benefit{
+   background:url("/assets/usa_gov/Topic_Icon_Benefit.png")5px 0 no-repeat;
+}
+
+.hp-srvc-bullhorn{
+   background:url("/assets/usa_gov/Topic_Icon_Alert.png")5px 0 no-repeat;
+}
+
+.hp-srvc-flag{
+   background:url("/assets/usa_gov/Topic_Icon_About_USA.png")5px 0 no-repeat;
+}
+
+.hp-srvc-ballot{
+   background:url("/assets/usa_gov/Topic_Icon_Voting.png")5px 0 no-repeat;
+}
+
+.hp-srvc-tag{
+   background:url("/assets/usa_gov/Topic_Icon_Sale.png")5px 0 no-repeat;
+}
+
+.hp-srvc-mortgage{
+   background:url("/assets/usa_gov/Topic_Icon_Mortgage.png")5px 0 no-repeat;
+}
+
+.hp-srvc-tax{
+   background:url("/assets/usa_gov/Topic_Icon_Money.png")5px 0 no-repeat;
+}
+
+.hp-srvc-medal{
+   background:url("/assets/usa_gov/Topic_Icon_Military.png")5px 0 no-repeat;
+}
+
+.hp-srvc-scales{
+   background:url("/assets/usa_gov/Topic_Icon_Law.png")5px 0 no-repeat;
+}
+
+.hp-srvc-job{
+   background:url("/assets/usa_gov/Topic_Icon_Job.png")5px 0 no-repeat;
+}
+
+.hp-srvc-globe{
+   background:url("/assets/usa_gov/Topic_Icon_Immigration.png")5px 0 no-repeat;
+}
+
+.hp-srvc-heart{
+   background:url("/assets/usa_gov/Topic_Icon_Health.png")5px 0 no-repeat;
+}
+
+.hp-srvc-leaf{
+   background:url("/assets/usa_gov/Topic_Icon_Environment.png")5px 0 no-repeat;
+}
+
+.hp-srvc-cap{
+   background:url("/assets/usa_gov/Topic_Icon_Education.png")5px 0 no-repeat;
+}
+
+.hp-srvc-tipi{
+   background:url("/assets/usa_gov/Topic_Icon_Native.png")5px 0 no-repeat;
+}
+.hp-srvc-agencies{
+   background:url("/assets/usa_gov/Topic_Icon_Elected_Officials.png")5px 0 no-repeat;
+}
+
+
 /***********************
-9. Government Agencies
+11. Government Agencies
 ***********************/
 
+#contact h4 {
+  margin: 15px;
+  font-weight: normal;
+  font-size: 120%;
+}
+#contact a {
+  display: table;
+  padding: 0 5px 0 40px;
+  text-decoration:none;
+  height:46px;
+  width:100%;
+  background: #C7DAF1 url(/assets/usa_gov/Icon_Arrow_Blue.png) no-repeat left 10px center;
+}
+#contact a span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+#contact a:hover {
+  text-decoration:underline;
+}
+#contact a.more {
+  background: none;
+  text-align: right;
+  color: #ffffff;
+  height: 40px;
+  padding: 10px 0 10px 0;
+  line-height: 20px;
+  margin: 5px 0 5px 0;
+  font-weight: bold;
+}
+#contact a.more span {
+  display: inline-block;
+  background: #C7DAF1 url(/assets/usa_gov/Icon_Arrow_Blue.png) no-repeat center;
+  width: 22px;
+  height: 22px;
+  margin: 0 0 0 10px;
+  vertical-align: bottom;
+  background-size: contain;
+}
+
+#officials, #agencies, #state-local {
+  position: relative;
+  color: white;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-color: #EDE9DE;
+  overflow: hidden;
+}
+#officials > *, #agencies > *, #state-local > * {
+  position: relative;
+  z-index: 1;
+}
+#officials .underlay, #agencies .underlay, #state-local .underlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#officials .overlay, #agencies .overlay, #state-local .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: background-color 0.5s;
+  z-index: 0;
+}
+#officials a, #agencies a, #state-local a {
+  opacity: 0;
+  position: relative;
+  transition: all 0.5s ease;
+}
+#officials a:hover, #officials a:active, #officials a:focus, #officials.active a,
+#agencies a:hover, #agencies a:active, #agencies a:focus, #agencies.active a,
+#state-local a:hover, #state-local a:active, #state-local a:focus, #state-local.active a {
+  opacity: 1;
+  top: 0;
+  transform: translate(0, 0px);
+}
+#officials:hover .overlay, #officials:active .overlay, #officials:focus .overlay, #officials.active .overlay,
+#agencies:hover .overlay, #agencies:active .overlay, #agencies:focus .overlay, #agencies.active .overlay,
+#state-local:hover .overlay, #state-local:active .overlay, #state-local:focus .overlay, #state-local.active .overlay {
+  background-color: rgba(20, 90, 190, 0.8);
+}
+#officials:hover a, #officials:active a, #officials:focus a,
+#agencies:hover a, #agencies:active a, #agencies:focus a,
+#state-local:hover a, #state-local:active a, #state-local:focus a {
+  opacity: 1;
+  top: 0;
+  transform: translate(0, 0px);
+}
+
+.quicktitle {
+    font-weight: bold;
+    font-size: 120%;
+    padding: 0 0 15px 0;
+    margin: 0 0 0 0;
+}
+
+.quickmenu {
+    margin: 0 0 0 0;
+}
+
+.quickmenu li {
+    display: block;
+}
+
+.quickmenu li a {
+    display: inline-block;
+    background-color: #1b50a0;
+    color: #fff;
+    padding: 10px 14px 10px 14px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    line-height: 20px;
+}
+
+.quickmenu li a:hover, .quickmenu li a:focus, .quickmenu li a:active{
+    text-decoration: underline;
+    background-color: #fff;
+    color: #1b50a0;
+    border: 1px solid;
+    border-color: #1b50a0;
+}
+
 /***********************
-10. Home Page Feature 
+12. Home Page Feature
 ***********************/
 
 
 
 /***********************
-11. Footer
+13. Footer
 ***********************/
  #footer{
   background: #4b4b4d;
   color: #fff;
 }
- 
+
  #footer ul{
   margin: 0 0 0 0;
-  padding: 0 0 40px 0;
+  padding: 0 0 20px 0;
  }
- 
+
  #footer ul li, .headercontact ul li{
   list-style-type: none;
  }
- 
+
  #footer a{
   color: #fff;
   text-decoration: none;
   white-space: nowrap;
  }
- #footer span.icon-phone {
+ #footer span.icon-phone, #header span.icon-phone {
   white-space: normal;
+  line-height: normal;
+  height: 27px;
  }
- 
+
  /*span.icon-phone.spcng {
   line-height: 20px;
  }*/
- 
+
  #footer a:visited, .headercontact a {
- 	color:#bcbcbc;
-    font-size: 80%;
- } 
- 
+  color:#e8e8e8;
+ }
+
  #footer a:hover, #footer a:focus, #footer a:active,
  #footer a:hover span, #footer a:focus span, #footer a:active span,
  .headercontact a:hover span, .headercontact a:focus span, .headercontact a:active span{
   color: #fff;
   text-decoration: underline;
  }
- 
-  div.footernav, div.footerconnected, div.footercontact{
-    height: 290px;
-  }
-  
+
   div.footernav ul li{
     float: none;
     width: 100%;
     padding: 0 0 10px 0;
-	line-height: 17px;
+  line-height: 17px;
   }
-  
+
   div.footercontact ul li{
     margin: 0 0 10px 0;
   }
-  
+
   div.footerconnected ul li{
     float: left;
     width: 49%;
     margin: 0 0 8px 0;
   }
-  
+
   div.footerconnected a{
     display: block;
   }
-  
+
   .cnnctfcbk {
-  background: url('../assets/assets/usa_gov/Icon_Connect_Facebook.png');
+  background: url('/assets/usa_gov/Icon_Connect_Facebook.png');
   background-repeat: no-repeat;
   padding: 6px 0 6px 50px;
   }
-  
+
   .cnncttwtr {
-  background: url('../assets/assets/usa_gov/Icon_Connect_Tweeter.png');
+  background: url('/assets/usa_gov/Icon_Connect_Tweeter.png');
   background-repeat: no-repeat;
   padding: 6px 0 6px 50px;
   }
-  
+
   .cnncttmblr {
-  background: url('../assets/assets/usa_gov/Icon_Connect_Tumblr.png');
+  background: url('/assets/usa_gov/Icon_Connect_Tumblr.png');
   background-repeat: no-repeat;
   padding: 6px 0 6px 50px;
   }
-  
+
   .cnnctrss {
-  background: url('../assets/assets/usa_gov/Icon_Connect_RSS.png');
+  background: url('/assets/usa_gov/Icon_Connect_RSS.png');
   background-repeat: no-repeat;
   padding: 6px 0 6px 50px;
   }
-  
+
   .cnnctytb {
-  background: url('../assets/assets/usa_gov/Icon_Connect_Youtube.png');
+  background: url('/assets/usa_gov/Icon_Connect_Youtube.png');
   background-repeat: no-repeat;
   padding: 6px 0 6px 50px;
   }
-  
+
   .cnncteml {
-  background: url('../assets/assets/usa_gov/Icon_Connect_Email.png');
+  background: url('/assets/usa_gov/Icon_Connect_Email.png');
   background-repeat: no-repeat;
   padding: 6px 0 6px 50px;
   white-space: nowrap;
   }
-  
+
   .cnnctglg {
-  background: url('../assets/assets/usa_gov/Icon_Connect_Google.png');
+  background: url('/assets/usa_gov/Icon_Connect_Google.png');
   background-repeat: no-repeat;
   padding: 6px 0 6px 50px;
   }
-  
+
  .footertagline{
     background: #000;
     clear:both;
   }
-  
+
   /***********************
-12. Tagline
+14. Tagline
 ***********************/
 .tagline{
   margin: 0 auto 0 auto;
@@ -602,28 +1321,33 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
 }
 
 #footer .tagline a{
-	text-decoration: none;
+  text-decoration: none;
 }
 
 #footer .tagline a:hover, .tagline a:focus, tagline a:active{
-	text-decoration: underline;
+  text-decoration: underline;
 }
- 
+
 .tagline .volver{
   float:right;
   padding:  0 14px 0 0;
 }
 
 /***********************
-13. Return to top buttons
+15. Return to top buttons
 ***********************/
+.statebacktotop{
+ padding: 160px 0 5px 0;
+ text-align:right;
+ }
+
 .volver{
   padding:10px 0 5px 0;
   text-align:right;
 }
 .volver a{
   display:inline-block;
-  padding:0 30px 4px 0;
+  padding:0 0 4px 0;
   text-decoration:none;
 }
 .volver a:hover, a:focus, a:active{
@@ -635,7 +1359,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
 }
 
 /***********************
-14. Survey
+16. Survey
 ***********************/
 
   #vocModalOverlay {
@@ -652,104 +1376,64 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
       padding:0 0 0 0;
   }
 
-  #vocModal {
+  div#vocModal {
       width:50%;
-      margin:auto auto auto auto;
-      padding: 25px 25px 25px 25px;
+      min-width:320px;
+      margin: auto auto auto auto;
+      padding: 100px 20px 20px 20px;
       text-align: center;
       border: thin #000 solid;
       background-color:#fff;
       z-index:10000; /* places the modal dialog on top of everything else */
       position:fixed;
       top:25%;
-      left:25%;
       display:none;
-      background-color: #FFF;
-      background-image: url('/resources/assets/assets/usa_gov/gobierno_logo-mobile.gif');
-      background-repeat: no-repeat;
-      background-position:0px 15px
   }
   #vocModal:before {
+    position:absolute;
     display:block;
+    top:0;
+    left:0;
     content:"";
-    height:10px;
+    height:80px;
     width:100%;
-    padding:0 25px 0 25px;
-    position:relative;
-    left:-25px;
-    top:-25px;
-    background-color:red;
-    background: -moz-linear-gradient(top, #bc0c15 0%, #72050a 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bc0c15), color-stop(100%,#72050a));
-    background: -webkit-linear-gradient(top, #bc0c15 0%,#72050a 100%);
-    background: -o-linear-gradient(top, #bc0c15 0%,#72050a 100%);
-    background: -ms-linear-gradient(top, #bc0c15 0%,#72050a 100%);
-    background: linear-gradient(top, #bc0c15 0%,#72050a 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc0c15', endColorstr='#72050a',GradientType=0 );
+    background-image:url("https://www.usa.gov/sites/all/themes/usa/images/usa_logo_white_with_bg.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-color: #1B50A0;
   }
+  html:lang(es) #vocModal:before {
+    background-image:url("https://gobierno.usa.gov/sites/all/themes/usa/images/Logo_Gobierno.png");
+  }
+
   #vocModal p {
     width:100%;
     max-width:400px;
-    margin:auto auto auto auto;
-  }
-  #vocModal p.firstpara {
-    margin:35px auto auto auto;
+    margin:auto auto 20px auto;
   }
   #vocModal h1 {
     text-align:center;
   }
 
   #vocEnter, .vocCancelButton, .start-survey  {
-    height:30px;
-    font-size:0.9em; /* suggested to usa percentage of 90% - todo*/
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-family: Tahoma, Verdana, Arial, sans-serif;
+    height:38px;
+    font-size:100%;
     font-weight: bold;
+    padding: 6px 12px 6px 12px;
+    cursor: pointer;
   }
   .vocCancelButton {
-    cursor: pointer;
     color:#022945;
-    background: #fff; /* Old browsers */
-    background: -moz-linear-gradient(top, #fff 0%, #ddf5ff 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#ddf5ff)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #fff 0%,#ddf5ff 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #fff 0%,#ddf5ff 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #fff 0%,#ddf5ff 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #fff 0%,#ddf5ff 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#ddf5ff',GradientType=0 ); /* IE6-9 */
+    background:#fff;
     border: 1px #24496B solid;
   }
 
   #vocEnter, .start-survey {
-    cursor: pointer;
     color:#fff;
-    background-color: #6d060a;
-    background: -moz-linear-gradient(top, #c00c15 0%, #6d060a 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c00c15), color-stop(100%,#6d060a));
-    background: -webkit-linear-gradient(top, #c00c15 0%,#6d060a 100%);
-    background: -o-linear-gradient(top, #c00c15 0%,#6d060a 100%);
-    background: -ms-linear-gradient(top, #c00c15 0%,#6d060a 100%);
-    background: linear-gradient(top, #c00c15 0%,#6d060a 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c00c15', endColorstr='#6d060a',GradientType=0 ); 
-    border: 1px solid #9c0e1c;
-  }
-
-  .banner {
-    padding-bottom: 10px; /*need to call out all and tes - todo */
-   /*border-bottom: 1px solid black;*/
-  }
-
-  .modalCloseButton {
-      float:right;
-      position:absolute;
-      top:10px;
-      left:95%;
-  }
-  .modalCloseButton img {
-      border:0;
+    background: #c61f0c;
+    border: 1px #c61f0c solid;
+    margin: 0 5px 0 0;
   }
 
   .screen-reader-offscreen {
@@ -761,14 +1445,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   }
 
   #vocModal input.top-right {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    text-decoration: none;
-    background-color: #808080;
-    color: #000;
-    font-weight: bold;
-    font-size: 80%;
+    display:none;
   }
 
 .content {
@@ -795,28 +1472,36 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   width: 150px;
   font-size: 1.2em; /* suggestion to change to 120% - todo */
   cursor: pointer;
-    
+
 }
 #survey-target {
   display:none;
 }
 
-
-
 @media (max-width: 1200px) {
   #search input[type="text"] {
-    width: 590px;
+    width: 570px;
   }
+  
+  #utilities:lang(es) {
+  float: right;
+  margin: -178px 0 85px 0;
+  padding: 0 0 0 0;
+ }
 }
- 
+
 @media (max-width: 992px) {
 
   body{
     font-size:100%;
   }
-   #logo{
-    float:left;
-   }
+   .cntrlogo, .cntrlogo:lang(en), .cntrlogo:lang(es) {
+    width: auto;
+    height: auto;
+    float: left;
+    padding: 0 0 0 0;
+  }
+
   h2{
     font-size: 117%;
   }
@@ -824,15 +1509,20 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
     font-size:90%;
   }
   #toggles {
-  	font-size: 80%;
+    font-size: 80%;
   }
- 
+
   #mnnav li{
     padding: 0 0 0 0;
   }
   #header>.container {
       height: auto
   }
+  
+  .betalnk {
+    display: none;
+  }
+  
   #logo {
     height: 80px;
   }
@@ -853,19 +1543,28 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
     border: none;
     color: #fff;
     margin: 0 0 0 0;
-    font-size: 120%;
+    font-size: 130%;
   }
   #search-toggle {
     padding: 17px 12px 26px 12px;
   }
   #nav-toggle{
+    margin: 18px 0px 21px 9px;
+    padding: 5px 0 5px 0;
+  }
+  .show-nav #nav-toggle{
     padding: 18px 0px 26px 9px;
+    margin: 0 0 0 0;
   }
   #mnnav li{
     border: none;
   }
   ul.navItems a {
     border-top: 0px solid transparent;
+  }
+  ul.navItems a:hover {
+    border: none;
+    padding: 0 0 0 0;
   }
   .headercontact{
     display: block;
@@ -881,7 +1580,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   .show-search #search, .show-nav #mnmenu {
     clear: both;
   }
-  .show-search #search li, .show-nav #mnnav li, .show-nav #mnnav li#moreservices {
+  .show-search #search li, .show-nav #mnnav li {
     width: 100%;
     height: auto;
     text-align: left;
@@ -894,14 +1593,13 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
     border-bottom: 1px solid #27558a;
     box-sizing: border-box;
   }
-  #mnnav #moreservices a {
-    background: #ebe6de;
-  }
   .show-search #search a.current, .show-nav #mnnav a.current {
     border-top: none;
-    border-left: 10px solid #c61f0c;
+    border-left: 6px solid #c61f0c;
+    border-bottom: 1px solid #1b50a0;
+    padding: 6px 12px 6px 6px;
   }
-  
+
   #search, #mnmenu {
     display: none;
   }
@@ -921,7 +1619,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
     font-size: 90%;
     background: #1b50a0;
   }
-  
+
   div.searchbkgnd{
     display: none;
   }
@@ -940,22 +1638,39 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   div.searchbkgnd{
       padding: 13px 20px 20px 20px;
   }
+
+  .quickmenu li {
+  display: inline-block;
+  }
 }
 
- @media (min-width: 992px){
-  
+ @media (min-width: 992px) {
+   #contact{
+     border-right: 1px solid #c9c9c9;
+   }
+   #contact h4 {
+     background-image: none;
+     height: 33px;
+     line-height: 33px;
+   }
  }
-
 @media (max-width: 991px) {
   #skiplinkholder a, #skiplinkholder a:link, #skiplinkholder a:visited {
   display: none;
+  } 
+ .betalnk {
+    display: none;
   }
   #header h1 a {
-	height: auto;
-	width: auto;
-	}
+  height: auto;
+  width: auto;
+  }
   #utilities{
     display: none;
+  }
+  .cntrlogo, .cntrlogolang(es), .cntrlogo:lang(en)  {
+    width: auto;
+    padding: 0 0 0 0;
   }
   #logo{
     height:100px;
@@ -970,9 +1685,25 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
     float: none;
   }
   .hptoggles{
-  	font-size: 95%;
+    font-size: 95%;
   }
   
+#content ul li, #content ol li{
+  line-height: 25px;
+}
+
+ #trending .inner ul {
+     max-height: 130px;
+  }
+  
+ #trending .inner p {
+     margin: 16px 0 16px 0;
+  }
+  
+  #topics li a div{
+    background-size: cover;
+  }
+
   div.footernav, div.footerconnected, div.footercontact{
     height: auto;
   }
@@ -985,7 +1716,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   div.footernav ul li{
       float: none;
       width: 100%;
-	  line-height: 25px;
+    line-height: 25px;
     }
 
   div.footerconnected ul li{
@@ -993,21 +1724,113 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
       width: 100%;
       margin: 0 0 15px 0;
   }
-	.volver{
-		text-align:center;
-	}
-	.volver a{
-  	  padding:0 0 0 0;
-  	}
-	.tagline .volver, .tagline p{
-  		float: none;
-  		text-align:center;
-  	}
+  .volver{
+    text-align:center;
+  }
+  .volver a{
+      padding:0 0 0 0;
+    }
+  .tagline .volver, .tagline p{
+      float: none;
+      text-align:center;
+    }
+
+    .statebacktotop{
+    text-align: center;
+    padding: 60px 0 0 0;
+   }
+
+  #trending .background {
+    display: none;
+  }
+
+  #trending {
+    border: none;
+    background: #EDE9DE;
+    padding: 15px 0 0 0;
+  }
+
+  #trending .topic, #trending h2, #trending .inner {
+    height: 60px;
+  }
+  #trending .topic {
+    margin: 0 0 0 0;
+  }
+  #trending .topic.expanded {
+    height: 400px;
+  }
+  #trending h2 {
+    font-size: 140%;
+  }
+  .inner .bg1, .inner .bg2, .inner .bg3, .inner .bg4 {
+    height: 0px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s;
+  }
+  .inner.expanded .bg1, .inner.expanded .bg2, .inner.expanded .bg3, .inner.expanded .bg4 {
+    height: 200px;
+  }
+
+  #officials, #agencies, #state-local {
+    background-image: none;
+  }
+  #officials a, #agencies a, #state-local a {
+    opacity: 1;
+    margin: 0 0 15px 0;
+  }
+  #officials .overlay, #agencies .overlay, #state-local .overlay {
+    background-color: rgba(20, 90, 190, 0.8);
+  }
+  #officials, #agencies, #state-local {
+    height: 90px;
+    transition: all 0.5s;
+  }
+  #officials h4, #agencies h4, #state-local h4 {
+    text-shadow: 0px 2px 5px #000;
+    height: 90px;
+    margin: 0;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s;
+  }
+  #officials:hover, #officials:active, #officials:focus, #officials.active,
+  #agencies:hover, #agencies:active, #agencies:focus, #agencies.active,
+  #state-local:hover, #state-local:active, #state-local:focus, #state-local.active {
+    height: 365px;
+  }
+  #officials:hover h4, #officials:active h4, #officials:focus h4, #officials.active h4,
+  #agencies:hover h4, #agencies:active h4, #agencies:focus h4, #agencies.active h4,
+  #state-local:hover h4, #state-local:active h4, #state-local:focus h4, #state-local.active h4 {
+    height: 90px;
+    margin: 15px;
+  }
+
+
+  blockquote{
+      padding: 15px 0 0 10px;
+      margin: 0 0 15px 0;
+      width: 70%;
+      font-size: 100%;
+  }
+
+  .fquote, .lquote{
+      width: 60px;
+      height: 50px;
+  }
+  
+  #trending button {
+    font-size: 85%;
+    padding: 0px 30px 0px 15px;
+    background-position: top 20px right 10px;
+  }
 }
 
 @media (max-width: 768px) {
   #logo {
-    height: 80px;
+    height: 75px;
   }
   #toggles{
     display:block;
@@ -1024,7 +1847,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   }
   .hptoggles ul {
     float: none;
-  	text-align: center;
+    text-align: center;
   }
 
   #search input[type="text"] {
@@ -1032,14 +1855,13 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
     }
   #search button {
     width: 20%;
-    }  
-  div.footernav, div.footerconnected, div.footercontact{  
+    }
+  div.footernav, div.footerconnected, div.footercontact{
     height: auto;
   }
   div.searchbkgnd {
     padding: 13px 0 0 0;
     position: absolute;
-    top: 80px;
     width: 100%;
     background: none;
     border:none;
@@ -1050,27 +1872,106 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   .show-search div.searchbkgnd {
     display: none;
   }
+
+  .quickmenu li {
+  display: inline-block;
+  }
+  
+  a.outline {
+    width: auto;
+  }
+      
+  #topics li{
+    height: auto;
+  }
+  
+  #topics li a div{
+    display: none;
+  }
+  
+  #topics li a span {
+    min-height: 45px;
+    padding: 5px 0 8px 65px;
+  
 }
+  #topics li a.more span {
+    min-height: 35px;
+    line-height:30px;
+    margin: 0 0 20px 0;
+    /* text-align:center; */
+    
+  
+    /* background-position: left; */
+}
+  #topics li a.more p {
+    text-align: right;
+    padding:0;
+  
+}
+  
+  #topics li p {
+    padding: 0 0 0 65px;
+    margin: -15px 0 0 0;
+  }
+  
+  .topicsmore{
+    width: auto;
+    }
+  
+#emlfnd input[type="text"] {
+  width: 60%;
+} 
+
+#emlfnd textarea {
+  width: 60%;
+}
+}
+
 @media (max-width: 480px) {
   
+  .cntrlogo, .cntrlogo:lang(en), .cntrlogo:lang(es) {
+    padding: 20px 0 0 0;
+  }
+  
+  #logo:lang(es) {
+    height: 49px;
+  }
+
   .hptoggles ul li{
-  	margin: 0 5px 0 5px;
+    margin: 0 5px 0 5px;
   }
   .hptoggles .engtoggle a{
-  	margin: 0 0 0 0;
+    margin: 0 0 0 0;
   }
   li.engtoggle::after{
-  	right: -8px;
+    right: -8px;
   }
-   
-  #search button {
-    font-size: 90%;
-  }  
 
+  #search button {
+    font-size: 100%;
+  }
+
+  #trending .topic, #trending h2, #trending .inner {
+    height: 60px;
+  }
+
+  .quickmenu li {
+  display: inline-block;
+  }
+  
+  .fquote, .lquote{
+      width: 36px;
+      height: 30px;
+  }
+  
+#emlfnd input[type="text"] {
+  width: 100%;
+} 
+
+#emlfnd textarea {
+  width: 100%;
 }
-/***********************
-14. Flow Indicator
-***********************/
+}
 
 .flowIndicator {
     margin:auto;
@@ -1080,6 +1981,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   display: -ms-flexbox;      /* TWEENER - IE 10 */
   display: -webkit-flex;     /* NEW - Chrome */
   display: flex;   
+  text-transform: uppercase;
 }
 .flowIndicator div {
     display:inline-block;
@@ -1172,6 +2074,16 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
     top: 15px;
     left:25px;
 }
+@media(max-width: 1200px){
+  .flowIndicator div {
+    line-height:40px;
+  }
+}
+@media(max-width: 992px){
+  .flowIndicator div {
+    line-height: 20px;
+  }
+}
 @media (max-width: 768px) {
     .flowIndicator > div {
       padding: 0;
@@ -1180,7 +2092,7 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
         font-size: 14px;
         text-align: left;
     }
-	.flowIndicator > div > span {
+  .flowIndicator > div > span {
         display: block;
     }
     .flowIndicator > .active{
@@ -1194,6 +2106,9 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
   left: 40%;
         font-size: 17px;
 }
+.flowIndicator div span{
+    display: none
+}
 .flowindicator-icon{
     position: relative;
     top: 15px;
@@ -1203,89 +2118,4 @@ ul.navItems a.current:hover span, ul.navItems a.current:active span, ul.navItems
     .active > i{
         color:#fff;
     }
-}
-
-/***********************
-14. Forms
-***********************/
-
-.inline-form{
-    border: 2px solid #E4EAEE;
-    padding:0 0 15px 0;
-    margin: 15px 0 15px 0;
-}
-.form-row{
-    border-bottom: dotted 1px #ddd;
-    padding: 15px;
-}
-.form-row-alt{
-background-color: #E4EAEE;}
-.form-row label{
-    font-weight: bold;
-    line-height: 22px;
-}
-.form-control{
-display: block;
-  width: 300px;
-  height: 35px;
-  padding: 20px;
-  border: solid 1px #ddd;
-    font-size: 100%;
-}
-.form-control-inline{
-    display: inline-block;
-    margin-right: 5px;
-    width:120px;
-}
-input[type='checkbox'] { 
-    -webkit-appearance:checkbox;
-}
-
-
-input[type='radio'] {
-     -webkit-appearance:radio;
-}
-.actionRow{
-    margin: 15px 15px 0 15px;
-    clear: both;
-    overflow: hidden;
-}
-.btn{
-    margin: 0 0 0 0;
-  padding: 7px 0 10px 0;
-  font-size: 130%;
-  font-weight: normal;
-  line-height: 20px;
-  width: 130px;
-  height: 40px;
-}
-.btn:hover{
-    text-decoration: underline;
-    cursor: pointer;
-}
-.primary-button {
-  border: solid 1px #1b50a0;
-  background: #fff;
-  color: #1b50a0;
-    float: right;
-}
-.nextIcon{
-    background-image: url(/assets/usa_gov/Icon_Arrow_More_Service.png);
-    background-repeat: no-repeat;
-	background-size: initial;
-	background-position: right;
-	padding: 0 50px 2px 0;
-}
-.secondary-button {
-  border: solid 1px #ddd;
-  background: #fff;
-  color: #4B4A4F;
- float: left;
-}
-.backIcon{
-    background-image: url(/assets/usa_gov/Icon_Arrow_back.png);
-    background-repeat: no-repeat;
-	background-size: initial;
-	background-position: left;
-	padding: 0 50px 2px 0;
 }

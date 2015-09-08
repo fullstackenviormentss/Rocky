@@ -1,278 +1,341 @@
 
 [class^="icon-"], [class*=" icon-"] {
-	position: relative;
-	background-repeat: no-repeat;
-	background-position: top center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 #toggles [class^="icon-"]::before, #toggles [class*=" icon-"]::before {
-	position: relative;
+  position: relative;
 }
 
 .icon-phone {
-	background-image: url(/assets/usa_gov/Icon_Call.png);
+  background-image: url("/assets/usa_gov/Icon_Call.png");
 }
 .icon-email {
-	background-image: url(/assets/usa_gov/Icon_Email.png);
+  background-image: url("/assets/usa_gov/Icon_Email.png");
 }
 .icon-chat {
-	background-image: url(/assets/usa_gov/Icon_Contact.png);
+  background-image: url("/assets/usa_gov/Icon_Contact.png");
 }
 .icon-user {
-	/*background-image: url(/assets/usa_gov/Icon_Contact_USA.png);*/
-	background-position: left;
-	background-size: initial;
-	padding: 0 0 0 30px;
+  /*background-image: url("/assets/usa_gov/Icon_Contact_USA.png");*/
+  background-position: left;
+  background-size: initial;
+  padding: 0 0 0 0;
 }
 .icon-text-height {
-	background-image: url(/assets/usa_gov/Icon_Change_Text.png);
-	background-position: right;
-	background-size: initial;
-	padding: 0 30px 0 0;
+  background-image: url("/assets/usa_gov/Icon_Change_Text.png");
+  background-position: right;
+  background-size: initial;
+  padding: 0 30px 0 0px;
 }
 
 .ftr-cntntmddl [class^="icon-"], .ftr-cntntmddl [class*=" icon-"],
 .headercontact [class^="icon-"], .headercontact [class*=" icon-"]  {
-	background-position: left;
-	display: block;
-	line-height: 27px;
+  background-position: left;
+  display: block;
+  line-height: 30px;
 }
 
 .icon-facebook {
-	background-image: url(/assets/usa_gov/Icon_Connect_Facebook.png);
+  background-image: url("/assets/usa_gov/Icon_Connect_Facebook.png");
 }
 .icon-googleplus {
-	background-image: url(/assets/usa_gov/Icon_Connect_Google.png);
+  background-image: url("/assets/usa_gov/Icon_Connect_Google.png");
 }
 .icon-twitter {
-	background-image: url(/assets/usa_gov/Icon_Connect_Twitter.png);
+  background-image: url("/assets/usa_gov/Icon_Connect_Twitter.png");
 }
 .icon-youtube {
-	background-image: url(/assets/usa_gov/Icon_Connect_Youtube.png);
+  background-image: url("/assets/usa_gov/Icon_Connect_Youtube.png");
 }
 .icon-tumblr {
-	background-image: url(/assets/usa_gov/Icon_Connect_Tumblr.png);
+  background-image: url("/assets/usa_gov/Icon_Connect_Tumblr.png");
 }
 .icon-rss {
-	background-image: url(/assets/usa_gov/Icon_Connect_RSS.png);
+  background-image: url("/assets/usa_gov/Icon_Connect_RSS.png");
 }
 .icon-connect {
-	background-image: url(/assets/usa_gov/Icon_Connect_Email.png);
+  background-image: url("/assets/usa_gov/Icon_Connect_Email.png");
 }
 .icon-backtotopHP {
-	background-image: url(/assets/usa_gov/Icon_Back_to_top.png);
-	background-size: initial;
-	background-position: right;
-	padding: 0 30px 0 0;
-	height: 25px;
-	line-height: 25px;
-	display: block;
+  background-image: url("/assets/usa_gov/Icon_Back_To_Top.png");
+  background-size: initial;
+  background-position: right;
+  padding: 0 30px 0 0;
+  height: 25px;
+  line-height: 25px;
+  display: block;
 }
 /*.icon-backtotop {
-	background-image: url(/assets/usa_gov/Icon_Back_to_top.png);
-	background-size: initial;
-	background-position: right;
-	padding: 0 30px 0 0;
-	height: 25px;
-	line-height: 25px;
-	display: none;
+  background-image: url("/assets/usa_gov/Icon_Back_to_top.png");
+  background-size: initial;
+  background-position: right;
+  padding: 0 30px 0 0;
+  height: 25px;
+  line-height: 25px;
+  display: none;
 }*/
 .icon-backtotop-dwnlvl {
-	background-image: url(/assets/usa_gov/Icon_Back_To_Top.png);
-	background-size: initial;
-	background-position: right;
-	padding: 0 30px 5px 0;
-	height: 25px;
+  background-image: url("/assets/usa_gov/Icon_Back_To_Top.png");
+  background-size: initial;
+  background-position: right;
+  padding: 0 30px 5px 0;
+  height: 25px;
 }
 .icon-home {
-	background-image: url(/assets/usa_gov/Icon_Nav_Home.png);
+  background-image: url("/assets/usa_gov/Icon_Nav_Home.png");
 }
 .icon-flag {
-	background-image: url(/assets/usa_gov/Icon_Nav_About_USA.png);
+  background-image: url("/assets/usa_gov/Icon_Nav_About_USA.png");
 }
 .icon-agencies {
-	background-image: url(/assets/usa_gov/Icon_Nav_Agencies.png);
+  background-image: url("/assets/usa_gov/Icon_Nav_Elected_Officials.png");
 }
 .icon-mortgage {
-	background-image: url(/assets/usa_gov/Icon_Nav_Mortgage.png);
+  background-image: url("/assets/usa_gov/Icon_Nav_Mortgage.png");
 }
 .icon-job {
-	background-image: url(/assets/usa_gov/Icon_Nav_Job.png);
+  background-image: url("/assets/usa_gov/Icon_Nav_Job.png");
 }
 .icon-tax {
-	background-image: url(/assets/usa_gov/Icon_Nav_Money.png);
+  background-image: url("/assets/usa_gov/Icon_Nav_Money.png");
 }
 .icon-globe {
-	background-image: url(/assets/usa_gov/Icon_Nav_Travel.png);
+  background-image: url("/assets/usa_gov/Icon_Nav_Travel.png");
 }
 .icon-plus {
-	background-image: url(/assets/usa_gov/Icon_Nav_More.png);
+  background-image: url("/assets/usa_gov/Icon_Nav_More.png");
 }
-
-
+.icon-bullhorn {
+  background-image: url("/assets/usa_gov/Icon_Nav_Alert.png");
+}
+.icon-dollar {
+  background-image: url("/assets/usa_gov/Icon_Nav_Benefit.png");
+}
+.icon-cap {
+  background-image: url("/assets/usa_gov/Icon_Nav_Education.png");
+}
+.icon-leaf {
+  background-image: url("/assets/usa_gov/Icon_Nav_Environment.png");
+}
+.icon-heart {
+  background-image: url("/assets/usa_gov/Icon_Nav_Health.png");
+}
+.icon-scales {
+  background-image: url("/assets/usa_gov/Icon_Nav_Law.png");
+}
+.icon-medal {
+  background-image: url("/assets/usa_gov/Icon_Nav_Military.png");
+}
+.icon-tag {
+  background-image: url("/assets/usa_gov/Icon_Nav_Sale.png");
+}
+.icon-tipi {
+  background-image: url("/assets/usa_gov/Icon_Nav_Native.png");
+}
+.icon-ballot {
+  background-image: url("/assets/usa_gov/Icon_Nav_Agencies.png");
+}
 .current .icon-home{
-    background-image: url(/assets/usa_gov/Icon_Nav_Home_Red.png);
+    background-image: url("/assets/usa_gov/Icon_Nav_Home_Red.png");
 }
 .current .icon-flag {
-    background-image: url(/assets/usa_gov/Icon_Nav_About_USA_Red.png);
+    background-image: url("/assets/usa_gov/Icon_Nav_About_USA_Red.png");
 }
 .current .icon-agencies {
-    background-image: url(/assets/usa_gov/Icon_Nav_Agencies_Red.png);
+    background-image: url("/assets/usa_gov/Icon_Nav_Elected_Officials_Red.png");
+}
+.current .icon-mortgage {
+  background-image: url("/assets/usa_gov/Icon_Nav_Mortgage_Red.png");
 }
 .current .icon-job {
-    background-image: url(/assets/usa_gov/Icon_Nav_Job_Red.png);
+    background-image: url("/assets/usa_gov/Icon_Nav_Job_Red.png");
 }
 .current .icon-tax {
-    background-image: url(/assets/usa_gov/Icon_Nav_Money_Red.png);
+    background-image: url("/assets/usa_gov/Icon_Nav_Money_Red.png");
 }
 .current .icon-globe {
-    background-image: url(/assets/usa_gov/Icon_Nav_Travel_Red.png);
+    background-image: url("/assets/usa_gov/Icon_Nav_Travel_Red.png");
 }
 .current .icon-plus {
-    background-image: url(/assets/usa_gov/Icon_Nav_More_Red.png);
+    background-image: url("/assets/usa_gov/Icon_Nav_More_Red.png");
+}
+.current .icon-bullhorn {
+  background-image: url("/assets/usa_gov/Icon_Nav_Alert_Red.png");
+}
+.current .icon-dollar {
+background-image: url("/assets/usa_gov/Icon_Nav_Benefit_Red.png");
+}
+.current .icon-cap {
+  background-image: url("/assets/usa_gov/Icon_Nav_Education_Red.png");
+}
+.current .icon-leaf {
+  background-image: url("/assets/usa_gov/Icon_Nav_Environment_Red.png");
+}
+.current .icon-heart {
+  background-image: url("/assets/usa_gov/Icon_Nav_Health_Red.png");
+}
+.current .icon-scales {
+  background-image: url("/assets/usa_gov/Icon_Nav_Law_Red.png");
+}
+.current .icon-medal {
+  background-image: url("/assets/usa_gov/Icon_Nav_Military_Red.png");
+}
+.current .icon-tag {
+  background-image: url("/assets/usa_gov/Icon_Nav_Sale_Red.png");
+}
+.current .icon-tipi {
+  background-image: url("/assets/usa_gov/Icon_Nav_Native_Red.png");
+}
+.current .icon-ballot {
+    background-image: url("/assets/usa_gov/Icon_Nav_Agencies_Red.png");
 }
 .icon-menu{
-	background-image: url(/assets/usa_gov/Button_Menu.png);
-	background-size: 30px;
+  background-image: url("/assets/usa_gov/Button_Menu.png");
+  background-size: 30px;
 }
 .icon-minus:before {
-	content: "\e60e";
+  content: "\e60e";
 }
 .icon-search{
-	background-image: url(/assets/usa_gov/Icon_Search.png);
-	background-position: top left; 
-	padding: 5px 0 3px 30px;
-	background-size: 30px;
+  background-image: url("/assets/usa_gov/Icon_Search.png");
+  background-position: top left;
+  padding: 5px 0 3px 30px;
+  background-size: 30px;
+  cursor: pointer;
 }
 button.submit .icon-search{
-	display: inline-block;
-	height: 25px;
-	/*line-height: 40px;*/
+  display: inline-block;
+  height: 25px;
+  cursor: pointer;
+  /*line-height: 40px;*/
 }
 .menuer {
-	border: 1px solid #fff;
-	padding: 4px 7px 4px 7px;
+  border: 1px solid #fff;
+  padding: 4px 7px 4px 7px;
+  cursor: pointer;
 }
 .icon-close.closer {
   padding: 0 8px 0 20px;
-  background: url('../assets/assets/usa_gov/Button_Menu_Close.png');
+  background: url('/assets/usa_gov/Button_Menu_Close.png');
   background-repeat: no-repeat;
-  background-position: -10px;
-}
-#nav-toggle .icon-close.closer {
-  background-position: -12px -11px;
+  background-position: -12px -9px;
+  cursor: pointer;
 }
 .icon-gobierno:before {
-	content: "\e613";
+  content: "\e613";
 }
 .icon-logo:before {
-	content: "\e614";
+  content: "\e614";
 }
 .navItems [class^="icon-"], .navItems [class*=" icon-"] {
-	position: relative;
-	padding: 50px 0 0 0;
-	display: inline-block;
+  position: relative;
+  padding: 40px 0 0 0;
+  display: table-cell;
+  vertical-align: middle;
+  line-height: 20px;
 }
 .footercontact [class^="icon-"], .footercontact [class*=" icon-"],
 .headercontact [class^="icon-"], .headercontact [class*=" icon-"] {
-	padding: 0 0 0 50px;
-	display: inline-block;
+  padding: 0 0 0 50px;
+  display: inline-block;
 }
 .footerconnected [class^="icon-"], .footerconnected [class*=" icon-"] {
-	padding: 0 0 0 40px
+  padding: 0 0 0 40px
 }
 
 @media (max-width: 992px) {
-	.navItems [class^="icon-"], .navItems [class*=" icon-"] {
-		padding: 6px 0 6px 40px;
-		background-position: left;
-		background-size: 32px;
-	}
-	#mnnav #moreservices [class^="icon-"], #mnnav #moreservices [class*=" icon-"] {
-		padding: 6px 50px 6px 0;
-		background-position: right;
-	}
-	.icon-home {
-		background-image: url(/assets/usa_gov/Icon_Nav_Home_Blue.png);
-	}
-	.icon-flag {
-		background-image: url(/assets/usa_gov/Icon_Nav_About_USA_Blue.png);
-	}
-	.icon-agencies {
-		background-image: url(/assets/usa_gov/Icon_Nav_Agencies_Blue.png);
-	}
-	.icon-mortgage {
-		background-image: url(/assets/usa_gov/Icon_Nav_Mortgage_Blue.png);
-	}
-	.icon-job {
-		background-image: url(/assets/usa_gov/Icon_Nav_Job_Blue.png);
-	}
-	.icon-tax {
-		background-image: url(/assets/usa_gov/Icon_Nav_Money_Blue.png);
-	}
-	.icon-globe {
-		background-image: url(/assets/usa_gov/Icon_Nav_Travel_Blue.png);
-	}
-	.icon-plus {
-		background-image: url(/assets/usa_gov/Icon_Arrow_More_Service.png);
-	}
-	/*.icon-backtotop {
-		background-image: url(/assets/usa_gov/Icon_Back_to_top.png);
-		background-size: initial;
-		background-position: right;
-		padding: 0 30px 0 0;
-		height: 25px;
-		line-height: 25px;
-		display: block;
-	}*/
+  .navItems [class^="icon-"], .navItems [class*=" icon-"] {
+    padding: 6px 0 6px 40px;
+    background-position: left;
+    background-size: 32px;
+  }
+  .softbreak {
+      display:none;
+  }
+  .icon-home {
+    background-image: url("/assets/usa_gov/Icon_Nav_Home_Gray.png");
+  }
+  .icon-flag {
+    background-image: url("/assets/usa_gov/Icon_Nav_About_USA_Gray.png");
+  }
+  .icon-agencies {
+    background-image: url("/assets/usa_gov/Icon_Nav_Elected_Officials_Gray.png");
+  }
+  .icon-mortgage {
+    background-image: url("/assets/usa_gov/Icon_Nav_Mortgage_Gray.png");
+  }
+  .icon-job {
+    background-image: url("/assets/usa_gov/Icon_Nav_Job_Gray.png");
+  }
+  .icon-tax {
+    background-image: url("/assets/usa_gov/Icon_Nav_Money_Gray.png");
+  }
+  .icon-globe {
+    background-image: url("/assets/usa_gov/Icon_Nav_Travel_Gray.png");
+  }
+  .icon-plus {
+    background-image: url("/assets/usa_gov/Icon_Nav_More_Gray.png")
+  }
+  .icon-bullhorn {
+    background-image: url("/assets/usa_gov/Icon_Nav_Alert_Gray.png");
+  }
+  .icon-dollar {
+    background-image: url("/assets/usa_gov/Icon_Nav_Benefit_Gray.png");
+  }
+  .icon-cap {
+    background-image: url("/assets/usa_gov/Icon_Nav_Education_Gray.png");
+  }
+  .icon-leaf {
+    background-image: url("/assets/usa_gov/Icon_Nav_Environment_Gray.png");
+  }
+  .icon-heart {
+    background-image: url("/assets/usa_gov/Icon_Nav_Health_Gray.png");
+  }
+  .icon-scales {
+    background-image: url("/assets/usa_gov/Icon_Nav_Law_Gray.png");
+  }
+  .icon-medal {
+    background-image: url("/assets/usa_gov/Icon_Nav_Military_Gray.png");
+  }
+  .icon-tag {
+    background-image: url("/assets/usa_gov/Icon_Nav_Sale_Gray.png");
+  }
+  .icon-tipi {
+    background-image: url("/assets/usa_gov/Icon_Nav_Native_Gray.png");
+  }
+  .icon-ballot {
+    background-image: url("/assets/usa_gov/Icon_Nav_Agencies_Gray.png");
+  }
+  .icon-backtotop {
+    background-image: url("/assets/usa_gov/Icon_Back_To_Top.png");
+    background-size: initial;
+    background-position: right;
+    padding: 0 30px 0 0;
+    height: 25px;
+    line-height: 25px;
+    display: block;
+  }
 }
 @media (max-width: 480px) {
-	button .icon-search{
-		background:none; 
-		padding: 0 0 0 0;
-	}
-	#search button {
-		padding: 10px 0 10px 0;
-	}
-	#search input[type="text"]{
-		font-size: 90%;
-	}
-	.icon-backtotop {
-		background-image: url(/assets/usa_gov/Icon_Back_to_top.png);
-		background-size: initial;
-		background-position: right;
-		padding: 0 30px 0 0;
-		height: 25px;
-		line-height: 25px;
-		display: block;
-	}
-}
-@media (max-width: 768px) {
-    .flowIndicator> div {
-      padding: 0;
-        margin-bottom: 35px;
-        text-transform:lowercase;
-        font-size: 14px;
-        text-align: left;
-    }
-	.flowIndicator> div >span {
-        position: relative;
-        top:40px;
-        z-index: 1;
-        line-height: 18px;
-    }
-    .flowIndicator> .active{
-        color:#c61f0c;
-    }
-    .flowIndicator i{
+  button .icon-search{
+    background:none;
+    padding: 0 0 0 0;
+  }
+  #search button {
+    padding: 10px 0 10px 0;
+  }
+  #search input[type="text"]{
+    font-size: 90%;
+  }
+  .icon-backtotop {
+    background-image: url("/assets/usa_gov/Icon_Back_To_Top.png");
+    background-size: initial;
+    background-position: right;
+    padding: 0 30px 0 0;
+    height: 25px;
+    line-height: 25px;
     display: block;
-}
-.flowindicator-icon{
-    position: relative;
-    top: 15px;
-    left:30px;
-    z-index: 200;
-}
-    .active > .flowindicator-icon{
-        color:#fff;
-    }
+  }
 }

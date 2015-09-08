@@ -1,7 +1,7 @@
 ---
 en:
   txt:
-    required_fields: All fields maked with field indicator (*) on the page are required.
+    required_fields: All fields marked with field indicator (*) on the page are required.
     unknown_error: "Unknown error: the web administrators have been contacted."
     error: "Something went wrong."
     try_again: "Go back and try again."
@@ -19,7 +19,7 @@ en:
       remind_me_later: Remind Me Later
       help: Help
       prepare: Prepare Form
-      review: Review Application
+      review: Review
       sendmail: Send Email
       share_facebook: Post It!
       share_twitter: Tweet It!
@@ -29,7 +29,7 @@ en:
       skip_state_online_registration: ! '&gt; No Thanks, I''ll continue with %{rtv_and_partner_name}
         and send in my form later.'
     registration:
-      online_voter: Based on your zip code, you can register online directly with your state at
+      online_voter: Based on your ZIP code, you can
       in_language_name: In English
       powered_by: ! 'powered by:'
       progress_indicator: ! 'Step:'
@@ -39,10 +39,10 @@ en:
       step_4_header: Stay Informed and Take Action
       step_4_ovr_header: Hang on. You are eligible to register online in your state.
       step_5_header: Review and Confirm
-      step_1_nav: ELIGIBILITY
-      step_2_nav: IDENTITY
-      step_3_nav: MORE INFO
-      step_5_nav: COMPLETE
+      step_1_nav: Verify Eligibility
+      step_2_nav: Personal information
+      step_3_nav: Review
+      step_5_nav: Print
       stay_informed_header: Stay Informed
       identification_header: Identification Information
       survey_title: Questions For You
@@ -115,9 +115,9 @@ en:
       instructions:
         overseas: ! '<b>Note</b>: Some states offer online voter registration. <a
           href=''http://www.rockthevote.com/voter-registration/online-application-system/online.html''
-          target=''_blank''>Learn more by selecting here.</a> If you are an American citizen living
+          target=''_blank''>Learn more by selecting here</a>. If you are an American citizen living
           abroad or a uniformed military voter, <a href=''http://www.rockthevote.com/voting-is-easy/voting-rights/overseas-rights/overseas.html''
-          target=''_blank''>select here</a> to register to vote.'
+          target=''_blank''>learn more by selecting here</a> to register to vote.'
         opt_in_email: We will send you timely election reminders, your polling place
           location, and information about music and issues.
         under_18: Hey, it looks like you aren't 18 yet. That's cool. In %{state_name},
@@ -221,11 +221,8 @@ en:
         date_of_birth_format: "Format: MM-DD-YYYY"
         phone_format: "Format: ###-###-####"
         state_id_format: "Format: ###-##-####"
-        date_of_birth: On your voter registration application, you are required to
-          indicate whether you will be 18 years old on or before election day.  However,
-          many states allow you to register before your 18th birthday, so please <a
-          href="http://www.rockthevote.com/voter-registration/online-application-system/register-before-you-are-18-rules.html">select
-          here</a> to see the rule for your state.
+        date_of_birth: On your voter registration application, you are required to indicate whether you will be 18 years old on or before election day. However, many states allow you to register before your 18th birthday. See the state list of voter registration age requirements for more information. <a
+          href="http://www.rockthevote.com/voter-registration/online-application-system/register-before-you-are-18-rules.html">View this page</a>  for state list of voter registration age requirements
         registrant_name: Put your full name in these boxes. Please do not use
           nicknames or initials. If this application is for a change of name you will
           be asked for your previous name in a later section.  And don't forget to

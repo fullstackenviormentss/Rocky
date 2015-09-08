@@ -3,7 +3,6 @@
   <ul class="flat race-dropdown">
     <li>
       <%= form.label :race %>
-      <span class="tooltip"><%= t("txt.registration.tooltips.race")%></span>
       <div><%= form.select :race, @registrant.races, :include_blank => true %></div>
       <span class="error"><%= form.object.errors[:race].join("\n") %></span>
     </li>
@@ -12,8 +11,7 @@
     <ul class="flat party-dropdown">
       <li>
         <label for="registrant_party"><%= t("activerecord.attributes.registrant.party") %><span class="required" title="required">*</span></label>
-        <span class="tooltip"><%= t("txt.registration.tooltips.party")%></span>
-        <%= select_div form, :party, @state_parties, :include_blank => true %>
+         <%= select_div form, :party, @state_parties, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->
       </li>
     </ul>

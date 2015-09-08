@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="en" xml:lang="en"><head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="google" value="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>USA.gov: Register to Vote</title>
+  <title><%= render_title %></title>
   <!--[if lte IE 8]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -21,32 +22,39 @@
   <p><a id="skiplink" href="#skiptarget" onclick="document.getElementById('#skiptarget').focus();">Skip to Main Content</a></p>
 </div>
 <div id="header">
-  <div class="container group">
-    <a class="logolink" href="http://promotions.usa.gov/platform/platformHP.html">
-      <img id="logo" src="/assets/usa_gov/USA_Logo.png" alt="USA.gov">
-    </a>
-    <ul id="utilities">
-      <li><a href="#"><span class="icon-user">Contact USA.gov</span></a></li> &nbsp;&nbsp;<li><a href="#"><span class="icon-text-height">Change Text Size</span></a></li>
-    </ul>
-  </div>
-  
-     <div id="mnmenu">
-        <div class="container">
-      <nav id="mnnav" role="navigation" aria-label="Site-wide">
-          <ul class="navItems clearfix group">
-              <li><a href="http://www.usa.gov/"><span class="icon-home">Home</span></a></li>
-              <li><a href="http://www.usa.gov/"><span class="icon-flag">About the U.S.</span></a></li>
-              <li><a href="http://www.usa.gov/"><span class="icon-agencies">Agencies and Elected Officials</span></a></li>
-              <li><a href="http://www.usa.gov/"><span class="icon-mortgage">Housing and Community</span></a></li>
-              <li><a href="http://www.usa.gov/"><span class="icon-job">Jobs and Unemployment</span></a></li>
-              <li><a href="http://www.usa.gov/"><span class="icon-tax">Money and Shopping</span></a></li>
-              <li><a href="http://www.usa.gov/"><span class="icon-globe">Travel and Immigration</span></a></li>
-              <li id="moreservices"><a href="http://www.usa.gov/"><span class="icon-plus">More Services</span></a></li>
-          </ul>
-      </nav>
-      </div>
+            <div class="container group">
+<ul class="betalnk">
+      <li><a href="/contact">E-mail or Chat Us Your Question</a></li>
+</ul>
+        <h1><div class="cntrlogo"><a class="logolink" href="/">
+          <img id="logo" src="/assets/usa_gov/usa_logo_white_with_bg.png" alt="USA.gov">
+      </a></div></h1>
+        <ul id="utilities">
+          <li><a href="/change-text"><span class="icon-text-height">Change Text Size</span></a></li>
+        </ul>
+      </div>        
+         <div id="mnmenu">
+            <div class="container">
+          <nav id="mnnav" role="navigation" aria-label="Site-wide">
+              <ul class="navItems clearfix group">
+              <li><a href="/" class="current"><span class="icon-home">Home</span></a></li><li><a href="/agencies"><span class="icon-agencies">Government Agencies and Elected Officials</span></a></li><li><a href="/health"><span class="icon-heart">Health</span></a></li><li><a href="/housing"><span class="icon-mortgage">Housing and Community</span></a></li><li><a href="/jobs-and-unemployment"><span class="icon-job">Jobs and Unemployment</span></a></li><li><a href="/money"><span class="icon-tax">Money and Shopping</span></a></li><li><a href="/travel-and-immigration"><span class="icon-globe">Travel and Immigration</span></a></li><li><a href="/topics"><span class="icon-plus">More Services</span></a></li>             </ul>
+          </nav>
+          <div class="headercontact clearfix">
+                      <h2>Contact USA.gov</h2>
+          <ul>
+            <li><a href="/contact">
+              <span class="icon-phone">Call 1-844-USA-GOV1 (1‑844‑872‑4681)</span>
+            </a></li>
+            <li><a href="/email">
+              <span class="icon-email">E-mail USA.gov</span>
+            </a></li>
+            <li><a href="/chat">
+              <span class="icon-chat">Chat with USA.gov</span>
+            </a></li>
+          </ul>       </div>
+          </div>
+        </div>
     </div>
-</div>
   <!-- begin skip link target for main content -->
   <div class="searchbkgnd">
  <div class="container">
@@ -70,7 +78,13 @@
   <!-- end skip link target for main content -->
   <!-- begin toggle -->
   <div id="#skiptarget" class="hptoggles clearfix">
-    <div class="container">
+
+    <% if I18n.locale == :es %>
+    <div class="container" lang="en" xml:lang="en">
+    <% else %>
+
+    <div class="container" lang="es" xml:lang="es">
+    <% end %>
       <ul>
         <% if I18n.locale == :es %>
           <li class="engtoggle"><%= link_to "English", new_registrant_path(locale: 'en') %></li>
@@ -89,55 +103,59 @@
     <%= yield %>
   </div>
   <aside class="sclmedia">
-    <div class="container clearfix">
-      <div class="col-md-offset-3">
-      <section class="col-md-6 col-xs-12">
-      <div class="nodvdr">
+  <div class="container clearfix">
+        <section class="col-md-6 col-xs-12 noemllft">
+          <div class="nodvdr">
         <header>
-          <h2 >Share This Page:</h2>
+        <h2>Share This Page:</h2>
         </header>
         <ul>
-          <li class="col-md-3 col-xs-6"><a href="http://www.usa.gov/" class="sclfcbk"><span>Facebook</span></a></li>
-          <li class="col-md-3 col-xs-6"><a href="http://www.usa.gov/" class="scltwttr"><span>Twitter</span></a></li>
-          <li class="col-md-3 col-xs-6"><a href="http://www.usa.gov/" class="sclggle"><span>Google+</span></a></li>
-          <li class="col-md-3 col-xs-6"><a href="http://www.usa.gov/" class="scleml"><span>E-mail</span></a></li>
+          <li class="col-md-3 col-xs-6"><a href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.www.usa.gov%2Fsite-index&amp;v=3" class="sclfcbk" onmousedown="_sendEvent('Outbound','www.facebook.com','/sharer/sharer.php',0);"><span>Facebook</span></a></li>
+          <li class="col-md-3 col-xs-6"><a href="http://twitter.com/intent/tweet?source=webclient&amp;text=" class="scltwttr" onmousedown="_sendEvent('Outbound','www.twitter.com','/intent/tweet',0);"><span>Twitter</span></a></li>
+          <li class="col-md-3 col-xs-6"><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.www.usa.gov%2Fsite-index" class="sclggle" onmousedown="_sendEvent('Outbound','plus.google.com','/share',0);"><span>Google+</span></a></li>
+          
+                      <li class="col-md-3 col-xs-6">
+                <a href="/emailpage?path=/site-index" class="scleml"><span>E-mail</span></a>
+            </li>
+          
         </ul>
       </div>
-      </section>
-      <section class="col-md-6 col-xs-12 dvdr">
+    </section>
+
+          <section class="col-md-6 col-xs-12 dvdr noeml">
+    
       <div>
         <header>
-          <h2 ><label for="email-input">Get E-mail Updates on This Topic:</label></h2>
+          <h2><label for="email-input">Get E-mail Updates on This Topic:</label></h2>
         </header>
         <div class="nowrp">
-                  <form method="POST" action="https://public.govdelivery.com/accounts/USAGOV/subscribers/qualify">
-                    <p class="txtbx">
-                      <input id="email-input" class="text" size="38" role="textbox" name="email" type="email">
-                      <input class="submit" value="Subscribe" id="emailSubmit" type="submit">
-                    </p>
-                  </form>
-              </div>
+          <form method="POST" action="https://public.govdelivery.com/accounts/USAGOV/subscribers/qualify">
+            <p class="txtbx">
+                            <input id="email-input" class="text" size="38" name="email" type="email">
+              <input class="submit" value="Subscribe" id="emailSubmit" type="submit">
+            </p>
+          </form>
+        </div>
       </div>
-      </section>  
-      </div>
-    </div>
-  </aside>
+    </section>  
+  </div>
+</aside>
 </main>
 <!-- begin footer container -->
-<div id="footer" role="contentinfo">
+<div id="footer" role="contentinfo" rendersource="/appdata/cmp-childsites/release/356/sites/all/themes/usa/templates/html.tpl.php">
   <div class="ftr-cntntmddl clearfix container">
     <!-- begin contact container -->
     <div class="row">
       <div class="footercontact col-md-4 col-sm-12 clearfix">
-        <h2 >Contact USA.gov</h2>
+        <h2>Contact USA.gov</h2>
         <ul>
-          <li><a href="http://www.usa.gov/">
-            <span class="icon-phone spk">Call 1-844-USA-GOV1 (1‑844‑872‑4681)</span>
+          <li><a href="/phone">
+            <span class="icon-phone">Call 1-844-USA-GOV1 (1‑844‑872‑4681)</span>
           </a></li>
-          <li><a href="http://www.usa.gov/">
+          <li><a href="/email">
             <span class="icon-email">E-mail USA.gov</span>
           </a></li>
-          <li><a href="http://www.usa.gov/">
+          <li><a href="/chat">
             <span class="icon-chat">Chat with USA.gov</span>
           </a></li>
         </ul>
@@ -147,30 +165,30 @@
       <!-- begin about container -->
       <div class="footernav col-md-4 col-sm-12 clearfix">
         <!-- <section> -->
-        <h2 >About USA.gov</h2>
+        <h2>About USA.gov</h2>
         <ul>
-          <li><a href="http://www.usa.gov/">About Us</a></li>
-          <li><a href="http://www.usa.gov/">Site Index</a></li>
-          <li><a href="http://www.usa.gov/">Kids.gov</a></li>
-          <li><a href="http://www.usa.gov/">GobiernoUSA.gov</a></li>
-          <li><a href="http://www.usa.gov/">Order Print Publications</a></li>
-          <li><a href="http://www.usa.gov/">For the Media</a></li>
-          <li><a href="http://www.usa.gov/">For Developers</a></li>
-          <li><a href="http://www.usa.gov/">Website Policies</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/site-index">Site Index</a></li>
+          <li><a href="http://gobierno.usa.gov" onmousedown="_sendEvent('Outbound','gobierno.usa.gov','/',0);">GobiernoUSA.gov</a></li>
+                                        <li><a href="http://kids.usa.gov" onmousedown="_sendEvent('Outbound','kids.usa.gov','/',0);">Kids.gov</a></li>
+          <li><a href="http://publications.usa.gov" onmousedown="_sendEvent('Outbound','publications.usa.gov','/',0);">Order Print Publications</a></li>
+          <li><a href="/media">For the Media</a></li>
+          <li><a href="/developer">For Developers</a></li>
+          <li><a href="/notices">Website Notices</a></li>
         </ul>
       </div>
       <!-- end about container -->
       
       <!-- begin connected container -->
       <div class="footerconnected col-md-4 col-sm-12 clearfix">
-        <h2 >Stay Connected</h2>
+        <h2>Stay Connected</h2>
         <ul>
-          <li><a href="http://www.usa.gov/"> <span class="icon-facebook">Facebook</span></a></li>
-          <li><a href="http://www.usa.gov/"> <span class="icon-googleplus">Google+</span> </a></li>
-          <li><a href="http://www.usa.gov/"> <span class="icon-twitter">Twitter</span> </a></li>
-          <li><a href="http://www.usa.gov/"> <span class="icon-rss">RSS</span> </a></li>
-          <li><a href="http://www.usa.gov/"> <span class="icon-youtube">YouTube</span> </a></li>
-          <li><a href="http://www.usa.gov/"> <span class="icon-connect">Get E-mail Updates</span> </a></li>
+          <li><a href="http://www.facebook.com/USAgov" onmousedown="_sendEvent('Outbound','www.facebook.com','/USAgov',0);"> <span class="icon-facebook">Facebook</span></a></li>
+          <li><a href="https://plus.google.com/+usagov/" onmousedown="_sendEvent('Outbound','plus.google.com','/+usagov/',0);"> <span class="icon-googleplus">Google+</span> </a></li>
+          <li><a href="http://twitter.com/USAgov" onmousedown="_sendEvent('Outbound','www.twitter.com','/USAgov',0);"> <span class="icon-twitter">Twitter</span> </a></li>
+          <li><a href="/rss"> <span class="icon-rss">RSS</span> </a></li>
+          <li><a href="http://www.youtube.com/USGovernment" onmousedown="_sendEvent('Outbound','www.youtube.com','/USGovernment',0);"> <span class="icon-youtube">YouTube</span> </a></li>
+          <li><a href="https://public.govdelivery.com/accounts/USAGOV/subscriber/new" onmousedown="_sendEvent('Outbound','public.govdelivery.com','/accounts/USAGOV/subscriber/new',0);"> <span class="icon-connect">Get E-mail Updates</span> </a></li>
         </ul>
         <!-- </section> -->
       </div>
@@ -185,9 +203,7 @@
       <p class="volver clearfix"><a href="#skiptarget"><span class="icon-backtotop-dwnlvl">Back to Top</span></a></p>
     </div>
   </div>
-  <!-- end tagline container -->
-  
-</div>
+  <!-- end tagline container --></div>
 <!-- end footer container -->
 <!-- Needed_for_USA.gov_uptime_check -->
 <script type="text/javascript"> 

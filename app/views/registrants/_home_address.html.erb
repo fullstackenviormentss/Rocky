@@ -15,7 +15,6 @@ $(document).ready(function() {
   <ul class="stacked">
     <li class="width_a">
       <label for="registrant_home_address"><%= t("activerecord.attributes.registrant.home_address") %><span class="required" title="required">*</span></label>
-      <%= raw CGI.unescapeHTML("#{form.label :home_address}").html_safe %>
       <%= field_div form, :home_address %>
       <!-- <span class="error"><%= form.object.errors[:home_address].join("\n") %></span> -->
     </li>

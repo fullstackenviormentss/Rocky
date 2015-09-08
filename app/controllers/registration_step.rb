@@ -29,6 +29,7 @@ class RegistrationStep < ApplicationController
   layout "usa_gov"
   before_filter :redirect_app_role
   before_filter :find_partner
+  before_filter :set_title
   helper_method :current_step
 
   rescue_from Registrant::AbandonedRecord do |exception|
@@ -56,6 +57,10 @@ class RegistrationStep < ApplicationController
   protected
 
   def set_up_view_variables
+  end
+  
+  def set_title
+    @title = t("txt.registration.step_#{self.class::CURRENT_STEP}_header")
   end
   
   def set_up_share_variables

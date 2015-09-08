@@ -9,32 +9,35 @@
     <p> The following errors were present on the page:</p>
     <ol>
       <% if !form.object.errors[:name_title].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.name_title")} #{form.object.errors[:name_title].join("\n")}", 'javascript:$("#registrant_name_title").focus();' %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.name_title")} #{form.object.errors[:name_title].join("\n")}", 'javascript:$("#registrant_name_title").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:first_name].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.first_name")} #{form.object.errors[:first_name].join("\n")}", 'javascript:$("#registrant_first_name").focus();' %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.first_name")} #{form.object.errors[:first_name].join("\n")}", 'javascript:$("#registrant_first_name").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:last_name].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.last_name")} #{form.object.errors[:last_name].join("\n")}", 'javascript:$("#registrant_last_name").focus();' %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.last_name")} #{form.object.errors[:last_name].join("\n")}", 'javascript:$("#registrant_last_name").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:home_address].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_address")} #{form.object.errors[:home_address].join("\n")}", 'javascript:$("#registrant_home_address").focus();' %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_address")} #{form.object.errors[:home_address].join("\n")}", 'javascript:$("#registrant_home_address").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:home_city].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_city")} #{form.object.errors[:home_city].join("\n")}", 'javascript:$("#registrant_home_city").focus();' %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_city")} #{form.object.errors[:home_city].join("\n")}", 'javascript:$("#registrant_home_city").focus();', tabindex: -1 %></li>
       <% end %>
     </ol>
   </h1>
 <% end %>
   <% if @online_reg_url %>
   <div id="online_reg_notice" class="success">
-    <p><%= t("txt.registration.online_voter") %>
-    <%= link_to @online_reg_text, @online_reg_url %></p>
+    <p><%= t("txt.registration.online_voter") %>:</p>
+      <ul>
+        <li><%= link_to @online_reg_text, @online_reg_url %></li>
+        <li>Continue completing your registration by filling out this application, printing, signing, and mailing into your local election office.</li>
+      <ul>
   </div>
   <% end %>
   <fieldset>
     <legend><%= I18n.t('txt.registration.name') %></legend>
-    <span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span>
+    <br/><br/><span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span>
     <ul class="stacked">
       <li class="width_d">
         <label for="registrant_name_title"><%= t("activerecord.attributes.registrant.name_title") %><span class="required" title="required">*</span></label>

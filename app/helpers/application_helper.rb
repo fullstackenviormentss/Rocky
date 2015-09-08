@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def render_title
+    return "#{@title} | USA.gov" if defined?(@title)
+    "Register to Vote Online | USA.gov"
+  end
 
   # flash_messages
   # use to display specified flash messages

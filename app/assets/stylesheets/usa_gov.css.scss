@@ -34,7 +34,7 @@ a:focus, input:focus, div[role=group]:focus, button:focus, textarea:focus, butto
     outline:#ff8c00 solid 3px;
     outline-offset: 3px;
 }
-a:active, a:hover{
+a:active, a:focus{
   outline:#ff8c00 solid 3px;
     outline-offset: 3px;
 }
@@ -96,7 +96,7 @@ fieldset > .checkbox, .stacked{
 }
 .flat > li > label, .checkbox > li > label, .stacked > li > label, .flat > li > div > label, .question > li > label{
     margin:0 0 2px 0px!important;
-    font-size: 15px;
+    font-size: 110%;
     font-weight: 600;
     line-height: 30px;
 }
@@ -134,7 +134,6 @@ color: #c61f0c;
 }
 .new_registrant, fieldset{
       border: 1px solid #eee;
-  margin: 15px;
 }
 // .tooltip{
 //   position: relative;
@@ -145,7 +144,7 @@ color: #c61f0c;
 //     width:20px;
 // }
 .required{
-    color: red;
+    color: #A80000;
     display: inline-block;
     margin: 0 5px 0 5px;
 }
@@ -169,9 +168,9 @@ color: #c61f0c;
 .button_next_step > button,
 .button_prepare > button,
 .button_review > button{
-  border: solid 1px #1b50a0;
-  background: #fff;
-  color: #1b50a0;
+  border: solid 1px #c61f0c;
+  background: #c61f0c;
+  color: #fff;
   margin: 0 0 0 0;
   padding: 7px 5px 10px 5px;
   font-size: 130%;
@@ -202,6 +201,9 @@ color: #c61f0c;
     padding: 3px 15px 10px 15px;
     text-decoration: none;
 }
+.back a:visited{
+  color: #1b50a0;
+}
 .button_edit{
     margin-left: 15px;
 }
@@ -220,7 +222,7 @@ legend{
 /*tooltip styles*/
 .tooltip{
   position: relative;
-  width:99%;
+  // width:99%;
   color: #000;
   background: #E4EAEE;
   border: 1px solid #ddd;
@@ -232,7 +234,6 @@ legend{
     display: block;
     margin: 0 30px 2px 0px;
     border-radius: 4px;
-    font-size: 13px;
 }
 .tooltip:before {
   content: '';
@@ -258,14 +259,14 @@ legend{
 }
 /*Errors on the page*/
 .alert{
-   color: #a94442;
-  background-color: #f2dede;
+   color: #903A38;
+  background-color: #FEFAFA;
   border:solid 1px #ebccd1;
     padding: 0 0 5px 15px;
     margin: 0 0 0 0; 
     overflow: auto;
     min-height: 0;
-    font-size: 18px;
+    font-size: 120%;
     font-weight: 500;
 }
 .alert:empty{

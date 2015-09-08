@@ -11,10 +11,10 @@
     <p>The following errors were present on the page:</p>
     <ol>
       <% if !form.object.errors[:state_id_number].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.state_id_number")} #{form.object.errors[:state_id_number].join("\n")}", 'javascript:$("#registrant_state_id_number").focus();' %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.state_id_number")} #{form.object.errors[:state_id_number].join("\n")}", 'javascript:$("#registrant_state_id_number").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:party].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.party")} #{form.object.errors[:party].join("\n")}", 'javascript:$("#registrant_party").focus();' %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.party")} #{form.object.errors[:party].join("\n")}", 'javascript:$("#registrant_party").focus();', tabindex: -1 %></li>
       <% end %>
     </ol>
   </h1>

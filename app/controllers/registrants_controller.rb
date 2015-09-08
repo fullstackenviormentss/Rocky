@@ -46,6 +46,7 @@ class RegistrantsController < RegistrationStep
 
   # GET /registrants/new
   def new
+    @title = t('txt.registration.step_1_header')
     set_up_locale
     if MobileConfig.is_mobile_request?(request)
       redirect_to MobileConfig.redirect_url(:partner=>@partner_id, :locale=>@locale, :source=>@source, :tracking=>@tracking, :collectemailaddress=>@collect_email_address)
