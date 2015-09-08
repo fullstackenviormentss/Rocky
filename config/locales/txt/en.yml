@@ -114,11 +114,9 @@ en:
         work: Work
         other: Other
       instructions:
-        overseas: ! '<b>Note</b>: Some states offer online voter registration. <a
+        overseas: ! '<b>Note</b>: Note: Online voter registration is available in certain states. <a
           href=''http://www.rockthevote.com/voter-registration/online-application-system/online.html''
-          target=''_blank''>Learn more by selecting here</a>. If you are an American citizen living
-          abroad or a uniformed military voter, <a href=''http://www.rockthevote.com/voting-is-easy/voting-rights/overseas-rights/overseas.html''
-          target=''_blank''>learn more by selecting here</a> to register to vote.'
+          target=''_blank''>Learn more about online voter registration</a>.
         opt_in_email: We will send you timely election reminders, your polling place
           location, and information about music and issues.
         under_18: Hey, it looks like you aren't 18 yet. That's cool. In %{state_name},
