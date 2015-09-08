@@ -36,8 +36,6 @@ class Step2Controller < RegistrationStep
       
     end
     super
-    
-    binding.pry
   end
 
   protected
