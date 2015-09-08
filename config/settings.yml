@@ -99,6 +99,11 @@ redirect_ovr_states:
     EN: I Vote Delaware|https://ivote.de.gov/
   GA:
     EN: Georgia Online Voter Registration|https://registertovote.sos.ga.gov/GAOLVR/welcome.do
+  HI:
+    EN: Hawaii Online Voter Registration System|https://olvr.hawaii.gov/
+  IL:
+    EN: Illinois Online Voter Registration|https://ova.elections.il.gov/RegistrationClosed.aspx
+    ES: Registro electoral de Illinois|https://spanish-ova.elections.il.gov/RegistrationClosed.aspx
   IN:
     EN: Indiana Online Voter Registration|https://indianavoters.in.gov/PublicSite/OVR/Introduction.aspx
   KS:
@@ -110,9 +115,15 @@ redirect_ovr_states:
     ES: Registro de votante|https://voterservices.elections.state.md.us/OnlineVoterRegistration/VoterType
   MN:
     EN: Minnesota Online Voter Registration|https://mnvotes.sos.state.mn.us/VoterRegistration/VoterRegistrationStep1.aspx
+  MA:
+    EN: Massachusetts Online Voter Registration System|https://www.sec.state.ma.us/ovr/
   NV:
     EN: Nevada Online Voter Registration|https://nvsos.gov/sosvoterservices/Registration/step1.aspx
     ES: Inscripción de votates en línea|https://nvsos.gov/sosvoterservices/Registration/step1.aspx
+  NY:
+    EN: New York State Voter Registration Form|http://www.elections.ny.gov/NYSBOE/download/voting/voteform_enterable.pdf
+  PA:
+    EN: PA Online Voter Registration|https://www.pavoterservices.state.pa.us/Pages/VoterRegistrationApplication.aspx
   OR:
     EN: Oregon Online Voter Registration|https://secure.sos.state.or.us/orestar/vr/register.do?lang=eng&source=SOS
     ES: Mi voto|https://secure.sos.state.or.us/orestar/vr/register.do?lang=spa#
