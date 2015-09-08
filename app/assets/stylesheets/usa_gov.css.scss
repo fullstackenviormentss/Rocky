@@ -235,6 +235,7 @@ legend{
     margin: 0 30px 2px 0px;
     border-radius: 4px;
 }
+
 .tooltip:before {
   content: '';
   position: absolute;
@@ -284,3 +285,9 @@ legend{
   padding: 5px;
 }
 
+
+@media (max-width: 992px) {
+  .button_print{
+    font-size: 100%;
+  }
+}
