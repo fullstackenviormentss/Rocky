@@ -50,19 +50,18 @@ es:
         last_name: Apellido
         name_suffix: Sufijo
         home_address: Dirección
-        home_unit: No.
+        home_unit: Número/Lote
         home_city: Ciudad
         home_state_name: Estado
-        has_mailing_address: Recibo mi correo en una dirección diferente a la provista
-          anteriormente.
-        has_state_license: Tendré 18 años de edad para la próxima elección general.
+        has_mailing_address: Recibo mi correo postal en una dirección postal y no en mi dirección de residencia
+        has_state_license: Tengo licencia de conducir o documento de identidad estatal.
         will_be_18_by_election: Tendré 18 años de edad para la próxima elección general.
         mailing_address: Dirección Alterna
         mailing_unit: No.
         mailing_city: Ciudad
         mailing_state_abbrev: Estado
         mailing_zip_code: Código Postal
-        party: Partido
+        party: Partido político
         race: Raza
         state_id_number: Número ID
         phone: Número
@@ -75,7 +74,7 @@ es:
         prev_name_suffix: Sufijo
         change_of_address: He cambiado mi dirección
         prev_address: Dirección
-        prev_unit: No.
+        prev_unit: Número/Lote
         prev_city: Ciudad
         prev_state_abbrev: Estado
         prev_zip_code: Código Postal

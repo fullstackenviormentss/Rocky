@@ -1,13 +1,26 @@
 ---
 es:
   txt:
+    intro_text: ! '<p>
+        Con el Formulario Nacional de Inscripción para Votar, usted pued:
+    </p>
+    <ul>
+      <li>Inscribirse para votar por primera vez</li>
+      <li>Reportar a la oficina electoral en su estado un cambio de nombre o dirección postal</li>
+      <li>Registrar su afiliación a un partido político</li>
+
+    </ul>
+    <p>Algunos estados ofrecen la opción de registrarse en Internet para votar. Seleccione su estado en el menú desplegable que aparece abajo y haga clic en el botón que indica ¨Siguiente¨ para saber cuáles son las opciones de inscripción para votar disponibles en su estado.</p>'
+    continue_with_state: Registrarse por Internet para votar en su estado en
+    continue_with_form: Completar el Formulario Nacional de Inscripción para Votar incluído aquí, imprimirlo, escribir su número de identidad, firmarlo y enviarlo por correo postal a la oficina electoral en su estado.
+    
     required_fields: Todos los campos con asterisco (*) son obligatorios.
     unknown_error: ! 'Error desconocido: los administradores de red han sido contactados.'
     error: Algo salió mal.
     try_again: Regresar y volver a intentarlo.
     rtv_and_partner: Rock the Vote y %{partner_name}
     button:
-      submit: Seguir
+      submit: Siguiente
       edit: Editar
       back: Atrás
       edit_eligibility: Edite su elegibilidad
@@ -15,7 +28,7 @@ es:
       edit_additional_info: Edite identidad estatal o filiación de partido político
       download: Imprimir su<br/>formulario de<br/>registro ahora
       ineligible_try_again: Regresar
-      keep_going: Seguir
+      keep_going: Siguiente
       remind_me_later: Recordármelo más tarde
       help: Ayuda
       prepare: Prepare su solicitud
@@ -30,7 +43,7 @@ es:
         y enviaré mi solicitud más tarde.'
     registration:
       confirm_information: Confirme que su información es correcta
-      online_voter: Su código postal indica que usted puede registrarse por Internet para votar en
+      online_voter: Su código postal indica que usted puede
       in_language_name: En español
       powered_by: ! 'accionado por:'
       progress_indicator: Paso
@@ -51,8 +64,8 @@ es:
       change_of_address: Cambio de dirección
       change_of_name: Cambio de nombre
       preparing_header: Preparando el Formulario...
-      download_header: Imprimir Formato
-      phone: Teléfono
+      download_header: Revise su e-mail para descargar el formulario
+      phone: Información de contacto
       finish_header: Pasen la voz!
       finish_pdf_delay_header: Revise su correo electrónico
       finish_pdf_delay: Se trata de tomar un tiempo para crear su formulario de inscripción
@@ -75,7 +88,7 @@ es:
       name: Nombre
       select_none: (nada)
       home_address: Dirección de residencia
-      has_mailing_address: Dirección postal
+      has_mailing_address: Tengo dirección postal
       mailing_address: Dirección correo
       previous_name: Nombre Anterior
       previous_address: Dirección Anterior
@@ -100,6 +113,8 @@ es:
         iii: III
         iv: IV
       race_and_party: Raza y filiación de partido político
+      race: Raza
+      party: Filiación partidista 
       races:
         american_indian_alaskan_native: Indio americano / Nativo de Alaska
         asian: Asiático / Isleño del Pacífico
@@ -120,9 +135,32 @@ es:
           target=''_blank''>Conozca más sobre esta opción (en inglés).</a>Si usted es un ciudadano estadounidense que vive afuera de EE. UU. o es miembro de las Fuerzas Armadas de EE. UU., puede registrarse para votar
           <a href=''http://www.rockthevote.com/voting-is-easy/voting-rights/overseas-rights/overseas.html''
           target=''_blank''>aquí (en inglés)</a>.'
+        overseas_military: Si usted es un ciudadano estadounidense que vive fuera de EE. UU. o es miembro de las Fuerzas Armadas de EE. UU., 
+          <a href''http://www.fvap.gov/''>tiene derecho a votar desde el exterior</a>. Para votar desde el exterior debe registrarse en el estado de residencia donde vivió cuando s
+          alió de Estados Unidos y solicitar cada año la papeleta de votación, que le será enviada por correo 45 días antes de la elección.
         opt_in_email: Le enviaremos recordatorios de la elección, información del
           recinto electoral asignado, y información oportuna sobre música y temas
           información.
+        requirements: Requisitos:<ul>
+          <li>Para completar el formulario de inscripción para votar usted necesitará descargar Adobe Acrobat, un software comercial gratuito que le permite acceder a información en formato de documento portátil (PDF, sigla en inglés). 
+          <a href=''https://get.adobe.com/reader/''>Puede descargar gratuitamente Adobe Acrobat Reader</a>. </li>
+          <li>Necesitará una impresora para imprimir el formulario. </li>
+          <li>Para poder votar en las elecciones federales y estatales, todos los estados requieren que usted sea un ciudadano estadounidense por nacimiento o naturalización. Declarar falsamente ser ciudadano estadounidense para votar en cualquier elección federal, estatal o local es ilegal. </li>
+          <li>Usted no puede registrarse al mismo tiempo para votar en más de un estado.</li>
+          </ul>
+        after_finish: Después de completar desde su computadora el formulario de inscripción para votar, usted debe imprimirlo, escribir su número de identidad, firmarlo y enviarlo por correo postal a la oficina electoral en su estado.
+        please_note: '<b>Nota</b>: Dakota del Norte, Nuevo Hampshire and Wyoming no aceptan el Formulario Nacional de Inscripción para Votar. Si usted vive en alguno de estos estados, contacte a su oficina electoral.'
+        each_state: Cada estado tiene sus propias leyes sobre quién puede registrarse y votar. Obtenga más información sobre el proceso de votación en su Secretaría de Estado o en la <a href\=\'http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf\'>oficina electoral de su estado</a> 
+          (PDF, <a href=''https://get.adobe.com/reader/''>Puede descargar gratuitamente Adobe Acrobat Reader</a>). 
+        first_time_register: 'Si usted va a registrarse para votar por primera vez y va a enviar por correo postal este formulario, las leyes federales requieren que muestre una prueba de identificación personal la primera vez que vaya a votar. Se consideran pruebas de identificación personal:'
+        first_time_register_ids: <ul>
+          <li>un documento de identidad válido que muestre una foto actual</li>
+          <li>una factura por servicios como agua, luz o teléfono</li>
+          <li>un estado de cuenta de su banco</li>
+          <li>un cheque del Gobierno a su nombre</li>
+          <li>un documento de identidad del Gobierno que muestre su nombre y dirección postal</li>
+          </ul>
+        first_time_exempt: 'Si usted incluye una copia de su identificación personal al enviar por correo este formulario, es posible que no sea necesario presentar su documento de identidad personal al momento de votar por primera vez.  Sin embargo, si desea incluir una copia de identificación personal por favor considere que es posible que su estado tenga más requerimientos que pueden incluir que usted muestre prueba de identificación personal cuando vaya a votar o que presente una prueba de identificación federal. Por favor no incluya ningún documento original que sirva como prueba de identificación personal al enviar este formulario. Solo incluya copias.'
         under_18: Parece que aún no tienes 18 años. Está bien. En %{state_name} puedes
           registrarte para votar %{state_rule}.  Visite nuestro <a href="http://www.rockthevote.com/election-center/"
           target="_blank">Centro Electoral</a> para saber cuándo es la próxima elección.
@@ -131,11 +169,8 @@ es:
           tu cumpleaños.
         remind_when_18: Envíenme un recordatorio cuando cumpla 18 años en %{email_address}
         review: Por favor revise la siguiente información y confirme que es correcta.
-        download: No has acabado aún.  Da click en el boton para imprimir tu forma
-          de registro para votar. Firma y envíalo vía correo a la dirección provista
-          en tu forma.
-        download_2: No serás registrado si no imprimes, firmas y mandas tu forma vía
-          correo!
+        download: Por favor revise su e-mail para descargar e imprimir su formulario. Escriba su número de identidad, firme el formulario y envíelo por correo postal a la dirección indicada en el formulario.
+        download_2: Recuerde que usted no estará registrado para votar a menos que descargue, imprima, firme y envíe su formulario por correo postal a la oficina electoral de su estado.
         finish: ! 'No se olviden de avisar a amigos y parientes lo facil que es registrarse!  Aqui
           se incluyen algunos instrumentos para pasar la voz sobre como registrar
           el voto:'

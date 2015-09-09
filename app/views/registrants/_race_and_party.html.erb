@@ -1,5 +1,5 @@
  <fieldset>
-    <legend><%= I18n.t('txt.registration.race_and_party') %></legend>
+    <legend><%= I18n.t('txt.registration.race') %></legend>
   <ul class="flat race-dropdown">
     <li>
       <label for="registrant_race"><%= t("activerecord.attributes.registrant.race") %>
@@ -10,7 +10,11 @@
       </label>
     </li>
   </ul>
-  <% if @state_parties && @state_parties.any? %>
+</fieldset>
+<% if @state_parties && @state_parties.any? %>
+  <fieldset>
+    <legend><%= I18n.t('txt.registration.party') %></legend>
+
     <ul class="flat party-dropdown">
       <li>
         <label for="registrant_party"><%= t("activerecord.attributes.registrant.party") %>
@@ -22,5 +26,5 @@
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->
       </li>
     </ul>
-  <% end %>
-</fieldset>
+  </fieldset>
+<% end %>

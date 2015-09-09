@@ -65,6 +65,8 @@ en:
       change_of_name: Change of Name
       confirm_information: Confirm Information
       race_and_party: Race and Party
+      race: Race
+      party: Party
       download_header: Check Your Email to Download Form
       finish_header: Spread the word!
       finish_pdf_delay_header: Check Your Email
