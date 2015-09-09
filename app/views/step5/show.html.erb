@@ -115,10 +115,9 @@
 
    
     <li>
-      <h3>
+
         <%= form.check_box :attest_true %>
-        <%= form.label :attest_true, {}, class: "check-box-step-1"  %>
-      </h3>
+        <label for="registrant_attest_true" class: "check-box-step-1"><%= t("activerecord.attributes.registrant.attest_true") %><span class="required" title="required">*</span></label>
     </li>
     <li>
       <span class="error"><%= form.object.errors[:attest_true].join("\n") %></span>
