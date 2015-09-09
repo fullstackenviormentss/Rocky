@@ -13,7 +13,7 @@ en:
     <p>Some states offer online voter registration. Select your state from the dropdown list below and click on the next button to see your registration options. </p>'
     continue_with_state: Register directly online with your state at
     continue_with_form: Fill out the National Mail Voter Registration Form below, download, print, write in your ID number, sign, and mail into your local election office. 
-    required_fields: All fields marked with field indicator (*) on the page are required.
+    required_fields: Items with an asterisk (*) are required.
     
     unknown_error: "Unknown error: the web administrators have been contacted."
     error: "Something went wrong."
