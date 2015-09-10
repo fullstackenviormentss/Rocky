@@ -111,17 +111,14 @@
   </div>
  <fieldset>
     <legend><%= t('txt.registration.confirm_information') %></legend>
-  <ul class="affirm">
-
-   
-    <li>
+    <ul class="checkbox checkbox-step-1">
+       <li>
         <%= form.check_box :attest_true %>
         <label for="registrant_attest_true" class: "check-box-step-1"><span class="required" title="required">*</span><%= t("activerecord.attributes.registrant.attest_true") %></label>
-    </li>
-    <li>
+
       <span class="error"><%= form.object.errors[:attest_true].join("\n") %></span>
     </li>
-  </ul>
+    </ul>
   </fieldset>
 
   <div class="button_row">
