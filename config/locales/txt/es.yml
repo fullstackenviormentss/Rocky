@@ -260,6 +260,7 @@ es:
               to re-enter the correct information.
             p3: ''
       tooltips:
+        check_all: Seleccione todas las opciones que describan su situació
         email_address: Le enviaremos una copia de su formulario de registro de votación.
         home_zip_code: "Ingrese el código postal de la dirección donde reside aunque no reciba correo postal allí."
         date_of_birth_format: "Formato fecha de nacimiento: MM-DD-AAAA"

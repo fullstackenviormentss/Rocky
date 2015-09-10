@@ -249,6 +249,7 @@ en:
               to re-enter the correct information.
             p3: ''
       tooltips:
+        check_all: Check all that apply
         email_address: We will email you a copy of your voter registration form.
         home_zip_code: "Enter ZIP code for the address where you live, even if you don't receive mail there."
         date_of_birth_format: "Format: MM-DD-YYYY"
