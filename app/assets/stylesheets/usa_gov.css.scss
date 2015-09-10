@@ -78,7 +78,7 @@ input[type="text"]:disabled, select:disabled {
 select{
      display: block;
     width: 300px;
-    font-size: 130%;
+    // font-size: 130%;
     border: solid 1px #ddd;
     line-height: 50px;
     background:#fafafa!important;
@@ -97,8 +97,8 @@ fieldset > .checkbox, .stacked{
 }
 .flat > li > label, .checkbox > li > label, .stacked > li > label, .flat > li > div > label, .question > li > label{
     margin:0 0 2px 0px!important;
-    font-size: 110%;
-    font-weight: 600;
+    // font-size: 110%;
+    font-weight: bold;
     line-height: 30px;
 }
 
@@ -142,6 +142,7 @@ color: #c61f0c;
   border:none;
   border-top:1px dotted #ddd;
   height:1px;
+  margin-bottom:15px;
 }
 // .tooltip{
 //   position: relative;
@@ -230,6 +231,7 @@ position: relative;
   border: 1px solid #ddd;
   height: auto;
   line-height: 18px;
+  font-weight: normal;
   text-align: left;
     padding: 0 10px 0 10px;
 //  visibility: hidden;
