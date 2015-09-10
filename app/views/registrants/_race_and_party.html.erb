@@ -21,7 +21,7 @@
           <%= t("activerecord.attributes.registrant.party") %>
         
         </label>
-         <%= select_div form, :party, @state_parties, :include_blank => true %>
+         <%= select_div form, :party, @state_parties.sort, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->
       </li>
     </ul>
