@@ -34,6 +34,21 @@ a:focus, input:focus, div[role=group]:focus, button:focus, textarea:focus, butto
     outline:#ff8c00 solid 3px;
     outline-offset: 3px;
 }
+
+.back a:focus{
+  border: #ff8c00 solid 3px;
+  border-spacing: 3px;
+  outline: none;
+}
+a.button_next_step:focus button{
+  border: #ff8c00 solid 3px;
+  border-spacing: 3px;
+  outline: none;
+}
+a.button_next_step:focus{
+  border: none;
+  outline: none;
+}
 a:active, a:focus{
   outline:#ff8c00 solid 3px;
     outline-offset: 3px;
