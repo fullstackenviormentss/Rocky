@@ -53,8 +53,6 @@
   </ul>
 </fieldset>
 
-<hr id="prev_address_rule" style="display:none;" />
-
 <fieldset class='no_border'>
   <legend><%= I18n.t('txt.registration.change_of_name') %></legend>
   <ul class="checkbox checkbox-with-tooltip">
@@ -86,7 +84,7 @@
     </li>
     <li class="width_b">
       <%= form.label :prev_last_name %>
-      <%= field_div form, :prev_last_name, :size => 15 %>
+      <%= field_div form, :prev_last_name, :size => 1 %>
       <span class="error"><%= form.object.errors[:prev_last_name].join("\n") %></span>
     </li>
     <li class="width_d">
