@@ -107,7 +107,7 @@ fieldset > .checkbox, .stacked{
   width: 300px;
   // height: 35px;
   padding: 10px;
-  border: solid 1px #ddd;
+  // border: solid 1px #ddd;
   font-size: 100%;
   background-color: #fafafa;
   border-radius: 4px;
@@ -134,7 +134,7 @@ color: #c61f0c;
   font-weight: normal;
 }
 .new_registrant, fieldset{
-      border: 1px solid #eee;
+      border: none;
 }
 // .tooltip{
 //   position: relative;
@@ -286,5 +286,17 @@ position: relative;
 @media (max-width: 992px) {
   .button_print{
     font-size: 100%;
+  }
+}
+
+@media(max-width:640px){
+  .flow-indicator{
+    display: none;
+  }
+}
+@media(max-width:500px){
+  .container{
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
