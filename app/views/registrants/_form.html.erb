@@ -36,7 +36,10 @@ $(document).ready(function() {
 </ul>
 <ul class="flat">
   <li class="width_f">
-    <label for="registrant_home_state_id"><%= t("activerecord.attributes.registrant.home_state_name") %><span class="required" title="required">*</span></label>  
+    <label for="registrant_home_state_id">
+      <span class="required" title="required">*</span>
+      <%= t("activerecord.attributes.registrant.home_state_name") %>
+    </label>  
     <%= select_div form, :home_state_id, GeoState.collection_for_state_select %>
   </li>
 </ul>

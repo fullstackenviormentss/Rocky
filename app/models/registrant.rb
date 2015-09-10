@@ -260,6 +260,7 @@ class Registrant < ActiveRecord::Base
     reg.validates_format_of     :email_address, :with => Authlogic::Regex.email, :allow_blank => true
     reg.validates_zip_code      :home_zip_code
     reg.validate                :validate_date_of_birth
+    reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
 
     reg.validates_inclusion_of  :has_state_license, :in=>[true,false], :unless=>[:building_via_api_call]
     reg.validates_inclusion_of  :will_be_18_by_election, :in=>[true,false], :unless=>[:building_via_api_call]
@@ -618,11 +619,8 @@ class Registrant < ActiveRecord::Base
     else
       @raw_date_of_birth = date_of_birth_before_type_cast
       date = nil
-      if matches = date_of_birth_before_type_cast.to_s.match(/^(\d{1,2})\D+(\d{1,2})\D+(\d{4})$/)
+      if matches = date_of_birth_before_type_cast.to_s.match(/^(\d{1,2})-{1}(\d{1,2})-{1}(\d{4})$/)
         m,d,y = matches.captures
-        date = Date.civil(y.to_i, m.to_i, d.to_i) rescue nil
-      elsif matches = date_of_birth_before_type_cast.to_s.match(/^(\d{4})\D+(\d{1,2})\D+(\d{1,2})$/)
-        y,m,d = matches.captures
         date = Date.civil(y.to_i, m.to_i, d.to_i) rescue nil
       end
       if date

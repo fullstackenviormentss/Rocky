@@ -67,16 +67,21 @@
 
   <ul class="flat">
     <li class="width_f">
-      <label for="registrant_email_address"><%= t("activerecord.attributes.registrant.email_address") %><span class="required" title="required">*</span>
-
-      <br/><div class="tooltip"><%= t("txt.registration.tooltips.email_address")%></div></label>  
+      <label for="registrant_email_address">
+        <span class="required" title="required">*</span>
+        <%= t("activerecord.attributes.registrant.email_address") %>
+        <br/><div class="tooltip"><%= t("txt.registration.tooltips.email_address")%></div></label>  
       <%= field_div form, :email_address %>
     </li>
   </ul>
   <ul class="flat">
     <li class="width_f">
-      <label for="registrant_date_of_birth"><%= t("activerecord.attributes.registrant.date_of_birth") %><span class="required" title="required">*</span></label>
-      <span class="example"><%= t("txt.registration.tooltips.date_of_birth_format") %></span>
+      <label for="registrant_date_of_birth">
+        <span class="required" title="required">*</span>
+        <%= t("activerecord.attributes.registrant.date_of_birth") %>
+      </label>
+      <span class="example"><%= t("txt.registration.tooltips.date_of_birth_format") %>
+      </span>
       <br/><span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span>
       <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth %>
       <% if !form.object.errors[:date_of_birth].empty? %>
@@ -91,28 +96,38 @@
     <ul class="checkbox checkbox-step-1">
       <li>
           <%= form.check_box :us_citizen %>
-          <%= form.label :us_citizen, {}, class: "check-box-step-1" %> 
+          <label for="registrant_us_citizen" class: "check-box-step-1">
+            <span class="required" title="required">*</span>
+            <%= t("activerecord.attributes.registrant.us_citizen") %>
+          </label>
           <span class="error"><%= form.object.errors[:us_citizen].join("\n") %></span>
       </li>
     </ul>
     <ul class="checkbox checkbox-step-1">
       <li>
           <%= form.check_box :has_state_license %>
-          <%= form.label :has_state_license, {}, class: "check-box-step-1" %> 
+          <label for="registrant_has_state_license" class: "check-box-step-1">
+            <span class="required" title="required">*</span>
+            <%= t("activerecord.attributes.registrant.has_state_license") %>
+          </label>
           <span class="error"><%= form.object.errors[:has_state_license].join("\n") %></span>
       </li>
     </ul>
     <ul class="checkbox checkbox-step-1">
       <li>
           <%= form.check_box :will_be_18_by_election %>
-          <%= form.label :will_be_18_by_election, {}, class: "check-box-step-1" %>
+          <label for="registrant_will_be_18_by_election" class: "check-box-step-1">
+            <span class="required" title="required">*</span>
+            <%= t("activerecord.attributes.registrant.will_be_18_by_election") %>
+          </label>
           <span class="error"><%= form.object.errors[:will_be_18_by_election].join("\n") %></span>
       </li>
     </ul>
     <ul class="checkbox checkbox-step-1">
       <li>
           <%= form.check_box :first_registration %>
-          <%= form.label :first_registration, class: "check-box-step-1" %> 
+          <label for="registrant_first_registration" class: "check-box-step-1">
+            <span class="required" title="required">*</span><%= t("activerecord.attributes.registrant.first_registration") %></label>
           <span class="error"><%= form.object.errors[:first_registration].join("\n") %></span>
       </li>
     </ul>
@@ -125,12 +140,17 @@
 
     <ul class="stacked">
       <li class="width_d">
-        <label for="registrant_name_title"><%= t("activerecord.attributes.registrant.name_title") %><span class="required" title="required">*</span></label>
+        <label for="registrant_name_title">
+          <span class="required" title="required">*</span>
+          <%= t("activerecord.attributes.registrant.name_title") %></label>
         <%= select_div form, :name_title, @registrant.titles, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:name_title].join("\n") %></span> -->
       </li>
       <li class="width_b">
-        <label for="registrant_first_name"><%= t("activerecord.attributes.registrant.first_name") %><span class="required" title="required">*</span></label>   
+        <label for="registrant_first_name">
+          <span class="required" title="required">*</span>
+          <%= t("activerecord.attributes.registrant.first_name") %>
+        </label>   
         <%= field_div form, :first_name %>
         <!-- <span class="error"><%= form.object.errors[:first_name].join("\n") %></span> -->
       </li>
@@ -139,7 +159,9 @@
         <%= field_div form, :middle_name %>
       </li>
       <li class="width_b">
-        <label for="registrant_last_name"><%= t("activerecord.attributes.registrant.last_name") %><span class="required" title="required">*</span></label>
+        <label for="registrant_last_name">
+          <span class="required" title="required">*</span>
+          <%= t("activerecord.attributes.registrant.last_name") %></label>
         <%= field_div form, :last_name %>
         <!-- <span class="error"><%= form.object.errors[:last_name].join("\n") %></span> -->
       </li>
