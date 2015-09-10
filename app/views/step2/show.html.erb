@@ -32,6 +32,9 @@
       <% if !form.object.errors[:home_zip_code].empty? %>
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_zip_code")} #{form.object.errors[:home_zip_code].join("\n")}",'javascript:$("#registrant_home_zip_code").focus();', tabindex: -1 %></li>
       <% end %>
+      <% if !form.object.errors[:race].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.race")} #{form.object.errors[:race].join("\n")}",'javascript:$("#registrant_race").focus();', tabindex: -1 %></li>
+      <% end %>
       <% if !form.object.errors[:party].empty? %>
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.party")} #{form.object.errors[:party].join("\n")}", 'javascript:$("#registrant_party").focus();', tabindex: -1 %></li>
       <% end %>
