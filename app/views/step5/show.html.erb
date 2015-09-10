@@ -1,6 +1,6 @@
 <h1><%= t('txt.registration.step_5_header') %></h1>
 <div class="text please_review"><p><%=I18n.t('txt.registration.instructions.review') %></p></div>
-
+<div class="text"><%= t("txt.required_fields") %></div>
 <%= form_for(@registrant, :url => registrant_step_5_path(@registrant)) do |form| %>
 <% if form.object.errors.count > 0 %>
     <h2 id="errors" class="alert" tabindex="-1">
