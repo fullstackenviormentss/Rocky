@@ -90,7 +90,7 @@ en:
       select_none: (none)
       home_address: Home Address
       mailing_address: Mailing Address
-      has_mailing_address: Has Mailing Address
+      has_mailing_address: Other Mailing Address
       previous_name: Previous Name
       phone: Phone Contact Info
       previous_address: Previous Address
