@@ -88,7 +88,7 @@ select{
     list-style: none;
 }
 .flat, .checkbox, .stacked{
-    border-bottom: dotted 1px #ddd;
+    // border-bottom: dotted 1px #ddd;
     padding: 10px 0 10px 25px;
     margin: 0;
 }
@@ -134,7 +134,7 @@ color: #c61f0c;
   font-weight: normal;
 }
 .new_registrant, fieldset{
-      border: none;
+      border: 1px solid #eee;
 }
 // .tooltip{
 //   position: relative;
