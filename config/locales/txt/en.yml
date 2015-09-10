@@ -133,12 +133,12 @@ en:
           href=''http://www.rockthevote.com/voter-registration/online-application-system/online.html''
           target=''_blank''>Learn more about online voter registration</a>.'
         overseas_military: If you are an American citizen living abroad or a uniformed military voter,  
-          see <a href''http://www.fvap.gov/''>information about Overseas Citizen & Military Voter Services</a> 
+          see <a href='http://www.fvap.gov/'>information about Overseas Citizen & Military Voter Services</a> 
           from the Federal Voting Assistance Program (FVAP) to register to vote or request your absentee ballot. 
         opt_in_email: We will send you timely election reminders, your polling place
           location, and information about music and issues.
         requirements: Requirements:<ul>
-          <li>You will need Adobe Acrobat to download your voter registration form. If you don't have Adobe Acrobat, you can <a href=''https://get.adobe.com/reader/''>download Adobe Acrobat Reader here</a>. </li>
+          <li>You will need Adobe Acrobat to download your voter registration form. If you don't have Adobe Acrobat, you can <a href='https://get.adobe.com/reader/'>download Adobe Acrobat Reader here</a>. </li>
           <li>You will also need a printer to print out your registration form. </li>
           <li>All States require that you be a United States citizen by birth or naturalization to register to vote in federal and State elections. Federal law makes it illegal to falsely claim U.S. citizenship to register to vote in any federal, State, or local election. </li>
           <li>You cannot be registered to vote in more than one place at one time.</li>
@@ -149,8 +149,8 @@ en:
         please_note: '<b>Please note</b>: North Dakota, New Hampshire and Wyoming don''t accept the National Mail Voter Registration form. 
           If you live in one of these states, contact your Secretary of State''s office.'
         each_state: Each State has its own laws about who may register and vote. Check the information under your State in the State Instructions on 
-          the <a href=''http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf''>National Mail Voter Registration Form</a> 
-          (PDF, <a href=''https://get.adobe.com/reader/''>Download Adobe Reader</a>). 
+          the <a href='http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf'>National Mail Voter Registration Form</a> 
+          (PDF, <a href='https://get.adobe.com/reader/'>Download Adobe Reader</a>). 
         first_time_register: If you are registering to vote for the first time in your jurisdiction and are mailing this registration application, Federal law requires you to show proof of identification the first time you vote. Proof of identification includes:'
         first_time_register_ids: A current and valid photo identification or a current utility bill, bank statement, government check, paycheck, or government document that shows your name and address. 
         first_time_exempt: 'Voters may be exempt from this requirement if they submit a copy of this identification with their mail in voter registration form. If you wish to submit a copy, please keep the following in mind: 
