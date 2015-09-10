@@ -135,7 +135,13 @@ color: #c61f0c;
 }
 .new_registrant, fieldset{
     border:none;
-      border-bottom: dotted 1px #ddd;
+    border-bottom: dotted 1px #ddd;
+    margin-bottom: 15px
+}
+#hrbreaker{
+  border:none;
+  border-top:1px dotted #ddd;
+  height:1px;
 }
 // .tooltip{
 //   position: relative;
@@ -144,7 +150,7 @@ color: #c61f0c;
 // }
 // .tooltip > img{
 //     width:20px;
-// }
+// 
 .required{
     color: #A80000;
     display: inline-block;

@@ -36,12 +36,12 @@ en:
   activerecord:
     attributes:
       partner:
-        from_email: From Email
+        from_email: From E-mail
         url: URL
         registration_instructions_url: PDF instructions URL
       registrant:
         date_of_birth: Date of Birth
-        email_address: Email Address
+        email_address: E-mail Address
         first_registration: I am registering to vote for the first time.
         home_zip_code: ZIP Code
         us_citizen: I am a U.S. citizen.
@@ -84,7 +84,7 @@ en:
         attest_true: I have reviewed the above information, and it is true and accurate
           to the best of my knowledge.
         tell_from: From
-        tell_email: Your Email
+        tell_email: Your E-mail
         tell_recipients: Recipients
         tell_subject: Subject
         tell_message: Personal Message
@@ -142,7 +142,7 @@ en:
       login_invalid: Username should use only letters, numbers, spaces, and .-_@ please.
       consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded,
         account is disabled.
-      email_invalid: Email is not a valid address.
+      email_invalid: E-mail is not a valid address.
       password_blank: Password can not be blank.
       password_invalid: Login/password combination is not valid.
       not_active: Your account is not active.
