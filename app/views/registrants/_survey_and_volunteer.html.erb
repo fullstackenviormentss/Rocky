@@ -2,38 +2,38 @@
   <fieldset class="questions">
     <legend><%= t('txt.registration.survey_title') %></legend>
     <% unless @question_1.blank? %>
-      <ul class="question">
-        <li class="width_e">
+      <div class="question">
+        <div class="width_e">
           <%= form.label :survey_answer_1, h(@question_1) %>
           <%= field_div form, :survey_answer_1, :maxlength => 60 %>
-        </li>
-      </ul>
+        </div>
+      </div>
     <% end %>
     <% unless @question_2.blank? %>
-      <ul class="question">
-        <li class="width_e">
+      <divdiv class="question">
+        <div class="width_e">
           <%= form.label :survey_answer_2, h(@question_2) %>
           <%= field_div form, :survey_answer_2, :maxlength => 60 %>
-        </li>
-      </ul>
+        </div>
+      </div>
     <% end %>
     <% if (@registrant.partner.ask_for_volunteers? || @registrant.partner.primary?) && RockyConf.sponsor.allow_ask_for_volunteers %>
-      <ul class="checkbox">
-        <li class="spacer">&nbsp;</li>
-        <li>
+      <div class="checkbox">
+        <div class="spacer">&nbsp;</div>
+        <div>
             <%= form.check_box :volunteer %>
             <%= form.label :volunteer, t('txt.registration.volunteer', :organization => h("Rock the Vote")) %>
-        </li>
-      </ul>
+        </div>
+      </div>
     <% end %>
     <% if @registrant.partner.partner_ask_for_volunteers? && !@registrant.partner.primary? %>
-      <ul class="checkbox">
-        <li class="spacer">&nbsp;</li>
-        <li>
+      <div class="checkbox">
+        <div class="spacer">&nbsp;</div>
+        <div>
             <%= form.check_box :partner_volunteer %>
             <%= form.label :partner_volunteer, t('txt.registration.volunteer', :organization => h(@registrant.partner.organization)).html_safe %>
-        </li>
-      </ul>
+        </div>
+      </div>
     <% end %>
   </fieldset>
 <% end %>

@@ -1,7 +1,7 @@
 <fieldset id="prev_name_set">
   <legend><%= t('txt.registration.phone') %></legend>
-  <ul class="flat">
-    <li class="width_b">
+  <div class="flat">
+    <div class="width_b">
       <%= form.label :phone %>
       <div class="flat-stack">
        <span class="example"><%= t('txt.registration.tooltips.phone_format') %></span>
@@ -13,13 +13,13 @@
         <% end %>
       </div>
      
-    </li>
-    <li class="secondary">
+    </div>
+    <div class="secondary">
       <div id="registrant_phone_type_label"><%= form.label :phone_type %></div>
       <div class="flat-stack" id="registrant_phone_type_wrapper">
         <div><%= form.select :phone_type, @registrant.phone_types %></div>
         <span class="error"><%= form.object.errors[:phone_type].join("\n") %></span>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </fieldset>

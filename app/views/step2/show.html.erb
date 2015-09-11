@@ -5,7 +5,7 @@
 <%= form_for(@registrant, :url => registrant_step_2_path(@registrant)) do |form| %>
 <div class="text"><%= t("txt.required_fields") %></div>
 <% if form.object.errors.count > 0 %>
-  <h2 id="errors" class="alert" tabindex="-1">
+  <div id="errors" class="alert" tabindex="-1">
     <p> The following errors were present on the page:</p>
     <ol>
       <% if !form.object.errors[:email_address].empty? %>
@@ -39,11 +39,11 @@
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.party")} #{form.object.errors[:party].join("\n")}", 'javascript:$("#registrant_party").focus();', tabindex: -1 %></li>
       <% end %>
     </ol>
-  </h1>
+  </div>
 <% end %>
   
-  <ul class="flat">
-  <li class="width_f">
+<div class="flat">
+  <div class="width_f">
     <div id="online_reg_notice">
       <p class="voter_message"><%= t("txt.registration.online_voter") %>:</p>
         <ul>
@@ -63,19 +63,19 @@
       <p class="voter_message"><%= raw t("txt.registration.instructions.first_time_exempt") %></p>
 
     </div>
-</ul>
-
-  <ul class="flat">
-    <li class="width_f">
+  </div>
+</div>
+  <div class="flat">
+    <div class="width_f">
       <label for="registrant_email_address">
         <span class="required" title="required">*</span>
         <%= t("activerecord.attributes.registrant.email_address") %>
         <br/><div class="tooltip"><%= t("txt.registration.tooltips.email_address")%></div></label>  
       <%= field_div form, :email_address %>
-    </li>
-  </ul>
-  <ul class="flat">
-    <li class="width_f">
+    </div>
+  </div>
+  <div class="flat">
+    <div class="width_f">
       <label for="registrant_date_of_birth">
         <span class="required" title="required">*</span>
         <%= t("activerecord.attributes.registrant.date_of_birth") %>
@@ -88,49 +88,49 @@
         <!-- <span class="error"><%= form.object.errors[:date_of_birth].join("\n") %></span> -->
       <% else %>
       <% end %>
-    </li>
-  </ul>
+    </div>
+  </div>
   <hr id="hrbreaker"></hr>
   <fieldset>
   <legend><%= t('txt.registration.tooltips.check_all') %></legend>
-    <ul class="checkbox checkbox-step-1">
-      <li>
+    <div class="checkbox checkbox-step-1">
+      <div>
           <%= form.check_box :us_citizen %>
           <label for="registrant_us_citizen" class: "check-box-step-1">
             <span class="required" title="required">*</span>
             <%= t("activerecord.attributes.registrant.us_citizen") %>
           </label>
           <span class="error"><%= form.object.errors[:us_citizen].join("\n") %></span>
-      </li>
-    </ul>
-    <ul class="checkbox checkbox-step-1">
-      <li>
+      </div>
+    </div>
+    <div class="checkbox checkbox-step-1">
+      <div>
           <%= form.check_box :has_state_license %>
           <label for="registrant_has_state_license" class: "check-box-step-1">
             <span class="required" title="required">*</span>
             <%= t("activerecord.attributes.registrant.has_state_license") %>
           </label>
           <span class="error"><%= form.object.errors[:has_state_license].join("\n") %></span>
-      </li>
-    </ul>
-    <ul class="checkbox checkbox-step-1">
-      <li>
+      </div>
+    </div>
+    <div class="checkbox checkbox-step-1">
+      <div>
           <%= form.check_box :will_be_18_by_election %>
           <label for="registrant_will_be_18_by_election" class: "check-box-step-1">
             <span class="required" title="required">*</span>
             <%= t("activerecord.attributes.registrant.will_be_18_by_election") %>
           </label>
           <span class="error"><%= form.object.errors[:will_be_18_by_election].join("\n") %></span>
-      </li>
-    </ul>
-    <ul class="checkbox checkbox-step-1">
-      <li>
+      </div>
+    </div>
+    <div class="checkbox checkbox-step-1">
+      <div>
           <%= form.check_box :first_registration %>
           <label for="registrant_first_registration" class: "check-box-step-1">
             <%= t("activerecord.attributes.registrant.first_registration") %></label>
           <span class="error"><%= form.object.errors[:first_registration].join("\n") %></span>
-      </li>
-    </ul>
+      </div>
+    </div>
 
   </fieldset>
   
@@ -138,38 +138,38 @@
     <legend><%= I18n.t('txt.registration.name') %></legend>
     <br/><br/><span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span>
 
-    <ul class="stacked">
-      <li class="width_d">
+    <div class="stacked">
+      <div class="width_d">
         <label for="registrant_name_title">
           <span class="required" title="required">*</span>
           <%= t("activerecord.attributes.registrant.name_title") %></label>
         <%= select_div form, :name_title, @registrant.titles, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:name_title].join("\n") %></span> -->
-      </li>
-      <li class="width_b">
+      </div>
+      <div class="width_b">
         <label for="registrant_first_name">
           <span class="required" title="required">*</span>
           <%= t("activerecord.attributes.registrant.first_name") %>
         </label>   
         <%= field_div form, :first_name %>
         <!-- <span class="error"><%= form.object.errors[:first_name].join("\n") %></span> -->
-      </li>
-      <li class="width_c">
+      </div>
+      <div class="width_c">
         <%= form.label :middle_name %>
         <%= field_div form, :middle_name %>
-      </li>
-      <li class="width_b">
+      </div>
+      <div class="width_b">
         <label for="registrant_last_name">
           <span class="required" title="required">*</span>
           <%= t("activerecord.attributes.registrant.last_name") %></label>
         <%= field_div form, :last_name %>
         <!-- <span class="error"><%= form.object.errors[:last_name].join("\n") %></span> -->
-      </li>
-      <li class="width_d">
+      </div>
+      <div class="width_d">
         <%= form.label :name_suffix %>
         <div><%= form.select :name_suffix, @registrant.suffixes, :include_blank => t('txt.registration.select_none') %></div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </fieldset>
 
   <%= render :partial=> "registrants/home_address", :locals=>{:form=>form} %>

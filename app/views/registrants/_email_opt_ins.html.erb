@@ -1,23 +1,23 @@
 <%- show_hr ||= false %>
 <%- if @registrant.any_email_opt_ins? %>
   <%- if @registrant.partner.rtv_email_opt_in || @registrant.partner.primary? %>
-    <ul class="checkbox">
-      <li>
+    <div class="checkbox">
+      <div>
           <%= form.check_box :opt_in_email %>
           <%= form.label :opt_in_email, t('txt.registration.opt_in_email', :organization => h("Rock the Vote")).html_safe %>
-      </li>
-    </ul>
+      </div>
+    </div>
     <div class="checkbox-explanation">
       <p><%= t('txt.registration.instructions.opt_in_email') %></p>
     </div>
   <%- end %>
   <%- if @registrant.partner.partner_email_opt_in && !@registrant.partner.primary? %>
-    <ul class="checkbox">
-      <li>
+    <div class="checkbox">
+      <div>
           <%= form.check_box :partner_opt_in_email %>
           <%= form.label :partner_opt_in_email, t('txt.registration.opt_in_email', :organization => h(@registrant.partner.organization)).html_safe %>
-      </li>
-    </ul>
+      </div>
+    </div>
   <%- end %>
   <% if show_hr %><hr/><% end %>
 <%- end %>

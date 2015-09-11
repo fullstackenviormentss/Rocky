@@ -102,14 +102,14 @@ select{
 fieldset > .checkbox, .stacked{
     border-bottom:none;
 }
-.flat > li > label, .checkbox > li > label, .stacked > li > label, .flat > li > div > label, .question > li > label{
+.flat > div > label, .checkbox > div > label, .stacked > li > label, .flat > div > div > label, .question > div > label{
     margin:0 0 2px 0px!important;
     // font-size: 110%;
     font-weight: bold;
     line-height: 30px;
 }
 
-.flat > li > div > input, .stacked> li > div > input, .form-control, .flat-stack input{
+.flat > div > div > input, .stacked> div > div > input, .form-control, .flat-stack input{
   display: block;
   width: 300px;
   // height: 35px;

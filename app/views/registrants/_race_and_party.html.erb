@@ -1,7 +1,7 @@
  <fieldset>
     <legend><%= I18n.t('txt.registration.race_and_party') %></legend>
-  <ul class="flat race-dropdown">
-    <li>
+  <div class="flat race-dropdown">
+    <div>
       <label for="registrant_race">
         <% if @registrant.requires_race? %>
           <span class="required" title="required">*</span>
@@ -10,10 +10,10 @@
         
         <%= select_div form, :race, @registrant.races, :include_blank => true %>
       </label>
-    </li>
-  </ul>
-  <ul class="flat party-dropdown">
-      <li>
+    </div>
+  </div>
+  <div class="flat party-dropdown">
+      <div>
         <label for="registrant_party">
           <% if @registrant.requires_party? %>
             <span class="required" title="required">*</span>
@@ -23,6 +23,6 @@
         </label>
          <%= select_div form, :party, @state_parties.sort, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->
-      </li>
-    </ul>
+      </div>
+    </div>
 </fieldset>
