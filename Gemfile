@@ -12,7 +12,7 @@ gem "aasm", "= 3.0.16"
 
 #gem 'utf8-cleaner'
 gem 'rack-robustness'
-
+gem 'therubyracer'
 gem 'attr_encrypted'
 gem "authlogic", "= 3.3.0"
 
