@@ -79,7 +79,7 @@ en:
         prev_city: City
         prev_state_abbrev: State
         prev_zip_code: ZIP Code
-        opt_in_email: Receive emails
+        opt_in_email: Receive E-mails
         opt_in_sms: Receive txt messages
         attest_true: I have reviewed the above information, and it is true and accurate
           to the best of my knowledge.

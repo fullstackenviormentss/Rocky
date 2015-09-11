@@ -336,10 +336,10 @@ position: relative;
   }
     .flowIndicator > div {
       padding: 0;
-        margin-bottom: 35px;
-        text-transform:lowercase;
-        font-size: 14px;
-        text-align: left;
+      margin-bottom: 35px;
+      text-transform:lowercase;
+      font-size: 105%;
+      text-align: left;
     }
   .flowIndicator > div > span {
         display: block;
@@ -353,7 +353,7 @@ position: relative;
     z-index: 100;
     top: 30%;
     left: 40%;
-          font-size: 17px;
+          font-size: 110%;
   }
   .flowIndicator div span{
       display: none

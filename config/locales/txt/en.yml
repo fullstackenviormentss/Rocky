@@ -26,14 +26,14 @@ en:
       edit_identity: "Edit Identity"
       edit_additional_info: "Edit State ID or Party"
       back: Previous Step
-      download: Check Your Email to Download Form
+      download: Check Your E-mail to Download Form
       ineligible_try_again: Return
       keep_going: Keep Going
       remind_me_later: Remind Me Later
       help: Help
       prepare: Prepare Form
       review: Review
-      sendmail: Send Email
+      sendmail: Send E-mail
       share_facebook: Post It!
       share_twitter: Tweet It!
       share_google_buzz: Share on Google!
@@ -52,7 +52,7 @@ en:
       step_4_header: Stay Informed and Take Action
       step_4_ovr_header: Hang on. You are eligible to register online in your state.
       step_5_header: Review and Confirm
-      step_6_header: Check Your Email to Download Form
+      step_6_header: Check Your E-mail to Download Form
       step_1_nav: Verify Eligibility
       step_2_nav: Personal Information
       step_3_nav: Review
@@ -67,14 +67,14 @@ en:
       race_and_party: Race and Party
       race: Race
       party: Party
-      download_header: Check Your Email to Download Form
+      download_header: Check Your E-mail to Download Form
       finish_header: Spread the word!
-      finish_pdf_delay_header: Check Your Email
+      finish_pdf_delay_header: Check Your E-mail
       finish_pdf_delay: It's taking a while to create your registration form to download,
-        but don't worry. We'll send you an email when it's ready. In the mean time,
+        but don't worry. We'll send you an E-mail when it's ready. In the mean time,
         you can let your friends know how they can register to vote too.
       finish_under_18_header: You're on the list!
-      tell_a_friend_title: Tell a Friend by Email
+      tell_a_friend_title: Tell a Friend by E-mail
       finish_reminder_header: Thanks for Registering!
       finish_reminder: Thank you, %{first_name}, for sending in your voter registration
         application! You should receive confirmation of your registration from your
@@ -95,7 +95,7 @@ en:
       phone: Phone Contact Info
       previous_address: Previous Address
       opt_in_sms: Send me txt messages from %{organization}.
-      opt_in_email: Receive emails from %{organization}.
+      opt_in_email: Receive E-mails from %{organization}.
       remind_when_18: Send me a reminder on my 18th birthday.
       get_updates: Get updates from Rock the Vote
       volunteer: I would like to volunteer with %{organization}.
@@ -175,7 +175,7 @@ en:
           it is to register to vote. Here are a few tools you can use to spread the
           word about voter registration.
         finish_tell_recipients: (separated by commas)
-        finish_email_sent: Email sent!
+        finish_email_sent: E-mail sent!
         finish_update_status: Don't forget to update your status on Facebook and Twitter!
         state_online_registration: Hang on. You are eligible to register online in
           your state.
@@ -250,8 +250,8 @@ en:
             p3: ''
       tooltips:
         check_all: Check all that apply
-        email_address: We will email you a copy of your voter registration form.
-        home_zip_code: "Enter ZIP code for the address where you live, even if you don't receive mail there."
+        email_address: We will E-mail you a copy of your voter registration form.
+        home_zip_code: "Enter ZIP Code for the address where you live, even if you don't receive mail there."
         date_of_birth_format: "Format: MM-DD-YYYY"
         phone_format: "Format: ###-###-####"
         state_id_format: "Format: ###-##-####"
