@@ -14,7 +14,6 @@ gem "aasm", "= 3.0.16"
 gem 'rack-robustness'
 gem 'therubyracer'
 
-gem 'attr_encrypted'
 gem "authlogic", "= 3.3.0"
 
 gem 'daemons', '~> 1.1.9'
@@ -40,11 +39,9 @@ end
 
 gem 'rest-client'
 gem 'diffy'
-gem 'asset_sync'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.10.1"
-  gem "rspec-spies",  "2.1.1"
   
   gem "rr", "= 0.10.11"
   
@@ -56,9 +53,6 @@ group :development, :test do
   gem 'simplecov', :require => false
   
   gem "treetop", "= 1.4.10"
-  # gem "selenium-client", "= 1.2.16"
-  gem "capistrano", "= 2.15.5"
-  gem "rvm-capistrano", require: false
   
   # Pito:
   gem "hpricot", "0.8.6"
