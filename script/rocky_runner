@@ -5,11 +5,12 @@ require 'daemons'
 script = File.join(File.dirname(__FILE__), 'rocky_worker')
 dir = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 
-Daemons.run(script, :ARGV => ARGV + ['--', dir],
+d = Daemons.run(script, :ARGV => ARGV + ['--', dir],
             :mode => :exec,
             :dir_mode => :script,
             :dir => '../tmp/pids',
             :log_output => true,
             :multiple => true)
 
+exit d.applications.length > 0 ? 0 : 1
 
