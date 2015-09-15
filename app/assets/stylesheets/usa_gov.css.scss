@@ -318,6 +318,19 @@ position: relative;
     padding-left: 0px;
     padding-right: 0px;
   }
+
+  h1{
+    padding-left:5px;
+  }
+  .flat{
+    padding: 0;
+  }
+  .stacked{
+    padding: 0;
+  }
+  .checkbox{
+    padding: 0;
+  }
 }
 
 @media(max-width: 1200px){
