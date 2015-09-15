@@ -287,7 +287,7 @@ a:hover.topicsmore {
 }
 
 .cntrlogo a, .cntrlogo a:visited{
-  font-size: 60px;
+  font-size: 200%;
   color: #fff;
   display: block;
   /*line-height: 80px;*/

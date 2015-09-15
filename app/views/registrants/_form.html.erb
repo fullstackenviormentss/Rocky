@@ -22,7 +22,7 @@ $(document).ready(function() {
     <p>The following errors were present on the page:</p>
     <ol>
       <% if !form.object.errors[:home_state_id].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_state_name")} #{form.object.errors[:home_state_id].join("\n")}", 'javascript:$("#registrant_home_state_id").focus();' %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_state_name")} #{form.object.errors[:home_state_id].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_home_state_id").focus();' %></li>
       <% end %>
     
     </ol>

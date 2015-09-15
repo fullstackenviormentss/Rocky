@@ -7,7 +7,7 @@
       <p> The following errors were present on the page:</p>
       <ol>
         <% if !form.object.errors[:attest_true].empty? %>
-          <li class="individual_error"><%= link_to "#{form.object.errors[:attest_true].join("\n")}", 'javascript:$("#registrant_attest_true").focus();', tabindex: -1 %></li>
+          <li class="individual_error"><%= link_to "#{form.object.errors[:attest_true].join("\n")}", '#', onclick: 'event.preventDefault(); $("#registrant_attest_true").focus();', tabindex: -1 %></li>
         <% end %>
       </ol>
     </div>

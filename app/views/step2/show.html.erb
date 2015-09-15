@@ -9,34 +9,34 @@
     <p> The following errors were present on the page:</p>
     <ol>
       <% if !form.object.errors[:email_address].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.email_address")} #{form.object.errors[:email_address].join("\n")}", 'javascript:$("#registrant_email_address").focus();' %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.email_address")} #{form.object.errors[:email_address].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_email_address").focus();' %></li>
       <% end %>
       <% if !form.object.errors[:date_of_birth].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.date_of_birth")} #{form.object.errors[:date_of_birth].join("\n")}", 'javascript:$("#registrant_date_of_birth").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.date_of_birth")} #{form.object.errors[:date_of_birth].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_date_of_birth").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:name_title].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.name_title")} #{form.object.errors[:name_title].join("\n")}", 'javascript:$("#registrant_name_title").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.name_title")} #{form.object.errors[:name_title].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_name_title").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:first_name].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.first_name")} #{form.object.errors[:first_name].join("\n")}", 'javascript:$("#registrant_first_name").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.first_name")} #{form.object.errors[:first_name].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_first_name").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:last_name].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.last_name")} #{form.object.errors[:last_name].join("\n")}", 'javascript:$("#registrant_last_name").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.last_name")} #{form.object.errors[:last_name].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_last_name").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:home_address].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_address")} #{form.object.errors[:home_address].join("\n")}", 'javascript:$("#registrant_home_address").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_address")} #{form.object.errors[:home_address].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_home_address").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:home_city].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_city")} #{form.object.errors[:home_city].join("\n")}", 'javascript:$("#registrant_home_city").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_city")} #{form.object.errors[:home_city].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_home_city").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:home_zip_code].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_zip_code")} #{form.object.errors[:home_zip_code].join("\n")}",'javascript:$("#registrant_home_zip_code").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_zip_code")} #{form.object.errors[:home_zip_code].join("\n")}","#", onclick: 'event.preventDefault(); $("#registrant_home_zip_code").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:race].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.race")} #{form.object.errors[:race].join("\n")}",'javascript:$("#registrant_race").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.race")} #{form.object.errors[:race].join("\n")}","#", onclick: 'event.preventDefault(); $("#registrant_race").focus();', tabindex: -1 %></li>
       <% end %>
       <% if !form.object.errors[:party].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.party")} #{form.object.errors[:party].join("\n")}", 'javascript:$("#registrant_party").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.party")} #{form.object.errors[:party].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_party").focus();', tabindex: -1 %></li>
       <% end %>
     </ol>
   </div>
@@ -94,33 +94,30 @@
   <fieldset>
   <legend><%= t('txt.registration.tooltips.check_all') %></legend>
     <div class="checkbox checkbox-step-1">
-      <div>
+      <div <% if form.object.errors[:first_registration] %>class="checkbox_error" <% end %>>
           <%= form.check_box :us_citizen %>
           <label for="registrant_us_citizen" class: "check-box-step-1">
             <span class="required" title="required">*</span>
             <%= t("activerecord.attributes.registrant.us_citizen") %>
           </label>
-          <span class="error"><%= form.object.errors[:us_citizen].join("\n") %></span>
       </div>
     </div>
     <div class="checkbox checkbox-step-1">
-      <div>
+      <div <% if form.object.errors[:first_registration] %>class="checkbox_error" <% end %>> 
           <%= form.check_box :has_state_license %>
           <label for="registrant_has_state_license" class: "check-box-step-1">
             <span class="required" title="required">*</span>
             <%= t("activerecord.attributes.registrant.has_state_license") %>
           </label>
-          <span class="error"><%= form.object.errors[:has_state_license].join("\n") %></span>
       </div>
     </div>
     <div class="checkbox checkbox-step-1">
-      <div>
+      <div <% if form.object.errors[:first_registration] %>class="checkbox_error" <% end %>>
           <%= form.check_box :will_be_18_by_election %>
           <label for="registrant_will_be_18_by_election" class: "check-box-step-1">
             <span class="required" title="required">*</span>
             <%= t("activerecord.attributes.registrant.will_be_18_by_election") %>
           </label>
-          <span class="error"><%= form.object.errors[:will_be_18_by_election].join("\n") %></span>
       </div>
     </div>
     <div class="checkbox checkbox-step-1">
@@ -128,7 +125,6 @@
           <%= form.check_box :first_registration %>
           <label for="registrant_first_registration" class: "check-box-step-1">
             <%= t("activerecord.attributes.registrant.first_registration") %></label>
-          <span class="error"><%= form.object.errors[:first_registration].join("\n") %></span>
       </div>
     </div>
 

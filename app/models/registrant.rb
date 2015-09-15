@@ -261,9 +261,9 @@ class Registrant < ActiveRecord::Base
     reg.validate                :validate_date_of_birth
     reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
 
-    reg.validates_inclusion_of  :has_state_license, :in=>[true,false], :unless=>[:building_via_api_call]
-    reg.validates_inclusion_of  :will_be_18_by_election, :in=>[true,false], :unless=>[:building_via_api_call]
-    reg.validates_inclusion_of  :us_citizen, :in => [ false, true ], :unless => :building_via_api_call
+    reg.validates_inclusion_of  :has_state_license, :in=>[true], :unless=>[:building_via_api_call]
+    reg.validates_inclusion_of  :will_be_18_by_election, :in=>[true], :unless=>[:building_via_api_call]
+    reg.validates_inclusion_of  :us_citizen, :in => [ true ], :unless => :building_via_api_call
     # end originally from step1
 
     reg.validates_presence_of   :name_title

@@ -511,7 +511,7 @@ section.otln > ul li:only-child, section.otlnrw > ul li:only-child{
   -o-appearance:none;
    appearance:none;
 
-  font-size: 1em;
+  font-size: 100%;
   height: 36px;
   padding: 0 0 0 10px;
   border: none;
