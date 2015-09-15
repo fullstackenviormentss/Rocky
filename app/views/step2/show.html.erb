@@ -14,6 +14,15 @@
       <% if !form.object.errors[:date_of_birth].empty? %>
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.date_of_birth")} #{form.object.errors[:date_of_birth].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_date_of_birth").focus();', tabindex: -1 %></li>
       <% end %>
+      <% if !form.object.errors[:us_citizen].empty? %>
+        <li class="individual_error"><%= link_to " #{form.object.errors[:us_citizen].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_us_citizen").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:has_state_license].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.has_state_license")} #{form.object.errors[:has_state_license].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_has_state_license").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:will_be_18_by_election].empty? %>
+        <li class="individual_error"><%= link_to "#{form.object.errors[:will_be_18_by_election].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_will_be_18_by_election").focus();', tabindex: -1 %></li>
+      <% end %>
       <% if !form.object.errors[:name_title].empty? %>
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.name_title")} #{form.object.errors[:name_title].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_name_title").focus();', tabindex: -1 %></li>
       <% end %>
@@ -94,7 +103,7 @@
   <fieldset>
   <legend><%= t('txt.registration.tooltips.check_all') %></legend>
     <div class="checkbox checkbox-step-1">
-      <div <% if form.object.errors[:first_registration] %>class="checkbox_error" <% end %>>
+      <div <% if !form.object.errors[:us_citizen].empty? %>class="checkbox_error" <% end %>>
           <%= form.check_box :us_citizen %>
           <label for="registrant_us_citizen" class: "check-box-step-1">
             <span class="required" title="required">*</span>
@@ -103,16 +112,16 @@
       </div>
     </div>
     <div class="checkbox checkbox-step-1">
-      <div <% if form.object.errors[:first_registration] %>class="checkbox_error" <% end %>> 
+      <div <% if !form.object.errors[:has_state_license].empty? %>class="checkbox_error" <% end %>> 
           <%= form.check_box :has_state_license %>
           <label for="registrant_has_state_license" class: "check-box-step-1">
-            <span class="required" title="required">*</span>
+            <!-- <span class="required" title="required">*</span> -->
             <%= t("activerecord.attributes.registrant.has_state_license") %>
           </label>
       </div>
     </div>
     <div class="checkbox checkbox-step-1">
-      <div <% if form.object.errors[:first_registration] %>class="checkbox_error" <% end %>>
+      <div <% if !form.object.errors[:will_be_18_by_election].empty? %>class="checkbox_error" <% end %>>
           <%= form.check_box :will_be_18_by_election %>
           <label for="registrant_will_be_18_by_election" class: "check-box-step-1">
             <span class="required" title="required">*</span>

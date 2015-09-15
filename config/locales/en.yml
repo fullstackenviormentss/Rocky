@@ -114,7 +114,7 @@ en:
             has_state_license:
               inclusion: Please indicate whether you have a valid state license.
       messages:
-        inclusion: ! '%{attribute} is not included in the list.'
+        inclusion: ! '%{attribute} is not selected.'
         exclusion: ! '%{attribute} is reserved.'
         invalid: ! '%{attribute} is invalid.'
         invalid_for_pdf: ! '%{attribute} must be provided in English.'

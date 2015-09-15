@@ -30,24 +30,7 @@
 .button_print:visited {
   color: #fff;
 }
-a:focus, input:focus, div[role=group]:focus, button:focus, textarea:focus, button:focus, select:focus, {
-    outline:#ff8c00 solid 3px;
-    outline-offset: 3px;
-}
 
-.back a:focus{
-  border: #ff8c00 solid 3px;
-  border-spacing: 3px;
-  outline: none;
-}
-
-a:active, a:focus{
-  outline:#ff8c00 solid 3px;
-    outline-offset: 3px;
-}
-#finish_page_iframe {
-  margin-top: 20px;
-}
 legend {
   color: #1a51a1;
   outline: 0px !important;
@@ -64,7 +47,7 @@ legend {
 }
 
 .checkbox_error{
-  
+
   border: 3px solid #C61F0C !important;
 }
 #other_language_link{
@@ -387,3 +370,26 @@ position: relative;
     }
 }
 
+a:focus, input:focus, div[role=group]:focus, button:focus, textarea:focus, button:focus, select:focus, {
+    outline:#ff8c00 solid 3px;
+    outline-offset: 3px;
+}
+
+.back a:focus{
+  border: #ff8c00 solid 3px;
+  border-spacing: 3px;
+  outline: none;
+}
+
+a:active, a:focus{
+  outline:#ff8c00 solid 3px;
+    outline-offset: 3px;
+}
+#finish_page_iframe {
+  margin-top: 20px;
+}
+
+button:focus{
+
+  border: solid 4px #ff8c00 ;
+}
