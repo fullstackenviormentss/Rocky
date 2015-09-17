@@ -102,40 +102,34 @@
   <hr id="hrbreaker"></hr>
   <fieldset>
   <legend><%= t('txt.registration.tooltips.check_all') %></legend>
-    <div class="checkbox checkbox-step-1">
-      <div <% if !form.object.errors[:us_citizen].empty? %>class="checkbox_error" <% end %>>
+    <ul class="checkbox checkbox-step-1">
+      <li <% if !form.object.errors[:us_citizen].empty? %>class="checkbox_error" <% end %>>
           <%= form.check_box :us_citizen %>
           <label for="registrant_us_citizen" class: "check-box-step-1">
             <span class="required" title="required">*</span>
             <%= t("activerecord.attributes.registrant.us_citizen") %>
           </label>
-      </div>
-    </div>
-    <div class="checkbox checkbox-step-1">
-      <div <% if !form.object.errors[:has_state_license].empty? %>class="checkbox_error" <% end %>> 
+      </li>
+      <li <% if !form.object.errors[:has_state_license].empty? %>class="checkbox_error" <% end %>> 
           <%= form.check_box :has_state_license %>
           <label for="registrant_has_state_license" class: "check-box-step-1">
             <!-- <span class="required" title="required">*</span> -->
             <%= t("activerecord.attributes.registrant.has_state_license") %>
           </label>
-      </div>
-    </div>
-    <div class="checkbox checkbox-step-1">
-      <div <% if !form.object.errors[:will_be_18_by_election].empty? %>class="checkbox_error" <% end %>>
+      </li>
+      <li <% if !form.object.errors[:will_be_18_by_election].empty? %>class="checkbox_error" <% end %>>
           <%= form.check_box :will_be_18_by_election %>
           <label for="registrant_will_be_18_by_election" class: "check-box-step-1">
             <span class="required" title="required">*</span>
             <%= t("activerecord.attributes.registrant.will_be_18_by_election") %>
           </label>
-      </div>
-    </div>
-    <div class="checkbox checkbox-step-1">
-      <div>
+      </li>
+      <li>
           <%= form.check_box :first_registration %>
           <label for="registrant_first_registration" class: "check-box-step-1">
             <%= t("activerecord.attributes.registrant.first_registration") %></label>
-      </div>
-    </div>
+      </li>
+    </ul>
 
   </fieldset>
   

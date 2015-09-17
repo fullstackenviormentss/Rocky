@@ -103,7 +103,7 @@ en:
             prev_zip_code:
               invalid: Use ZIP or ZIP+4
             email_address:
-              invalid: Not a valid address
+              invalid: is not a valid address
             date_of_birth:
               format: Should be MM-DD-YYYY
             phone:
@@ -142,7 +142,7 @@ en:
       login_invalid: Username should use only letters, numbers, spaces, and .-_@ please.
       consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded,
         account is disabled.
-      email_invalid: E-mail is not a valid address.
+      email_invalid: Please enter a valid E-mail address.
       password_blank: Password can not be blank.
       password_invalid: Login/password combination is not valid.
       not_active: Your account is not active.
