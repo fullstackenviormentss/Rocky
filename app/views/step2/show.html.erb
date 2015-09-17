@@ -79,7 +79,7 @@
       <label for="registrant_email_address">
         <span class="required" title="required">*</span>
         <%= t("activerecord.attributes.registrant.email_address") %>
-        <br/><div class="tooltip"><%= t("txt.registration.tooltips.email_address")%></div></label>  
+        <br/><div class="tooltip"><%= t("txt.registration.tooltips.email_address")%></div><br/></label>  
       <%= field_div form, :email_address %>
     </div>
   </div>
@@ -88,10 +88,10 @@
       <label for="registrant_date_of_birth">
         <span class="required" title="required">*</span>
         <%= t("activerecord.attributes.registrant.date_of_birth") %>
-      </label>
       <span class="example"><%= t("txt.registration.tooltips.date_of_birth_format") %>
       </span>
-      <br/><span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span>
+      <br/><span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span><br/>
+    </label>
       <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth %>
       <% if !form.object.errors[:date_of_birth].empty? %>
         <!-- <span class="error"><%= form.object.errors[:date_of_birth].join("\n") %></span> -->
@@ -135,7 +135,7 @@
   
   <fieldset>
     <legend><%= I18n.t('txt.registration.name') %></legend>
-    <br/><br/><span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span>
+    <br/><br/><span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span><br/>
 
     <div class="stacked">
       <div class="width_d">

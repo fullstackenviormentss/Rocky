@@ -5,12 +5,8 @@
       <%= form.label :phone %>
       <div class="flat-stack">
        <span class="example"><%= t('txt.registration.tooltips.phone_format') %></span>
-       <br/><span class="tooltip"><%= t("txt.registration.tooltips.phone")%></span>
+       <br/><span class="tooltip"><%= t("txt.registration.tooltips.phone")%></span><br/>
         <%= field_div form, :phone %>
-        <% if form.object.errors[:phone].any? %>
-          <span class="error"><%= form.object.errors[:phone].join("\n") %></span>
-        <% else %>
-        <% end %>
       </div>
      
     </div>
@@ -18,7 +14,6 @@
       <div id="registrant_phone_type_label"><%= form.label :phone_type %></div>
       <div class="flat-stack" id="registrant_phone_type_wrapper">
         <div><%= form.select :phone_type, @registrant.phone_types %></div>
-        <span class="error"><%= form.object.errors[:phone_type].join("\n") %></span>
       </div>
     </div>
   </div>
