@@ -53,6 +53,15 @@ class Notifier < ActionMailer::Base
     
   end
 
+  def download_ready(registrant_id)
+    registrant = Registrant.find(registrant_id)
+
+    attachments['voter_registration.pdf'] = File.read(registrant.pdf_path)
+    mail(:subject => "Your download is ready",
+      :from => "Notifier", :body => "This is the body to an email, yo",
+      :to => registrant.email_address)
+  end
+
   protected
 
   def setup_registrant_email(registrant, kind)

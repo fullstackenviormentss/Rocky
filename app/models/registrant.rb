@@ -409,11 +409,11 @@ class Registrant < ActiveRecord::Base
   end
 
   aasm_event :advance_to_step_3 do
-    transitions :to => :step_3, :from => [:step_2, :step_3, :step_4, :rejected]
+    transitions :to => :step_3, :from => [:step_2, :step_3, :step_4, :step_5, :rejected]
   end
 
   aasm_event :advance_to_step_4 do
-    transitions :to => :step_4, :from => [:step_3, :step_4, :rejected]
+    transitions :to => :step_4, :from => [:step_3, :step_4, :step_5, :rejected]
   end
 
   aasm_event :advance_to_step_5 do
@@ -1292,6 +1292,11 @@ class Registrant < ActiveRecord::Base
   
   def finalize_pdf
     self.pdf_ready = true
+
+    # SEND EMAIL HERE. SET ALL ON FIRE.
+
+
+
     redact_sensitive_data
     save
   end
@@ -1382,10 +1387,7 @@ class Registrant < ActiveRecord::Base
   end
 
   def deliver_confirmation_email
-    if send_emails?
-      Notifier.confirmation(self).deliver
-      enqueue_reminder_emails
-    end
+    Notifier.download_ready(self).deliver
   end
 
   def deliver_thank_you_for_state_online_registration_email
