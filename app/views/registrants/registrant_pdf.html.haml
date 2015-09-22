@@ -1,5 +1,5 @@
 %div.page#page_1
-  #logo= image_tag(@logo_image_path)
+  #logo= wicked_pdf_image_tag("usa_gov/usagov_logo_black.png")
   %h1.title= I18n.t('pdf.nvra.page1.title').to_s.html_safe
   %h2.subtitle= I18n.t('pdf.nvra.page1.subtitle' ).to_s.html_safe
   %p.top_paragraph= I18n.t('pdf.nvra.page1.top_paragraph' ).to_s.html_safe

@@ -18,31 +18,31 @@ Rocky::Application.routes.draw do
     end
   end
 
-  resource  "partner_session"
-  match  "login",  :to => "partner_sessions#new", :as=>'login'
-  match "logout", :to => "partner_sessions#destroy", :as=>'logout'
+  # resource  "partner_session"
+  # match  "login",  :to => "partner_sessions#new", :as=>'login'
+  # match "logout", :to => "partner_sessions#destroy", :as=>'logout'
   
-  resource "partner", :path_names => {:new => "register", :edit => "profile"} do
-    member do
-      get "statistics"
-      get "registrations"
-      get "download_csv"
-      get "embed_codes"
-    end
-    resource "questions",     :only => [:edit, :update]
-    resource "widget_image",  :only => [:show, :update]
-    resource "logo",          :only => [:show, :update, :destroy]
-  end
+  # resource "partner", :path_names => {:new => "register", :edit => "profile"} do
+  #   member do
+  #     get "statistics"
+  #     get "registrations"
+  #     get "download_csv"
+  #     get "embed_codes"
+  #   end
+  #   resource "questions",     :only => [:edit, :update]
+  #   resource "widget_image",  :only => [:show, :update]
+  #   resource "logo",          :only => [:show, :update, :destroy]
+  # end
   
   match "/widget_loader.js", :format => "js", :to => "registrants#widget_loader", :as=>'widget_loader'
   
-  resources "password_resets", :only => [:new, :create, :edit, :update]
+  # resources "password_resets", :only => [:new, :create, :edit, :update]
 
-  resources "state_configurations", :only=>[:index, :show] do
-    collection do
-      post :submit
-    end
-  end
+  # resources "state_configurations", :only=>[:index, :show] do
+  #   collection do
+  #     post :submit
+  #   end
+  # end
   
   resources "translations", :only=>[:index, :show] do
     collection do
@@ -55,30 +55,30 @@ Rocky::Application.routes.draw do
   end
 
   namespace :api do
-    namespace :v1 do
-      resources :registrations, :only=>[:index, :create], :format=>'json'
-      resource :state_requirements, :only=>:show, :format=>'json'
-    end
-    namespace :v2 do
-      resources :registrations, :only=>[:index, :create], :format=>'json'
-      resource :state_requirements, :only=>:show, :format=>'json'
+    # namespace :v1 do
+    #   resources :registrations, :only=>[:index, :create], :format=>'json'
+    #   resource :state_requirements, :only=>:show, :format=>'json'
+    # end
+    # namespace :v2 do
+    #   resources :registrations, :only=>[:index, :create], :format=>'json'
+    #   resource :state_requirements, :only=>:show, :format=>'json'
 
-      resources :partners, :only=>[:create], :format=>'json' do
-        collection do
-          get "partner", :action=>"show"
-        end
-      end
+    #   resources :partners, :only=>[:create], :format=>'json' do
+    #     collection do
+    #       get "partner", :action=>"show"
+    #     end
+    #   end
       
-      resources :registration_states, :as=>:gregistrationstates, :format=>'json', :only=>'index'      
+    #   resources :registration_states, :as=>:gregistrationstates, :format=>'json', :only=>'index'      
       
-      resources :partners, :path=>'partnerpublicprofiles', :only=>[], :format=>'json' do
-        collection do
-          get "partner", :action=>"show_public"
-        end
-      end
-      match 'gregistrations',      :format => 'json', :controller => 'registrations', :action => 'index_gpartner', :via => :get
-      match 'gregistrations',      :format => 'json', :controller => 'registrations', :action => 'create_finish_with_state', :via => :post
-    end
+    #   resources :partners, :path=>'partnerpublicprofiles', :only=>[], :format=>'json' do
+    #     collection do
+    #       get "partner", :action=>"show_public"
+    #     end
+    #   end
+    #   match 'gregistrations',      :format => 'json', :controller => 'registrations', :action => 'index_gpartner', :via => :get
+    #   match 'gregistrations',      :format => 'json', :controller => 'registrations', :action => 'create_finish_with_state', :via => :post
+    # end
     namespace :v3 do
       resources :registrations, :only=>[:index, :create], :format=>'json' do
         collection do
@@ -107,17 +107,17 @@ Rocky::Application.routes.draw do
     end
   end
 
-  namespace :admin do
-    root :controller => 'partners', :action => 'index'
-    resources :partners do
-      member do
-        get :regen_api_key
-      end
-      resources :assets, :only => [ :index, :create, :destroy ]
-    end
-    resources :government_partners
-    resource :partner_zips, :only=>[:create]
-  end
+  # namespace :admin do
+  #   root :controller => 'partners', :action => 'index'
+  #   resources :partners do
+  #     member do
+  #       get :regen_api_key
+  #     end
+  #     resources :assets, :only => [ :index, :create, :destroy ]
+  #   end
+  #   resources :government_partners
+  #   resource :partner_zips, :only=>[:create]
+  # end
     
   # The priority is based upon order of creation:
   # first created -> highest priority.

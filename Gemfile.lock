@@ -124,8 +124,12 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     ledermann-rails-settings (2.0.3)
       activerecord (~> 3.1)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     libv8 (3.16.14.7)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -290,6 +294,7 @@ DEPENDENCIES
   jquery-rails (~> 2.1)
   json
   ledermann-rails-settings
+  letter_opener
   mechanize (= 2.7.1)
   mysql2
   newrelic_rpm (= 3.6.0.83)

@@ -20,7 +20,7 @@ gem 'daemons', '~> 1.1.9'
 gem "paperclip", "~> 3.0"
 gem "mysql2"
 gem "rubyzip"
-
+gem 'letter_opener'
 gem "dotenv-rails"
 
 gem "haml"
