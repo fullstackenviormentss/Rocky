@@ -15,7 +15,25 @@
  *= require font-awesome
  *= require_self
  */
+.js-to_expand[aria-hidden=true] { display: none; }
 
+.expandmore__button {
+  background: none;
+  font-size: inherit;
+  color: inherit;
+  width: 100%;
+}
+
+.expandmore__button[aria-expanded=false]:before {
+  content : '+ ';
+}
+.expandmore__button[aria-expanded=true]:before {
+  content : '- ';
+}
+.js-to_expand{
+  border: solid #000 1px ;
+  padding: 15px;
+}
 .button_print {
   color: #fff;
   text-decoration: none;
