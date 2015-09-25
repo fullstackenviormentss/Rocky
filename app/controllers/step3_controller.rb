@@ -27,9 +27,6 @@ class Step3Controller < RegistrationStep
   
   def show
     super
-    if @registrant.skip_survey_and_opt_ins? && @registrant.in_ovr_flow?
-      attempt_to_advance
-    end
   end
 
   def update
@@ -45,11 +42,11 @@ class Step3Controller < RegistrationStep
   protected
 
   def next_url
-    registrant_step_5_url(@registrant)
+    registrant_step_4_url(@registrant)
   end
 
   def advance_to_next_step
-    @registrant.advance_to_step_3
+    @registrant.advance_to_step_4
   end
 
 

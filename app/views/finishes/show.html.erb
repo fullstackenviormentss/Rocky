@@ -1,3 +1,5 @@
+<%= render partial: "layouts/usa_gov_header_nav" %>
+
 <% if @stop_reminders -%>
   <h1><%= I18n.t('txt.registration.finish_reminder_header').html_safe %></h1>
   <p><%= I18n.t('txt.registration.finish_reminder', :first_name => @registrant.first_name, :last_name=>@registrant.last_name).html_safe %></p>

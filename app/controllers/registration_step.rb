@@ -46,7 +46,13 @@ class RegistrationStep < ApplicationController
     find_registrant
     set_up_view_variables
     @registrant.attributes = params[:registrant]
-    attempt_to_advance
+    @registrant.send(:"advance_to_step_#{current_step}")
+    if @registrant.aasm_current_state == :step_3
+      @registrant.calculate_age
+      render 'step3/verify'
+    else
+      attempt_to_advance
+    end
   end
 
   def current_step
@@ -76,16 +82,13 @@ class RegistrationStep < ApplicationController
   
 
   def attempt_to_advance
-    advance_to_next_step
 
     if @registrant.valid?
       @registrant.save_or_reject!
-      
-       redirect_when_eligible
+        
+      advance_to_next_step
+      redirect_when_eligible
     else
-
-    puts @registrant.inspect
-    puts @registrant.errors.inspect
       set_show_skip_state_fields
       render "show"
     end

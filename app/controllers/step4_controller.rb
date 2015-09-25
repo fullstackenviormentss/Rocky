@@ -32,13 +32,7 @@ class Step4Controller < RegistrationStep
   
   def show
     super
-    if @registrant.has_ovr_pre_check?
-      @registrant.ovr_pre_check(self)
-    end
-    if @registrant.skip_survey_and_opt_ins? && !@registrant.in_ovr_flow?
-    
-      attempt_to_advance
-    end
+
   end
   
   def update
@@ -62,15 +56,11 @@ class Step4Controller < RegistrationStep
   end
 
   def advance_to_next_step
-    @registrant.advance_to_step_4
+    @registrant.advance_to_step_5
   end
 
   def next_url
-    if @registrant.using_state_online_registration?
-      registrant_state_online_registration_url(@registrant)
-    else
-      registrant_step_5_url(@registrant)
-    end
+    registrant_step_5_url(@registrant)
   end
 
   def set_up_view_variables

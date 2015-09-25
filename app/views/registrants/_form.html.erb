@@ -31,7 +31,21 @@ $(document).ready(function() {
 
 <div class="flat">
   <div class="width_f">
-    <%= raw t('txt.intro_text') %>
+    <h2><%= t("txt.registration.step_1_subheader") %></h2>
+    <ul>
+      <li>
+        <p><%= t("txt.registration.step_1_first_bullet") %></p>
+        <p><%= t("txt.registration.step_1_first_bullet_list_header") %></p>
+        <ul>
+          <li>North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept this form. </li>
+          <li>New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.</li>
+          <li>American citizens or uniformed military living abroad, visit the <a href="http://www.fvap.gov/">Federal Voting Assistance Program (FVAP)</a> to register to vote or request your absentee ballot.</li>
+        </ul>
+      </li>
+      <li> 
+        <p><%= t("txt.registration.step_1_second_bullet") %>:</p>
+      </li>
+    </ul>
   </div>
 </div>
 <div class="flat">

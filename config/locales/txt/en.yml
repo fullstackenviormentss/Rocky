@@ -1,26 +1,19 @@
 ---
 en:
   txt:
-    intro_text: ! '<p>
-        With the National Mail Voter Registration Form, you can:
-    </p>
-    <ul>
-      <li>Register to vote for the first time</li>
-      <li>Report a change of name or address to your voter registration office</li>
-      <li>Register with a political party</li>
-
-    </ul>
-    <p>Some states offer online voter registration. Select your state from the dropdown list below and click on the next button to see your registration options. </p>'
-    continue_with_state: Register directly online with your state at
-    continue_with_form: Fill out the National Mail Voter Registration Form below, download, print, write in your ID number, sign, and mail into your local election office. 
+    intro_text:
+    continue_with_state: Register directly online with your state
+    continue_with_form: Fill out the National Mail Voter Registration Form below, print, write in your ID number, sign, and mail into your local election office.
     required_fields: Items with an asterisk (*) are required.
-    
     unknown_error: "Unknown error: the web administrators have been contacted."
     error: "Something went wrong."
     try_again: "Go back and try again."
     rtv_and_partner: Rock the Vote and %{partner_name}
     button:
+      reads_submit: Submit
       submit: Next Step
+      eligibility: Check Eligibility
+      continue: Proceed to the National Mail Voter Registration Form
       edit: Edit
       edit_eligibility: "Edit Eligibility"
       edit_identity: "Edit Identity"
@@ -42,14 +35,17 @@ en:
       skip_state_online_registration: ! '&gt; No Thanks, I''ll continue with %{rtv_and_partner_name}
         and send in my form later.'
     registration:
+      eligibility: Eligibility
+      personal_info: Personal Information
       online_voter: Based on the state you live in, you can
       in_language_name: In English
       powered_by: ! 'powered by:'
       progress_indicator: ! 'Step:'
-      step_1_header: Voter Registration Form
-      step_2_header: Personal Information
-      step_3_header: Additional Registration Information
-      step_4_header: Stay Informed and Take Action
+      step_1_header: Register To Vote
+      step_1_subheader: 'U.S. citizens living within the U.S. can:'
+      step_2_header: Your Options For Registering to Vote
+      step_3_header: National Mail Voter Registration Form
+      step_4_header: National Mail Voter Registration Form
       step_4_ovr_header: Hang on. You are eligible to register online in your state.
       step_5_header: Review and Confirm
       step_6_header: Check Your E-mail to Download Form
@@ -58,6 +54,11 @@ en:
       step_2_nav: Personal Information
       step_3_nav: Review
       step_5_nav: Print
+      step_1_first_bullet: ! 'Complete the National Mail Voter Registration Form online and mail your completed 
+        voter registration application to your state’s election office. The National Mail Voter Registration Form
+        is accepted by most U.S. states and the District of Columbia.'
+      step_1_first_bullet_list_header: Exceptions 
+      step_1_second_bullet: Register online to vote. Some states offer online voter registration. Select your state from the dropdown list below to see your registration options.
       stay_informed_header: Stay Informed
       identification_header: Identification Information
       survey_title: Questions For You
@@ -130,6 +131,10 @@ en:
         work: Work
         other: Other
       instructions:
+        us_citizen: If you are a U.S. citizen who lives or has an address within the United States, you can use the form to
+        purpose_1: Register to vote for the first time
+        purpose_2: Report a change of name or address to your state’s voter registration office
+        purpose_3: Register with a political party
         overseas: ! '<b>Note</b>: Online voter registration is available in certain states. <a
           href=''http://www.rockthevote.com/voter-registration/online-application-system/online.html''
           target=''_blank''>Learn more about online voter registration</a>.'
@@ -251,6 +256,7 @@ en:
             p3: ''
       tooltips:
         check_all: Check all that apply
+        check_all_more: To register to vote, you must be naturally born or fully naturalized U.S. citizen and be at least 18 years of age on or before the next election day. 
         email_address: We will E-mail you a copy of your voter registration form.
         home_zip_code: "Enter ZIP Code for the address where you live, even if you don't receive mail there."
         date_of_birth_format: "Format: MM-DD-YYYY"

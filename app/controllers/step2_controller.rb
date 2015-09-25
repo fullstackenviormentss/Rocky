@@ -41,20 +41,11 @@ class Step2Controller < RegistrationStep
   protected
   
   def advance_to_next_step
-    @registrant.advance_to_step_2
-    if @registrant.use_short_form?
-      @registrant.advance_to_step_3
-      @registrant.advance_to_step_4
-      @registrant.advance_to_step_5
-    end
+    @registrant.advance_to_step_3
   end
 
   def next_url
-    if @registrant.use_short_form?
-      registrant_download_url(@registrant)
-    else
-      registrant_step_5_url(@registrant)
-    end
+    registrant_step_3_url(@registrant)
   end
 
   def redirect_when_eligible

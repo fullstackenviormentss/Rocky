@@ -180,6 +180,7 @@ fieldset{
 .rollover_button > button,
 .button_next_step > button,
 .button_prepare > button,
+.button_review > button,
 .button_review > button{
   border: solid 1px #c61f0c;
   background: #c61f0c;
@@ -190,9 +191,37 @@ fieldset{
   font-weight: normal;
   line-height: 20px;
   min-width: 130px;
-  height: 40px;
   cursor: pointer;
 
+}
+
+.registration_options{
+  margin: 20px;
+}
+.registration_options li{
+  margin: 10px;
+}
+.online-reg{
+  background: #c61f0c;
+  color: #fff;
+    display: inline-block;
+    // flex: 6;
+  padding: 7px 0 10px 0;
+  font-weight: normal;
+  text-align: left;
+  cursor: pointer; 
+}
+
+.online-reg a{
+    border: solid 1px #c61f0c;
+  color: #fff;
+    font-size: 130%;
+    line-height: 20px;
+    padding: 3px 15px 10px 15px;
+    text-decoration: none;
+}
+.online-reg a:visited{
+  color: #fff;
 }
 
 
@@ -218,6 +247,29 @@ fieldset{
 }
 .back a:visited{
   color: #1b50a0;
+}
+
+.next{
+  background: #c61f0c;
+  color: #fff;
+    display: inline;
+  margin: 0 0 0 15px;
+  padding: 7px 0 10px 0;
+  font-weight: normal;
+  height: 40px;
+  text-align: left;
+  cursor: pointer; 
+}
+.next a{
+    border: solid 1px #c61f0c;
+    font-size: 130%;
+  color: #fff;
+    line-height: 20px;
+    padding: 3px 15px 10px 15px;
+    text-decoration: none;
+}
+.next a:visited{
+  color: #fff;
 }
 .button_edit{
     margin-left: 15px;
@@ -378,7 +430,8 @@ a:focus, input:focus, div[role=group]:focus, button:focus, textarea:focus, butto
     outline-offset: 3px;
 }
 
-.back a:focus{
+.back a:focus,
+.next a:focus{
   border: #ff8c00 solid 3px;
   border-spacing: 3px;
   outline: none;

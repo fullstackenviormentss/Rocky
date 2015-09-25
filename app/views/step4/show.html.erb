@@ -1,18 +1,130 @@
+<%= render partial: "layouts/usa_gov_header_nav" %>
+
+<h1><%= t('txt.registration.step_4_header') %></h1>
+
 <%= form_for(@registrant, :url => registrant_step_4_path(@registrant)) do |form| %>
-  <%- if @registrant.in_ovr_flow? %>
-    <%= render :partial=> @registrant.custom_step_4_partial, :locals=>{:form=>form} %>
-  <%- else %>
-    
-    <h1><%= t('txt.registration.step_4_header') %></h1>
-    <div class="step-4">
-      <%= render :partial=> 'registrants/email_opt_ins', :locals=>{:form=>form} %>
-      <%= render :partial=> 'registrants/phone_opt_ins', :locals=>{:form=>form, :show_hr=>true} %>
-
+<div class="text"><%= t("txt.required_fields") %></div>
+<% if form.object.errors.count > 0 %>
+  <div id="errors" class="alert" tabindex="-1">
+    <p> The following errors were present on the page:</p>
+    <ol>
+      <% if !form.object.errors[:email_address].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.email_address")} #{form.object.errors[:email_address].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_email_address").focus();' %></li>
+      <% end %>
+      <% if !form.object.errors[:us_citizen].empty? %>
+        <li class="individual_error"><%= link_to " #{form.object.errors[:us_citizen].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_us_citizen").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:has_state_license].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.has_state_license")} #{form.object.errors[:has_state_license].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_has_state_license").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:will_be_18_by_election].empty? %>
+        <li class="individual_error"><%= link_to "#{form.object.errors[:will_be_18_by_election].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_will_be_18_by_election").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:name_title].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.name_title")} #{form.object.errors[:name_title].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_name_title").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:first_name].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.first_name")} #{form.object.errors[:first_name].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_first_name").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:last_name].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.last_name")} #{form.object.errors[:last_name].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_last_name").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:home_address].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_address")} #{form.object.errors[:home_address].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_home_address").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:home_city].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_city")} #{form.object.errors[:home_city].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_home_city").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:home_zip_code].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.home_zip_code")} #{form.object.errors[:home_zip_code].join("\n")}","#", onclick: 'event.preventDefault(); $("#registrant_home_zip_code").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:race].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.race")} #{form.object.errors[:race].join("\n")}","#", onclick: 'event.preventDefault(); $("#registrant_race").focus();', tabindex: -1 %></li>
+      <% end %>
+      <% if !form.object.errors[:party].empty? %>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.party")} #{form.object.errors[:party].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_party").focus();', tabindex: -1 %></li>
+      <% end %>
+    </ol>
+  </div>
+<% end %>
+  
+  <fieldset>
+    <legend><%= I18n.t('txt.registration.personal_info') %></legend>
+    <div class="stacked">
+      <div class="width_f">
+      <label for="registrant_email_address">
+        <span class="required" title="required">*</span>
+        <%= t("activerecord.attributes.registrant.email_address") %>
+        <br/><div class="tooltip"><%= t("txt.registration.tooltips.email_address")%></div><br/></label>  
+      <%= field_div form, :email_address %>
+      </div>
     </div>
+  </fieldset>
+  
+  <fieldset>
+    <legend><%= I18n.t('txt.registration.name') %></legend>
+    <br/><br/><span class="tooltip"><%= t("txt.registration.tooltips.registrant_name")%></span><br/>
 
-    <%= render :partial=>'registrants/survey_and_volunteer', :locals=>{:form=>form} %>
-    <%= rollover_button(:review, I18n.t('txt.button.review')) %>
+    <div class="stacked">
+      <div class="width_d">
+        <label for="registrant_name_title">
+          <span class="required" title="required">*</span>
+          <%= t("activerecord.attributes.registrant.name_title") %></label>
+        <%= select_div form, :name_title, @registrant.titles, :include_blank => true %>
+        <!-- <span class="error"><%= form.object.errors[:name_title].join("\n") %></span> -->
+      </div>
+      <div class="width_b">
+        <label for="registrant_first_name">
+          <span class="required" title="required">*</span>
+          <%= t("activerecord.attributes.registrant.first_name") %>
+        </label>   
+        <%= field_div form, :first_name %>
+        <!-- <span class="error"><%= form.object.errors[:first_name].join("\n") %></span> -->
+      </div>
+      <div class="width_c">
+        <%= form.label :middle_name %>
+        <%= field_div form, :middle_name %>
+      </div>
+      <div class="width_b">
+        <label for="registrant_last_name">
+          <span class="required" title="required">*</span>
+          <%= t("activerecord.attributes.registrant.last_name") %></label>
+        <%= field_div form, :last_name %>
+        <!-- <span class="error"><%= form.object.errors[:last_name].join("\n") %></span> -->
+      </div>
+      <div class="width_d">
+        <%= form.label :name_suffix %>
+        <div><%= form.select :name_suffix, @registrant.suffixes, :include_blank => t('txt.registration.select_none') %></div>
+      </div>
+    </div>
+  </fieldset>
+
+  <%= render :partial=> "registrants/home_address", :locals=>{:form=>form} %>
+  
+  <%- if @registrant.use_short_form? %>
+    <%= render(:partial => 'step2/previous', :locals => {:form => form, :show_hr=>false}) unless @registrant.first_registration? %>
+    
+    <%= render :partial=> "registrants/state_id_number", :locals=>{:form=>form, :include_race_and_party=>true} %>
+    
+    <%= render :partial=> "registrants/phone", :locals=>{:form=>form} %>
+    <%= render :partial=> 'registrants/phone_opt_ins', :locals=>{:form=>form, :show_hr=>true} %>
+    <%= render :partial=> 'registrants/email_opt_ins', :locals=>{:form=>form} %>
+    
+    <%= render :partial=>'registrants/survey_and_volunteer', :locals=>{:form=>form} %>      
+  
+    <%#= rollover_button(:prepare, I18n.t('txt.button.prepare')) %>
+    
+  <%- else %>
+    <%= render(:partial => 'step2/previous', :locals => {:form => form}) unless @registrant.first_registration? %>
+    <%= render :partial=> "registrants/phone", :locals=>{:form=>form} %>
+    
+    <%#= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
   <%- end %>
-  <div class="back">
-    <%= link_to t('txt.button.back').html_safe, (@registrant.skip_survey_and_opt_ins? && @registrant.in_ovr_flow?) ? registrant_step_2_path(@registrant) : registrant_step_3_path(@registrant) %></div>
+
+  <%= form.hidden_field :state_id_number, value: "---------" %>
+  <%= render :partial=> "registrants/race_and_party", :locals=>{:form=>form} %>
+  <div class="button_row">
+    <div class="back"><%= link_to t('txt.button.back').html_safe, registrant_step_3_path(@registrant) %></div>
+    <%= rollover_button(:next_step, I18n.t('txt.button.submit').html_safe) %>
+  </div>
 <% end %>

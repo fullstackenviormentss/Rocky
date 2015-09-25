@@ -174,8 +174,8 @@ class Registrant < ActiveRecord::Base
   aasm_initial_state :initial
   aasm_state :initial
   aasm_state :step_1
-  aasm_state :step_2, :enter => :generate_barcode
-  aasm_state :step_3
+  aasm_state :step_2
+  aasm_state :step_3, :enter => :generate_barcode
   aasm_state :step_4
   aasm_state :step_5
   aasm_state :complete, :enter => :complete_registration
@@ -253,17 +253,47 @@ class Registrant < ActiveRecord::Base
     reg.validates_presence_of   :home_state_id
   end
 
-  with_options :if => :at_least_step_2? do |reg|
+
+  with_options :if => :at_least_step_3? do |reg|
+    #originally from step1
+    # reg.validates_presence_of   :email_address
+    # reg.validates_format_of     :email_address, :with => Authlogic::Regex.email, :allow_blank => true
+    # reg.validates_zip_code      :home_zip_code
+    reg.validate                :validate_date_of_birth
+    # reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
+
+    # reg.validates_inclusion_of  :has_state_license, :in=>[true], :unless=>[:building_via_api_call]
+    # reg.validates_inclusion_of  :will_be_18_by_election, :in=>[true], :unless=>[:building_via_api_call]
+    # reg.validates_inclusion_of  :us_citizen, :in => [ true ], :unless => :building_via_api_call
+    # end originally from step1
+
+    # reg.validates_presence_of   :name_title
+    # reg.validates_inclusion_of  :name_title, :in => TITLES, :allow_blank => true
+    # reg.validates_presence_of   :first_name, :unless => :building_via_api_call
+    # reg.validates_presence_of   :last_name
+    # reg.validates_inclusion_of  :name_suffix, :in => SUFFIXES, :allow_blank => true
+    # reg.validates_presence_of   :home_address,    :unless => [ :finish_with_state? ]
+    # reg.validates_presence_of   :home_city,       :unless => [ :finish_with_state? ]
+    
+    # reg.validate                :validate_race_at_least_step_3,   :unless => [ :in_ovr_flow? ]
+    # reg.validate                :validate_party_at_least_step_3,  :unless => [ :building_via_api_call, :in_ovr_flow? ]
+
+    # reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
+    # reg.validates_presence_of :phone_type, :if => :has_phone?
+    # reg.validate :validate_phone_present_if_opt_in_sms_at_least_step_2  
+  end
+
+   with_options :if => :at_least_step_4? do |reg|
     #originally from step1
     reg.validates_presence_of   :email_address
     reg.validates_format_of     :email_address, :with => Authlogic::Regex.email, :allow_blank => true
     reg.validates_zip_code      :home_zip_code
-    reg.validate                :validate_date_of_birth
+
     reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
 
     # reg.validates_inclusion_of  :has_state_license, :in=>[true], :unless=>[:building_via_api_call]
-    reg.validates_inclusion_of  :will_be_18_by_election, :in=>[true], :unless=>[:building_via_api_call]
-    reg.validates_inclusion_of  :us_citizen, :in => [ true ], :unless => :building_via_api_call
+    # reg.validates_inclusion_of  :will_be_18_by_election, :in=>[true], :unless=>[:building_via_api_call]
+    # reg.validates_inclusion_of  :us_citizen, :in => [ true ], :unless => :building_via_api_call
     # end originally from step1
 
     reg.validates_presence_of   :name_title
@@ -277,9 +307,9 @@ class Registrant < ActiveRecord::Base
     reg.validate                :validate_race_at_least_step_3,   :unless => [ :in_ovr_flow? ]
     reg.validate                :validate_party_at_least_step_3,  :unless => [ :building_via_api_call, :in_ovr_flow? ]
 
-    reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
-    reg.validates_presence_of :phone_type, :if => :has_phone?
-    reg.validate :validate_phone_present_if_opt_in_sms_at_least_step_2  
+    # reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
+    # reg.validates_presence_of :phone_type, :if => :has_phone?
+    # reg.validate :validate_phone_present_if_opt_in_sms_at_least_step_2  
   end
   
   with_options :if => :needs_mailing_address? do |reg|
@@ -289,20 +319,6 @@ class Registrant < ActiveRecord::Base
     reg.validates_zip_code    :mailing_zip_code
   end
 
-  with_options :if => :at_least_step_3? do |reg|
-    # reg.validates_presence_of :state_id_number, :unless=>[:complete?, :in_ovr_flow?]
-    # reg.validates_format_of :state_id_number, :with => /^(none|\d{4}|[-*A-Z0-9]{7,42})$/i, :allow_blank => true
-    reg.validate :validate_phone_present_if_opt_in_sms_at_least_step_3
-    
-  end
-  
-  with_options :if => [:at_least_step_2?, :use_short_form?] do |reg|
-    # reg.validates_presence_of :state_id_number, :unless=>:complete?
-    # reg.validates_format_of :state_id_number, :with => /^(none|\d{4}|[-*A-Z0-9]{7,42})$/i, :allow_blank => true
-    reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
-    reg.validates_presence_of :phone_type, :if => :has_phone?
-    reg.validate :validate_phone_present_if_opt_in_sms_use_short_form
-  end
 
   with_options :if => :needs_prev_name? do |reg|
     reg.validates_presence_of :prev_name_title
@@ -409,15 +425,15 @@ class Registrant < ActiveRecord::Base
   end
 
   aasm_event :advance_to_step_3 do
-    transitions :to => :step_3, :from => [:step_2, :step_3, :step_4, :step_5, :rejected]
+    transitions :to => :step_3, :from => [:step_1, :step_2, :step_3, :step_4, :step_5, :rejected]
   end
 
   aasm_event :advance_to_step_4 do
-    transitions :to => :step_4, :from => [:step_3, :step_4, :step_5, :rejected]
+    transitions :to => :step_4, :from => [:step_1, :step_2, :step_3, :step_4, :step_5,:rejected]
   end
 
   aasm_event :advance_to_step_5 do
-    transitions :to => :step_5, :from => [:step_4, :step_5, :rejected]
+    transitions :to => :step_5, :from => [:step_1, :step_2, :step_3, :step_4, :step_5,:rejected]
   end
 
   aasm_event :complete do
@@ -520,6 +536,10 @@ class Registrant < ActiveRecord::Base
 
   def at_least_step_3?
     at_least_step?(3)
+  end
+
+  def at_least_step_4?
+    at_least_step?(4)
   end
 
   def at_least_step_5?

@@ -1,0 +1,40 @@
+<%= render partial: "layouts/usa_gov_header_nav" %>
+
+<h1><%= t('txt.registration.step_3_header') %></h1>
+<% if !@registrant.us_citizen?  %>
+  <div class="flat">
+    <div class="width_f">
+      <div id="online_reg_notice">
+        <h2>Your Eligibility</h2>
+        <p>Sorry, you are not eligible to register to vote for the following reason(s):</p>
+        <% if !@registrant.us_citizen? %>
+          <p>Your registration cannot be completed because you did not check the box indicating that you are a U.S. citizen. You must be a U.S. citizen to register to vote. If you are a citizen, please return to the previous page and check the citizenship box.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% elsif @registrant.age < 18  && !@registrant.under_18_ok  %>
+  <div class="flat">
+    <div class="width_f">
+      <div id="online_reg_notice">
+        <h2>Your Eligibility</h2>
+        <p>Sorry, you are not eligible to register to vote for the following reason(s):</p>
+
+        <p>It looks like you aren't 18 yet. In most states, you can register to vote if you will turn 18 before the next election. Visit your state election office to find out when the next election is. </p>
+        <p>If you will turn 18 before the next election, then you are eligible to use the National Mail Voter Registration Form. Please review the requirements and instructions for using this form before proceeding to the next step.</p>
+
+      </div>
+    </div>
+  </div>
+  <%= render partial: "requirements" %>
+<% else %>
+  <div class="flat">
+    <div class="width_f">
+      <div id="online_reg_notice">
+        <h2>Your Eligibility</h2>
+        <p>Based on your responses, you are eligible to use the National Mail Voter Registration Form. Please review the requirements and instructions for using this form before proceeding.</p>
+      </div>
+    </div>
+  </div>
+  <%= render partial: "requirements" %>
+<% end %>
