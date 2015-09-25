@@ -1087,7 +1087,7 @@ class Registrant < ActiveRecord::Base
         Rails.logger.error e.message
         Rails.logger.error e.backtrace
       end
-      raise "Error submiting to core API"
+      return true
     end
     
     
