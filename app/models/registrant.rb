@@ -1076,9 +1076,9 @@ class Registrant < ActiveRecord::Base
       #   {:registration => self.to_api_hash}.to_json, :content_type => :json, :accept => :json, :verify_ssl => false
       # ))
       Rails.logger.error "Made SSL Request"
-      self.remote_uid = response["uid"]
-      self.remote_pdf_path = response["pdfurl"]
-      self.save!
+      # self.remote_uid = response["uid"]
+      # self.remote_pdf_path = response["pdfurl"]
+      # self.save!
       redact_sensitive_data
       return true
     rescue Exception => e
