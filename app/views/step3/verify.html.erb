@@ -1,6 +1,8 @@
 <%= render partial: "layouts/usa_gov_header_nav" %>
 
 <h1><%= t('txt.registration.step_3_header') %></h1>
+<%= form_for(@registrant, :url => registrant_step_2_path(@registrant)) do |form| %>
+
 <% if !@registrant.us_citizen?  %>
   <div class="flat">
     <div class="width_f">
@@ -37,4 +39,5 @@
     </div>
   </div>
   <%= render partial: "requirements" %>
+<% end %>
 <% end %>
