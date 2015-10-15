@@ -260,7 +260,6 @@ class Registrant < ActiveRecord::Base
     # reg.validates_format_of     :email_address, :with => Authlogic::Regex.email, :allow_blank => true
     # reg.validates_zip_code      :home_zip_code
     reg.validates_presence_of :date_of_birth
-    reg.validate                :validate_date_of_birth
     # reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
 
     # reg.validates_inclusion_of  :has_state_license, :in=>[true], :unless=>[:building_via_api_call]
@@ -354,7 +353,6 @@ class Registrant < ActiveRecord::Base
     reg.validates_inclusion_of :us_citizen,                        :in => [ true ], :message=>"Required value is '1' or 'true'"
   end
 
-  validates_presence_of :home_state_id
   validates_presence_of  :send_confirmation_reminder_emails, :in => [ true, false ], :if=>[:building_via_api_call, :finish_with_state?]
 
 
@@ -612,44 +610,6 @@ class Registrant < ActiveRecord::Base
     return true
     if (self.opt_in_sms? || self.partner_opt_in_sms?) && phone.blank?
       errors.add(:phone, :required_if_opt_in)
-    end
-  end
-
-  def date_of_birth=(string_value)
-    dob = nil
-    if string_value.is_a?(String)
-      if matches = string_value.match(/^(\d{1,2})\D+(\d{1,2})\D+(\d{4})$/)
-        m,d,y = matches.captures
-        dob = Date.civil(y.to_i, m.to_i, d.to_i) rescue string_value
-      elsif matches = string_value.match(/^(\d{4})\D+(\d{1,2})\D+(\d{1,2})$/)
-        y,m,d = matches.captures
-        dob = Date.civil(y.to_i, m.to_i, d.to_i) rescue string_value
-      else
-        dob = string_value
-      end
-    else
-      dob = string_value
-    end
-    write_attribute(:date_of_birth, dob)
-  end
-
-  def validate_date_of_birth
-    return if date_of_birth_before_type_cast.is_a?(Date) || date_of_birth_before_type_cast.is_a?(Time)
-    if date_of_birth_before_type_cast.blank?
-      errors.add(:date_of_birth, :blank)
-    else
-      @raw_date_of_birth = date_of_birth_before_type_cast
-      date = nil
-      if matches = date_of_birth_before_type_cast.to_s.match(/^(\d{1,2})-{1}(\d{1,2})-{1}(\d{4})$/)
-        m,d,y = matches.captures
-        date = Date.civil(y.to_i, m.to_i, d.to_i) rescue nil
-      end
-      if date
-        @raw_date_of_birth = nil
-        self[:date_of_birth] = date
-      else
-        errors.add(:date_of_birth, :format)
-      end
     end
   end
 
@@ -1449,10 +1409,12 @@ class Registrant < ActiveRecord::Base
   end
 
   def check_ineligible
-    self.ineligible_non_participating_state = home_state && !home_state.participating?
-    self.ineligible_age = age && age < 18
-    self.ineligible_non_citizen = !us_citizen?
-    true # don't halt save in after_validation
+    if at_least_step_4?
+      self.ineligible_non_participating_state = home_state && !home_state.participating?
+      self.ineligible_age = age && age < 18
+      self.ineligible_non_citizen = !us_citizen?
+      true # don't halt save in after_validation
+    end
   end
 
   def ineligible?

@@ -48,10 +48,14 @@ class RegistrationStep < ApplicationController
     @registrant.attributes = params[:registrant]
     @registrant.send(:"advance_to_step_#{current_step}")
     if @registrant.aasm_current_state == :step_3
-      
       @registrant.save_or_reject!
-      @registrant.calculate_age
-      render 'step3/verify'
+      if @registrant.valid?
+        @registrant.calculate_age
+        render 'step3/verify'
+      else
+       attempt_to_advance
+
+      end
     else
       attempt_to_advance
     end

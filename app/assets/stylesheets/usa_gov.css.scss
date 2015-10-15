@@ -578,3 +578,37 @@ a:active, a:focus{
 [aria-hidden=true]{
   display: none !important;
 }
+
+.usa-date-of-birth label {
+  margin-top: 0; }
+.usa-date-of-birth input[type=number]::-webkit-inner-spin-button,
+.usa-date-of-birth input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0; }
+.usa-date-of-birth input[type=number] {
+  -moz-appearance: textfield; }
+
+.usa-form-group-day,
+.usa-form-group-month,
+.usa-form-group-year {
+  float: left;
+  clear: none;
+  margin-right: 1.5rem;
+  width: 5rem; }
+
+.usa-form-group-day > input,
+.usa-form-group-month > input,
+.usa-form-group-year > input{
+  border: 1px solid #5b616b;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #000;
+    display: block;
+    font-size: 1.3rem;
+    margin: .2em 0;
+    max-width: 46rem;
+    width: 100%;
+    outline: none;
+    appearance: none;
+}

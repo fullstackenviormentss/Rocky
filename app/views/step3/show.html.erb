@@ -10,7 +10,7 @@
     <p> The following errors were present on the page:</p>
     <ol>
       <% if !form.object.errors[:date_of_birth].empty? %>
-        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.date_of_birth")} #{form.object.errors[:date_of_birth].join("\n")}", "#", onclick: 'event.preventDefault(); $("#registrant_date_of_birth").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.date_of_birth")} #{form.object.errors[:date_of_birth].join("\n")}", "#", onclick: 'event.preventDefault(); $("#date_of_birth_1").focus();', tabindex: -1 %></li>
       <% end %>
     </ol>
   </div>
@@ -34,14 +34,29 @@
     <legend><%= I18n.t('txt.registration.eligibility') %></legend>
     <div class="stacked">
       <div class="width_f">
-        <label for="registrant_date_of_birth">
-          <span class="required" title="required">*</span>
-          <%= t("activerecord.attributes.registrant.date_of_birth") %>
-        <span class="example"><%= t("txt.registration.tooltips.date_of_birth_format") %>
-        </span>
-        <br/><span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span><br/>
-      </label>
-        <%= field_div form, :date_of_birth, :value => form.object.form_date_of_birth %>
+      <span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span>
+        <br/>
+        <br/>
+        <fieldset>
+          <legend>
+          <%= t("activerecord.attributes.registrant.date_of_birth") %></legend>
+          <span class="usa-form-hint usa-datefield-hint" id="dobHint">For example: 04 28 1986</span>
+          <div class="usa-date-of-birth">
+            <div class="usa-datefield usa-form-group usa-form-group-month">
+              <label for="date_of_birth_1">Month<span class="required" title="required">*</span></label>
+              <input aria-describedby="dobHint" class="usa-form-control" id="date_of_birth_1" name="registrant[date_of_birth(2i)]" pattern="0?[1-9]|1[012]" type="number" value="" maxlength="2">
+            </div>
+            <div class="usa-datefield usa-form-group usa-form-group-day">
+              <label for="date_of_birth_2">Day<span class="required" title="required">*</span></label>
+              <input aria-describedby="dobHint" class="usa-form-control" id="date_of_birth_2" name="registrant[date_of_birth(3i)]" pattern="0?[1-9]|1[0-9]|2[0-9]|3[01]" type="number" value="" maxlength="2">
+            </div>
+            <div class="usa-datefield usa-form-group usa-form-group-year">
+              <label for="date_of_birth_3">Year<span class="required" title="required">*</span></label>
+              <input aria-describedby="dobHint" class="usa-form-control" id="date_of_birth_3" name="registrant[date_of_birth(1i)]" pattern="[0-9]{4}" type="number" value="" maxlength="4">
+            </div>
+          </div>
+
+        </fieldset>
       </div>
     </div>
   </fieldset>
