@@ -41,9 +41,9 @@ en:
       in_language_name: In English
       powered_by: ! 'powered by:'
       progress_indicator: ! 'Step:'
-      step_1_header: Register To Vote
+      step_1_header: Verify Eligibility
       step_1_subheader: 'U.S. citizens living within the U.S. can:'
-      step_2_header: Your Options For Registering to Vote
+      step_2_header: Personal Information
       step_3_header: National Mail Voter Registration Form
       step_4_header: National Mail Voter Registration Form
       step_4_ovr_header: Hang on. You are eligible to register online in your state.
