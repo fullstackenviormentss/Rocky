@@ -49,12 +49,13 @@ $(document).ready(function() {
   </div>
 </div>
 <div class="flat">
-  <div class="width_f">
+  <div class="width_f home_state">
     <label for="registrant_home_state_id">
       <span class="required" title="required">*</span>
       <%= t("activerecord.attributes.registrant.home_state_name") %>
-    </label>  
+    </label> <br/>
     <%= select_div form, :home_state_id, GeoState.collection_for_state_select %>
+    <%= rollover_button(:next_step, I18n.t('txt.button.reads_submit').html_safe) %>
   </div>
 </div>
 

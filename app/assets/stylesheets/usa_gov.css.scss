@@ -195,6 +195,12 @@ fieldset{
     overflow: hidden;
     display: inline;
 }
+.home_state > div{
+  display: inline-block
+}
+.rollover_button > {
+  padding-top: 20px;
+}
 .rollover_button > button,
 .button_next_step > button,
 .button_prepare > button,
