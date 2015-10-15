@@ -231,6 +231,7 @@ class Registrant < ActiveRecord::Base
     end
   end
 
+  validates_presence_of :home_state_id
   before_validation :clear_superfluous_fields
   before_validation :reformat_state_id_number
   before_validation :reformat_phone
@@ -421,7 +422,7 @@ class Registrant < ActiveRecord::Base
   end
 
   aasm_event :advance_to_step_2 do
-    transitions :to => :step_2, :from => [:step_1, :step_2, :step_3, :step_4, :rejected]
+    transitions :to => :step_2, :from => [:initial, :step_1, :step_2, :step_3, :step_4, :rejected]
   end
 
   aasm_event :advance_to_step_3 do
