@@ -412,7 +412,7 @@ class Registrant < ActiveRecord::Base
 
   aasm_event :save_or_reject do
     transitions :to => :rejected, :from => Registrant::STEPS, :guard => :ineligible?
-    [:step_1, :step_2, :step_3, :step_4, :step_5].each do |step|
+    [:initial, :step_1, :step_2, :step_3, :step_4, :step_5].each do |step|
       transitions :to => step, :from => step
     end
   end
