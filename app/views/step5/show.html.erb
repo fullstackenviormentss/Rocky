@@ -35,7 +35,7 @@
           <div><%=h @registrant.date_of_birth.strftime("%B %e, %Y") %></div>
         </li>
       </ul>
-    <%= rollover_image_link(:edit, I18n.t('txt.button.edit_eligibility'), registrant_path(@registrant)) %>
+    <%= rollover_image_link(:edit, I18n.t('txt.button.edit_eligibility'), registrant_step_4_path(@registrant)) %>
     </fieldset>
   </div>
 
@@ -63,6 +63,7 @@
             <%=h @registrant.mailing_city %>, <%=h @registrant.mailing_state.name %> <%=h @registrant.mailing_zip_code %>
           </div>
         </li>
+        <% end %>
         <% if @registrant.change_of_address? %>
         <li class="tall">
           <span><%= I18n.t('txt.registration.previous_address') %></span>
@@ -83,10 +84,8 @@
           <span><%= I18n.t('activerecord.attributes.registrant.phone') %></span>
           <div><%=h @registrant.phone_and_type %></div>
         </li>
-        
-        <% end %>
       </ul>
-    <%= rollover_image_link(:edit, I18n.t('txt.button.edit_identity'), registrant_step_2_path(@registrant)) %>
+    <%= rollover_image_link(:edit, I18n.t('txt.button.edit_identity'), registrant_step_4_path(@registrant)) %>
     </fieldset>
   </div>
 
@@ -108,7 +107,7 @@
           </li>
         <% end %>
       </ul>
-      <%= rollover_image_link(:edit, I18n.t('txt.button.edit_additional_info'), (@registrant.in_ovr_flow? ? registrant_step_4_path(@registrant, :show_fields=>"1") : registrant_step_3_path(@registrant))) %>
+      <%= rollover_image_link(:edit, I18n.t('txt.button.edit_additional_info'), (@registrant.in_ovr_flow? ? registrant_step_4_path(@registrant, :show_fields=>"1") : registrant_step_4_path(@registrant))) %>
     </fieldset>
   </div>
  <fieldset>

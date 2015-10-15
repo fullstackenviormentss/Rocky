@@ -91,12 +91,12 @@ redirect_ovr_states:
     EN: California Online Voter Registration|http://registertovote.ca.gov/
     ES: Inscripción de votante en línea de California|http://registertovote.ca.gov/es/
   CO:
-    EN: Go Vote Colorado|https://www.sos.state.co.us/voter-classic/secuRegVoterIntro.do
+    EN: Colorado Online Voter Registration|https://www.sos.state.co.us/voter-classic/secuRegVoterIntro.do
   CT:
     EN: Connecticut Online Voter Registration|https://voterregistration.ct.gov/OLVR/welcome.do
     ES: Inscripción en el Padrón Electoral https://voterregistration.ct.gov/OLVR/prefix.do
   DE:
-    EN: I Vote Delaware|https://ivote.de.gov/
+    EN: Delaware Online Voter Registration|https://ivote.de.gov/
   GA:
     EN: Georgia Online Voter Registration|https://registertovote.sos.ga.gov/GAOLVR/welcome.do
   HI:
@@ -109,14 +109,19 @@ redirect_ovr_states:
   KS:
     EN: Kansas Online Voter Registration|https://www.kdor.org/voterregistration/Default.aspx
   LA:
-    EN: Geaux Vote|http://www.sos.la.gov/ElectionsAndVoting/Pages/OnlineVoterRegistration.aspx
+    EN: Louisiana Online Voter Registration|http://www.sos.la.gov/ElectionsAndVoting/Pages/OnlineVoterRegistration.aspx
   MD:
     EN: Maryland Online Voter Registration|https://voterservices.elections.state.md.us/OnlineVoterRegistration/VoterType
     ES: Registro de votante|https://voterservices.elections.state.md.us/OnlineVoterRegistration/VoterType
+  MO:
+    EN: Missouri Online Voter Registration|http://s1.sos.mo.gov/elections/goVoteMissouri/register.aspx
   MN:
     EN: Minnesota Online Voter Registration|https://mnvotes.sos.state.mn.us/VoterRegistration/VoterRegistrationStep1.aspx
   MA:
     EN: Massachusetts Online Voter Registration System|https://www.sec.state.ma.us/ovr/
+  NE:
+    EN: Nebraska Online Voter Registration|https://www.nebraska.gov/apps-sos-voter-registration/
+    ES: Registrarse para votar en Nebraska|https://www.nebraska.gov/apps-sos-voter-registration/?lang=es
   NV:
     EN: Nevada Online Voter Registration|https://nvsos.gov/sosvoterservices/Registration/step1.aspx
     ES: Inscripción de votates en línea|https://nvsos.gov/sosvoterservices/Registration/step1.aspx
@@ -133,9 +138,13 @@ redirect_ovr_states:
     EN: Utah Online Voter Registration|https://secure.utah.gov/voterreg/index.html
   VA:
     EN: Virginia Online Voter Registration|https://www.vote.virginia.gov/
+  VT:
+    EN: Vermont Online Voter Registration|http://olvr.sec.state.vt.us/
   WA:
-    EN: MyVote|http://www.sos.wa.gov/elections/myvote/
+    EN: Washington Online Voter Registration|http://www.sos.wa.gov/elections/myvote/
     ES: MyVote|http://www.sos.wa.gov/elections/myvote/
+  WV:
+    EN: West Virginia Online Voter Registration|https://ovr.sos.wv.gov/Register
 pdf:
   nvra:
     page1:

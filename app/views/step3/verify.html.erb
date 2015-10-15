@@ -6,7 +6,7 @@
 <% if !@registrant.us_citizen?  %>
   <div class="flat">
     <div class="width_f">
-      <div id="online_reg_notice">
+      <div class="online_reg_notice">
         <h2>Your Eligibility</h2>
         <p>Sorry, you are not eligible to register to vote for the following reason(s):</p>
         <% if !@registrant.us_citizen? %>
@@ -18,7 +18,7 @@
 <% elsif @registrant.age != nil && @registrant.age < 18  && !@registrant.under_18_ok  %>
   <div class="flat">
     <div class="width_f">
-      <div id="online_reg_notice">
+      <div class="online_reg_notice">
         <h2>Your Eligibility</h2>
         <p>Sorry, you are not eligible to register to vote for the following reason(s):</p>
 
@@ -32,7 +32,7 @@
 <% else %>
   <div class="flat">
     <div class="width_f">
-      <div id="online_reg_notice">
+      <div class="online_reg_notice">
         <h2>Your Eligibility</h2>
         <p>Based on your responses, you are eligible to use the National Mail Voter Registration Form. Please review the requirements and instructions for using this form before proceeding.</p>
       </div>

@@ -18,7 +18,7 @@
   
 <div class="flat">
   <div class="width_f">
-    <div id="online_reg_notice">
+    <div class="online_reg_notice">
       <p class="voter_message"><%= t("txt.registration.instructions.us_citizen") %>:</p>
       <ul>
         <li><%= t("txt.registration.instructions.purpose_1") %></li>
@@ -79,8 +79,7 @@
       </div>
     </div>
   </fieldset>
-  <div class="button_row">
-    <div class="back"></div>
+  <div class="button_row centered">
     <%= rollover_button(:next_step, I18n.t('txt.button.eligibility').html_safe) %>
   </div>
 <% end %>

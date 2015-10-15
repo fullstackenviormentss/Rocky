@@ -36,7 +36,11 @@ class Step4Controller < RegistrationStep
   end
   
   def update
-    params[:registrant][:using_state_online_registration] = !params[:registrant_state_online_registration].nil?
+    if params[:registrant]
+      reg = params[:registrant]
+      reg[:change_of_address] = !"#{reg[:prev_address]}#{reg[:prev_unit]}#{reg[:prev_city]}#{reg[:prev_zip_code]}".blank?
+      reg[:change_of_name] = !"#{reg[:prev_first_name]}#{reg[:prev_middle_name]}#{reg[:prev_last_name]}".blank?
+    end
     super
   end
 

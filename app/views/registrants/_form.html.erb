@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 <div class="flat">
   <div class="width_f">
-    <h2><%= t("txt.registration.step_1_subheader") %></h2>
+    <h2 class="section_header"><%= t("txt.registration.step_1_subheader") %></h2>
     <ul>
       <li>
         <p><%= t("txt.registration.step_1_first_bullet") %></p>
@@ -54,8 +54,13 @@ $(document).ready(function() {
       <span class="required" title="required">*</span>
       <%= t("activerecord.attributes.registrant.home_state_name") %>
     </label> <br/>
-    <%= select_div form, :home_state_id, GeoState.collection_for_state_select %>
-    <%= rollover_button(:next_step, I18n.t('txt.button.reads_submit').html_safe) %>
+    <div class="left_side">
+      <%= select_div form, :home_state_id, [["Select your State", nil]] + GeoState.collection_for_state_select %>
+    </div>
+    <div class="right_side">
+
+      <%= rollover_button(:next_step, I18n.t('txt.button.reads_submit').html_safe) %>
+    </div>
   </div>
 </div>
 

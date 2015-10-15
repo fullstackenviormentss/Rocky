@@ -259,6 +259,7 @@ class Registrant < ActiveRecord::Base
     # reg.validates_presence_of   :email_address
     # reg.validates_format_of     :email_address, :with => Authlogic::Regex.email, :allow_blank => true
     # reg.validates_zip_code      :home_zip_code
+    reg.validates_presence_of :date_of_birth
     reg.validate                :validate_date_of_birth
     # reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
 
@@ -353,6 +354,7 @@ class Registrant < ActiveRecord::Base
     reg.validates_inclusion_of :us_citizen,                        :in => [ true ], :message=>"Required value is '1' or 'true'"
   end
 
+  validates_presence_of :home_state_id
   validates_presence_of  :send_confirmation_reminder_emails, :in => [ true, false ], :if=>[:building_via_api_call, :finish_with_state?]
 
 

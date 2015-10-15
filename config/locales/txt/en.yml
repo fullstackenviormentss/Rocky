@@ -2,8 +2,8 @@
 en:
   txt:
     intro_text:
-    continue_with_state: Register directly online with your state
-    continue_with_form: Fill out the National Mail Voter Registration Form below, print, write in your ID number, sign, and mail into your local election office.
+    continue_with_state: You can register directly online with your state if you have a state issued driver's license or ID card.
+    continue_with_form: Fill out the National Mail Voter Registration Form on this website. You will complete, print, write in your ID number (your social security or driver's license number), sign and mail to your local election office. 
     required_fields: Items with an asterisk (*) are required.
     unknown_error: "Unknown error: the web administrators have been contacted."
     error: "Something went wrong."
@@ -51,9 +51,9 @@ en:
       step_6_header: Check Your E-mail to Download Form
       step_7_header: Check Your E-mail to Download Form
       step_1_nav: Verify Eligibility
-      step_2_nav: Personal Information
-      step_3_nav: Review
-      step_5_nav: Print
+      step_2_nav: Add Personal Information
+      step_3_nav: Review and Confirm
+      step_5_nav: Download and Print
       step_1_first_bullet: ! 'Complete the National Mail Voter Registration Form online and mail your completed 
         voter registration application to your state’s election office. The National Mail Voter Registration Form
         is accepted by most U.S. states and the District of Columbia.'

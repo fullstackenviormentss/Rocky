@@ -7,8 +7,8 @@
   <% if @registrant.ineligible_non_participating_state %>
   <div class="flat">
     <div class="width_f">
-      <div id="online_reg_notice">
-        <h2>Sorry, you are not eligible to register to vote with this form for the following reason(s): </h2>
+      <div class="online_reg_notice">
+        <h2 class="section_header">Sorry, you are not eligible to register to vote with this form for the following reason(s): </h2>
         <ul>
           <li>North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept the National Mail Voter Registration Form. New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.</li>
           <li>If you live in one of these states or territories, contact your <a href="https://www.usa.gov/election-office">local election office</a> to find out how to register.</li>
@@ -20,19 +20,20 @@
   <% else %>
   <div class="flat">
     <div class="width_f">
-      <div id="online_reg_notice">
+      <div class="online_reg_notice">
         <h2><%= t("txt.registration.online_voter") %>:</h2>
           <ul class="registration_options">
             <% if @online_reg_url %>
               <li>
-                <p><%= t('txt.continue_with_state') %>:</p>
+                <p><%= t('txt.continue_with_state') %></p>
                 <div class="online-reg"><%= link_to @online_reg_text, @online_reg_url, :class =>"button" %></div>
               </li>
 
             <% end %>
             <li>
               <p><%=  t('txt.continue_with_form') %></p>
-              <div><%= rollover_button(:next_step, I18n.t('txt.button.continue').html_safe) %></div>
+              <p>Completing the form will take about 5 minutes.</p>
+              <%= rollover_button(:next_step, I18n.t('txt.button.continue').html_safe) %>
             </li>
           </ul>
       </div>

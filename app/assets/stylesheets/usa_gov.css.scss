@@ -45,6 +45,10 @@
   line-height:60px;
     text-decoration: none;
 }
+.bold{
+
+  font-weight: bold;
+}
 .button_print:visited {
   color: #fff;
 }
@@ -58,15 +62,15 @@ legend {
   font-weight: bold;
 }
 .has_error input{
-  border: 3px solid #C61F0C !important;
+  border: 3px solid #A81A0A !important;
 }
 .has_error select{
-  border: 3px solid #C61F0C !important;
+  border: 3px solid #A81A0A !important;
 }
 
 .checkbox_error{
 
-  border: 3px solid #C61F0C !important;
+  border: 3px solid #A81A0A !important;
 }
 #other_language_link{
   visibility: hidden;
@@ -81,7 +85,7 @@ legend {
 
 main > div > form, .review {
     border: 2px solid #E4EAEE;
-  padding: 0 0 15px 0;
+  padding: 0 15px 0;
   margin: 15px 0 15px 0;
 }
 input[type="text"]:disabled, select:disabled {
@@ -144,7 +148,7 @@ label.check-box-step-1{
     background-color: #E4EAEE;
 }
 h1{
-color: #c61f0c;
+color: #A81A0A;
   padding: 10px 0 10px 0;
   font-size: 180%;
   font-weight: normal;
@@ -198,16 +202,26 @@ fieldset{
 .home_state > div{
   display: inline-block
 }
-.rollover_button > {
-  padding-top: 20px;
+.home_state > .rollover_button {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.centered{
+  width: 100%;
+  text-align: center;
+}
+.centered > .rollover_button{
+  display: inline-block;
+  margin: 0 auto;
 }
 .rollover_button > button,
 .button_next_step > button,
 .button_prepare > button,
 .button_review > button,
 .button_review > button{
-  border: solid 1px #c61f0c;
-  background: #c61f0c;
+  border: solid 1px #A81A0A;
+  background: #A81A0A;
   color: #fff;
   margin: 0 0 0 0;
   padding: 7px 5px 10px 5px;
@@ -216,9 +230,16 @@ fieldset{
   line-height: 20px;
   min-width: 130px;
   cursor: pointer;
-
+  outline: none;
 }
-
+.section_header{
+  color: #1a51a1;
+  outline: 0px !important;
+  border: 0px !important;
+  font-size: 140%;
+  padding: 0 15px 0 15px;
+  font-weight: bold;
+}
 .registration_options{
   margin: 20px;
 }
@@ -226,7 +247,7 @@ fieldset{
   margin: 10px;
 }
 .online-reg{
-  background: #c61f0c;
+  background: #A81A0A;
   color: #fff;
     display: inline-block;
     // flex: 6;
@@ -237,7 +258,7 @@ fieldset{
 }
 
 .online-reg a{
-    border: solid 1px #c61f0c;
+    border: solid 1px #A81A0A;
   color: #fff;
     font-size: 130%;
     line-height: 20px;
@@ -274,7 +295,7 @@ fieldset{
 }
 
 .next{
-  background: #c61f0c;
+  background: #A81A0A;
   color: #fff;
     display: inline;
   margin: 0 0 0 15px;
@@ -285,7 +306,7 @@ fieldset{
   cursor: pointer; 
 }
 .next a{
-    border: solid 1px #c61f0c;
+    border: solid 1px #A81A0A;
     font-size: 130%;
   color: #fff;
     line-height: 20px;
@@ -400,14 +421,17 @@ position: relative;
   }
 }
 
+
 @media(max-width: 1200px){
   .flowIndicator div {
-    line-height:40px;
+    line-height: 20px;
+    padding-top: 5px
   }
 }
-@media(max-width: 992px){
+@media(max-width: 900px){
   .flowIndicator div {
     line-height: 20px;
+    padding-top: 0px;
   }
 }
 @media (max-width: 768px) {
@@ -425,7 +449,7 @@ position: relative;
         display: block;
     }
     .flowIndicator > .active{
-        color:#c61f0c;
+        color:#A81A0A;
     }
     .flowIndicator i{
     display: block!important;
@@ -469,7 +493,88 @@ a:active, a:focus{
   margin-top: 20px;
 }
 
-button:focus{
+.centered > .button > button:focus{
 
   border: solid 4px #ff8c00 ;
+}
+
+
+
+.usa-accordion + .usa-accordion,
+.usa-accordion + .usa-accordion-bordered,
+.usa-accordion-bordered + .usa-accordion,
+.usa-accordion-bordered + .usa-accordion-bordered {
+  margin-top: 1rem; }
+.usa-accordion > ul,
+.usa-accordion-bordered > ul {
+  color: #212121;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+  .usa-accordion > ul > li,
+  .usa-accordion-bordered > ul > li {
+    background-color: #f1f1f1;
+    font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+    list-style: none;
+    margin-bottom: 6px;
+    width: 100%; }
+.usa-accordion button[aria-expanded=false],
+.usa-accordion-bordered button[aria-expanded=false] {
+  background-image: url("plus.png");
+  background-image: url("plus.svg");
+  background-repeat: no-repeat;
+  background-size: 1.3rem; }
+.usa-accordion button,
+.usa-accordion-bordered button {
+  background-color: #EBE7DF;
+  background-image: url("minus.png");
+  background-image: url("minus.svg");
+  background-position: right 3rem center;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  color: #1a51a1;
+  margin: 0;
+  padding-bottom: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 5.5rem;
+  padding-top: 1.5rem;
+  width: 100%; }
+  .usa-accordion button:focus,
+  .usa-accordion-bordered button:focus {
+    box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf; }
+  .usa-accordion button:hover,
+  .usa-accordion-bordered button:hover {
+    background-color: #d6d7d9;
+    color: #212121; }
+  .usa-accordion button h1, .usa-accordion button h2, .usa-accordion button h3, .usa-accordion button h4, .usa-accordion button h5, .usa-accordion button h6,
+  .usa-accordion-bordered button h1,
+  .usa-accordion-bordered button h2,
+  .usa-accordion-bordered button h3,
+  .usa-accordion-bordered button h4,
+  .usa-accordion-bordered button h5,
+  .usa-accordion-bordered button h6 {
+    margin: 0; }
+
+.usa-accordion-bordered .usa-accordion-content {
+  border-bottom: 3px solid #EBE7DF;
+  border-left: 3px solid #EBE7DF;
+  border-right: 3px solid #EBE7DF; }
+
+.usa-accordion-content {
+  display: block;
+  background-color: white;
+  overflow: auto;
+  padding: 3rem; }
+  .usa-accordion-content > *:first-child {
+    margin-top: 0; }
+  .usa-accordion-content > *:last-child {
+    margin-bottom: 0; }
+[aria-hidden=true]{
+  display: none !important;
 }
