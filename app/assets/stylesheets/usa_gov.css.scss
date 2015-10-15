@@ -493,7 +493,8 @@ a:active, a:focus{
   margin-top: 20px;
 }
 
-.centered > .button > button:focus{
+.centered > .button > button:focus,
+.button_row > .rollover_button > button:focus{
 
   border: solid 4px #ff8c00 ;
 }
