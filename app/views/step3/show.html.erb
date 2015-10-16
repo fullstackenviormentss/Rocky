@@ -60,13 +60,13 @@
             </div>
             <div class="usa-datefield usa-form-group usa-form-group-day
             <%= "has_error" if !form.object.errors[:date_of_birth].empty? %>">
-              <label for="date_of_birth_2"><span class="required" title="required">*</span> Day<span class="required" title="required">*</span></label>
+              <label for="date_of_birth_2"><span class="required" title="required">*</span> Day</label>
               <input aria-describedby="dobHint" class="usa-form-control" id="date_of_birth_2" name="registrant[date_of_birth(3i)]" pattern="0?[1-9]|1[0-9]|2[0-9]|3[01]" type="number" value="<%= @registrant.date_of_birth.try(:day) %>" maxlength="2">
             </div>
 
             <div class="usa-datefield usa-form-group usa-form-group-year
                <%= "has_error" if !form.object.errors[:date_of_birth].empty?  %>">
-              <label for="date_of_birth_3"><span class="required" title="required">*</span> Year<span class="required" title="required">*</span></label>
+              <label for="date_of_birth_3"><span class="required" title="required">*</span> Year</label>
               <input aria-describedby="dobHint" class="usa-form-control" id="date_of_birth_3" name="registrant[date_of_birth(1i)]" pattern="[0-9]{4}" type="number" value="<%= @registrant.date_of_birth.try(:year) %>" maxlength="4">
             </div>
           </div>
