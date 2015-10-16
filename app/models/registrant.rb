@@ -426,15 +426,15 @@ class Registrant < ActiveRecord::Base
   end
 
   aasm_event :advance_to_step_3 do
-    transitions :to => :step_3, :from => [:step_1, :step_2, :step_3, :step_4, :step_5, :rejected]
+    transitions :to => :step_3, :from => [:initial, :step_1, :step_2, :step_3, :step_4, :step_5, :rejected]
   end
 
   aasm_event :advance_to_step_4 do
-    transitions :to => :step_4, :from => [:step_1, :step_2, :step_3, :step_4, :step_5,:rejected]
+    transitions :to => :step_4, :from => [:initial, :step_1, :step_2, :step_3, :step_4, :step_5,:rejected]
   end
 
   aasm_event :advance_to_step_5 do
-    transitions :to => :step_5, :from => [:step_1, :step_2, :step_3, :step_4, :step_5,:rejected]
+    transitions :to => :step_5, :from => [:initial, :step_1, :step_2, :step_3, :step_4, :step_5,:rejected]
   end
 
   aasm_event :complete do
