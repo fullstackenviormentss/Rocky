@@ -1035,6 +1035,7 @@ class Registrant < ActiveRecord::Base
   def complete_registration
     begin
       Rails.logger.error "Trying SSL request: https://#{RockyConf.api_host_name}/api/v3/registrations.json"
+      Rails.logger.error "Registration: #{self.to_api_hash}"
       response = JSON.parse(RestClient.post("https://#{RockyConf.api_host_name}/api/v3/registrations.json", 
         {:registration => self.to_api_hash}.to_json, :content_type => :json, :accept => :json, :verify_ssl => false
       ))
