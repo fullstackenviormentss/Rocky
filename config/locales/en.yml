@@ -94,14 +94,14 @@ en:
           ca_disclosures_error: In order to finish your registration with the state
             of California, you must accept the disclosures above.
           blank: is required
-          invalid_zip: Invalid ZIP
+          invalid_zip: Invalid ZIP Code
           attributes:
             home_zip_code:
-              invalid: Use ZIP or ZIP+4
+              invalid: Use ZIP Code
             mailing_zip_code:
-              invalid: Use ZIP or ZIP+4
+              invalid: Use ZIP Code
             prev_zip_code:
-              invalid: Use ZIP or ZIP+4
+              invalid: Use ZIP Code
             email_address:
               invalid: is not a valid address
             date_of_birth:

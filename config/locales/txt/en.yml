@@ -262,8 +262,7 @@ en:
         date_of_birth_format: "Format: MM-DD-YYYY"
         phone_format: "Format: ###-###-####"
         state_id_format: "Format: ###-##-####"
-        date_of_birth: On your voter registration application, you are required to indicate whether you will be 18 years old on or before election day. However, many states allow you to register before your 18th birthday. See the state list of voter registration age requirements for more information. <a
-          href="http://www.rockthevote.com/voter-registration/online-application-system/register-before-you-are-18-rules.html">View this page</a>  for state list of voter registration age requirements
+        date_of_birth: On your voter registration application, you are required to indicate whether you will be 18 years old on or before election day. However, many states allow you to register before your 18th birthday. See the state list of voter registration age requirements for more information.
         registrant_name: Put your full name in these boxes. Please do not use
           nicknames or initials. If this application is for a change of name you will
           be asked for your previous name in a later section.  And don't forget to
