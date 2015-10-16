@@ -260,7 +260,8 @@ class Registrant < ActiveRecord::Base
     # reg.validates_presence_of   :email_address
     # reg.validates_format_of     :email_address, :with => Authlogic::Regex.email, :allow_blank => true
     # reg.validates_zip_code      :home_zip_code
-    reg.validates_presence_of :date_of_birth
+    reg.validates_presence_of     :date_of_birth
+    reg.validate                  :validate_check_boxes
     # reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
 
     # reg.validates_inclusion_of  :has_state_license, :in=>[true], :unless=>[:building_via_api_call]
@@ -595,6 +596,16 @@ class Registrant < ActiveRecord::Base
       self.opt_in_email = false
     end
     return true
+  end
+
+  def validate_check_boxes
+    if !self.us_citizen
+      errors.add(:us_citizen, :not_citizen)
+    end
+    self.calculate_age
+    if self.age < 18 && !self.will_be_18_by_election
+      errors.add(:will_be_18_by_election, :not_eligible_age)
+    end
   end
 
   def validate_phone_present_if_opt_in_sms_at_least_step_2
