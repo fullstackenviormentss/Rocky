@@ -1036,9 +1036,12 @@ class Registrant < ActiveRecord::Base
     begin
       Rails.logger.error "Trying SSL request: https://#{RockyConf.api_host_name}/api/v3/registrations.json"
       Rails.logger.error "Registration: #{self.to_api_hash}"
-      response = JSON.parse(RestClient.post("https://#{RockyConf.api_host_name}/api/v3/registrations.json", 
-        {:registration => self.to_api_hash}.to_json, :content_type => "json", :verify_ssl => false
-      ))
+      # response = JSON.parse(RestClient.post("https://#{RockyConf.api_host_name}/api/v3/registrations.json", 
+      #   {:registration => self.to_api_hash}.to_json, :content_type => "json", :verify_ssl => false
+      # ))
+      queue_pdf
+      self.status = 'complete'
+      self.save
       Rails.logger.error "Made SSL Request"
       # self.remote_uid = response["uid"]
       # self.remote_pdf_path = response["pdfurl"]
