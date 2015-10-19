@@ -603,7 +603,7 @@ class Registrant < ActiveRecord::Base
       errors.add(:us_citizen, :not_citizen)
     end
     self.calculate_age
-    if self.age < 18 && !self.will_be_18_by_election
+    if self.age && self.age < 18 && !self.will_be_18_by_election
       errors.add(:will_be_18_by_election, :not_eligible_age)
     end
   end
