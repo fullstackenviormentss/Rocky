@@ -28,12 +28,18 @@
                 <p><%= t('txt.continue_with_state') %></p>
                 <div class="online-reg"><%= link_to @online_reg_text, @online_reg_url, :class =>"button" %></div>
               </li>
-
+              <li>
+                <p>Fill out the <%= link_to "National Mail Voter Registration Form", registrant_step_3_path(@registrant) %> on this website. You will complete, print, write in your ID number (your social security or driver's license number), sign and mail to your local election office. </p>
+                <p>Completing the form will take about 5 minutes.</p>
+              </li>
+            <% else %>
+              <li>
+                <p>Fill out the National Mail Voter Registration Form on this website. You will complete, print, write in your ID number (your social security or driver's license number), sign and mail to your local election office. </p>
+                <p>Completing the form will take about 5 minutes.</p>
+                <div class="online-reg"><%= link_to National Mail Voter Registration Form, registrant_step_3_path(@registrant), :class =>"button" %></div>
+              </li>
             <% end %>
-            <li>
-              <p>Fill out the <%= link_to "National Mail Voter Registration Form", registrant_step_3_path(@registrant) %> on this website. You will complete, print, write in your ID number (your social security or driver's license number), sign and mail to your local election office. </p>
-              <p>Completing the form will take about 5 minutes.</p>
-            </li>
+            
           </ul>
       </div>
     </div>

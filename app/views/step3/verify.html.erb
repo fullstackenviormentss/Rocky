@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-<% elsif @registrant.age != nil && @registrant.age < 18  && !@registrant.under_18_ok  %>
+<% elsif @registrant.age != nil && @registrant.age < 18  && !@registrant.will_be_18_by_election  %>
   <div class="flat">
     <div class="width_f">
       <div class="online_reg_notice">

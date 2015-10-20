@@ -57,9 +57,13 @@ class Notifier < ActionMailer::Base
     registrant = Registrant.find(registrant_id)
 
     attachments['voter_registration.pdf'] = File.read("public/#{registrant.pdf_path}")
-    mail(:subject => "Your download is ready",
+    m = mail(:subject => "Your download is ready",
       :from => "vote.USA.gov", :body => "Please print out the attached form, fill in your state ID, and mail to your State Elections Office.",
       :to => registrant.email_address)
+
+    registrant.destroy!
+
+    m
   end
 
   protected
