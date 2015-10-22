@@ -12,7 +12,7 @@ $(document).ready(function() {
   <legend><%= I18n.t('txt.registration.home_address') %></legend>
 
     <br/><span class="tooltip"><%= t("txt.registration.tooltips.home_address")%></span><br/>
-  <div class="stacked">
+  <div class="stacked space_labels">
     <div class="width_a">
       <label for="registrant_home_address">
         <span class="required" title="required">*</span>
@@ -25,8 +25,6 @@ $(document).ready(function() {
       <%= form.label :home_unit %>
       <%= field_div form, :home_unit %>
     </div>
-  </div>
-  <div class="stacked">
     <div class="width_a">
       <label for="registrant_home_city">
         <span class="required" title="required">*</span>
@@ -66,7 +64,7 @@ $(document).ready(function() {
   <%= hidden_field_tag "javascript_disabled", "1"  %>
   <legend><%= t('txt.registration.mailing_address') %></legend>
   <br/><span class="tooltip"><%= t("txt.registration.tooltips.mailing_address")%></span><br/>
-  <div class="stacked">
+  <div class="stacked space_labels">
     <div class="width_a">
       <%= form.label :mailing_address %>
       <%= field_div form, :mailing_address %>
@@ -76,8 +74,6 @@ $(document).ready(function() {
       <%= form.label :mailing_unit %>
       <%= field_div form, :mailing_unit, :size => 15 %>
     </div>
-  </div>
-  <div class="stacked">
     <div class="width_a">
       <%= form.label :mailing_city %>
       <%= field_div form, :mailing_city %>

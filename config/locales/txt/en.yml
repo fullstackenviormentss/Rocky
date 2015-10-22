@@ -24,7 +24,7 @@ en:
       keep_going: Keep Going
       remind_me_later: Remind Me Later
       help: Help
-      prepare: Prepare Form
+      prepare: Generate Your Form
       review: Review
       sendmail: Send E-mail
       share_facebook: Post It!
@@ -47,7 +47,7 @@ en:
       step_3_header: National Mail Voter Registration Form
       step_4_header: National Mail Voter Registration Form
       step_4_ovr_header: Hang on. You are eligible to register online in your state.
-      step_5_header: Review and Confirm
+      step_5_header: Review and Confirm Your Information
       step_6_header: Check Your E-mail to Download Form
       step_7_header: Check Your E-mail to Download Form
       step_1_nav: Verify Eligibility
@@ -69,7 +69,7 @@ en:
       race_and_party: Race and Party
       race: Race
       party: Party
-      download_header: Check Your E-mail to Download Form
+      download_header: Check Your E-mail to Download Your Form
       finish_header: Spread the word!
       finish_pdf_delay_header: Check Your E-mail
       finish_pdf_delay: It's taking a while to create your registration form to download,
@@ -131,13 +131,13 @@ en:
         work: Work
         other: Other
       instructions:
-        us_citizen: If you are a U.S. citizen who lives or has an address within the United States, you can use the form to
-        purpose_1: Register to vote for the first time
-        purpose_2: Report a change of name or address to your state’s voter registration office
-        purpose_3: Register with a political party
-        overseas: ! '<b>Note</b>: Online voter registration is available in certain states. <a
+        us_citizen: If you are a U.S. citizen who lives or has an address within the United States, you can use this form to
+        purpose_1: Register to vote for the first time.
+        purpose_2: Report a change of name or address to your state’s voter registration office.
+        purpose_3: Register with a political party.
+        overseas: ! '<b>Note</b>: Online voter registration is available in certain states. Learn more about <a
           href=''http://www.rockthevote.com/voter-registration/online-application-system/online.html''
-          target=''_blank''>Learn more about online voter registration</a>.'
+          target=''_blank''>online voter registration</a>.'
         overseas_military: If you are an American citizen living abroad or a uniformed military voter,  
           see <a href='http://www.fvap.gov/'>information about Overseas Citizen & Military Voter Services</a> 
           from the Federal Voting Assistance Program (FVAP) to register to vote or request your absentee ballot. 
@@ -194,7 +194,7 @@ en:
           sign, and mail it in.
         leave_state_online_registration_link: finish your registration with %{rtv_and_partner_name}
       ineligible:
-        age: You must be 18 years old by the date of the next election.
+        age: You must be 18-years-old by the date of the next election.
         non_citizen: Your registration cannot be completed because you did not check
           the box indicating that you are a U.S. citizen. You must be a U.S. citizen
           to register to vote. If you are a citizen, please return to the previous
@@ -255,18 +255,15 @@ en:
               to re-enter the correct information.
             p3: ''
       tooltips:
-        check_all: Check all that apply
+        check_all: Check All That Apply
         check_all_more: To register to vote, you must be naturally born or fully naturalized U.S. citizen and be at least 18 years of age on or before the next election day. 
-        email_address: We will E-mail you a copy of your voter registration form.
+        email_address: We will e-mail you a copy of your voter registration form.
         home_zip_code: "Enter ZIP Code for the address where you live, even if you don't receive mail there."
         date_of_birth_format: "Format: MM-DD-YYYY"
         phone_format: "Format: ###-###-####"
-        state_id_format: "Format: ###-##-####"
+        state_id_format: "Format: ###-##-####" 
         date_of_birth: On your voter registration application, you are required to indicate whether you will be 18 years old on or before election day. However, many states allow you to register before your 18th birthday. See the state list of voter registration age requirements for more information.
-        registrant_name: Put your full name in these boxes. Please do not use
-          nicknames or initials. If this application is for a change of name you will
-          be asked for your previous name in a later section.  And don't forget to
-          include your title (Mr., Mrs., Miss, Ms.).
+        registrant_name: Put your full name in these boxes. Please do not use nicknames or initials. If you're changing your name on this application, we will ask you for your former name in a later section. And don't forget to include your title (Mr., Mrs., Miss, Ms.).
         home_address: Put your home address in these boxes. Do not put your mailing
           address here if it is different from your home address. Do not use a post
           office box or rural route without a box number. If you live in a rural area
@@ -276,8 +273,7 @@ en:
           at an address that is different from your home address. If you do not receive
           mail at your home address you must fill out this section to indicate where
           you can be reached by mail.
-        phone: Most states ask for your telephone number in case there are questions
-          about your application. You are not required to provide your phone number.
+        phone: Most states ask for your telephone number in case they have questions about your application.
         previous_name: If you have changed your name since your last registration,
           enter your previous name.
         previous_address: If you have moved since your last registration, enter your

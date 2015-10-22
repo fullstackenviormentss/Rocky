@@ -23,7 +23,7 @@
 
 <fieldset id="prev_address_set">
   <legend><%= t('txt.registration.previous_address') %></legend>
-  <div class="stacked">
+  <div class="stacked space_labels">
     <div class="width_a">
     <%= form.label :prev_address %>
       <%= field_div form, :prev_address %>
@@ -34,8 +34,6 @@
       <%= field_div form, :prev_unit, :size => 15 %>
       <span class="error"><%= form.object.errors[:prev_unit].join("\n") %></span>
     </div>
-  </div>
-  <div class="stacked">
     <div class="width_a">
       <%= form.label :prev_city %>
       <%= field_div form, :prev_city %>
@@ -67,7 +65,7 @@
 <fieldset id="prev_name_set">
   <%= hidden_field_tag "javascript_disabled", "1"  %>
   <legend><%= I18n.t('txt.registration.previous_name') %></legend>
-  <div class="stacked">
+  <div class="stacked space_labels">
     <div class="width_d">
       <%= form.label :prev_name_title %>
       <%= select_div form, :prev_name_title, @registrant.titles, :include_blank => true %>

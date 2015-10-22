@@ -13,6 +13,7 @@
         <%= select_div form, :race, @registrant.races, :include_blank => true %>
     </div>
   </div>
+  <% if !@state_parties.empty? %>
   <div class="flat party-dropdown">
       <div>
         <label for="registrant_party">
@@ -27,4 +28,5 @@
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->
       </div>
     </div>
+  <% end %>
 </fieldset>

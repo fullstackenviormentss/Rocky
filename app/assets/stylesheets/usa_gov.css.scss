@@ -613,3 +613,36 @@ a:active, a:focus{
     outline: none;
     appearance: none;
 }
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {  /*safari and chrome*/
+    select {
+        height:40px;
+        line-height:40px;
+        background:#f4f4f4;
+    } 
+}
+select::-moz-focus-inner { /*Remove button padding in FF*/ 
+    border: 0;
+    padding: 0;
+}
+@-moz-document url-prefix() { /* targets Firefox only */
+    select {
+        padding: 20px 0!important;
+    }
+}        
+@media screen\0 { /* IE Hacks: targets IE 8, 9 and 10 */        
+    select {
+        height:40px;
+        line-height:40px;
+    }     
+}
+
+.space_labels > div >label{
+  display:block;
+  margin: 10px 0px 10px 0px;
+}
+
+.no_border{
+  border: none;
+}

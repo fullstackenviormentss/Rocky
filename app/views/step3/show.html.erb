@@ -7,7 +7,7 @@
 
 <% if form.object.errors.count > 0 %>
   <div id="errors" class="alert" tabindex="-1">
-    <p> The following errors were present on the page:</p>
+    <p> Please correct the following error(s):</p>
     <ol>
       <% if !form.object.errors[:date_of_birth].empty? %>
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.date_of_birth")} #{form.object.errors[:date_of_birth].join("\n")}", "#", onclick: 'event.preventDefault(); $("#date_of_birth_1").focus();', tabindex: -1 %></li>
@@ -48,7 +48,7 @@
       <span class="tooltip"><%= t("txt.registration.tooltips.date_of_birth").html_safe%></span>
         <br/>
         <br/>
-        <fieldset>
+        <fieldset class="no_border">
           <legend>
           <%= t("activerecord.attributes.registrant.date_of_birth") %></legend>
           <span class="usa-form-hint usa-datefield-hint" id="dobHint">For example: 4 28 1986</span>
