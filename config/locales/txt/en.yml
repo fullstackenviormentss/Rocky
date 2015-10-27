@@ -2,8 +2,52 @@
 en:
   txt:
     intro_text:
+    form_name: National Mail Voter Registration Form
+    select_your_state: Select your state
     continue_with_state: You can register directly online with your state if you have a state issued driver's license or ID card.
     continue_with_form: Fill out the National Mail Voter Registration Form on this website. You will complete, print, write in your ID number (your social security or driver's license number), sign and mail to your local election office. 
+    continue_with_form_link_part_1: Fill out the 
+    continue_with_form_link_part_2: on this website. You will complete, print, write in your ID number (your social security or driver's license number), sign and mail to your local election office. 
+    about_5_minutes: Completing the form will take about 5 minutes.
+    format: Format
+    month: Month
+    day: Day
+    year: Year
+    your_eligibility: Your Eligibility
+    sorry_eligibility: Sorry, you are not eligible to register to vote for the following reason(s)
+    ineligible_citizenship: Your registration cannot be completed because you did not check the box indicating that you are a U.S. citizen. You must be a U.S. citizen to register to vote. If you are a citizen, please return to the previous page and check the citizenship box.
+    ineligible_age_1: It looks like you aren't 18 yet. In most states, you can <a href="https://www.usa.gov/voter-registration-age-requirements-by-state">register to vote if you will turn 18</a> before the next election. Visit your <a href="https://www.usa.gov/election-office">state election office</a> to find out when the next election is. 
+    ineligible_age_2: If you will turn 18 before the next election, then you are eligible to use the National Mail Voter Registration Form. Please review the requirements and instructions for using this form before proceeding to the next step.
+    are_eligible: Based on your responses, you are eligible to use the National Mail Voter Registration Form. Please review the requirements and instructions for using this form before proceeding.
+    requirements: Requirements
+    state_requirements: State Requirements
+    state_requirements_1: All states require that you be a United States citizen by birth or naturalization to register to vote in federal and state elections. Federal law makes it illegal to falsely claim U.S. citizenship to register to vote in any federal, state, or local election.
+    state_requirements_2: Each state has its own laws about who may register and vote. Check the information for your state in the State Instructions on the <a href="http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf">National Mail Voter Registration Form</a> (PDF, <a href="https://get.adobe.com/reader/">Download Adobe Reader</a>).
+    state_requirements_6: Each state has it’s own deadline for registering to vote. Check the deadline for your state in the State Registration Deadlines table. For your convenience, the deadline for your state is pre-populated on  your form (that you will download after completing) under the box labeled “Registration Deadlines” on  page 1.
+    state_requirements_3: You cannot be registered to vote in more than one place at one time.
+    state_requirements_4: <span class="bold">Please note:</span> North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept the National Mail Voter Registration Form. New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.
+    state_requirements_5: If you live in one of these states or territories, contact your <a href="https://www.usa.gov/election-office">local election office</a> to register.
+    americans_abroad: <span class="bold">American citizens or uniformed military living abroad:</span> Do not use this form. Visit the <a href="http://www.fvap.gov/">Federal Voting Assistance Program (FVAP)</a> to register to vote or request your absentee ballot.
+    first_time: <span class="bold">First time registering to vote.</span> If you are registering to vote for the first time in your jurisdiction and are mailing this registration application, federal law requires you to show proof of identification the first time you vote. Proof of identification includes
+    first_time_photo_id: A current and valid photo identification, or 
+    first_time_other_id: A current utility bill, bank statement, government check, paycheck, or government document that shows your name and address.
+    voters_exempt: Voters may be exempt from this requirement if they attach a copy of this identification with their mail-in voter registration application. If you wish to submit a copy, please keep the following in mind
+    voters_additional: Your state may have additional identification requirements that may mandate you show identification at the polling place even if you meet the federal proof of identification. 
+    voters_do_not: Do not submit original documents with your application, only copies.
+    instructions: Instructions for using this form
+    download_adobe: You will need Adobe Acrobat to download your voter registration application. If you don't have Adobe Acrobat, you can <a href="https://get.adobe.com/reader/">download Adobe Acrobat Reader</a> here.
+    complete_all_fields: Complete all requested fields in the form. We have provided detailed instructions throughout the form. If you have any questions regarding the information requested by your state, please contact your <a href="https://www.usa.gov/election-office">state’s election office.</a> 
+    after_you_complete: After you complete the process for filling out your voter registration application form online, you will receive an email with the PDF to download. Please note that this e-mail will not be encrypted.  If you prefer, you can download the <a href="http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf">National Mail Voter Registration Application</a> form from the EAC to complete and mail in yourself.
+    able_to_print: You will also need a printer to print out your registration form.
+    after_print: You must print, enter your ID number (your social security or driver’s license number), sign, and mail your form to your Secretary of State or state/territorial election office. For your convenience, the address of your Secretary of State is pre-printed on your form along with detailed registrations instructions for your state. Federal law requires that states collect from each registrant an identification (ID) number, typically your social security number or driver’s license number. If you have neither a driver’s license nor a social security number, please indicate this on the form and a number will be assigned to you by your state.
+    race: A few states ask for your race  or ethnic group, in order to administer the Federal Voting Rights Act.  Please make a choice that best describes you from the list below
+    party: In some states, you must register with a party if you  want to  take part in that party’s primary election, caucus, or convention.  If you do not want to register with a party, select "none". Do not select "independent" if you  mean "no party," because this  might  be confused with the name of a political party in your state.
+    party_note: 'Note: If  you do  not register with a party, you can still  vote in general  elections and nonpartisan (nonparty) primary elections.'
+    download_one: You are not done. Check your e-mail to download and print your voter registration form. 
+    download_two: On your printed application, write in your ID number, sign, and mail to the address located on the form. Federal law requires that states collect from each registrant an identification (ID) number, typically your social security number or driver’s license number. If you have neither a driver’s license nor a social security number, please indicate this on the form and a number will be assigned to you by your state.
+    download_three: If you are registering to vote for the first time, remember to attach copies of your proof of identification. Do not send original documents with the application, only copies.
+    download_four: You will not be registered unless you download, print, sign, and mail your form to your local election office.
+    download_five: <a href="https://www.usa.gov/election-office">Contact your state</a> to confirm that you are registered. After you mail your voter registration application to your state election office, it is their responsibility to data enter your application and register you to vote.
     required_fields: Items with an asterisk (*) are required.
     unknown_error: "Unknown error: the web administrators have been contacted."
     error: "Something went wrong."
@@ -42,7 +86,7 @@ en:
       powered_by: ! 'powered by:'
       progress_indicator: ! 'Step:'
       step_1_header: Verify Eligibility
-      step_1_subheader: 'U.S. citizens living within the U.S. can:'
+      step_1_subheader: U.S. citizens living within the U.S. can
       step_2_header: Your Options for Registering to Vote
       step_3_header: National Mail Voter Registration Form
       step_4_header: National Mail Voter Registration Form
@@ -58,6 +102,9 @@ en:
         voter registration application to your state’s election office. The National Mail Voter Registration Form
         is accepted by most U.S. states and the District of Columbia.'
       step_1_first_bullet_list_header: Exceptions 
+      step_1_bullet_one: North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept this form.
+      step_1_bullet_two: New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.
+      step_1_bullet_three: American citizens or uniformed military living abroad, visit the <a href="http://www.fvap.gov/">Federal Voting Assistance Program (FVAP)</a> to register to vote or request your absentee ballot..
       step_1_second_bullet: Register online to vote. Some states offer online voter registration. Select your state from the dropdown list below to see your registration options.
       stay_informed_header: Stay Informed
       identification_header: Identification Information
@@ -85,8 +132,9 @@ en:
         form, you can find contact information for your Secretary of State at our
         <a href="http://www.rockthevote.com/election-center/" target="_blank">Election
         Center</a>.
-      ineligible_header: ! 'Sorry, you are not eligible to register to vote for the
-        following reason(s):'
+      ineligible_header: Sorry, you are not eligible to register to vote with this form for the following reason(s)
+      ineligible_state: North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept the National Mail Voter Registration Form. New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.
+      ineligible_state_contact: If you live in one of these states or territories, contact your <a href="https://www.usa.gov/election-office">local election office</a> to find out how to register.
       external_header: ! '%{state} Registrant'
       name: Name
       select_none: (none)

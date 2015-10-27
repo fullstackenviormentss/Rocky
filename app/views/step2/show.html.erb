@@ -8,10 +8,10 @@
   <div class="flat">
     <div class="width_f">
       <div class="online_reg_notice">
-        <h2 class="section_header">Sorry, you are not eligible to register to vote with this form for the following reason(s): </h2>
+        <h2 class="section_header"><%= I18n.t('txt.registration.ineligible_header') %>: </h2>
         <ul>
-          <li>North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept the National Mail Voter Registration Form. New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.</li>
-          <li>If you live in one of these states or territories, contact your <a href="https://www.usa.gov/election-office">local election office</a> to find out how to register.</li>
+          <li><%= I18n.t('txt.registration.ineligible_state') %></li>
+          <li><%= I18n.t('txt.registration.ineligible_state_contact') %></li>
         </ul>
       </div>
     </div>
@@ -29,14 +29,14 @@
                   <div class="online-reg"><%= link_to @online_reg_text, @online_reg_url, :class =>"button" %></div>
                 </li>
                 <li>
-                  <p>Fill out the <%= link_to "National Mail Voter Registration Form", registrant_step_3_path(@registrant) %> on this website. You will complete, print, write in your ID number (your social security or driver's license number), sign and mail to your local election office. </p>
-                  <p>Completing the form will take about 5 minutes.</p>
+                  <p><%= I18n.t('txt.continue_with_form_link_part_1') %> <%= link_to I18n.t('txt.form_name'), registrant_step_3_path(@registrant) %> <%= I18n.t('txt.continue_with_form_link_part_2') %> </p>
+                  <p><%= I18n.t('txt.about_5_minutes') %></p>
                 </li>
               <% else %>
                 <li>
-                  <p>Fill out the National Mail Voter Registration Form on this website. You will complete, print, write in your ID number (your social security or driver's license number), sign and mail to your local election office. </p>
-                  <p>Completing the form will take about 5 minutes.</p>
-                  <div class="online-reg"><%= link_to "National Mail Voter Registration Form", registrant_step_3_path(@registrant), :class =>"button" %></div>
+                  <p><%= I18n.t('txt.continue_with_form') %></p>
+                  <p><%= I18n.t('txt.about_5_minutes') %></p>
+                  <div class="online-reg"><%= link_to I18n.t('txt.form_name'), registrant_step_3_path(@registrant), :class =>"button" %></div>
                 </li>
               <% end %>
               

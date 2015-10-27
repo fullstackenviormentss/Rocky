@@ -5,44 +5,43 @@
         <ul class="usa-unstyled-list">
           <li>
             <button class="usa-button-unstyled" aria-expanded="false" aria-controls="collapsible-0">
-              Requirements
+              <%= I18n.t('txt.requirements') %>
             </button>
             <div id="collapsible-0" aria-hidden="true" class="usa-accordion-content">
-              <p><span class="bold">State requirements</span</p>
+              <p><span class="bold"><%= I18n.t('txt.state_requirements') %></span</p>
               <ul>
-                <li>All states require that you be a United States citizen by birth or naturalization to register to vote in federal and state elections. Federal law makes it illegal to falsely claim U.S. citizenship to register to vote in any federal, state, or local election.</li>
-                <li>Each state has its own laws about who may register and vote. Check the information for your state in the State Instructions on the <a href="http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf">National Mail Voter Registration Form</a> (PDF, <a href="https://get.adobe.com/reader/">Download Adobe Reader</a>).</li>
-                <li>You cannot be registered to vote in more than one place at one time.</li>
-                <li><span class="bold">Please note:</span> North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept the National Mail Voter Registration Form. New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.</li>
-                <li>If you live in one of these states or territories, contact your <a href="https://www.usa.gov/election-office">local election office</a> to register.</li>
+                <li><%= raw I18n.t('txt.state_requirements_1') %></li>
+                <li><%= raw I18n.t('txt.state_requirements_2') %></li>
+                <li><%= raw I18n.t('txt.state_requirements_6') %></li>
+                <li><%= raw I18n.t('txt.state_requirements_3') %></li>
+                <li><%= raw I18n.t('txt.state_requirements_4') %></li>
+                <li><%= raw I18n.t('txt.state_requirements_5') %></li>
               </ul>
-              <p><span class="bold">American citizens or uniformed military living abroad:</span> Do not use this form. Visit the <a href="http://www.fvap.gov/">Federal Voting Assistance Program (FVAP)</a> to register to vote or request your absentee ballot.</p>
-
-              <p><span class="bold">First time registering to vote.</span> If you are registering to vote for the first time in your jurisdiction and are mailing this registration application, federal law requires you to show proof of identification the first time you vote. Proof of identification includes: </p>
+              <p><%= raw I18n.t('txt.americans_abroad') %></p>
+              <p><%= raw I18n.t('txt.first_time') %>:</p>
               <ul>
-                <li>A current and valid photo identification, or </li>
-                <li>A current utility bill, bank statement, government check, paycheck, or government document that shows your name and address.</li>
+                <li><%= raw I18n.t('txt.first_time_photo_id') %></li>
+                <li><%= raw I18n.t('txt.first_time_other_id') %></li>
               </ul>
-              <p>Voters may be exempt from this requirement if they attach a copy of this identification with their mail-in voter registration application. If you wish to submit a copy, please keep the following in mind:
+              <p><%= raw I18n.t('txt.voters_exempt') %>:</p>
               <ul>
-                <li>Your state may have additional identification requirements that may mandate you show identification at the polling place even if you meet the federal proof of identification. </li>
-                <li>Do not submit original documents with your application, only copies.</li>
+                <li><%= raw I18n.t('txt.voters_additional') %></li>
+                <li><%= raw I18n.t('txt.voters_do_not') %></li>
               </ul>
             </div>
           </li>
           <li>
             <button class="usa-button-unstyled" aria-expanded="false" aria-controls="collapsible-1">
-              Instructions for using this form
+              <%= raw I18n.t('txt.instructions') %>
             </button>
             <div id="collapsible-1" aria-hidden="true" class="usa-accordion-content">
               <ul>
-                <li>You will need Adobe Acrobat to download your voter registration application. If you don't have Adobe Acrobat, you can <a href="https://get.adobe.com/reader/">download Adobe Acrobat Reader</a> here.</li>
-                <li>You will also need a printer to print out your registration form.</li>
+                <li><%= raw I18n.t('txt.download_adobe') %></li>
+                <li><%= raw I18n.t('txt.able_to_print') %></li>
               </ul>
-              <p>Complete all requested fields in the form. We have provided detailed instructions throughout the form. 
-If you have any questions regarding the information requested by your state, please contact your <a href="https://www.usa.gov/election-office">state’s election office.</a> </p>
-              <p>After you complete the process for filling out your voter registration application form online, you will receive an email with the PDF to download. Please note that this e-mail will not be encrypted.  If you prefer, you can download the <a href="http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf">National Mail Voter Registration Application</a> form from the EAC to complete and mail in yourself. </p>
-              <p>You must print, enter your ID number (your social security or driver’s license number), sign, and mail your form to your Secretary of State or state/territorial election office. For your convenience, the address of your Secretary of State is pre-printed on your form along with detailed registrations instructions for your state. Federal law requires that states collect from each registrant an identification (ID) number, typically your social security number or driver’s license number. If you have neither a driver’s license nor a social security number, please indicate this on the form and a number will be assigned to you by your state.</p>
+              <p><%= raw I18n.t('txt.complete_all_fields') %></p>
+              <p><%= raw I18n.t('txt.after_you_complete') %></p>
+              <p><%= raw I18n.t('txt.after_print') %></p>
             </div>
           </li>
         </ul>

@@ -11,18 +11,61 @@ es:
 
     </ul>
     <p>Algunos estados ofrecen la opción de registrarse en Internet para votar. Seleccione su estado en el menú desplegable que aparece abajo y haga clic en el botón que indica ¨Siguiente¨ para saber cuáles son las opciones de inscripción para votar disponibles en su estado.</p>'
+    form_name: Ir al Formulario Nacional de Inscripción para Votar
+    select_your_state: Debe indicar el estado
     continue_with_state: Registrarse por Internet para votar en su estado en
     continue_with_form: Completar el Formulario Nacional de Inscripción para Votar incluído aquí, imprimirlo, escribir su número de identidad, firmarlo y enviarlo por correo postal a la oficina electoral en su estado.
-    
+    about_5_minutes: Llenar el formulario toma aproximadamente 5 minutos.
+    format: Formato
+    month: Mes
+    day: Día
+    year: Año
+    your_eligibility: Su elegibilidad
+    sorry_eligibility: Lo sentimos, usted no puede registrarse para votar porque
+    ineligibile_citizenship: Su registro no puede ser completado porque usted no seleccionó la opción que indica que es ciudadano estadounidense. Usted debe ser ciudadano estadounidense para registrarse para votar. Si usted es ciudadano de Estados Unidos, por favor regrese a la página anterior y seleccione la opción que indica su ciudadanía estadounidense.
+    ineligible_age_1: Parece que usted aún no tiene 18 años de edad. En la mayor parte de estados usted puede registrarse para votar <a href="https://www.usa.gov/voter-registration-age-requirements-by-state">si va a cumplir 18 años</a>(en inglés)antes de la próxima elección general. Visite el sitio web de su <a href="https://www.usa.gov/election-office">oficina electoral</a> (en inglés) para saber la fecha de la próxima elección general. 
+    ineligible_age_2: Si usted va a cumplir 18 años antes de la próxima elección general, entonces usted es elegible para usar el Formulario Nacional de Inscripción para Votar. Por favor revise los requisitos e instrucciones para usar este formulario antes de seguir con el siguiente paso.
+    are_eligible: En base a sus respuestas, usted es elegible para usar el Formulario Nacional de Inscripción para Votar. Por favor revise los requisitos e instrucciones para usar este formulario antes de continuar.
+    requirements: Requisitos
+    state_requirements: Requisitos de los estados
+    state_requirements_1: Todos los estados requieren que usted sea un ciudadano estadounidense por nacimiento o naturalización. Declarar falsamente ser ciudadano estadounidense para votar en cualquier elección federal, estatal o local es ilegal.
+    state_requirements_2: Cada estado tiene sus propias leyes sobre quién puede registrarse y votar. Obtenga más información sobre el proceso de votación en su Secretaría de Estado o en la <a href="http://www.eac.gov/voter_resources/contact_your_state.aspx">oficina elecoral de su estado</a> (en inglés).
+    state_requirements_6: Cada estado tiene sus propias fechas límite de inscripción para votar. Verifique cuál es la fecha límite de su estado. Convenientemente, la fecha límite de inscripción para votar que corresponde a su estado  aparece en su formulario (que descargará después de haberlo llenado) bajo la casilla  ̈Fechas límite de  inscripción para votar ̈en la página 1.
+    state_requirements_3: Usted no puede estar registrado para votar en más de un estado.
+    state_requirements_4: <span class="bold">Nota:</span> Dakota del Norte,  Wyoming y territorios de Estados Unidos (Puerto Rico, Islas Vírgenes, Samoa Americana y Guam) no aceptan el Formulario Nacional de Inscripción para  Votar. Nuevo Hampshire acepta este formulario solo al solicitar la papeleta de voto ausente por correo  postal.
+    state_requirements_5: Si usted vive en alguno de estos estados, contacte a su <a href="https://www.usa.gov/election-office">oficina electoral</a> (en inglés).
+    americans_abroad: <span class="bold">Ciudadanos estadounidense o miembros de las Fuerzas Armadas que viven en el exterior::</span> No usen este formulario. <a href="http://www.eac.gov/translations/spanish/recursos_para_electores_uniformados_.aspx">Pueden votar desde el exterior.</a> Para votar desde el exterior debe registrarse en el estado de residencia donde vivió cuando salió de Estados Unidos y solicitar cadaaño la papeleta de votación, que le será  enviada por correo 45 días antes de la elección.
+    first_time: <span class="bold">Registro para votar por primera vez.</span> Si usted va a registrarse para votar por primera vez y va a enviar por correo postal este formulario, las leyes federales requieren que muestre una prueba de identificación personal la primera vez que vaya a votar. Se consideran pruebas de identificación personal
+    first_time_photo_id: Un documento de identidad válido que muestre una foto actual
+    first_time_other_id: una factura por servicios como agua, luz o teléfono, un estado de cuenta de su banco, un cheque del Gobierno a su nombre, un documento de identidad del Gobierno que muestre su nombre y dirección postal.
+    voters_exempt: Si usted incluye una copia de su identificación personal al enviar por correo este formulario, es posible que no sea necesario presentar su documento de identidad personal al momento de votar por primera vez. Si desea hacer esto, por favor tenga en cuenta que
+    voters_additional: Su estado puede tener más requisitos que podrían incluir mostrar prueba de identificación personal al presentarse en las urnas.
+    voters_do_not: No debe incluir ningún documento original que sirva como prueba de identificación personal al enviar este formulario. Solo incluya copias.
+    instructions: Instrucciones para usar este formulario
+    download_adobe: Usted necesitará descargar Adobe Acrobat, un software comercial gratuito que le permite acceder a información en formato de documento portátil (PDF, sigla en inglés). <a href="https://get.adobe.com/reader/">Puede descargar gratuitamente Adobe Acrobat Reader</a>.
+    able_to_print: Necesitará una impresora para imprimir el formulario.
+    complete_all_fields: Llene todos los campos obligatorios en el formulario. Hemos incluido instrucciones detalladas sobre cómo usar este formulario. Si tiene alguna pregunta relacionada sobre la información requerida por su estado, por favor contacte a su <a href="https://www.usa.gov/election-office">oficina electoral</a> (en inglés).
+    after_you_complete: Después de llenar este formulario por Internet, usted recibirá un e­mail con un documento PDF adjunto que contiene su información. Debe descargar este documento PDF. Este e­mail no es codificado. Si usted prefiere, puede descargar el <a href="http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf">Formulario Nacional de Inscripción para Votar</a> (en inglés) desde el sitio web de la Comisión de Asistencia Electoral de Estados Unidos (EAC, sigla en inglés), llenarlo y enviarlo por correo postal a la oficina electoral en su estado.
+    after_print: Debe imprimir, incluir su número de identificación personal (su número de Seguro Social o número de su licencia de conducir), firmar y enviar su formulario por correo postal a la Secretaría de su estado o a la oficina electoral de su estado o territorio. La dirección postal de la Secretaría de su estado esta pre­impresa en su formulario junto con instrucciones detalladas de su estado. La ley federal requiere que los estados reciban de cada inscrito un número de identificación personal, generalmente su número de Seguro Social o número de su licencia de conducir. Si usted no tiene ninguno de estos documentos de identidad, por favor indíquelo en este formulario y un número le será asignado por su estado.
+    race: Algunos estados solicitan información sobre raza o grupo étnico en caso sea apropiado ejercer el Acta Federal de Derechos del Votante (Federal Voting Rights Act, en inglés). Por favor seleccione la opción que mejor describe su situación de la lista que aparece debajo
+    party: En algunos estados es obligatorio registrarse con un partido político si quiere participar en las elecciones primarias del partido político. Si usted no quiere registrarse con un partido, seleccione la opción  ̈ninguno ̈. Por favor no seleccione la opción “independiente” si quiere indicar  ̈ningún partido ̈ ya que esta opción puede ser confundida con el nombre de un partido político en su estado.
+    party_note: 'Nota: Aunque usted no se registre con un partido político, usted puede votar en las elecciones generales y en las elecciones primarias  "nonpartisan" (sin partido).'
+    download_one: Aún no ha terminado. Por favor revise su e­mail para descargar e imprimir su formulario de inscripción para votar.
+    download_two: En su formulario impreso, escriba su número de identificación personal, firme y envíelo por correo postal a la dirección indicada en el formulario. La ley federal requiere que los estados reciban de cada inscrito un número de identificación personal, generalmente su número de Seguro Social o número de su licencia de conducir. Si usted no tiene ninguno de estos documentos de identidad, por favor indíquelo en este formulario y un número le será asignado por su estado.
+    download_three: Si esta es la primera vez que se registra para votar, recuerde incluir copias de documentos que son prueba de su identidad personal. No envíe documentos originales con esta solicitud, solo copias.
+    download_four: Usted no estará registrado para votar a menos que descargue, imprima, firme y envíe su formulario a la oficina electoral de su estado.
+    download_five: <a href="https://www.usa.gov/election-office">Contacte a su estado</a> (en inglés) para confirmar su inscripción para votar. Es responsabilidad de la oficina electoral de su estado procesar su solicitud y registro para votar una vez que usted haya enviado por correo postal su formulario de inscripción a esta oficina.
     required_fields: Todos los campos con asterisco (*) son obligatorios.
     unknown_error: ! 'Error desconocido: los administradores de red han sido contactados.'
     error: Algo salió mal.
     try_again: Regresar y volver a intentarlo.
     rtv_and_partner: Rock the Vote y %{partner_name}
     button:
+      reads_submit: Siguiente
       submit: Siguiente
       edit: Editar
       back: Atrás
+      eligibility: Verifique elegibilidad
       edit_eligibility: Edite su elegibilidad
       edit_identity: Edite su información de identidad
       edit_additional_info: Edite identidad estatal o filiación de partido político
@@ -42,12 +85,19 @@ es:
       skip_state_online_registration: ! '&gt; No gracias, continuaré con %{rtv_and_partner_name}
         y enviaré mi solicitud más tarde.'
     registration:
+      eligibility: Eligibility
+      personal_info: Información personal
+      us_citizen: Si usted es ciudadano estadounidense que vive o tiene una dirección postal en los Estados Unidos, puede usar este formulario para
+      purpose_1: Inscribirse para votar por primera vez.
+      purpose_2: Reportar a la oficina electoral en su estado un cambio de nombre o dirección postal. 
+      purpose_3: Registrar su afiliación a un partido político.
       confirm_information: Confirme que su información es correcta
       online_voter: Su código postal indica que usted puede
       in_language_name: En español
       powered_by: ! 'accionado por:'
       progress_indicator: Paso
       step_1_header: Regístrese Para Votar
+      step_1_subheader: Ciudadanos estadounidenses dentro de Estados Unidos pueden
       step_2_header: Información Personal
       step_3_header: Información Adicional
       step_4_header: Mantente Informado y Toma Acción
@@ -60,6 +110,12 @@ es:
       step_2_nav: Información Personal
       step_3_nav: Más Información
       step_5_nav: Completar
+      step_1_first_bullet: Llenar el Formulario Nacional de Inscripción para Votar por Internet y enviar por correo postal susolicitud completa de registro para votar a la oficina electoral en su estado. El Formulario Nacional de Inscripción para Votar es aceptado en la mayoría de estados y en el Distrito de Columbia.
+      step_1_first_bullet_list_header: Excepciones
+      step_1_bullet_one: Dakota del Norte, Wyoming y territorios de Estados Unidos (Puerto Rico, Islas Vírgenes, Samoa Americana y Guam) no aceptan este formulario.
+      step_1_bullet_two: Nuevo Hampshire acepta este formulario solo al solicitar la papeleta de voto ausente por correo postal.
+      step_1_bullet_three: Ciudadanos estadounidense o miembros de las Fuerzas Armadas de Estados Unidos que viven en el exterior <a href="http://www.eac.gov/translations/spanish/recursos_para_electores_uniformados_.aspx">tienen derecho a votar</a>.
+      step_1_second_bullet: Regístrese para votar por Internet. Algunos estados ofrecen la opción de registrarse en Internet para votar. Seleccione su estado en el menú desplegable que aparece abajo para ver cuáles son las opciones de inscripción para votar disponibles en su estado.
       stay_informed_header: Para más información
       identification_header: Información de identidad
       survey_title: Preguntas para ti
@@ -84,8 +140,9 @@ es:
         de votantes, se puede encontrar información de contacto de su Secretario de
         Estado en nuestro enlace <a href="http://www.rockthevote.com/election-center/"
         target="_blank">Centro Electoral</a>.
-      ineligible_header: ! 'Una disculpa, no eres elegilbe para registrarte para votar
-        por las siguientes razones:'
+      ineligible_header: Lo sentimos. Usted no es elegible para registrarse para votar usando este formulario porque
+      ineligible_state: Dakota del Norte, Wyoming  y territorios de Estados Unidos (Puerto Rico, Islas Vírgenes, Samoa Americana y Guam) no aceptan el Formulario Nacional de Inscripción para Votar. Nuevo Hampshire acepta este formulario solo al solicitar la papeleta de voto ausente por correo postal. 
+      ineligible_state_contact: Si usted vive en alguno de estos estados, contacte a su <a href="https://www.usa.gov/election-office">oficina electoral</a> (en inglés).
       external_header: SPANISH %{state} Registrant
       name: Nombre
       select_none: (nada)
@@ -132,6 +189,10 @@ es:
         work: Trabajo
         other: Otro
       instructions:
+        us_citizen: Si usted es ciudadano estadounidense que vive o tiene una dirección postal en los Estados Unidos, puede usar este formulario para
+        purpose_1: Inscribirse para votar por primera vez.
+        purpose_2: Reportar a la oficina electoral en su estado un cambio de nombre o dirección postal.
+        purpose_3: Registrar su afiliación a un partido político.
         overseas: ! '<b>Nota</b>: Algunos estados ofrecen la opción de registrarse en Internet para votar. <a
           href=''http://www.rockthevote.com/voter-registration/online-application-system/online.html''
           target=''_blank''>Conozca más sobre esta opción (en inglés).</a>Si usted es un ciudadano estadounidense que vive afuera de EE. UU. o es miembro de las Fuerzas Armadas de EE. UU., puede registrarse para votar
@@ -263,15 +324,13 @@ es:
             p3: ''
       tooltips:
         check_all: Seleccione todas las opciones que describan su situació
+        check_all_more: Para poder registrarse para votar, usted debe haber nacido en los Estados Unidos o ser ciudadano estadounidense naturalizado y tener por lo menos 18 años de edad antes o en la fecha de la próxima elección general.
         email_address: Le enviaremos una copia de su formulario de registro de votación.
         home_zip_code: "Ingrese el código postal de la dirección donde reside aunque no reciba correo postal allí."
         date_of_birth_format: "Formato fecha de nacimiento: MM-DD-AAAA"
         phone_format: "Formato: ###-###-####"
         state_id_format: "Formato de documento de identidad: ###-##-####"
-        date_of_birth: En la solicitud de registro de votación usted debe indicar que h
-          abrá cumplido 18 años de edad antes o en la fecha de la próxima elección general. 
-          Sin embargo, muchos estados permiten que se registre para votar antes de haber
-          cumplido los 18 años de edad. Seleccione <a href="http://www.rockthevote.com/voter-registration/online-application-system/register-before-you-are-18-rules.html">aquí (en inglés)</a> para ver la regla de su estado.
+        date_of_birth: En su solicitud de registro de votación usted debe indicar si  habrá cumplido 18 años de edad antes o en la fecha de la próxima elección general. Sin embargo, muchos estados permiten que se registre para votar antes de haber cumplido los 18 años de edad. Infórmese más sobre las<a href="https://www.usa.gov/voter-registration-age-requirements-by-state">reglas en su estado</a>(en inglés).
         registrant_name: Ingrese su nombre completo. Por favor no use apodos o iniciales. Si esta solicitud es para procesar un cambio de nombre, podrá ingresar su nombre anterior en una seción más adelante. Por favor recuerde incluir su título (Sr., Sra., Srta.).
         home_address: Ingrese la dirección postal de su residencia. Por favor no ingrese la dirección donde recibe correo postal si es distinta de la dirección de su residencia. No use apartados postales o rutas de correo rurales sin número. Si vive en una zona rural y no tiene una dirección formal, por favor utilice el mapa incluido en este formulario para mostrar dónde vive.
         mailing_address: Recibo mi correo postal en una dirección postal y no en mi dirección de residencia

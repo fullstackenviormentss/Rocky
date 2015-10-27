@@ -9,7 +9,7 @@
         <%= t("activerecord.attributes.registrant.race") %>
       </label>
       
-        <p>A few states ask for your race  or ethnic group, in order to administer the Federal Voting Rights Act.  Please make a choice that best describes you from the list below:</p>
+        <p><%= I18n.t('txt.race')%>:</p>
         <%= select_div form, :race, @registrant.races, :include_blank => true %>
     </div>
   </div>
@@ -23,7 +23,7 @@
           <%= t("activerecord.attributes.registrant.party") %>
         
         </label>
-        <p>In some states, you must register with a party if you  want to  take part in that party’s primary election, caucus, or convention.  If you do not want to register with a party, select “none”. Do not select “independent” if you  mean “no party,” because this  might  be confused with the name of a political party in your state.</p><p> Note: If  you do  not register with a party, you can still  vote in general  elections and nonpartisan (nonparty) primary elections.</p>
+        <p><%= I18n.t('txt.party')%></p><p><%= I18n.t('txt.party_note')%></p>
          <%= select_div form, :party, @state_parties.sort, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->
       </div>

@@ -31,15 +31,15 @@ $(document).ready(function() {
 
 <div class="flat">
   <div class="width_f">
-    <h2 class="section_header"><%= t("txt.registration.step_1_subheader") %></h2>
+    <h2 class="section_header"><%= t("txt.registration.step_1_subheader") %>:</h2>
     <ul>
       <li>
         <p><%= t("txt.registration.step_1_first_bullet") %></p>
         <p><%= t("txt.registration.step_1_first_bullet_list_header") %></p>
         <ul>
-          <li>North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept this form. </li>
-          <li>New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.</li>
-          <li>American citizens or uniformed military living abroad, visit the <a href="http://www.fvap.gov/">Federal Voting Assistance Program (FVAP)</a> to register to vote or request your absentee ballot.</li>
+          <li><%= t("txt.registration.step_1_bullet_one") %></li>
+          <li><%= t("txt.registration.step_1_bullet_two") %></li>
+          <li><%= raw t("txt.registration.step_1_bullet_three") %></li>
         </ul>
       </li>
       <li> 
@@ -55,7 +55,7 @@ $(document).ready(function() {
       <%= t("activerecord.attributes.registrant.home_state_name") %>
     </label> <br/>
     <div class="left_side">
-      <%= select_div form, :home_state_id, [["Select your State", nil]] + GeoState.collection_for_state_select %>
+      <%= select_div form, :home_state_id, [[I18n.t('txt.select_your_state'), nil]] + GeoState.collection_for_state_select %>
     </div>
     <div class="right_side">
 

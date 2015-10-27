@@ -39,7 +39,7 @@ es:
         from_email: De correo electrónico
         url: URL
       registrant:
-        date_of_birth: Fecha de Nac
+        date_of_birth: Fecha de Nacimiento
         email_address: E-mail
         first_registration: Es la primera vez que me registro para votar.
         home_zip_code: Código Postal
