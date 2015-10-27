@@ -3,7 +3,7 @@ en:
   txt:
     intro_text:
     form_name: National Mail Voter Registration Form
-    select_your_state: Select your state
+    select_your_state: Select Your State
     continue_with_state: You can register directly online with your state if you have a state issued driver's license or ID card.
     continue_with_form: Fill out the National Mail Voter Registration Form on this website. You will complete, print, write in your ID number (your social security or driver's license number), sign and mail to your local election office. 
     continue_with_form_link_part_1: Fill out the 
@@ -47,7 +47,7 @@ en:
     download_two: On your printed application, write in your ID number, sign, and mail to the address located on the form. Federal law requires that states collect from each registrant an identification (ID) number, typically your social security number or driver’s license number. If you have neither a driver’s license nor a social security number, please indicate this on the form and a number will be assigned to you by your state.
     download_three: If you are registering to vote for the first time, remember to attach copies of your proof of identification. Do not send original documents with the application, only copies.
     download_four: You will not be registered unless you download, print, sign, and mail your form to your local election office.
-    download_five: <a href="https://www.usa.gov/election-office">Contact your state</a> to confirm that you are registered. After you mail your voter registration application to your state election office, it is their responsibility to data enter your application and register you to vote.
+    download_five: <a href="https://www.usa.gov/election-office">Contact your state</a> to confirm that you are registered. After you mail your voter registration application to your state election office, it is their responsibility to process your application and register you to vote.
     required_fields: Items with an asterisk (*) are required.
     unknown_error: "Unknown error: the web administrators have been contacted."
     error: "Something went wrong."
@@ -92,8 +92,8 @@ en:
       step_4_header: National Mail Voter Registration Form
       step_4_ovr_header: Hang on. You are eligible to register online in your state.
       step_5_header: Review and Confirm Your Information
-      step_6_header: Check Your E-mail to Download Form
-      step_7_header: Check Your E-mail to Download Form
+      step_6_header: Check Your E-mail to Download Your Form
+      step_7_header: Check Your E-mail to Download Your Form
       step_1_nav: Verify Eligibility
       step_2_nav: Add Personal Information
       step_3_nav: Review and Confirm

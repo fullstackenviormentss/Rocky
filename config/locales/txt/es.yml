@@ -12,7 +12,7 @@ es:
     </ul>
     <p>Algunos estados ofrecen la opción de registrarse en Internet para votar. Seleccione su estado en el menú desplegable que aparece abajo y haga clic en el botón que indica ¨Siguiente¨ para saber cuáles son las opciones de inscripción para votar disponibles en su estado.</p>'
     form_name: Ir al Formulario Nacional de Inscripción para Votar
-    select_your_state: Debe indicar el estado
+    select_your_state: Debe Indicar el Estado
     continue_with_state: Registrarse por Internet para votar en su estado en
     continue_with_form: Completar el Formulario Nacional de Inscripción para Votar incluído aquí, imprimirlo, escribir su número de identidad, firmarlo y enviarlo por correo postal a la oficina electoral en su estado.
     about_5_minutes: Llenar el formulario toma aproximadamente 5 minutos.
