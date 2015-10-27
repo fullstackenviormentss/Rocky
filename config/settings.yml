@@ -95,6 +95,8 @@ redirect_ovr_states:
   CT:
     EN: Connecticut Online Voter Registration|https://voterregistration.ct.gov/OLVR/welcome.do
     ES: Inscripción en el Padrón Electoral https://voterregistration.ct.gov/OLVR/prefix.do
+  DC:
+    EN: District of Columbia Online Voter Registration|https://www.vote4dc.com/Voter/Home/SearchMain
   DE:
     EN: Delaware Online Voter Registration|https://ivote.de.gov/
   GA:
