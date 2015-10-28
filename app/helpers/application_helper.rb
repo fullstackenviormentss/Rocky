@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def registrant_instructions_url(home_state_name, locale)
     state_string = home_state_name.downcase.gsub(" ", "")
-    locale == "en" ? 
+    locale == :en ? 
       "http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf##{state_string}" :
       "http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_SPA.pdf##{state_string}"
   end
