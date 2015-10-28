@@ -114,6 +114,9 @@ select{
 fieldset{
   padding: 0 15px 0;
 }
+.usa-accordion-bordered > .usa-unstyled-list{
+  padding: 0 15px 0;
+}
 fieldset > .checkbox, .stacked{
     border-bottom:none;
 }
