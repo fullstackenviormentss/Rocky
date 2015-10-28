@@ -85,7 +85,6 @@ legend {
 
 main > div > form, .review {
     border: 2px solid #E4EAEE;
-  padding: 0 15px 0;
   margin: 15px 0 15px 0;
 }
 input[type="text"]:disabled, select:disabled {
@@ -111,6 +110,9 @@ select{
 }
 .checkbox li{
   padding: 10px 0 10px 25px;
+}
+fieldset{
+  padding: 0 15px 0;
 }
 fieldset > .checkbox, .stacked{
     border-bottom:none;
