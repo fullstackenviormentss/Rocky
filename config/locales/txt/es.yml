@@ -15,6 +15,8 @@ es:
     select_your_state: Debe Indicar el Estado
     continue_with_state: Registrarse por Internet para votar en su estado en
     continue_with_form: Completar el Formulario Nacional de Inscripción para Votar incluído aquí, imprimirlo, escribir su número de identidad, firmarlo y enviarlo por correo postal a la oficina electoral en su estado.
+    continue_with_form_link_part_1: Completar el 
+    continue_with_form_link_part_2: en este sitio web, imprimirlo, escribir su número de identidad (su número de Seguro Social o número de su licencia de conducir), firmarlo y enviarlo por correo postal a la oficina electoral en su estado. Llenar el formulario toma aproximadamente 5 minutos.
     about_5_minutes: Llenar el formulario toma aproximadamente 5 minutos.
     format: Formato
     month: Mes
