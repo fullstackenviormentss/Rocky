@@ -4,6 +4,12 @@ module ApplicationHelper
     "Register to Vote Online | USA.gov"
   end
 
+  def registrant_instructions_url(home_state_name, locale)
+    state_string = home_state_name.downcase.gsub(" ", "")
+    locale == "en" ? 
+      "http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf##{state_string}" :
+      "http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_SPA.pdf##{state_string}"
+  end
   # flash_messages
   # use to display specified flash messages
   # defaults to standard set: [:success, :message, :warning]

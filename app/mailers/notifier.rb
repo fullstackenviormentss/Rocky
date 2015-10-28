@@ -61,7 +61,7 @@ class Notifier < ActionMailer::Base
       :from => "vote.USA.gov", :body => "Please print out the attached form, fill in your state ID, and mail to your State Elections Office.",
       :to => registrant.email_address)
 
-    registrant.destroy!
+    # registrant.destroy!
 
     m
   end
