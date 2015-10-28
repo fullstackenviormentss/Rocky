@@ -16,6 +16,13 @@
 //= require rocky
 
 
+$('a').on('click', function(e){
+  ga('send', 'vote.usa.gov','link clicked', $(this).attr('href'));
+});
+
+$('button').on('click', function(e){
+  ga('send', 'vote.usa.gov','form submitted', window.location.href);
+});
 /**
  * Accordion
  *
