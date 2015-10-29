@@ -63,7 +63,7 @@ en:
       edit_identity: "Edit Identity"
       edit_additional_info: "Edit State ID or Party"
       back: Previous Step
-      download: Check Your E-mail to Download Form
+      download: Check Your E-mail to Downxload Form
       ineligible_try_again: Return
       keep_going: Keep Going
       remind_me_later: Remind Me Later
@@ -310,7 +310,7 @@ en:
         date_of_birth_format: "Format: MM-DD-YYYY"
         phone_format: "Format: ###-###-####"
         state_id_format: "Format: ###-##-####" 
-        date_of_birth: On your voter registration application, you are required to indicate whether you will be 18 years old on or before election day. However, many states allow you to register before your 18th birthday. See the state list of voter registration age requirements for more information.
+        date_of_birth: On your voter registration application, you are required to indicate whether you will be 18 years old on or before election day. However, many states allow you to register before your 18th birthday. See the <a href="https://www.usa.gov/voter-registration-age-requirements-by-state">state list of voter registration age requirements</a> for more information.
         registrant_name: Put your full name in these boxes. Please do not use nicknames or initials. If you're changing your name on this application, we will ask you for your former name in a later section. And don't forget to include your title (Mr., Mrs., Miss, Ms.).
         home_address: Put your home address in these boxes. Do not put your mailing
           address here if it is different from your home address. Do not use a post
