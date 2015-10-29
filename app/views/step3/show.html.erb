@@ -94,12 +94,17 @@
                 <%= t("activerecord.attributes.registrant.has_state_license") %>
               </label>
           </li>
-          <li <% if !form.object.errors[:will_be_18_by_election].empty? %>class="checkbox_error" <% end %>>
+          <% classes = "" %>
+          <% if !form.object.errors[:will_be_18_by_election].empty?
+            classes += " checkbox_error"
+          end %>
+          <% if @registrant.age == nil || (@registrant.age && @registrant.age > 18)
+            classes += " hidden"
+            end %>
+          <li id="will_be_18_li" class="<%= classes %>" >
               <%= form.check_box :will_be_18_by_election %>
               <label for="registrant_will_be_18_by_election" class: "check-box-step-1">
-                <% if @registrant.age && @registrant.age < 18 %>
                 <span class="required" title="required">*</span>
-                <% end %>
                 <%= t("activerecord.attributes.registrant.will_be_18_by_election") %>
               </label>
           </li>
@@ -116,3 +121,33 @@
     <%= rollover_button(:next_step, I18n.t('txt.button.eligibility').html_safe) %>
   </div>
 <% end %>
+
+<script>
+function calculateAge(birthMonth, birthDay, birthYear)
+{
+  todayDate = new Date();
+  todayYear = todayDate.getFullYear();
+  todayMonth = todayDate.getMonth();
+  todayDay = todayDate.getDate();
+  age = todayYear - birthYear; 
+
+  if (todayMonth < birthMonth - 1)
+  {
+    age--;
+  }
+
+  if (birthMonth - 1 == todayMonth && todayDay < birthDay)
+  {
+    age--;
+  }
+  return age;
+}
+
+$('#date_of_birth_1, #date_of_birth_2, #date_of_birth_3').on('change', function(){
+  if(calculateAge(parseInt($('#date_of_birth_1').val()), parseInt($('#date_of_birth_2').val()),parseInt($('#date_of_birth_3').val())) < 18){
+    $('#will_be_18_li').removeClass("hidden");
+  }else{
+    $('#will_be_18_li').addClass("hidden");
+  }
+});
+</script>
