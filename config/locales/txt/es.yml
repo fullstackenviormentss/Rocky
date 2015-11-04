@@ -34,7 +34,7 @@ es:
     state_requirements: Requisitos de los estados
     state_requirements_1: Todos los estados requieren que usted sea un ciudadano estadounidense por nacimiento o naturalización. Declarar falsamente ser ciudadano estadounidense para votar en cualquier elección federal, estatal o local es ilegal.
     state_requirements_2: Cada estado tiene sus propias leyes sobre quién puede registrarse y votar. Obtenga más información sobre el proceso de votación en su Secretaría de Estado o en la <a href="http://www.eac.gov/voter_resources/contact_your_state.aspx">oficina elecoral de su estado</a> (en inglés).
-    state_requirements_6: Cada estado tiene sus propias fechas límite de inscripción para votar. Verifique cuál es la fecha límite de su estado. Convenientemente, la fecha límite de inscripción para votar que corresponde a su estado  aparece en su formulario (que descargará después de haberlo llenado) bajo la casilla  ̈Fechas límite de  inscripción para votar ̈en la página 1.
+    state_requirements_6: Cada estado tiene sus propias fechas límite de inscripción para votar. Verifique cuál es la <a href="https://www.usa.gov/voter-registration-deadlines-by-state">fecha límite de su estado</a>. Convenientemente, la fecha límite de inscripción para votar que corresponde a su estado aparece en su formulario (que descargará después de haberlo llenado) bajo la casilla  ̈Fechas límite de  inscripción para votar ̈en la página 1.
     state_requirements_3: Usted no puede estar registrado para votar en más de un estado.
     state_requirements_4: <span class="bold">Nota:</span> Dakota del Norte,  Wyoming y territorios de Estados Unidos (Puerto Rico, Islas Vírgenes, Samoa Americana y Guam) no aceptan el Formulario Nacional de Inscripción para  Votar. Nuevo Hampshire acepta este formulario solo al solicitar la papeleta de voto ausente por correo  postal.
     state_requirements_5: Si usted vive en alguno de estos estados, contacte a su <a href="https://www.usa.gov/election-office">oficina electoral</a> (en inglés).
@@ -118,7 +118,7 @@ es:
       step_1_first_bullet_list_header: Excepciones
       step_1_bullet_one: Dakota del Norte, Wyoming y territorios de Estados Unidos (Puerto Rico, Islas Vírgenes, Samoa Americana y Guam) no aceptan este formulario.
       step_1_bullet_two: Nuevo Hampshire acepta este formulario solo al solicitar la papeleta de voto ausente por correo postal.
-      step_1_bullet_three: Ciudadanos estadounidense o miembros de las Fuerzas Armadas de Estados Unidos que viven en el exterior <a href="http://www.eac.gov/translations/spanish/recursos_para_electores_uniformados_.aspx">tienen derecho a votar</a>.
+      step_1_bullet_three: Ciudadanos estado unidense o miembros de las Fuerzas Armadas de Estados Unidos que viven en el exterior <a href="http://www.eac.gov/translations/spanish/recursos_para_electores_uniformados_.aspx">tienen derecho a votar</a>.
       step_1_second_bullet: Regístrese para votar por Internet. Algunos estados ofrecen la opción de registrarse en Internet para votar. Seleccione su estado en el menú desplegable que aparece abajo para ver cuáles son las opciones de inscripción para votar disponibles en su estado.
       stay_informed_header: Para más información
       identification_header: Información de identidad

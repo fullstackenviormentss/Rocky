@@ -85,7 +85,7 @@
 
     <div class="container">
       <ul>
-        <li class="engtoggle"><%= link_to I18n.locale("txt.faq"), I18n.locale("txt.faq_link") %></li>
+        <li class="engtoggle"><%= link_to I18n.t("txt.faq"), I18n.t("txt.faq_link") %></li>
         <% if I18n.locale == :es %>
           <li class="engtoggle" lang="en" xml:lang="en"><%= link_to "English", new_registrant_path(locale: 'en') %></li>
         <% else %>
