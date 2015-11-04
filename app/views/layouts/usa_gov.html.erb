@@ -83,17 +83,13 @@
   <!-- begin toggle -->
   <div id="#skiptarget" class="hptoggles clearfix">
 
-    <% if I18n.locale == :es %>
-    <div class="container" lang="en" xml:lang="en">
-    <% else %>
-
-    <div class="container" lang="es" xml:lang="es">
-    <% end %>
+    <div class="container">
       <ul>
+        <li class="engtoggle"><%= link_to I18n.locale("txt.faq"), I18n.locale("txt.faq_link") %></li>
         <% if I18n.locale == :es %>
-          <li class="engtoggle"><%= link_to "English", new_registrant_path(locale: 'en') %></li>
+          <li class="engtoggle" lang="en" xml:lang="en"><%= link_to "English", new_registrant_path(locale: 'en') %></li>
         <% else %>
-          <li class="engtoggle"><%= link_to "Español", new_registrant_path(locale: 'es') %></li>
+          <li class="engtoggle" lang="es" xml:lang="es"><%= link_to "Español", new_registrant_path(locale: 'es') %></li>
         <% end %>
       </ul>
     </div>

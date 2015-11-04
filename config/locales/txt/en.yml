@@ -2,6 +2,8 @@
 en:
   txt:
     intro_text:
+    faq: FAQ
+    faq_link: https://www.usa.gov/voter-registration-tool-faqs
     form_name: National Mail Voter Registration Form
     select_your_state: Select Your State
     continue_with_state: You can register directly online with your state if you have a state issued driver's license or ID card.
