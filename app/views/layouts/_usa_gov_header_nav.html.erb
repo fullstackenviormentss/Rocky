@@ -1,4 +1,5 @@
-<nav aria-label="Topic" class="flow-indicator">
+
+<nav aria-label="Topic" class="flow-indicator <% if I18n.locale == :es %> spanish-nav<% end %>">
   <div class="flowIndicator">
     <div class="<%= "active" if current_step == 3 %> right "><i class="fa fa-check-circle"></i><span><%= t("txt.registration.step_1_nav") %></span></div>
     <div class="<%= "active" if current_step == 4 %> left right <%= "notInitiated" if current_step < 2 %>"><i class="fa fa-user"></i><span><%= t("txt.registration.step_2_nav") %></span></div>

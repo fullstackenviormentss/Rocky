@@ -108,10 +108,10 @@ es:
       step_5_header: Revise y confirme su información
       step_6_header: Revise su e-mail para descargar el formulario
       step_7_header: Revise su e-mail para descargar el formulario
-      step_1_nav: Elegibilidad
-      step_2_nav: Información Personal
-      step_3_nav: Más Información
-      step_5_nav: Completar
+      step_1_nav: Verifique su elegibilidad
+      step_2_nav: Incluya su información personal
+      step_3_nav: Revise y confirme su información
+      step_5_nav: Descargue e imprima el formulario
       step_1_first_bullet: Llenar el Formulario Nacional de Inscripción para Votar por Internet y enviar por correo postal susolicitud completa de registro para votar a la oficina electoral en su estado. El Formulario Nacional de Inscripción para Votar es aceptado en la mayoría de estados y en el Distrito de Columbia.
       step_1_first_bullet_list_header: Excepciones
       step_1_bullet_one: Dakota del Norte, Wyoming y territorios de Estados Unidos (Puerto Rico, Islas Vírgenes, Samoa Americana y Guam) no aceptan este formulario.

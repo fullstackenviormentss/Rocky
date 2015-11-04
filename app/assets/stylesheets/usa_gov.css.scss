@@ -657,6 +657,9 @@ select::-moz-focus-inner { /*Remove button padding in FF*/
 
 
 
+.spanish-nav > .flowIndicator > div {
+  line-height: 20px;
+}
 
 /* SURVEY CSS */
 
@@ -664,7 +667,6 @@ select::-moz-focus-inner { /*Remove button padding in FF*/
   background: #d0e1cf;
   padding: 0 0 10px 0;
   margin: 0 auto 0 auto;
-  max-width: 855px;
 }
 
 #pagesurvey-hdr {
@@ -673,7 +675,6 @@ select::-moz-focus-inner { /*Remove button padding in FF*/
   color: #fff;
   padding: 12px 0 15px 65px;
   margin: 0 auto 0 auto;
-  max-width: 855px;
   height: auto;
   background: #366334 url('../images/Page_Survey_Invite_Icon.png') left 20px top 12px no-repeat;
 }
@@ -683,7 +684,6 @@ select::-moz-focus-inner { /*Remove button padding in FF*/
   padding: 0 0 20px 0;
   background: #d0e1cf;
   text-align: center;
-  max-width: 855px;
   font-size: 90%;
 }
 
