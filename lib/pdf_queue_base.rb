@@ -75,7 +75,7 @@ module PdfQueueBase
   rescue Exception => e
     Rails.logger.error "#{Time.now} Error finding and generating PDF:\n#{e.message}\n#{e.backtrace}"
     pdfgen.delete
-    sleep(15)
+    sleep(3)
     #raise e
   end
   
