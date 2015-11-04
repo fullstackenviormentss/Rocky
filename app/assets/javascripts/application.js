@@ -17,11 +17,11 @@
 
 
 $('a').on('click', function(e){
-  ga('send', 'event', 'vote.usa.gov','link clicked', $(this).attr('href'));
+  ga('send', 'event', 'VoterRegTool','link clicked', $(this).attr('href'));
 });
 
 $('button').on('click', function(e){
-  ga('send', 'event', 'vote.usa.gov','form submitted', window.location.href);
+  ga('send', 'event', 'VoterRegTool','form submitted', window.location.href);
 });
 /**
  * Accordion

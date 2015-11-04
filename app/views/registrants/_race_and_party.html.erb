@@ -5,11 +5,12 @@
       <label for="registrant_race">
         <% if @registrant.requires_race? %>
           <span class="required" title="required">*</span>
-        <% end %>
-        <%= t("activerecord.attributes.registrant.race") %>
+        <% end %> <%= t("activerecord.attributes.registrant.race") %>
       </label>
-      
-        <p><%= I18n.t('txt.race')%>:</p>
+        <br/>
+        <span class="tooltip">
+          <%= I18n.t('txt.race')%>:
+        </span>
         <%= select_div form, :race, @registrant.races, :include_blank => true %>
     </div>
   </div>
@@ -19,11 +20,15 @@
         <label for="registrant_party">
           <% if @registrant.requires_party? %>
             <span class="required" title="required">*</span>
-          <% end %>  
-          <%= t("activerecord.attributes.registrant.party") %>
+          <% end %>
+          <%= t("activerecord.attributes.registrant.party") %></br>
         
         </label>
-        <p><%= I18n.t('txt.party')%></p><p><%= I18n.t('txt.party_note')%></p>
+        <span class="tooltip">
+          <%= I18n.t('txt.party')%>
+          <br/><br/>
+          <%= I18n.t('txt.party_note')%>
+        </span>
          <%= select_div form, :party, @state_parties.sort, :include_blank => true %>
         <!-- <span class="error"><%= form.object.errors[:party].join("\n") %></span> -->
       </div>
