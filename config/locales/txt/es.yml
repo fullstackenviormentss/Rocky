@@ -61,7 +61,7 @@ es:
     download_five: <a href="https://www.usa.gov/election-office">Contacte a su estado</a> (en inglés) para confirmar su inscripción para votar. Es responsabilidad de la oficina electoral de su estado procesar su solicitud y registro para votar una vez que usted haya enviado por correo postal su formulario de inscripción a esta oficina.
     required_fields: Todos los campos con asterisco (*) son obligatorios.
     unknown_error: ! 'Error desconocido: los administradores de red han sido contactados.'
-    error: Algo salió mal.
+    error: El sistema indica un error. Por favor verifique su información personal
     try_again: Regresar y volver a intentarlo.
     rtv_and_partner: Rock the Vote y %{partner_name}
     button:
