@@ -40,11 +40,11 @@ es:
         from_email: De correo electrónico
         url: URL
       registrant:
-        date_of_birth: Fecha de Nacimiento
+        date_of_birth: Fecha de nacimiento
         email_address: E-mail
         first_registration: Es la primera vez que me registro para votar.
-        home_zip_code: Código Postal
-        us_citizen: Soy ciudadano de EE. UU.
+        home_zip_code: Código postal
+        us_citizen: Soy ciudadano de Estados Unidos
         name_title: Titulo
         first_name: Nombre
         middle_name: Segundo Nombre

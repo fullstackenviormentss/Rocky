@@ -12,16 +12,20 @@
               <ul>
                 <li><%= raw I18n.t('txt.state_requirements_1') %></li>
                 <li><%= raw I18n.t('txt.state_requirements_2') %></li>
-                <li><%= raw I18n.t('txt.state_requirements_6') %></li>
                 <li><%= raw I18n.t('txt.state_requirements_3') %></li>
                 <li><%= raw I18n.t('txt.state_requirements_4') %></li>
                 <li><%= raw I18n.t('txt.state_requirements_5') %></li>
+                <li><%= raw I18n.t('txt.state_requirements_6') %></li>
               </ul>
               <p><%= raw I18n.t('txt.americans_abroad') %></p>
               <p><%= raw I18n.t('txt.first_time') %>:</p>
               <ul>
                 <li><%= raw I18n.t('txt.first_time_photo_id') %></li>
                 <li><%= raw I18n.t('txt.first_time_other_id') %></li>
+                <% if I18n.locale == :es %>
+                <li><%= raw I18n.t('txt.first_time_other_id2') %></li>
+                <li><%= raw I18n.t('txt.first_time_other_id3') %></li>
+                <% end %>
               </ul>
               <p><%= raw I18n.t('txt.voters_exempt') %>:</p>
               <ul>

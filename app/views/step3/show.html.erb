@@ -7,21 +7,18 @@
 
 <% if form.object.errors.count > 0 %>
   <div id="errors" class="alert" tabindex="-1">
-    <p><%= I18n.t('txt.error') %>:</p>
+    <p><%= I18n.t('txt.form_error') %>:</p>
     <ol>
       <% if !form.object.errors[:date_of_birth].empty? %>
         <li class="individual_error"><%= link_to "#{t("activerecord.attributes.registrant.date_of_birth")} #{form.object.errors[:date_of_birth].join("\n")}", "#", onclick: 'event.preventDefault(); $("#date_of_birth_1").focus();', tabindex: -1 %></li>
       <% end %>
 
       <% if !form.object.errors[:us_citizen].empty? %>
-        <li class="individual_error"><%= link_to "Your registration cannot be completed because you did not check
-          the box indicating that you are a U.S. citizen. You must be a U.S. citizen
-          to register to vote. If you are a citizen, please check 'I am a U.S. citizen' below.", "#", onclick: 'event.preventDefault(); $("#registrant_us_citizen").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to I18n.t('txt.must_be_citizen'), "#", onclick: 'event.preventDefault(); $("#registrant_us_citizen").focus();', tabindex: -1 %></li>
       <% end %>
 
       <% if !form.object.errors[:will_be_18_by_election].empty? %>
-        <li class="individual_error"><%= link_to "
-      You must be 18 years old by the date of the next election.  If you will be 18 or older by the time of the next election, please check ' I will be 18 by the next election day.' below.", "#", onclick: 'event.preventDefault(); $("#registrant_will_be_18_by_election").focus();', tabindex: -1 %></li>
+        <li class="individual_error"><%= link_to I18n.t('txt.must_be_18'), "#", onclick: 'event.preventDefault(); $("#registrant_will_be_18_by_election").focus();', tabindex: -1 %></li>
       <% end %>
     </ol>
   </div>

@@ -6,7 +6,7 @@
 <%= form_for(@registrant, :url => registrant_step_5_path(@registrant)) do |form| %>
 <% if form.object.errors.count > 0 %>
     <div id="errors" class="alert" tabindex="-1">
-      <p> <%= I18n.t('txt.error') %>:</p>
+      <p> <%= I18n.t('txt.form_error') %>:</p>
       <ol>
         <% if !form.object.errors[:attest_true].empty? %>
           <li class="individual_error"><%= link_to "#{form.object.errors[:attest_true].join("\n")}", '#', onclick: 'event.preventDefault(); $("#registrant_attest_true").focus();', tabindex: -1 %></li>

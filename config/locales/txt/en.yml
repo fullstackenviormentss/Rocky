@@ -1,7 +1,13 @@
 ---
 en:
   txt:
-    error: Please correct the following error(s)
+    must_be_citizen: Your registration cannot be completed because you did not check
+      the box indicating that you are a U.S. citizen. You must be a U.S. citizen
+      to register to vote. If you are a citizen, please check 'I am a U.S. citizen' below.
+    must_be_18: You must be 18 years old by the date of the next election. 
+      If you will be 18 or older by the time of the next election, please check 
+      'I will be 18 by the next election day.' below.
+    form_error: Please correct the following error(s)
     intro_text:
     faq: FAQ
     faq_link: https://www.usa.gov/voter-registration-tool-faqs
@@ -26,10 +32,10 @@ en:
     state_requirements: State Requirements
     state_requirements_1: All states require that you be a United States citizen by birth or naturalization to register to vote in federal and state elections. Federal law makes it illegal to falsely claim U.S. citizenship to register to vote in any federal, state, or local election.
     state_requirements_2: Each state has its own laws about who may register and vote. Check the information for your state in the State Instructions on the <a href="http://www.eac.gov/assets/1/Documents/Federal%20Voter%20Registration_6-25-14_ENG.pdf">National Mail Voter Registration Form</a> (PDF, <a href="https://get.adobe.com/reader/">Download Adobe Reader</a>).
-    state_requirements_6: Each state has it’s own deadline for registering to vote. Check the deadline for your state in the <a href="https://www.usa.gov/voter-registration-deadlines-by-state">State Registration Deadlines table</a>. Once you download your form, for your convenience, we’ve included the deadline for your state under the box labeled “Registration Deadlines” on page 1. 
-    state_requirements_3: You cannot be registered to vote in more than one place at one time.
-    state_requirements_4: <span class="bold">Please note:</span> North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept the National Mail Voter Registration Form. New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.
-    state_requirements_5: If you live in one of these states or territories, contact your <a href="https://www.usa.gov/election-office">local election office</a> to register.
+    state_requirements_3: Each state has it’s own deadline for registering to vote. Check the deadline for your state in the <a href="https://www.usa.gov/voter-registration-deadlines-by-state">State Registration Deadlines table</a>. Once you download your form, for your convenience, we’ve included the deadline for your state under the box labeled “Registration Deadlines” on page 1. 
+    state_requirements_4: You cannot be registered to vote in more than one place at one time.
+    state_requirements_5: <span class="bold">Please note:</span> North Dakota, Wyoming, and the U.S. territories (Puerto Rico, U.S. Virgin Islands, American Samoa, and Guam) do not accept the National Mail Voter Registration Form. New Hampshire will accept this form only as a request for their own absentee voter mail-in registration form.
+    state_requirements_6: If you live in one of these states or territories, contact your <a href="https://www.usa.gov/election-office">local election office</a> to register.
     americans_abroad: <span class="bold">American citizens or uniformed military living abroad:</span> Do not use this form. Visit the <a href="http://www.fvap.gov/">Federal Voting Assistance Program (FVAP)</a> to register to vote or request your absentee ballot.
     first_time: <span class="bold">First time registering to vote.</span> If you are registering to vote for the first time in your jurisdiction and are mailing this registration application, federal law requires you to show proof of identification the first time you vote. Proof of identification includes
     first_time_photo_id: A current and valid photo identification, or 
