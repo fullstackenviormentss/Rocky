@@ -149,12 +149,12 @@ es:
       ineligible_state_contact: Si usted vive en alguno de estos estados, contacte a su <a href="https://www.usa.gov/election-office">oficina electoral</a> (en inglés).
       external_header: SPANISH %{state} Registrant
       name: Nombre
-      select_none: (nada)
+      select_none: (ninguno)
       home_address: Dirección de residencia
       has_mailing_address: Tengo dirección postal
       mailing_address: Dirección correo
       previous_name: Nombre Anterior
-      previous_address: Dirección Anterior
+      previous_address: Dirección
       opt_in_sms: Deseo recibir mensajes de texto de %{organization}.
       opt_in_email: Recibir emails de %{organization}
       remind_when_18: Envíenme un recordatorio cuando cumpla 18 años.

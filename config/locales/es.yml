@@ -1,5 +1,6 @@
 ---
 es:
+  error: El sistema indica un error. Por favor verifique su información personal
   language_name: español
   language_name_translation_instructions: Por favor, indique el nombre de la lengua
     traducida en ese idioma. Por ejemplo, si se está traduciendo japonés, proporcione
@@ -56,8 +57,8 @@ es:
         has_mailing_address: Recibo mi correo postal en una dirección postal y no en mi dirección de residencia
         has_state_license: Tengo licencia de conducir o documento de identidad estatal.
         will_be_18_by_election: Tendré 18 años de edad para la próxima elección general.
-        mailing_address: Dirección Alterna
-        mailing_unit: No.
+        mailing_address: Dirección
+        mailing_unit: Número/Lote
         mailing_city: Ciudad
         mailing_state_abbrev: Estado
         mailing_zip_code: Código Postal
