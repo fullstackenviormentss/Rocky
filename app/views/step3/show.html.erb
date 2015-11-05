@@ -46,9 +46,9 @@
         <br/>
         <br/>
         <fieldset class="no_border">
-          <legend>
-          <%= t("activerecord.attributes.registrant.date_of_birth") %></legend>
-          <span class="usa-form-hint usa-datefield-hint" id="dobHint"><%= I18n.t('txt.format') %>: 4 28 1986</span>
+          <legend class="dob-legend">
+          <%= t("activerecord.attributes.registrant.date_of_birth") %></legend><br/>
+          <span class="usa-form-hint usa-datefield-hint" id="dobHint"><%= I18n.t('txt.format') %>: 4 28 1986</span><br/><br/>
           <div class="usa-date-of-birth">
             <div class="usa-datefield usa-form-group usa-form-group-month
             <%= "has_error" if !form.object.errors[:date_of_birth].empty? %>">

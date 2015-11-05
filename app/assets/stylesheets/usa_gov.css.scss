@@ -661,6 +661,14 @@ select::-moz-focus-inner { /*Remove button padding in FF*/
   line-height: 20px;
 }
 
+.dob-legend{
+  padding: 0;
+}
+#dobHint{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /* SURVEY CSS */
 
 #pagesurvey-trgt {
