@@ -17,12 +17,17 @@
 
 
 $('a').on('click', function(e){
+  e.preventDefault();
   ga('send', 'event', 'VoterRegTool','link clicked', $(this).attr('href'));
+  window.location = $(this).attr('href');
 });
 
-$('button').on('click', function(e){
+
+$('form').submit(function(e){
+  e.preventDefault();
   ga('send', 'event', 'VoterRegTool','form submitted', window.location.href);
-});
+  $('form').submit();
+})
 /**
  * Accordion
  *
