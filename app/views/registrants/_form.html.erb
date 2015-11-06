@@ -55,7 +55,7 @@ $(document).ready(function() {
       <%= t("activerecord.attributes.registrant.home_state_name") %>
     </label> <br/>
     <div class="left_side">
-      <%= select_div form, :home_state_id, [[I18n.t('txt.select_your_state'), nil]] + GeoState.collection_for_state_select %>
+      <%= select_div form, :home_state_id, [[I18n.t('txt.select_your_state'), nil]] + GeoState.collection_for_locale_select(I18n.locale) %>
     </div>
     <div class="right_side">
 

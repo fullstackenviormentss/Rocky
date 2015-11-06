@@ -43,6 +43,11 @@ class GeoState < ActiveRecord::Base
     @@all_states_by_abbrev.map { |abbrev, state| [state.name, abbrev] }.sort
   end
 
+  def self.collection_for_locale_select(locale)
+    init_all_states
+    @@all_states_by_abbrev.map { |abbrev, state| [I18n.t("states.names.#{state.abbreviation}"), state.id] }.sort
+  end
+
   def self.collection_for_state_select
     init_all_states
     @@all_states_by_abbrev.map { |abbrev, state| [state.name, state.id] }.sort
