@@ -5,7 +5,7 @@
   %p.top_paragraph= I18n.t('pdf.nvra.page1.top_paragraph' ).to_s.html_safe
   %table#instructions_table
     %tr
-      %td.instructions_block{:rowspan=>3}
+      %td.instructions_block{rowspan: 3}
         %h4= I18n.t('pdf.nvra.page1.instructions_block.title' ).to_s.html_safe
         %p= I18n.t('pdf.nvra.page1.instructions_block.subtitle' ).to_s.html_safe
         %ol
@@ -13,14 +13,13 @@
           %li= I18n.t('pdf.nvra.page1.instructions_block.step2' ).to_s.html_safe
           %li
             %p= I18n.t('pdf.nvra.page1.instructions_block.step3' ).to_s.html_safe
-            %P= I18n.t('pdf.nvra.page1.instructions_block.step3para' ).to_s.html_safe
+            %p= I18n.t('pdf.nvra.page1.instructions_block.step3para' ).to_s.html_safe
             .mailer
               .instructions= I18n.t('pdf.nvra.page1.instructions_block.step3mailer' ).to_s.html_safe
               .image= wicked_pdf_image_tag("pdf/mailer.png")
           %li= I18n.t('pdf.nvra.page1.instructions_block.step4' ).to_s.html_safe
           %li= I18n.t('pdf.nvra.page1.instructions_block.step5' ).to_s.html_safe
           %li= I18n.t('pdf.nvra.page1.instructions_block.step6' ).to_s.html_safe
-          %li= I18n.t('pdf.nvra.page1.instructions_block.step7' ).to_s.html_safe
       %td.submit_block
         - if !@registrant.home_state_pdf_instructions.blank? && false
           .state_instructions

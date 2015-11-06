@@ -1,9 +1,9 @@
 class TranslationsController < ApplicationController
   layout 'state_configuration'
   
-  before_filter :disallow_production
-  before_filter :get_translations
-  before_filter :get_locale_and_translation, :except=>[:index, :all_languages, :preview_pdf]
+  # before_filter :disallow_production
+  # before_filter :get_translations
+  # before_filter :get_locale_and_translation, :except=>[:index, :all_languages, :preview_pdf]
   
 
   def index
@@ -13,7 +13,7 @@ class TranslationsController < ApplicationController
   end
   
   def preview_pdf
-    @locale = params[:id]
+    @locale = params[:id] || :en
     @state = (params[:state] ? GeoState[params[:state]]  : GeoState.first ) || GeoState.first
     @registrant = Registrant.new
     @registrant.home_state = @state
@@ -21,7 +21,7 @@ class TranslationsController < ApplicationController
     @registrant.id = 111
     @registrant.locale = @locale
     @logo_image_path ="file:///#{Rails.root.join('app/assets/images', RockyConf.pdf.nvra.page1.default_logo).to_s}"
-    I18n.locale = @locale
+    I18n.locale = :en
     
     respond_to do |format|
       format.html do
