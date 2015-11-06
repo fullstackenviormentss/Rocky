@@ -28,7 +28,7 @@ $(document).ready(function(){
     e.preventDefault();
     var pathArray = window.location.pathname.split( '/' );
     ga('send', 'event', 'VoterRegTool','form submitted', pathArray[pathArray.length-1]);
-    $('form').submit();
+    $(this).submit();
   })
 });
 /**
