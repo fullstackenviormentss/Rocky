@@ -16,18 +16,20 @@
 //= require rocky
 
 
-$('a').on('click', function(e){
-  e.preventDefault();
-  ga('send', 'event', 'VoterRegTool','link clicked', $(this).attr('href'));
-  window.location = $(this).attr('href');
+$(document).ready(function(){
+  $('a').on('click', function(e){
+    e.preventDefault();
+    ga('send', 'event', 'VoterRegTool','link clicked', $(this).attr('href'));
+    window.location = $(this).attr('href');
+  });
+
+
+  $('form').submit(function(e){
+    e.preventDefault();
+    ga('send', 'event', 'VoterRegTool','form submitted', window.location.href);
+    $('form').submit();
+  })
 });
-
-
-$('form').submit(function(e){
-  e.preventDefault();
-  ga('send', 'event', 'VoterRegTool','form submitted', window.location.href);
-  $('form').submit();
-})
 /**
  * Accordion
  *
