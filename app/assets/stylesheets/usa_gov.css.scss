@@ -15,6 +15,7 @@
  *= require font-awesome
  *= require_self
  */
+ 
 .js-to_expand[aria-hidden=true] { display: none; }
 
 .expandmore__button {
@@ -137,6 +138,9 @@ fieldset > .checkbox, .stacked{
   background-color: #fafafa;
   border-radius: 4px;
 }
+
+
+
 .checkbox-step-1 input[type='checkbox'] {
   -webkit-appearance: checkbox;
   margin-top: -15px;
@@ -166,7 +170,8 @@ color: #A81A0A;
 fieldset{
     border:none;
     border-bottom: dotted 1px #ddd;
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    padding-right: 15px;
 }
 #hrbreaker{
   border:none;
@@ -424,6 +429,19 @@ position: relative;
   .checkbox{
     padding: 0;
   }
+
+  select{
+    width: 250px;
+  }
+  .flat > div > div > input, .stacked> div > div > input, .form-control, .flat-stack input{
+    width: 250px;
+  }
+  .back a{
+    padding: 2px 10px 2px 10px;
+  }
+  .rollover_button > button, .button_next_step > button, .button_prepare > button, .button_review > button, .button_review > button{
+    padding: 2px 10px 8px 10px;
+  }
 }
 
 
@@ -605,17 +623,20 @@ a:active, a:focus{
 .usa-form-group-day > input,
 .usa-form-group-month > input,
 .usa-form-group-year > input{
-  border: 1px solid #5b616b;
-    border-radius: 0;
     box-sizing: border-box;
     color: #000;
     display: block;
-    font-size: 1.3rem;
     margin: .2em 0;
     max-width: 46rem;
     width: 100%;
     outline: none;
     appearance: none;
+}
+
+.usa-form-control{
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 100%;
 }
 
 
@@ -663,6 +684,8 @@ select::-moz-focus-inner { /*Remove button padding in FF*/
 
 .dob-legend{
   padding: 0;
+  color: #4b4a4f;
+  font-size: 110%;
 }
 #dobHint{
   margin-top: 10px;
