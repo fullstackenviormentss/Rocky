@@ -437,9 +437,20 @@ position: relative;
   .flat > div > div > input, .stacked> div > div > input, .form-control, .flat-stack input{
     width: 250px;
   }
-  .back a{
-    padding: 2px 10px 2px 10px;
+  .back{
+    margin: 0 0 0 10px;
   }
+  .back a{
+    padding: 3px 10px 10px 10px;
+  }
+  .next{
+    margin: 0 10px 0 15px;
+  }
+
+  .button_row {
+    -webkit-text-size-adjust: 80%;
+    overflow: visible;
+  } 
   .rollover_button > button, .button_next_step > button, .button_prepare > button, .button_review > button, .button_review > button{
     padding: 2px 10px 8px 10px;
   }
@@ -449,6 +460,9 @@ position: relative;
   }
   .right_side{
     margin-top: 15px;
+  }
+  #footer{
+    overflow:hidden;
   }
 }
 
