@@ -15,7 +15,11 @@
     </div>
   </div>
 </div>
+<% if I18n.locale == :en %>
 <h2 id="pagesurvey-hdr">What you think matters!</h2>
+<% else %>
+<h2 id="pagesurvey-hdr">¡Su opinión es importante para nosotros!</h2>
+<% end %>
 <div id="pagesurvey-trgt">
 </div>
 <% if I18n.locale == :en %>
