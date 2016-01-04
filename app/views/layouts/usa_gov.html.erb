@@ -25,7 +25,8 @@
  <div id="skiplinkholder">
   <p><a id="skiplink" href="#skiptarget" onclick="document.getElementById('#skiptarget').focus();">Skip to Main Content</a></p>
 </div>
-<div id="header">
+ <% if I18n.locale == :en %>
+          <div id="header">
             <div class="container group">
 <ul class="betalnk">
       <li><a href="https://usa.gov/contact">E-mail or Chat Us Your Question</a></li>
@@ -75,6 +76,57 @@
   </div>
   </div>
 </div>
+        <% else %>
+          <div id="header">
+            <div class="container group">
+<ul class="betalnk">
+      <li><a href="/contactenos">Envíe su pregunta por e-mail o chat</a></li>
+</ul>
+        <h1><div class="cntrlogo"><a class="logolink" href="/">
+          <img id="logo" src="/assets/usa_gov/Logo_Gobierno.png" alt="USA.gov"/>
+      </a></div></h1>
+        <ul id="utilities">
+          <li><a href="/cambie-tamano-texto"><span class="icon-text-height">Cambie el tamaño del texto</span></a></li>
+        </ul>
+      </div>        
+         <div id="mnmenu">
+            <div class="container">
+          <nav id="mnnav">
+              <ul class="navItems clearfix">
+              <li><a href="/" class="current" ><span class="icon-home">Inicio</span></a></li><li><a href="/ayuda-financiera-becas-beneficios"><span class="icon-tax">Ayuda financiera y beneficios</span></a></li><li><a href="/ciudadania-inmigracion-viajes"><span class="icon-globe">Ciudadanía, inmigración y viajes</span></a></li><li><a href="/dinero-temas-consumidor"><span class="icon-dollar">Dinero y temas del consumidor</span></a></li><li><a href="/directorios"><span class="icon-agencies">Directorios del Gobierno</span></a></li><li><a href="/salud"><span class="icon-heart">Salud</span></a></li><li><a href="/trabajo-y-desempleo"><span class="icon-job">Trabajo y desempleo</span></a></li><li><a href="/servicios-informacion"><span class="icon-plus">Más servicios</span></a></li>             </ul>
+          </nav>
+          <div class="headercontact clearfix">
+                      <h2>Contáctenos</h2>
+          <ul>
+            <li><a href="/centro-de-llamadas">
+              <span class="icon-phone">Llame al 1-844-USA-GOV1 (1&#8209;844&#8209;872&#8209;4681)</span>
+            </a></li>
+            <li><a href="/email">
+              <span class="icon-email">E-mail GobiernoUSA.gov</span>
+            </a></li>
+            <li><a href="/chat">
+              <span class="icon-chat">Chatee con GobiernoUSA.gov</span>
+            </a></li>
+          </ul>       </div>
+          </div>
+        </div>
+    </div>
+    <!-- begin skip link target for main content -->
+    <div class="searchbkgnd">
+         <div class="container">
+         <div class="searchttl" role="search"><p><label for="query">Busque en el Gobierno</label></p></div>
+           <div id="search" aria-expanded="false">
+            <div>
+              <form action="https://search.usa.gov/search" method="get" name="search_form" accept-charset="UTF-8">
+                <input id="affiliate" name="affiliate" type="hidden" value="gobiernousa">
+                <input type="text" maxlength="50" name="query" size="38" id="query" class="text search_bg usagov-search-autocomplete ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                <button type="submit" class="submit" value="Search" id="buscarSubmit"><span class="icon-search">Buscar</span></button>
+              </form>
+            </div>
+          </div>
+          </div>
+        </div>  
+        <% end %>
 
   <div class="clearfix">
      <p id="skiptargetholder"> <a id="skiptarget" class="skip" tabindex="-1"></a> </p>
@@ -122,28 +174,8 @@
   </div>
 </aside>
 </main>
-<!-- begin footer container -->
-<div id="footer" role="contentinfo">
-  <div class="ftr-cntntmddl clearfix container">
-    <!-- begin contact container -->
-    <div class="row">
-      <div class="footercontact col-md-4 col-sm-12 clearfix">
-        <h2>Contact USA.gov</h2>
-        <ul>
-          <li><a href="https://usa.gov/phone">
-            <span class="icon-phone">Call 1-844-USA-GOV1 (1‑844‑872‑4681)</span>
-          </a></li>
-          <li><a href="https://usa.gov/email">
-            <span class="icon-email">E-mail USA.gov</span>
-          </a></li>
-          <li><a href="https://usa.gov/chat">
-            <span class="icon-chat">Chat with USA.gov</span>
-          </a></li>
-        </ul>
-      </div>
-      <!-- end contact container -->
-      
-      <!-- begin about container -->
+<% if I18n.locale == :en %>
+          <!-- begin about container -->
       <div class="footernav col-md-4 col-sm-12 clearfix">
         <!-- <section> -->
         <h2>About USA.gov</h2>
@@ -185,8 +217,74 @@
     </div>
   </div>
   <!-- end tagline container --></div>
+        <% else %>
+          <!-- begin footer container -->
+<div id="footer" role="contentinfo" rendersource="/appdata/cmp-childsites/release/372/sites/all/themes/usa/templates/html.tpl.php">
+  <div class="ftr-cntntmddl clearfix container">
+    <!-- begin contact container -->
+    <div class="row">
+      <div class="footercontact col-md-4 col-sm-12 clearfix">
+        <h2>Contáctenos</h2>
+        <ul>
+          <li><a href="/centro-de-llamadas">
+            <span class="icon-phone">Llame al 1-844-USA-GOV1 (1&#8209;844&#8209;872&#8209;4681)</span>
+          </a></li>
+          <li><a href="/email">
+            <span class="icon-email">E-mail GobiernoUSA.gov</span>
+          </a></li>
+          <li><a href="/chat">
+            <span class="icon-chat">Chatee con GobiernoUSA.gov</span>
+          </a></li>
+        </ul>
+      </div>
+      <!-- end contact container -->
+      
+      <!-- begin about container -->
+      <div class="footernav col-md-4 col-sm-12 clearfix">
+        <!-- <section> -->
+        <h2>Sobre GobiernoUSA.gov</h2>
+        <ul>
+          <li><a href="/acerca-de-gobiernosusa">Acerca de nosotros</a></li>
+          <li><a href="/sitio-indice">Índice del sitio</a></li>
+<li><a href="http://usa.gov">USA.gov</a></li>
+          <li><a href="http://kids.usa.gov">Kids.gov</a></li>
+          <li><a href="/publicaciones">Ordene publicaciones</a></li>
+          <li><a href="/medios">Medios</a></li>
+          <li><a href="/avisos-sitio-web">Avisos de este sitio web</a></li>         
+          <li><a href="http://beta.usa.gov/developer">Desarrolladores</a> (en inglés)</li>
+        </ul>
+      </div>
+      <!-- end about container -->
+      
+      <!-- begin connected container -->
+      <div class="footerconnected col-md-4 col-sm-12 clearfix">
+        <h2>Conéctese</h2>
+        <ul>
+          <li><a href="https://www.facebook.com/GobiernoUSA"> <span class="icon-facebook">Facebook</span></a></li>
+          <li><a href="https://plus.google.com/+gobiernousa"> <span class="icon-googleplus">Google+</span> </a></li>
+          <li><a href="https://twitter.com/GobiernoUSA"> <span class="icon-twitter">Twitter</span> </a></li>
+          <li><a href="/rss"> <span class="icon-rss">RSS</span> </a></li>
+          <li><a href="https://www.youtube.com/user/GobiernoUSA"> <span class="icon-youtube">YouTube</span> </a></li>
+          <li><a href="https://public.govdelivery.com/accounts/GOBIERNOUSA/subscriber/new"> <span class="icon-connect">Reciba alertas por e-mail</span> </a></li>
+        </ul>
+        <!-- </section> -->
+      </div>
+      <!-- end connected container -->
+    </div>
+  </div>
+  <!-- begin tagline container -->
+  <div class="footertagline">
+  <!-- <section> -->
+    <div class="tagline clearfix container">
+      <p>GobiernoUSA.gov es el portal oficial del Gobierno de Estados Unidos en español.</p>
+      <p class="volver clearfix"><a href="#skiptarget"><span class="icon-backtotop-dwnlvl">Volver al inicio</span></a></p>
+    </div>
+  </div>
+  <!-- end tagline container -->
+  </div>
 <!-- end footer container -->
 <!-- Needed_for_USA.gov_uptime_check -->
+        <% end %>
 <script type="text/javascript"> 
 //<![CDATA[ 
 var aid = "usagov"; 
