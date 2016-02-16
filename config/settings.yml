@@ -10,7 +10,6 @@ sponsor:
   partner_comarketing_text: |
     Numbers not as high as you'd like?
     <a href="http://www.rockthevote.com/partner/how-to-get-it-out-there.html" target="_blank">Here are some ways to help market your tool.</a>
-
 from_address: "rocky@example.com"
 default_url_host: "register.example.com"
 ui_url_host: "register5.example.com"
@@ -25,7 +24,7 @@ admin_username: 'admin'
 widget_js_url:  'https://s3.amazonaws.com/ovr/widget_loader.js'
 
 use_https: false
-paperclip_options: 
+paperclip_options:
   storage: "fog"
   path: ":rails_root/public/system/:attachment/:id/:style/:filename"
   url: "/system/:attachment/:id/:style/:filename"
@@ -36,7 +35,7 @@ mobile_browsers:
   - webos
   - blackberry
   - iphone
-  
+
 widget_loader_url: https://s3.amazonaws.com/ovr/widget_loader.js
 hours_before_first_reminder: 120
 hours_between_first_and_second_reminder: 72
@@ -44,7 +43,7 @@ pdf_expiration_days: 14
 pdf_no_email_expiration_minutes: 10
 partner_csv_expiration_minutes: 30
 
-  
+
 ovr_states:
   CA:
     redirect_to_online_reg_url: true
@@ -77,13 +76,18 @@ ovr_states:
     languages:
       - en
 
-  
+
 enabled_locales:
   - en
   - es
 
-
 redirect_ovr_states:
+  AL:
+    EN: Alabama Online Voter Registration|https://www.alabamavotes.gov/olvr/default.aspx
+    ES: Alabama (en inglés)
+  AK:
+    EN: Alaska Voter Registration|https://voterregistration.alaska.gov/
+    ES: Alaska (en inglés)
   AZ:
     EN: Arizona EZ Voter Registration|https://servicearizona.com/webapp/evoter/selectLanguage
     ES: Registro Electoral EZ de Arizona|https://servicearizona.com/webapp/evoter/register?execution=e1s1
@@ -92,65 +96,88 @@ redirect_ovr_states:
     ES: Inscripción de votante en línea de California|http://registertovote.ca.gov/es/
   CO:
     EN: Colorado Online Voter Registration|https://www.sos.state.co.us/voter-classic/secuRegVoterIntro.do
+    ES: Colorado|http://www.sos.state.co.us/pubs/spanish/spanishHome.html
   CT:
     EN: Connecticut Online Voter Registration|https://voterregistration.ct.gov/OLVR/welcome.do
-    ES: Inscripción en el Padrón Electoral https://voterregistration.ct.gov/OLVR/prefix.do
+    ES: Inscripción en el Padrón Electoral|https://voterregistration.ct.gov/OLVR/welcome.do
   DC:
     EN: District of Columbia Online Voter Registration|https://www.vote4dc.com/Voter/Home/SearchMain
+    ES: Distrito de Columbia (en inglés)|https://www.vote4dc.com/Voter/Home/SearchMain
   DE:
     EN: Delaware Online Voter Registration|https://ivote.de.gov/
+    ES: Delaware (en inglés)|https://ivote.de.gov/
   GA:
     EN: Georgia Online Voter Registration|https://registertovote.sos.ga.gov/GAOLVR/welcome.do
+    ES: Georgia (en inglés)|https://registertovote.sos.ga.gov/GAOLVR/welcome.do
   HI:
     EN: Hawaii Online Voter Registration System|https://olvr.hawaii.gov/
+    ES: Hawaii (en inglés)|https://olvr.hawaii.gov/
+  IA:
+    EN: Iowa Online Voter Registration|https://sos.iowa.gov/elections/voterinformation/voterregistration.html
+    ES: Iowa (en inglés)|https://sos.iowa.gov/elections/voterinformation/voterregistration.html
   IL:
     EN: Illinois Online Voter Registration|https://ova.elections.il.gov/RegistrationClosed.aspx
-    ES: Registro electoral de Illinois|https://spanish-ova.elections.il.gov/RegistrationClosed.aspx
+    ES: Illinois (en inglés)|https://spanish-ova.elections.il.gov/RegistrationClosed.aspx
   IN:
     EN: Indiana Online Voter Registration|https://indianavoters.in.gov/PublicSite/OVR/Introduction.aspx
+    ES: Indiana (en inglés)|https://indianavoters.in.gov/PublicSite/OVR/Introduction.aspx?AspxAutoDetectCookieSupport=1
   KS:
     EN: Kansas Online Voter Registration|https://www.kdor.org/voterregistration/Default.aspx
+    ES: Kansas (en inglés)|https://www.kdor.org/voterregistration/Default.aspx
   LA:
     EN: Louisiana Online Voter Registration|http://www.sos.la.gov/ElectionsAndVoting/Pages/OnlineVoterRegistration.aspx
+    ES: Luisiana (en inglés)|https://www.kdor.org/voterregistration/Default.aspx
   MD:
     EN: Maryland Online Voter Registration|https://voterservices.elections.state.md.us/OnlineVoterRegistration/VoterType
-    ES: Registro de votante|https://voterservices.elections.state.md.us/OnlineVoterRegistration/VoterType
+    ES: Maryland|https://voterservices.elections.state.md.us/OnlineVoterRegistration/VoterType
   MO:
     EN: Missouri Online Voter Registration|http://s1.sos.mo.gov/elections/goVoteMissouri/register.aspx
+    ES: Misuri (en inglés)|http://s1.sos.mo.gov/elections/goVoteMissouri/register.aspx
   MN:
     EN: Minnesota Online Voter Registration|https://mnvotes.sos.state.mn.us/VoterRegistration/VoterRegistrationStep1.aspx
+    ES: Minnesota (en inglés)|https://mnvotes.sos.state.mn.us/VoterRegistration/VoterRegistrationStep1.aspx
   MA:
     EN: Massachusetts Online Voter Registration System|https://www.sec.state.ma.us/ovr/
+    ES: Massachusetts (en inglés)|https://www.sec.state.ma.us/ovr/
   NE:
     EN: Nebraska Online Voter Registration|https://www.nebraska.gov/apps-sos-voter-registration/
-    ES: Registrarse para votar en Nebraska|https://www.nebraska.gov/apps-sos-voter-registration/?lang=es
+    ES: Nebraska|https://www.nebraska.gov/apps-sos-voter-registration/?lang=es
   NV:
     EN: Nevada Online Voter Registration|https://nvsos.gov/sosvoterservices/Registration/step1.aspx
-    ES: Inscripción de votates en línea|https://nvsos.gov/sosvoterservices/Registration/step1.aspx
+    ES: Nevada|https://nvsos.gov/sosvoterservices/Registration/step1.aspx
+  NM:
+    EN: New Mexico|https://portal.sos.state.nm.us/OVR/(S(ts1rbmr53ikt0yu5vv0ojwbw))/WebPages/InstructionsStep1.aspx
+    ES: Nuevo México|https://portal.sos.state.nm.us/OVR/(S(e5hl11jpt5dp0nqiwm32n1rp))/WebPages/InstructionsStep1.aspx
   NY:
     EN: New York State Voter Registration Form|http://www.elections.ny.gov/NYSBOE/download/voting/voteform_enterable.pdf
+    ES: Nueva York (en inglés)|http://www.elections.ny.gov/NYSBOE/download/voting/voteform_enterable.pdf
   PA:
     EN: PA Online Voter Registration|https://www.pavoterservices.state.pa.us/Pages/VoterRegistrationApplication.aspx
+    ES: Pensilvania (en inglés)|https://www.pavoterservices.state.pa.us/Pages/VoterRegistrationApplication.aspx
   OR:
     EN: Oregon Online Voter Registration|https://secure.sos.state.or.us/orestar/vr/register.do?lang=eng&source=SOS
-    ES: Mi voto|https://secure.sos.state.or.us/orestar/vr/register.do?lang=spa#
+    ES: Oregón Mi voto|https://secure.sos.state.or.us/orestar/vr/register.do?lang=spa#
   SC:
     EN: South Carolina Online Voter Registration|https://info.scvotes.sc.gov/eng/ovr/start.aspx
+    ES: Carolina del Sur (en inglés)|https://info.scvotes.sc.gov/eng/ovr/start.aspx
   UT:
     EN: Utah Online Voter Registration|https://secure.utah.gov/voterreg/index.html
+    ES: Utah (en inglés)|https://secure.utah.gov/voterreg/index.html
   VA:
     EN: Virginia Online Voter Registration|https://www.vote.virginia.gov/
+    ES: Virginia (en inglés)|https://vote.elections.virginia.gov/VoterInformation
   VT:
     EN: Vermont Online Voter Registration|http://olvr.sec.state.vt.us/
+    ES: Vermont (en inglés)|http://olvr.sec.state.vt.us/
   WA:
     EN: Washington Online Voter Registration|http://www.sos.wa.gov/elections/myvote/
-    ES: MyVote|http://www.sos.wa.gov/elections/myvote/
+    ES: Washington MyVote|http://www.sos.wa.gov/elections/myvote/
   WV:
     EN: West Virginia Online Voter Registration|https://ovr.sos.wv.gov/Register
+    ES: Virgina Occidental (en inglés)|https://ovr.sos.wv.gov/Register#Landing
 pdf:
   nvra:
     page1:
       default_logo: 'pdf/rtvlogo.gif'
       other_block:
         instructions_url: "http://www.rockthevote.com/registration/instructions/<STATE>-<LOCALE>.html"
-  

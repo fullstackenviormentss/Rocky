@@ -33,13 +33,13 @@ class Step2Controller < RegistrationStep
       end
       reg[:change_of_address] = !"#{reg[:prev_address]}#{reg[:prev_unit]}#{reg[:prev_city]}#{reg[:prev_zip_code]}".blank?
       reg[:change_of_name] = !"#{reg[:prev_first_name]}#{reg[:prev_middle_name]}#{reg[:prev_last_name]}".blank?
-      
+
     end
     super
   end
 
   protected
-  
+
   def advance_to_next_step
     @registrant.advance_to_step_3
   end
@@ -69,14 +69,15 @@ class Step2Controller < RegistrationStep
       end
       if @online_reg
         @online_reg_text,@online_reg_url = @online_reg.split("|")[0], @online_reg.split("|")[1]
+        @online_reg_text = I18n.t('txt.continue_with_state_button').to_s + @online_reg_text
       end
     end
     @state_id_tooltip = @registrant.state_id_tooltip
-    
+
     @state_parties = @registrant.state_parties
     @race_tooltip = @registrant.race_tooltip
     @party_tooltip = @registrant.party_tooltip
-    
+
     if @registrant.use_short_form?
       @question_1 = @registrant.question_1
       @question_2 = @registrant.question_2
