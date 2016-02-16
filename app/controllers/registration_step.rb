@@ -45,6 +45,9 @@ class RegistrationStep < ApplicationController
   def update
     find_registrant
     set_up_view_variables
+    if params.has_key? :date
+      params[:registrant] = params[:registrant].merge(params[:date][:registrant])
+    end
     @registrant.attributes = params[:registrant]
     @registrant.send(:"advance_to_step_#{current_step}")
     if @registrant.aasm_current_state == :step_3
@@ -70,11 +73,11 @@ class RegistrationStep < ApplicationController
 
   def set_up_view_variables
   end
-  
+
   def set_title
     @title = t("txt.registration.step_#{self.class::CURRENT_STEP}_header")
   end
-  
+
   def set_up_share_variables
     @root_url_escaped = CGI::escape(root_url)
     # @registrant.tell_message ||=
@@ -85,13 +88,13 @@ class RegistrationStep < ApplicationController
     #     I18n.t('email.tell_friend.body', :rtv_url => root_url(:source => "email"))
     #   end
   end
-  
+
 
   def attempt_to_advance
 
     if @registrant.valid?
       @registrant.save_or_reject!
-        
+
       advance_to_next_step
       redirect_when_eligible
     else
@@ -134,7 +137,7 @@ class RegistrationStep < ApplicationController
     @short_form = params[:short_form]
     @collect_email_address = params[:collectemailaddress]
   end
-  
+
   def redirect_app_role
     if ENV['ROCKY_ROLE'] == 'web'
       redirect_to "//#{RockyConf.ui_url_host}"
