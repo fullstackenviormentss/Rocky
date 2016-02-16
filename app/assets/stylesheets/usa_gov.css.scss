@@ -15,7 +15,7 @@
  *= require font-awesome
  *= require_self
  */
- 
+
 .js-to_expand[aria-hidden=true] { display: none; }
 
 .expandmore__button {
@@ -187,7 +187,7 @@ fieldset{
 // }
 // .tooltip > img{
 //     width:20px;
-// 
+//
 .required{
     color: #A80000;
     display: inline-block;
@@ -265,7 +265,7 @@ fieldset{
   padding: 7px 0 10px 0;
   font-weight: normal;
   text-align: left;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .online-reg a{
@@ -292,7 +292,7 @@ fieldset{
   width: 130px;
   height: 40px;
   text-align: left;
-  cursor: pointer; 
+  cursor: pointer;
 }
 .back a{
     border: solid 1px #1b50a0;
@@ -314,7 +314,7 @@ fieldset{
   font-weight: normal;
   height: 40px;
   text-align: left;
-  cursor: pointer; 
+  cursor: pointer;
 }
 .next a{
     border: solid 1px #A81A0A;
@@ -382,7 +382,7 @@ position: relative;
   background-color: #FEFAFA;
   border:solid 1px #ebccd1;
     padding: 0 0 5px 15px;
-    margin: 0 0 0 0; 
+    margin: 0 0 0 0;
     overflow: auto;
     min-height: 0;
     font-size: 120%;
@@ -626,7 +626,12 @@ a:active, a:focus{
   float: left;
   clear: none;
   margin-right: 1.5rem;
-  width: 5rem; }
+  width: 5rem;
+
+  select {
+    width: 100%;
+  }
+}
 
 .usa-form-group-day > input,
 .usa-form-group-month > input,
@@ -653,9 +658,9 @@ a:active, a:focus{
         height:40px;
         line-height:40px;
         background:#f4f4f4;
-    } 
+    }
 }
-select::-moz-focus-inner { /*Remove button padding in FF*/ 
+select::-moz-focus-inner { /*Remove button padding in FF*/
     border: 0;
     padding: 0;
 }
@@ -663,12 +668,12 @@ select::-moz-focus-inner { /*Remove button padding in FF*/
     select {
         padding: 20px 0!important;
     }
-}        
-@media screen\0 { /* IE Hacks: targets IE 8, 9 and 10 */        
+}
+@media screen\0 { /* IE Hacks: targets IE 8, 9 and 10 */
     select {
         height:40px;
         line-height:40px;
-    }     
+    }
 }
 
 .space_labels > div >label{

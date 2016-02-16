@@ -23,7 +23,7 @@
     </ol>
   </div>
 <% end %>
-  
+
 <div class="flat">
   <div class="width_f">
     <div class="online_reg_notice">
@@ -48,23 +48,22 @@
         <fieldset class="no_border">
           <legend class="dob-legend">
           <%= t("activerecord.attributes.registrant.date_of_birth") %></legend><br/>
-          <span class="usa-form-hint usa-datefield-hint" id="dobHint"><%= I18n.t('txt.format') %>: 4 28 1986</span><br/><br/>
           <div class="usa-date-of-birth">
             <div class="usa-datefield usa-form-group usa-form-group-month
             <%= "has_error" if !form.object.errors[:date_of_birth].empty? %>">
               <label for="date_of_birth_1"><span class="required" title="required">*</span> <%= I18n.t('txt.month') %></label>
-              <input aria-describedby="dobHint" class="usa-form-control" id="date_of_birth_1" name="registrant[date_of_birth(2i)]" pattern="0?[1-9]|1[012]" type="number" value="<%= @registrant.date_of_birth.try(:month) %>" maxlength="2">
+              <%= select_month(Date.today, :use_month_numbers => true, :id => "date_of_birth_1", :field_name => 'registrant[date_of_birth(2i)]', :class => "usa-form-control") %>
             </div>
             <div class="usa-datefield usa-form-group usa-form-group-day
             <%= "has_error" if !form.object.errors[:date_of_birth].empty? %>">
               <label for="date_of_birth_2"><span class="required" title="required">*</span> <%= I18n.t('txt.day') %></label>
-              <input aria-describedby="dobHint" class="usa-form-control" id="date_of_birth_2" name="registrant[date_of_birth(3i)]" pattern="0?[1-9]|1[0-9]|2[0-9]|3[01]" type="number" value="<%= @registrant.date_of_birth.try(:day) %>" maxlength="2">
+              <%= select_day(Date.today, use_two_digit_numbers: true, :id => "date_of_birth_2", :field_name => "registrant[date_of_birth(3i)]") %>
             </div>
 
             <div class="usa-datefield usa-form-group usa-form-group-year
                <%= "has_error" if !form.object.errors[:date_of_birth].empty?  %>">
               <label for="date_of_birth_3"><span class="required" title="required">*</span> <%= I18n.t('txt.year') %></label>
-              <input aria-describedby="dobHint" class="usa-form-control" id="date_of_birth_3" name="registrant[date_of_birth(1i)]" pattern="[0-9]{4}" type="number" value="<%= @registrant.date_of_birth.try(:year) %>" maxlength="4">
+              <%= select_year(Date.today, :start_year => Time.now.year - 18, :end_year => Time.now.year - 95, :field_name => 'registrant[date_of_birth(1i)]', :id => "date_of_birth_3") %>
             </div>
           </div>
 
@@ -84,7 +83,7 @@
                 <span class="required" title="required">*</span> <%= t("activerecord.attributes.registrant.us_citizen") %>
               </label>
           </li>
-          <li <% if !form.object.errors[:has_state_license].empty? %>class="checkbox_error" <% end %>> 
+          <li <% if !form.object.errors[:has_state_license].empty? %>class="checkbox_error" <% end %>>
               <%= form.check_box :has_state_license %>
               <label for="registrant_has_state_license" class: "check-box-step-1">
                 <!-- <span class="required" title="required">*</span> -->
@@ -126,7 +125,7 @@ function calculateAge(birthMonth, birthDay, birthYear)
   todayYear = todayDate.getFullYear();
   todayMonth = todayDate.getMonth();
   todayDay = todayDate.getDate();
-  age = todayYear - birthYear; 
+  age = todayYear - birthYear;
 
   if (todayMonth < birthMonth - 1)
   {
