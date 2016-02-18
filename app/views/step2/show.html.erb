@@ -10,8 +10,8 @@
       <div class="online_reg_notice">
         <h2 class="section_header"><%= I18n.t('txt.registration.ineligible_header') %>: </h2>
         <ul>
-          <li><%= I18n.t('txt.registration.ineligible_state') %></li>
-          <li><%= I18n.t('txt.registration.ineligible_state_contact') %></li>
+          <li><%= I18n.t('txt.registration.ineligible_state').html_safe %></li>
+          <li><%= I18n.t('txt.registration.ineligible_state_contact').html_safe %></li>
         </ul>
       </div>
     </div>
@@ -39,7 +39,7 @@
                   <div class="online-reg"><%= link_to I18n.t('txt.form_name'), registrant_step_3_path(@registrant), :class =>"button" %></div>
                 </li>
               <% end %>
-              
+
             </ul>
         </div>
       </div>
