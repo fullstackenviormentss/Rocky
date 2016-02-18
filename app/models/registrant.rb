@@ -30,17 +30,17 @@ class Registrant < ActiveRecord::Base
     def initialize(registrant)
       @registrant = registrant
     end
-    
+
   end
 
   include AASM
   include Lolrus
   include Rails.application.routes.url_helpers
-  
+
   serialize :state_ovr_data, Hash
 
   STEPS = [:initial, :step_1, :step_2, :step_3, :step_4, :step_5, :complete]
-  
+
   TITLE_KEYS = I18n.t('txt.registration.titles', :locale => :en).keys
   SUFFIX_KEYS = I18n.t('txt.registration.suffixes', :locale => :en).keys
   RACE_KEYS = I18n.t('txt.registration.races', :locale => :en).keys
@@ -55,71 +55,71 @@ class Registrant < ActiveRecord::Base
 
 
 
-  ADDRESS_FIELDS = ["home_address", 
-    "mailing_address", 
+  ADDRESS_FIELDS = ["home_address",
+    "mailing_address",
     "prev_address"]
 
-  CITY_FIELDS = ["home_city", 
-   "mailing_city", 
+  CITY_FIELDS = ["home_city",
+   "mailing_city",
    "prev_city"]
 
-  NAME_FIELDS = ["first_name", 
-   "middle_name", 
+  NAME_FIELDS = ["first_name",
+   "middle_name",
    "last_name",
-   "prev_first_name", 
-   "prev_middle_name", 
+   "prev_first_name",
+   "prev_middle_name",
    "prev_last_name"]
 
   PDF_FIELDS = [
       "home_zip_code",
-       "first_name", 
-       "middle_name", 
-       "last_name", 
-       "home_address", 
-       "home_unit", 
-       "home_city", 
-       "mailing_address", 
-       "mailing_unit", 
-       "mailing_city", 
-       "mailing_zip_code", 
-       "prev_first_name", 
-       "prev_middle_name", 
-       "prev_last_name", 
-       "prev_address", 
-       "prev_unit", 
-       "prev_city", 
+       "first_name",
+       "middle_name",
+       "last_name",
+       "home_address",
+       "home_unit",
+       "home_city",
+       "mailing_address",
+       "mailing_unit",
+       "mailing_city",
+       "mailing_zip_code",
+       "prev_first_name",
+       "prev_middle_name",
+       "prev_last_name",
+       "prev_address",
+       "prev_unit",
+       "prev_city",
        "prev_zip_code"
     ]
-  
+
   # OVR_REGEX = /^(\p{Latin}|\P{Letter})*$/
   CA_NAME_REGEX =   /^[a-zA-Z0-9'#,\-\/_\.@\s]*$/ #A-Z a-z 0-9 '#,-/_ .@space
   # CA_EMAIL_REGEX =  /^[a-zA-Z0-9\-\/_\.]+@.*\..*$/ #A-Z a-z 0-9, underscore, dash, and '@' followed by at least one "."
   CA_ADDRESS_REGEX    = /^[a-zA-Z0-9#\-\s,\/\.]*$/ # A-Z a-z 0-9 # dash space, / .
   CA_CITY_STATE_REGEX = /^[a-zA-Z0-9#\-\s]*$/      # A-Z a-z 0-9 # dash space
   OVR_REGEX = /^[a-zA-Z0-9#\-\s,\/\.\+!@\$%\^&\*_=\(\)\[\]\{\};':"\\<>\?\|]*$/
-  #white space and hyphen for names; and for addresses phone#s and other stuff, also include special chars such as # ( ) / + 
-  
+  #white space and hyphen for names; and for addresses phone#s and other stuff, also include special chars such as # ( ) / +
+
   def self.validate_fields(list, regex, message)
     list.each do |field|
-      validates field, format: { with: regex , 
+      validates field, format: { with: regex ,
         message: message }#I18n.t('activerecord.errors.messages.invalid_for_pdf')}
     end
-    
+
   end
-  
+
   validate_fields(PDF_FIELDS, OVR_REGEX, :invalid_for_pdf)
   validate_fields(NAME_FIELDS, CA_NAME_REGEX, :invalid)
   validate_fields(ADDRESS_FIELDS, CA_ADDRESS_REGEX, :invalid)
   validate_fields(CITY_FIELDS, CA_CITY_STATE_REGEX, :invalid)
-  
+
   # PDF_FIELDS.each do |pdf_field|
-  #   validates pdf_field, format: { with: OVR_REGEX , 
+  #   validates pdf_field, format: { with: OVR_REGEX ,
   #     message: :invalid_for_pdf }#I18n.t('activerecord.errors.messages.invalid_for_pdf')}
   # end
-  
-  
-  
-  
+
+
+
+
 
   FINISH_IFRAME_URL = "https://s3.rockthevote.com/rocky/rtv-ovr-share.php"
 
@@ -215,7 +215,7 @@ class Registrant < ActiveRecord::Base
       end
     end
   end
-  
+
 
   def self.validates_zip_code(*attr_names)
     configuration = { }
@@ -248,9 +248,9 @@ class Registrant < ActiveRecord::Base
 
   with_options :if => :at_least_step_1? do |reg|
     reg.validates_presence_of   :partner_id, :unless=>[:remote_partner_id_present?]
-    
+
     reg.validates_inclusion_of  :locale, :in => RockyConf.enabled_locales
-   
+
     reg.validates_presence_of   :home_state_id
   end
 
@@ -276,13 +276,13 @@ class Registrant < ActiveRecord::Base
     # reg.validates_inclusion_of  :name_suffix, :in => SUFFIXES, :allow_blank => true
     # reg.validates_presence_of   :home_address,    :unless => [ :finish_with_state? ]
     # reg.validates_presence_of   :home_city,       :unless => [ :finish_with_state? ]
-    
+
     # reg.validate                :validate_race_at_least_step_3,   :unless => [ :in_ovr_flow? ]
     # reg.validate                :validate_party_at_least_step_3,  :unless => [ :building_via_api_call, :in_ovr_flow? ]
 
     # reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
     # reg.validates_presence_of :phone_type, :if => :has_phone?
-    # reg.validate :validate_phone_present_if_opt_in_sms_at_least_step_2  
+    # reg.validate :validate_phone_present_if_opt_in_sms_at_least_step_2
   end
 
    with_options :if => :at_least_step_4? do |reg|
@@ -305,15 +305,15 @@ class Registrant < ActiveRecord::Base
     reg.validates_inclusion_of  :name_suffix, :in => SUFFIXES, :allow_blank => true
     reg.validates_presence_of   :home_address,    :unless => [ :finish_with_state? ]
     reg.validates_presence_of   :home_city,       :unless => [ :finish_with_state? ]
-    
+
     reg.validate                :validate_race_at_least_step_3,   :unless => [ :in_ovr_flow? ]
     reg.validate                :validate_party_at_least_step_3,  :unless => [ :building_via_api_call, :in_ovr_flow? ]
 
     # reg.validates_format_of :phone, :with => /[ [:punct:]]*\d{3}[ [:punct:]]*\d{3}[ [:punct:]]*\d{4}\D*/, :allow_blank => true
     # reg.validates_presence_of :phone_type, :if => :has_phone?
-    # reg.validate :validate_phone_present_if_opt_in_sms_at_least_step_2  
+    # reg.validate :validate_phone_present_if_opt_in_sms_at_least_step_2
   end
-  
+
   with_options :if => :needs_mailing_address? do |reg|
     reg.validates_presence_of :mailing_address
     reg.validates_presence_of :mailing_city
@@ -327,7 +327,7 @@ class Registrant < ActiveRecord::Base
     reg.validates_presence_of :prev_first_name
     reg.validates_presence_of :prev_last_name
   end
-  
+
   with_options :if => :needs_prev_address? do |reg|
     reg.validates_presence_of :prev_address
     reg.validates_presence_of :prev_city
@@ -362,7 +362,7 @@ class Registrant < ActiveRecord::Base
     return true if RockyConf.skip_survey_and_opt_ins
     question_1.blank? && question_2.blank? && !any_ask_for_volunteers? && !any_email_opt_ins? && !any_phone_opt_ins?
   end
-  
+
   def locale_english_name
     I18n.t("locales.#{locale}.name", locale: "en")
   end
@@ -377,23 +377,23 @@ class Registrant < ActiveRecord::Base
   def collect_email_address?
     collect_email_address.to_s.downcase.strip != 'no'
   end
-  
+
   def any_email_opt_ins?
     collect_email_address? && (partner.rtv_email_opt_in || partner.primary? || partner.partner_email_opt_in)
   end
-  
+
   def any_phone_opt_ins?
     partner.rtv_sms_opt_in || partner.partner_sms_opt_in || partner.primary?
   end
-  
+
   def any_ask_for_volunteers?
     ((partner.ask_for_volunteers? || partner.primary?) && RockyConf.sponsor.allow_ask_for_volunteers) || (partner.partner_ask_for_volunteers? && !partner.primary?)
   end
-  
+
   def not_require_email_address?
     false
   end
-  
+
   def require_email_address?
     #!%w(no optional)
     !%w(no).include?(collect_email_address.to_s.downcase.strip)
@@ -465,7 +465,7 @@ class Registrant < ActiveRecord::Base
   def self.find_by_param!(param)
     find_by_param(param) || begin raise ActiveRecord::RecordNotFound end
   end
-  
+
   def self.old_ui_record_ids
     self.where("updated_at < ?", ui_timeout_minutes.minutes.ago).pluck(:id)
   end
@@ -473,7 +473,7 @@ class Registrant < ActiveRecord::Base
   def self.ui_timeout_minutes
     30
   end
-  
+
   def self.process_ui_records
     self.where("status='complete' AND updated_at < ?", ui_timeout_minutes.minutes.ago).delete_all
     results = {}
@@ -481,11 +481,11 @@ class Registrant < ActiveRecord::Base
       registrants = self.where("id in (?)", id_list)
       reg_hashes = registrants.collect {|r| r.to_bulk_api_hash }
       created_records = JSON.parse(RestClient.post("#{RockyConf.api_host_name}/api/v3/registrations/bulk.json", {
-          :registrants => reg_hashes, 
-          :partner_id=>Partner::DEFAULT_ID, 
+          :registrants => reg_hashes,
+          :partner_id=>Partner::DEFAULT_ID,
           :partner_API_key=>ENV['ROCKY_CORE_API_KEY']
       }.to_json, :content_type => :json, :accept => :json))
-      
+
       created_records["registrants_added"].each_with_index do |creation_status,idx|
         results[registrants[idx].id] = creation_status
         if creation_status[0] == true
@@ -522,10 +522,10 @@ class Registrant < ActiveRecord::Base
     home_state_id && locale ?
         StateLocalization.where({:state_id  => home_state_id, :locale => locale}).first : nil
   end
-  
+
   def en_localization
     home_state_id ? StateLocalization.where({:state_id  => home_state_id, :locale => 'en'}).first : nil
-      
+
   end
 
   def at_least_step_1?
@@ -586,11 +586,11 @@ class Registrant < ActiveRecord::Base
       end
     end
   end
-  
+
   def phone_digits
     phone.to_s.gsub(/\D/,'')
   end
-  
+
   def set_opt_in_email
     if !require_email_address? && email_address.blank?
       self.opt_in_email = false
@@ -637,7 +637,7 @@ class Registrant < ActiveRecord::Base
       self.age = nil
     end
   end
-  
+
   def titles
     TITLE_KEYS.collect {|key| I18n.t("txt.registration.titles.#{key}", :locale=>locale)}
   end
@@ -649,7 +649,7 @@ class Registrant < ActiveRecord::Base
   def races
     RACE_KEYS.collect {|key| I18n.t("txt.registration.races.#{key}", :locale=>locale)}
   end
-  
+
   def phone_types
     PHONE_TYPE_KEYS.collect {|key| I18n.t("txt.registration.phone_types.#{key}", :locale=>locale)}
   end
@@ -660,14 +660,14 @@ class Registrant < ActiveRecord::Base
   def english_name_title
     english_attribute_value(name_title_key, 'titles')
   end
-  
+
   def name_suffix_key
     key_for_attribute(:name_suffix, 'suffixes')
   end
   def english_name_suffix
     english_attribute_value(name_suffix_key, 'suffixes')
   end
-    
+
   def prev_name_title_key
     key_for_attribute(:prev_name_title, 'titles')
   end
@@ -681,16 +681,16 @@ class Registrant < ActiveRecord::Base
   def english_prev_name_suffix
     english_attribute_value(prev_name_suffix_key, 'suffixes')
   end
-  
+
   def key_for_attribute(attr_name, i18n_list)
     key_value = I18n.t("txt.registration.#{i18n_list}", :locale=>locale).detect{|k,v| v==self.send(attr_name)}
-    key_value && key_value.length == 2 ? key_value[0] : nil    
+    key_value && key_value.length == 2 ? key_value[0] : nil
   end
-  
+
   def english_attribute_value(key, i18n_list)
     key.nil? ? nil : I18n.t("txt.registration.#{i18n_list}.#{key}", :locale=>:en)
   end
-  
+
   def self.english_races
     I18n.t('txt.registration.races', :locale=>:en).values
   end
@@ -709,7 +709,7 @@ class Registrant < ActiveRecord::Base
       end
     end
   end
-  
+
   def self.race_key(locale, race)
     if ridx = race_idx(locale, race)
       I18n.t('txt.registration.races').keys[ridx]
@@ -717,26 +717,26 @@ class Registrant < ActiveRecord::Base
       nil
     end
   end
-  
+
   def self.race_idx(locale, race)
     I18n.t('txt.registration.races', :locale=>locale).values.index(race)
   end
-  
+
   def english_race
     self.class.english_race(locale, race)
   end
-  
+
   def race_key
     self.class.race_key(locale, race)
   end
-  
+
   def validate_race_at_least_step_3
     validate_race
   end
   def validate_race_at_least_step_3_custom_2
     validate_race
   end
-  
+
   def validate_race
     if requires_race?
       if race.blank?
@@ -754,13 +754,13 @@ class Registrant < ActiveRecord::Base
       []
     end
   end
-  
+
   def set_official_party_name
     return unless self.step_5? || self.complete?
     self.official_party_name = detect_official_party_name
   end
-  
-  
+
+
   def detect_official_party_name
     if party.blank?
       I18n.t('states.no_party_label.none')
@@ -782,16 +782,16 @@ class Registrant < ActiveRecord::Base
       end
     end
   end
-  
+
   def english_state_parties
     if requires_party?
       en_localization ? en_localization.parties + [ en_localization.no_party ] : []
     else
       []
-    end    
+    end
   end
 
-  
+
   def english_party_name
     if locale.to_s == 'en' || english_state_parties.include?(party)
       return party
@@ -813,7 +813,7 @@ class Registrant < ActiveRecord::Base
   def pdf_date_of_birth_year
     pdf_date_of_birth.split('/')[2]
   end
-  
+
   def pdf_date_of_birth
     (date_of_birth.is_a?(Date) || date_of_birth.is_a?(DateTime)) ? date_of_birth.to_s(:month_day_year) : date_of_birth.to_s
   end
@@ -825,7 +825,7 @@ class Registrant < ActiveRecord::Base
       ""
     end
   end
-  
+
   def pdf_race
     if requires_race? && race != I18n.t('txt.registration.races', :locale=>locale).values.last
       race
@@ -854,21 +854,21 @@ class Registrant < ActiveRecord::Base
   def home_state_not_participating_text
     localization.not_participating_tooltip
   end
-  
+
   def registration_deadline
     localization.registration_deadline
   end
-  
+
   def state_registrar_address
     home_state && home_state.registrar_address(self.home_zip_code)
   end
-  
+
   [:pdf_instructions, :email_instructions].each do |state_data|
     define_method("home_state_#{state_data}") do
       localization.send(state_data)
     end
   end
-  
+
   def registration_instructions_url
     ((partner.blank? || partner.registration_instructions_url.blank?) ? RockyConf.pdf.nvra.page1.other_block.instructions_url : partner.registration_instructions_url).tap do |r_url|
       return r_url.gsub(
@@ -915,7 +915,7 @@ class Registrant < ActiveRecord::Base
 
   def home_zip_code=(zip)
     self[:home_zip_code] = zip
-    
+
   end
 
   def home_state_name
@@ -924,19 +924,19 @@ class Registrant < ActiveRecord::Base
   def home_state_abbrev
     home_state && home_state.abbreviation
   end
-  
+
   def home_state_online_reg_url
     home_state && home_state.online_reg_url(self)
   end
-  
+
   def has_home_state_online_redirect?
     home_state && home_state.redirect_to_online_reg_url(self)
   end
-  
+
   def has_ovr_pre_check?
     in_ovr_flow? && home_state_has_ovr_pre_check?
   end
-  
+
   def home_state_has_ovr_pre_check?
     home_state ? home_state.has_ovr_pre_check?(self) : false
   end
@@ -948,7 +948,7 @@ class Registrant < ActiveRecord::Base
   def decorate_for_state(controller = nil)
     home_state ? home_state.decorate_registrant(self, controller) : nil
   end
-  
+
   def mailing_state_abbrev=(abbrev)
     self.mailing_state = GeoState[abbrev]
   end
@@ -956,7 +956,7 @@ class Registrant < ActiveRecord::Base
   def mailing_state_abbrev
     mailing_state && mailing_state.abbreviation
   end
-  
+
   def mailing_state_name
     mailing_state && mailing_state.name
   end
@@ -976,25 +976,25 @@ class Registrant < ActiveRecord::Base
   def home_state_online_reg_enabled?
     !home_state.nil? && home_state.online_reg_enabled?(locale, self)
   end
-  
+
   def in_ovr_flow?
     home_state_allows_ovr?
   end
-  
+
   def home_state_allows_ovr?
     localization ? localization.allows_ovr?(self) : false
   end
-  
-  
+
+
 
   def custom_step_4_partial
     "#{home_state.abbreviation.downcase}"
   end
-  
+
   def has_home_state_online_registration_instructions?
     File.exists?(File.join(Rails.root, 'app/views/state_online_registrations/', "_#{home_state_online_registration_instructions_partial}.html.erb"))
   end
-  
+
   def home_state_online_registration_instructions_partial
     "#{home_state.abbreviation.downcase}_instructions"
   end
@@ -1002,8 +1002,8 @@ class Registrant < ActiveRecord::Base
   def has_home_state_online_registration_view?
     File.exists?(File.join(Rails.root, 'app/views/state_online_registrations/', "#{home_state_online_registration_view}.html.erb"))
   end
-  
-  
+
+
   def home_state_online_registration_view
     "#{home_state.abbreviation.downcase}"
   end
@@ -1011,7 +1011,7 @@ class Registrant < ActiveRecord::Base
   def use_short_form?
     short_form? && !in_ovr_flow?
   end
-    
+
 
   def full_name
     [name_title, first_name, middle_name, last_name, name_suffix].compact.join(" ")
@@ -1047,7 +1047,7 @@ class Registrant < ActiveRecord::Base
     begin
       Rails.logger.error "Trying SSL request: https://#{RockyConf.api_host_name}/api/v3/registrations.json"
       Rails.logger.error "Registration: #{self.to_api_hash}"
-      # response = JSON.parse(RestClient.post("https://#{RockyConf.api_host_name}/api/v3/registrations.json", 
+      # response = JSON.parse(RestClient.post("https://#{RockyConf.api_host_name}/api/v3/registrations.json",
       #   {:registration => self.to_api_hash}.to_json, :content_type => "json", :verify_ssl => false
       # ))
       queue_pdf
@@ -1069,16 +1069,16 @@ class Registrant < ActiveRecord::Base
       end
       return true
     end
-    
-    
+
+
     # I18n.locale = self.locale.to_sym
     # generate_pdf
     # deliver_confirmation_email
     # enqueue_reminder_emails
   end
-  
+
   def self.remote_pdf_ready?(uid)
-    response = JSON.parse(RestClient.get("#{RockyConf.api_host_name}/api/v3/registrations/pdf_ready.json?UID=#{uid}"))    
+    response = JSON.parse(RestClient.get("#{RockyConf.api_host_name}/api/v3/registrations/pdf_ready.json?UID=#{uid}"))
     return (response["pdf_ready"] == true)
   rescue Exception => e
     begin
@@ -1089,9 +1089,9 @@ class Registrant < ActiveRecord::Base
     end
     return false
   end
-  
+
   def self.stop_reminders(uid)
-    response = JSON.parse(RestClient.post("#{RockyConf.api_host_name}/api/v3/registrations/stop_reminders.json", {:UID=>uid}))    
+    response = JSON.parse(RestClient.post("#{RockyConf.api_host_name}/api/v3/registrations/stop_reminders.json", {:UID=>uid}))
     return response.symbolize_keys
   rescue Exception => e
     begin
@@ -1102,23 +1102,23 @@ class Registrant < ActiveRecord::Base
     end
     return {:reminders_stopped=>false}
   end
-  
+
   def stop_reminders_url
     self.custom_stop_reminders_url.blank? ? default_stop_reminders_url : custom_stop_reminders_url_with_uid
   end
-  
+
   def default_stop_reminders_url
     registrant_finish_url(self, :protocol => "https", :reminders => "stop", :host=>RockyConf.pdf_host_name)
   end
-  
+
   def custom_stop_reminders_url_with_uid
     custom_stop_reminders_url.to_s.gsub("<UID>", self.uid)
   end
-  
+
   def remote_pdf_ready?
     self.class.remote_pdf_ready?(self.remote_uid)
   end
-  
+
   def to_api_hash
     {
       lang: locale,
@@ -1178,10 +1178,10 @@ class Registrant < ActiveRecord::Base
       opt_in_sms: opt_in_sms?,
       opt_in_volunteer: volunteer?,
       partner_opt_in_email: partner_opt_in_email?,
-      partner_opt_in_sms: partner_opt_in_sms?, 
+      partner_opt_in_sms: partner_opt_in_sms?,
       partner_opt_in_volunteer: partner_volunteer?,
       survey_question_1: survey_question_1,
-      survey_answer_1: survey_answer_1, 
+      survey_answer_1: survey_answer_1,
       survey_question_2: survey_question_2,
       survey_answer_2: survey_answer_2,
       custom_stop_reminders_url: "https://#{RockyConf.ui_url_host}/registrants/<UID>/stop_reminders",
@@ -1215,16 +1215,16 @@ class Registrant < ActiveRecord::Base
       queue_pdf
       self.status = 'complete'
       return self.save
-      
-    else 
+
+    else
       self.status = 'complete'
       self.save
-      
+
       generate_pdf
       finalize_pdf
     end
   end
-  
+
 
   def generate_barcode
     self.barcode = self.pdf_barcode
@@ -1241,7 +1241,7 @@ class Registrant < ActiveRecord::Base
   def generate_pdf!
     generate_pdf(true)
   end
-  
+
   def queue_pdf
     klass = PdfGeneration
     if self.email_address.blank?
@@ -1249,20 +1249,20 @@ class Registrant < ActiveRecord::Base
     end
     klass.create!(:registrant_id=>self.id)
   end
-  
+
   def pdf_file_path(pdfpre=nil)
     pdf_writer.pdf_file_path(pdfpre)
   end
-  
+
   def pdf_path(pdfpre = nil, file=false)
     pdf_writer.pdf_path(pdfpre, file)
   end
-  
+
   def pdf_file_dir(pdfpre = nil)
     pdf_writer.pdf_file_dir(pdfpre)
   end
-  
-  
+
+
 
   def pdf_writer
     if @pdf_writer.nil?
@@ -1284,12 +1284,12 @@ class Registrant < ActiveRecord::Base
       return false
     end
   end
-  
-  
+
+
   def lang
     locale
   end
-  
+
   def finalize_pdf
     self.pdf_ready = true
 
@@ -1300,7 +1300,7 @@ class Registrant < ActiveRecord::Base
     redact_sensitive_data
     save
   end
-  
+
   def to_pdf_hash
     {
       :id =>  id,
@@ -1310,31 +1310,31 @@ class Registrant < ActiveRecord::Base
       :us_citizen => us_citizen?,
       :will_be_18_by_election => will_be_18_by_election?,
       :home_zip_code => home_zip_code,
-      :name_title_key => name_title_key,        
-      :first_name => first_name,         
-      :middle_name => middle_name,        
-      :last_name => last_name,   
-      :name_suffix_key => name_suffix_key,        
-      :home_address => home_address,       
-      :home_unit => home_unit,        
+      :name_title_key => name_title_key,
+      :first_name => first_name,
+      :middle_name => middle_name,
+      :last_name => last_name,
+      :name_suffix_key => name_suffix_key,
+      :home_address => home_address,
+      :home_unit => home_unit,
       :home_city => home_city,
       :home_state_id => home_state_abbrev,
-      :home_state_name => home_state.name,      
-      :mailing_address => mailing_address,    
-      :mailing_unit => mailing_unit,      
-      :mailing_city => mailing_city,       
+      :home_state_name => home_state.name,
+      :mailing_address => mailing_address,
+      :mailing_unit => mailing_unit,
+      :mailing_city => mailing_city,
       :mailing_state_id => mailing_state_abbrev,
       :mailing_zip_code => mailing_zip_code,
-      :phone => phone,          
+      :phone => phone,
       :state_id_number => state_id_number,
-      :prev_name_title_key => prev_name_title_key,    
-      :prev_first_name => prev_first_name,    
-      :prev_middle_name => prev_middle_name,   
-      :prev_last_name => prev_last_name, 
+      :prev_name_title_key => prev_name_title_key,
+      :prev_first_name => prev_first_name,
+      :prev_middle_name => prev_middle_name,
+      :prev_last_name => prev_last_name,
       :prev_name_suffix_key => prev_name_suffix_key,
-      :prev_address => prev_address,   
-      :prev_unit => prev_unit,       
-      :prev_city => prev_city,          
+      :prev_address => prev_address,
+      :prev_unit => prev_unit,
+      :prev_city => prev_city,
       :prev_state_id => prev_state_abbrev,
       :prev_zip_code => prev_zip_code,
       :partner_absolute_pdf_logo_path => partner_absolute_pdf_logo_path,
@@ -1347,10 +1347,10 @@ class Registrant < ActiveRecord::Base
       :pdf_english_race => pdf_english_race,
       :pdf_date_of_birth => pdf_date_of_birth,
       :pdf_barcode => pdf_barcode,
-      :created_at => created_at.to_param 
+      :created_at => created_at.to_param
     }
   end
-  
+
   def to_finish_with_state_array
     [{:status               => self.extended_status,
     :create_time          => self.created_at.to_s,
@@ -1382,7 +1382,7 @@ class Registrant < ActiveRecord::Base
     :source_tracking_id   => self.tracking_source,
     :partner_tracking_id  => self.tracking_id}]
   end
-  
+
   def send_emails?
     !email_address.blank? && collect_email_address? && (!building_via_api_call? || send_confirmation_reminder_emails?)
   end
@@ -1421,18 +1421,16 @@ class Registrant < ActiveRecord::Base
   def redact_sensitive_data
     self.state_id_number = nil
   end
-  
+
   def bucket_code
     pdf_writer.bucket_code
   end
 
   def check_ineligible
-    if at_least_step_4?
-      self.ineligible_non_participating_state = home_state && !home_state.participating?
-      self.ineligible_age = age && age < 18
-      self.ineligible_non_citizen = !us_citizen?
-      true # don't halt save in after_validation
-    end
+    self.ineligible_non_participating_state = home_state && !home_state.participating?
+    self.ineligible_age = age && age < 18
+    self.ineligible_non_citizen = !us_citizen?
+    true # don't halt save in after_validation
   end
 
   def ineligible?
@@ -1625,7 +1623,7 @@ class Registrant < ActiveRecord::Base
   def yes_no(attribute)
     attribute ? "Yes" : "No"
   end
-  
+
   def method_missing(sym, *args)
     if sym.to_s =~ /^yes_no_(.+)$/
       attribute = $1
@@ -1634,7 +1632,7 @@ class Registrant < ActiveRecord::Base
       super
     end
   end
-  
+
   def ineligible_reason
     case
     when ineligible_non_citizen? then "Not a US citizen"
@@ -1661,7 +1659,7 @@ class Registrant < ActiveRecord::Base
     end
     true
   end
-  
+
   def set_finish_with_state
     self.finish_with_state = false unless self.home_state_online_reg_enabled?
     return true
