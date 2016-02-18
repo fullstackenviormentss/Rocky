@@ -46,8 +46,8 @@ class RegistrantsController < RegistrationStep
 
   # GET /registrants/new
   def new
-    @title = t('txt.registration.step_1_header')
     set_up_locale
+    @title = t('txt.registration.step_1_header')
     if MobileConfig.is_mobile_request?(request)
       redirect_to MobileConfig.redirect_url(:partner=>@partner_id, :locale=>@locale, :source=>@source, :tracking=>@tracking, :collectemailaddress=>@collect_email_address)
     else
@@ -66,7 +66,7 @@ class RegistrantsController < RegistrationStep
                                     :tracking_id => @tracking,
                                     :short_form => @short_form,
                                     :collect_email_address => @collect_email_address))
-                                    
+
     if @registrant.partner.primary?
       @registrant.opt_in_email = true
       @registrant.opt_in_sms = true
@@ -76,7 +76,7 @@ class RegistrantsController < RegistrationStep
       end
       if @registrant.partner.rtv_sms_opt_in
         @registrant.opt_in_sms = true
-      end 
+      end
       if @registrant.partner.partner_email_opt_in
         @registrant.partner_opt_in_email = true
       end
