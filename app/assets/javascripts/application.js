@@ -18,14 +18,36 @@
 
 $(document).ready(function(){
   $('a').on('click', function(e){
-    ga('send', 'event', 'VoterRegTool','link clicked', $(this).attr('href'));
+    var message=$(this).attr('href');
+    if(message.indexOf("step_3")>-1){
+      message="Options for Voting Page (2): National Mail Voter Form link";
+    }
+    if(message.indexOf("step_4")>-1){
+      message="Natl Form Page (4): Eligibility/Next Step button";
+    }
+    ga('send', 'event', 'VoterRegTool','link clicked', message);
     window.location = $(this).attr('href');
   });
 
 
   $('form').submit(function(e){
     var pathArray = window.location.pathname.split( '/' );
-    ga('send', 'event', 'VoterRegTool','form submitted', pathArray[pathArray.length-1]);
+    pathArray=pathArray[pathArray.length-1];
+    switch(pathArray){
+      case "new":
+        pathArray="Entry Page (1): Register to Vote/Select State/Submit button";
+        break;
+      case "step_3":
+        pathArray="Natl Form Page (3): Check Eligibility button";
+        break;
+      case "step_4":
+        pathArray="Natl Form Page (5): Personal Info/Next Step button";
+        break;
+      case "step_5":
+        pathArray="Review & Confirm Info Page (6): Generate Form button";
+        break;
+    }
+    ga('send', 'event', 'VoterRegTool','form submitted', pathArray);
     return true;
   })
 });
