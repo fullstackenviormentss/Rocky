@@ -1,7 +1,11 @@
 %div.page#page_1
-  #logo= wicked_pdf_image_tag(I18n.locale == :en ? "usa_gov/usa_gov_logo.png": "usa_gov/gobierno_gov_logo.png")
-  %h1.title= I18n.t('pdf.nvra.page1.title').to_s.html_safe
-  %h2.subtitle= I18n.t('pdf.nvra.page1.subtitle' ).to_s.html_safe
+  %div.title-container
+    %h1.title= I18n.t('pdf.nvra.page1.title').to_s.html_safe
+    %h2.subtitle= I18n.t('pdf.nvra.page1.subtitle' ).to_s.html_safe
+    #logo= wicked_pdf_image_tag(I18n.locale == :en ? "usa_gov/usa_gov_logo.png": "usa_gov/gobierno_gov_logo.png")
+    %br/
+    %br/
+
   %p.top_paragraph= I18n.t('pdf.nvra.page1.top_paragraph' ).to_s.html_safe
   %table#instructions_table
     %tr
@@ -23,7 +27,7 @@
         - if !@registrant.home_state_pdf_instructions.blank? && false
           .state_instructions
             %p= @registrant.home_state_pdf_instructions.to_s.html_safe
-          
+
         %h4.title= I18n.t('pdf.nvra.page1.submit_block.title' ).to_s.html_safe
         %p#registrar_address= @registrant.state_registrar_address.to_s.html_safe
     %tr
@@ -38,11 +42,11 @@
   %p= I18n.t('pdf.nvra.page1.bottom_block.paragraph2' ).to_s.html_safe
   %p= I18n.t('pdf.nvra.page1.bottom_block.paragraph3' ).to_s.html_safe
   %p= I18n.t('pdf.nvra.page1.bottom_block.paragraph4' ).to_s.html_safe
-  
+
 .page#page_2
   %h1.title= form_prompt('pdf.nvra.page2.title' ).to_s.html_safe
   %h2.subtitle= form_prompt('pdf.nvra.page2.subtitle' ).to_s.html_safe
-  
+
   %table.form
     %tr#topblock{:class=>"#{non_english? ? 'smaller_prompts' : ''}"}
       %td.items
@@ -75,7 +79,7 @@
             .checkbox{:class=>checked?(:ms, :name_title) ? 'checkbox-checked' : ''}
               = checkbox(:ms, :name_title)
               %span= I18n.t("txt.registration.titles.ms", :locale=>:en)
-      
+
       %td.box2#name_last
         .label= form_prompt('pdf.nvra.page2.block1.box2_label' ).to_s.html_safe
         .value= (@registrant.last_name).to_s.html_safe
@@ -105,7 +109,7 @@
             .checkbox{:class=>checked?(:iv, :name_suffix) ? 'checkbox-checked' : ''}
               = checkbox(:iv, :name_suffix)
               %span= I18n.t("txt.registration.suffixes.iv", :locale=>:en)
-  
+
   %table.form
     %tr#block2
       %td.block_number 2
@@ -255,7 +259,7 @@
                 %span= I18n.t("txt.registration.suffixes.iii", :locale=>:en)
               .checkbox{:class=>checked?(:iv, :prev_name_suffix) ? 'checkbox-checked' : ''}
                 = checkbox(:iv, :prev_name_suffix)
-                %span= I18n.t("txt.registration.suffixes.iv", :locale=>:en)          
+                %span= I18n.t("txt.registration.suffixes.iv", :locale=>:en)
     %p.block_title.blockB= form_prompt('pdf.nvra.page2.blockB.title' ).to_s.html_safe
     %table.form
       %tr#blockB
@@ -275,7 +279,7 @@
         %td.box5#prev_address_zip_code
           .label= form_prompt('pdf.nvra.page2.blockB.box5_label' ).to_s.html_safe
           .value=  @registrant.prev_zip_code.to_s.html_safe
-          
+
     %p.block_title.blockC= form_prompt('pdf.nvra.page2.blockC.title' ).to_s.html_safe
     %table.form
       %tr#blockC
@@ -283,7 +287,7 @@
         %td.box1
           .address_map_wrapper
             .address_map= wicked_pdf_image_tag("pdf/address_map.png")
-            %ul.instructions 
+            %ul.instructions
               %li= form_prompt('pdf.nvra.page2.blockC.instructions.bullet1' ).to_s.html_safe
               %li= form_prompt('pdf.nvra.page2.blockC.instructions.bullet2' ).to_s.html_safe
               %li= form_prompt('pdf.nvra.page2.blockC.instructions.bullet3' ).to_s.html_safe

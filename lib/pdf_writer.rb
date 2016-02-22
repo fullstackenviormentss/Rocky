@@ -2,49 +2,49 @@ class PdfWriter
   include ActiveModel::AttributeMethods
   include ActiveModel::MassAssignmentSecurity
   include ActiveModel::Validations
-  
+
   include Lolrus
-  
+
   #registrant data values
   attr_accessor :id, :uid, :locale,
         :email_address,
-        :us_citizen,  
+        :us_citizen,
         :will_be_18_by_election,
         :home_zip_code,
-        :name_title,      
-        :name_title_key,        
-        :first_name,         
-        :middle_name,        
-        :last_name,   
-        :name_suffix,    
-        :name_suffix_key,        
-        :home_address,       
-        :home_unit,        
+        :name_title,
+        :name_title_key,
+        :first_name,
+        :middle_name,
+        :last_name,
+        :name_suffix,
+        :name_suffix_key,
+        :home_address,
+        :home_unit,
         :home_city,
-        :home_state_id,   
-        :home_state_name,    
-        :mailing_address,    
-        :mailing_unit,      
-        :mailing_city,       
+        :home_state_id,
+        :home_state_name,
+        :mailing_address,
+        :mailing_unit,
+        :mailing_city,
         :mailing_state_id,
-        :mailing_zip_code,   
-        :phone,       
-        :party,   
+        :mailing_zip_code,
+        :phone,
+        :party,
         :state_id_number,
         :prev_name_title,
-        :prev_name_title_key,    
-        :prev_first_name,    
-        :prev_middle_name,   
-        :prev_last_name, 
-        :prev_name_suffix,  
+        :prev_name_title_key,
+        :prev_first_name,
+        :prev_middle_name,
+        :prev_last_name,
+        :prev_name_suffix,
         :prev_name_suffix_key,
-        :prev_address,   
-        :prev_unit,       
-        :prev_city,          
+        :prev_address,
+        :prev_unit,
+        :prev_city,
         :prev_state_id,
         :prev_zip_code
-        
-        
+
+
   # computed registrant values
   attr_accessor :partner_absolute_pdf_logo_path,
       :registration_instructions_url,
@@ -56,10 +56,10 @@ class PdfWriter
       :pdf_date_of_birth,
       :pdf_barcode,
       :created_at
-      
+
   validates_presence_of :id, :uid, :home_state_id, :pdf_barcode, :locale, :registration_instructions_url, :state_registrar_address, :registration_deadline, :pdf_date_of_birth, :created_at
   validate :pdf_date_of_birth_format
-  
+
   def us_citizen?
     self.us_citizen == true
   end
@@ -108,14 +108,18 @@ class PdfWriter
     renderer = PdfRenderer.new(self)
 
     html_string = renderer.render_to_string(
-      'registrants/registrant_pdf', 
+      'registrants/registrant_pdf',
       :layout => 'layouts/nvra',
       :encoding => 'utf8',
-      :locale=>self.locale
+      :locale=>self.locale,
+      :print_media_type => false,
+      :page_size => "A4",
+      :show_as_html => true,
+      :disable_smart_shrinking => true
     )
     I18n.locale = prev_locale
 
-    return html_string    
+    return html_string
   end
 
   def generate_html(force_write = false)
@@ -128,8 +132,10 @@ class PdfWriter
 
     return true
   end
-  
+
   def self.write_html_from_html_string(html_string, dir, path)
+    Rails.logger.info dir
+    Rails.logger.info path
     FileUtils.mkdir_p(dir)
     File.open(path, "w") do |f|
       f << html_string.force_encoding('UTF-8')
@@ -150,7 +156,7 @@ class PdfWriter
   def pdf_exists?
     File.exists?(pdf_file_path)
   end
-  
+
   def html_exists?
     File.exists?(html_file_path)
   end
@@ -212,15 +218,15 @@ class PdfWriter
       :disable_external_links         => false,
       :encoding => 'utf8',
       :locale=>locale
-    )      
+    )
     FileUtils.mkdir_p(pdf_file_dir)
     File.open(path, "w") do |f|
       f << pdf.force_encoding('UTF-8')
     end
-  end   
-  
-  private 
-  
+  end
+
+  private
+
   def pdf_date_of_birth_format
     if (/^\d{1,2}\/\d{1,2}\/\d{2,4}$/.match(self.pdf_date_of_birth))
       return true
@@ -229,5 +235,5 @@ class PdfWriter
       return false
     end
   end
-  
+
 end
